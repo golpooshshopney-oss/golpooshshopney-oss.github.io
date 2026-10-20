@@ -112,7 +112,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <div class="benefit-grid">
    <div class="benefit"><div class="ico">🌷</div><h3>مدل‌ها و رنگ‌های متنوع</h3><p>برای سلیقه‌های مختلف، از طرح‌های ساده تا گل‌دار و فانتزی.</p></div>
    <div class="benefit"><div class="ico">🧵</div><h3>توجه به دوخت و جزئیات</h3><p>تمرکز روی تمیزی دوخت، راحتی و انتخاب پارچه مناسب.</p></div>
-   <div class="benefit"><div class="ico">📏</div><h3>دوخت با اندازه دلخواه</h3><p>برای سفارش سفارشی، اندازه‌ها و مدنظرت را برای ما بفرست.</p></div>
+   <div class="benefit"><div class="ico">📏</div><h3>دوخت با اندازه دلخواه</h3><p>برای سفارش سفارشی، اندازه‌ها و مدل مدنظرت را برای ما بفرست.</p></div>
   </div>
  </div>
 </section>
@@ -532,14 +532,14 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
 
 /* ================= پنل مدیریت ================= */
 let brandClicks = 0, brandTimer = null;
-document.getElementById("brandLogo").addEventListener("click", (e)=>{
+document.getElementById("brandLogo").addEventListener("click", function(e) {
   e.preventDefault();
   brandClicks++;
   clearTimeout(brandTimer);
-  brandTimer = setTimeout(()=>{ brandClicks=0 }, 1200);
-  if(brandClicks >= 5){ 
-    brandClicks = 0; 
-    openAdminLogin(); 
+  brandTimer = setTimeout(function() { brandClicks = 0; }, 1500);
+  if (brandClicks >= 5) {
+    brandClicks = 0;
+    openAdminLogin();
   }
 });
 
