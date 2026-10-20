@@ -28,14 +28,11 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .empty{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted)}
 .benefits{background:#fff0f1}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{padding:23px;background:white;border:1px solid var(--line);border-radius:20px}.benefit .ico{font-size:27px}.benefit h3{color:var(--wine);margin:8px 0 3px;font-size:17px}.benefit p{font-size:13px;color:var(--muted);margin:0}
 .reviews{background:#fff0f1}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
-
-/* بخش جدید ضمانت و مرجوعی */
 .trust-badges {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px;}
 .trust-item {background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow);}
 .trust-item .icon {font-size:40px;}
 .trust-item h4 {margin:0 0 5px;color:var(--wine);font-size:16px;}
 .trust-item p {margin:0;font-size:12px;color:var(--muted);}
-
 .custom{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:var(--wine);color:white;padding:30px;border-radius:28px}.custom h2{color:white}.custom p{color:#f3dbe2;margin-bottom:0}.custom .btn{background:white;color:var(--wine)}
 footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
 .overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{background:#fffaf8;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.modal h2{margin:0;color:var(--wine);font-size:24px}.close{border:0;background:var(--pink);color:var(--wine);width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
@@ -48,7 +45,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:50;display:none;font-size:13px}
 .pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.pdetail-visual{height:230px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.pdetail-visual:before{content:"";position:absolute;width:150px;height:170px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.pdetail-visual:after{content:"♡  ✿  ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:95px}.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
-/* admin panel */
 .admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}
 .admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}
 .admin-modal h2{color:var(--wine);margin:0 0 12px}
@@ -132,8 +128,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
 </main>
 <footer id="contact"><div class="wrap">
- 
- <!-- بخش جدید ضمانت و مرجوعی -->
  <div class="trust-badges">
     <div class="trust-item">
       <div class="icon">🛡️</div>
@@ -150,13 +144,11 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
       </div>
     </div>
  </div>
-
  <div class="footer-grid">
   <div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه؛ جایی برای راحتی، لطافت و انتخاب‌های دوست‌داشتنی.</p></div>
   <div><strong>راه‌های ارتباطی</strong><ul><li>تلفن و سفارش: <a href="tel:09368550283">۰۹۳۶۸۵۵۰۲۸۳</a></li><li>اینستاگرام: @gol.pooshshop1</li><li>تلگرام: @golpooshshop1</li></ul></div>
   <div><strong>ثبت سفارش</strong><p>محصول را به سبد خرید اضافه کن و سفارش را از طریق پیام‌رسان ارسال کن. پرداخت آنلاین پس از اتصال درگاه پرداخت فعال می‌شود.</p><div class="social"><a href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">اینستاگرام</a><a href="https://t.me/golpooshshop1" target="_blank" rel="noopener">تلگرام</a></div></div>
  </div>
-
  <div class="copyright">© گلپوش — تمامی حقوق محفوظ است. <span>نسخه اولیه فروشگاه</span></div>
 </div></footer>
 <div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
@@ -189,7 +181,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <div id="productDetail"></div>
  </div>
 </div>
-<!-- admin login -->
 <div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
  <div class="modal" style="width:min(400px,100%)">
   <div class="modal-head"><h2>ورود مدیر</h2><button class="close" onclick="closeAdminLogin()">×</button></div>
@@ -197,7 +188,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <button class="btn primary" style="width:100%" onclick="checkAdminPass()">ورود</button>
  </div>
 </div>
-<!-- admin panel -->
 <div class="admin-panel" id="adminPanel">
  <div class="admin-modal">
   <div class="modal-head"><h2>⚙️ پنل مدیریت گلپوش</h2><button class="close" onclick="closeAdminPanel()">×</button></div>
@@ -237,7 +227,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
-/* ================= تنظیمات دیتابیس (اینجا را تغییر دهید) ================= */
+/* ================= تنظیمات دیتابیس ================= */
 const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_4X8o4U7t5qD5x3X7Y8w9Z0a1B2c3D4e5'; // 🔴 کلید خودت را اینجا جایگزین کن
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -444,7 +434,6 @@ document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
 document.getElementById("orderForm").addEventListener("submit", async function(e){
   e.preventDefault();
   
-  // دکمه رو غیرفعال کن تا کاربر دوبار کلیک نکنه
   const submitBtn = this.querySelector('button[type="submit"]');
   const originalText = submitBtn.innerHTML;
   submitBtn.innerHTML = 'در حال ثبت... ⏳';
@@ -468,7 +457,6 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
   const f=new FormData(this);
   const name=f.get("name"),phone=f.get("phone"),address=f.get("address"),postal=f.get("postal"),channel=f.get("channel"),payment=f.get("payment");
 
-  // بررسی استفاده قبلی کد تخفیف با شماره موبایل
   if(appliedCoupon) {
     let usedPhones = {};
     try { usedPhones = JSON.parse(localStorage.getItem(LS_USED_PHONES)) || {}; } catch(e){}
@@ -483,7 +471,6 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
   const discount = appliedCoupon ? Math.round(subtotal * COUPON.percent/100) : 0;
   const total = subtotal - discount;
 
-  // ذخیره در دیتابیس Supabase
   const { data, error } = await supabase
     .from('orders')
     .insert([
@@ -523,7 +510,6 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
     window.open("https://t.me/golpooshshop1","_blank","noopener");
   }
 
-  // ثبت کد تخفیف به عنوان استفاده شده
   if(appliedCoupon){ 
       try{ 
           localStorage.setItem(LS_COUPON_USED,"1"); 
@@ -535,7 +521,6 @@ document.getElementById("orderForm").addEventListener("submit", async function(e
       appliedCoupon=false; 
   }
 
-  // خالی کردن سبد و ریست فرم
   cart={}; saveCart(); updateCart();
   document.getElementById("couponInput").value="";
   document.getElementById("couponMsg").textContent="";
@@ -599,11 +584,10 @@ async function renderAdminOrders(){
   const box = document.getElementById("adminOrderList");
   box.innerHTML = '<p class="hint">در حال دریافت سفارش‌ها از سرور... ⏳</p>';
   
-  // دریافت اطلاعات از دیتابیس
   const { data: orders, error } = await supabase
     .from('orders')
     .select('*')
-    .order('created_at', { ascending: false }); // جدیدترین‌ها بالا
+    .order('created_at', { ascending: false });
 
   if (error) {
     box.innerHTML = '<p class="hint" style="color:red">خطا در دریافت اطلاعات از سرور!</p>';
@@ -613,7 +597,6 @@ async function renderAdminOrders(){
   if(!orders || !orders.length){ box.innerHTML='<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
 
   box.innerHTML = orders.map(o=>{
-    // تبدیل تاریخ به شمسی
     const dateObj = new Date(o.created_at);
     const dateStr = dateObj.toLocaleDateString('fa-IR') + " - " + dateObj.toLocaleTimeString('fa-IR', {hour: '2-digit', minute:'2-digit'});
     const itemsHtml = (o.items || "").split('\n').map(i => `<span style="color:#754758">${i}</span>`).join("<br>");
