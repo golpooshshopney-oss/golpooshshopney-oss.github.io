@@ -537,7 +537,10 @@ document.getElementById("brandLogo").addEventListener("click", (e)=>{
   brandClicks++;
   clearTimeout(brandTimer);
   brandTimer = setTimeout(()=>{ brandClicks=0 }, 1200);
-  if(brandClicks >= 5){ brandClicks=0; openAdminLogin(); }
+  if(brandClicks >= 5){ 
+    brandClicks = 0; 
+    openAdminLogin(); 
+  }
 });
 
 function openAdminLogin(){ document.getElementById("adminLoginOverlay").classList.add("show"); document.getElementById("adminPass").value=""; }
