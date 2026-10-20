@@ -1,675 +1,122 @@
 <!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#8b2345">
-<meta name="description" content="گلپوش؛ فروشگاه لباس خواب زنانه با امکان دوخت سفارشی">
-<title>گلپوش | فروشگاه لباس خواب زنانه</title>
-<style>
-:root{--wine:#7c1f40;--wine2:#9f3658;--rose:#d77d91;--pink:#f8e6e8;--pale:#fff8f6;--ink:#4b2432;--muted:#876b73;--line:#efd3d9;--white:#fff;--shadow:0 12px 32px #6d234010}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--pale);color:var(--ink);font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.8}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
-.topbar{background:var(--wine);color:white;text-align:center;padding:8px 12px;font-size:13px}
-header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;color:var(--wine);font-weight:900;font-size:29px;cursor:pointer;user-select:none}.brandmark{display:grid;place-items:center;width:44px;height:44px;background:var(--pink);border-radius:50%;font-size:24px}.navlinks{display:flex;gap:24px;color:#704552;font-size:14px}.nav-actions{display:flex;gap:9px;align-items:center}.btn{border:0;border-radius:999px;padding:11px 18px;cursor:pointer;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-1px)}.primary{background:var(--wine);color:white}.soft{background:var(--pink);color:var(--wine)}.outline{border:1px solid var(--line);background:white;color:var(--wine)}.cartbtn{position:relative}.count{background:var(--rose);color:white;border-radius:50%;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px}
-.hero{padding:44px 0 35px;background:radial-gradient(circle at 90% 15%,#f1cbd2 0,transparent 28%),linear-gradient(125deg,#fff7f3,#f8e3e7)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow{display:inline-block;background:white;color:var(--wine2);padding:5px 13px;border-radius:999px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.35;margin:14px 0;color:var(--wine)}.hero h1 span{color:var(--rose)}.hero p{color:#765560;max-width:510px}.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}.hero-notes{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;font-size:13px;color:#7b5360}.hero-art{min-height:365px;border-radius:42% 42% 28px 28px;overflow:hidden;position:relative;background:linear-gradient(140deg,#e8b5c0,#fff0eb 55%,#c97b92);display:grid;place-items:center}.hero-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#fff7f1aa;top:28px;right:10%}.hero-art:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#a83e62aa;bottom:-70px;left:-35px}.fabric-stack{position:relative;z-index:1;display:grid;gap:0;transform:rotate(-5deg);filter:drop-shadow(0 18px 15px #63243b30)}.fabric{width:min(330px,70vw);height:74px;border-radius:16px 24px 10px 10px;border:2px solid #ffffffaa;margin-top:-7px;box-shadow:inset 0 0 0 2px #ffffff20;display:flex;align-items:center;justify-content:center;font-size:31px;color:#8e3d5b}.f1{background:repeating-linear-gradient(135deg,#f6c4d0 0 12px,#fbe0e3 12px 24px)}.f2{background:repeating-linear-gradient(45deg,#fff2e7 0 14px,#eac4c8 14px 18px)}.f3{background:repeating-linear-gradient(135deg,#c889a0 0 12px,#e2b1c0 12px 24px)}.f4{background:repeating-linear-gradient(45deg,#3f3940 0 13px,#6c5964 13px 16px);color:#f6dce4}
-.section{padding:52px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:23px}.section h2{font-size:clamp(25px,3vw,35px);color:var(--wine);margin:0}.section-head p{color:var(--muted);margin:5px 0 0;font-size:14px}
-.toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}
-.searchbox{flex:1;min-width:200px;position:relative}
-.searchbox input{width:100%;border:1px solid var(--line);border-radius:999px;padding:10px 40px 10px 15px;background:white;outline-color:var(--rose)}
-.searchbox span{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:#b08694;font-size:15px}
-.sortbox select{border:1px solid var(--line);border-radius:999px;padding:10px 15px;background:white;color:#754758;cursor:pointer;outline-color:var(--rose)}
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.filter{border:1px solid var(--line);background:white;color:#754758;border-radius:999px;padding:8px 15px;cursor:pointer}.filter.active{background:var(--wine);border-color:var(--wine);color:white}
-.products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:white;border:1px solid #f0dfe2;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 18px 40px #6d23401a}.product-visual{height:220px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden;cursor:pointer}.product-visual:before{content:"";position:absolute;width:160px;height:180px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.product-visual:after{content:"♡  ✿  ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:94px}.product-visual .tag{position:absolute;top:12px;right:12px;background:white;color:var(--wine);font-size:11px;border-radius:999px;padding:4px 9px;z-index:1}.product-info{padding:15px;display:flex;flex-direction:column;flex:1}.product-info h3{font-size:16px;margin:0 0 4px;cursor:pointer}.desc{font-size:12px;color:var(--muted);margin:0 0 12px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.price{font-weight:900;color:var(--wine)}.oldprice{font-size:11px;color:#aa9298;text-decoration:line-through}.add{margin-top:12px;width:100%}
-.sizes{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.size-opt{border:1px solid var(--line);background:white;color:#754758;border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:700;transition:.15s}.size-opt:hover{border-color:var(--rose)}.size-opt.sel{background:var(--wine);border-color:var(--wine);color:white}
-.share-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;justify-content:center}
-.share-btn{border:1px solid var(--line);background:white;color:var(--wine);border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
-.share-btn:hover{background:var(--pink);border-color:var(--rose)}
-.empty{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted)}
-.benefits{background:#fff0f1}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{padding:23px;background:white;border:1px solid var(--line);border-radius:20px}.benefit .ico{font-size:27px}.benefit h3{color:var(--wine);margin:8px 0 3px;font-size:17px}.benefit p{font-size:13px;color:var(--muted);margin:0}
-.reviews{background:#fff0f1}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
-.trust-badges {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px;}
-.trust-item {background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow);}
-.trust-item .icon {font-size:40px;}
-.trust-item h4 {margin:0 0 5px;color:var(--wine);font-size:16px;}
-.trust-item p {margin:0;font-size:12px;color:var(--muted);}
-.custom{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:var(--wine);color:white;padding:30px;border-radius:28px}.custom h2{color:white}.custom p{color:#f3dbe2;margin-bottom:0}.custom .btn{background:white;color:var(--wine)}
-footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
-.overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{background:#fffaf8;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.modal h2{margin:0;color:var(--wine);font-size:24px}.close{border:0;background:var(--pink);color:var(--wine);width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
-.cart-items{display:grid;gap:10px;margin:18px 0}.cart-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:14px}.cart-item .sz{font-size:11px;color:var(--wine);background:var(--pink);padding:1px 8px;border-radius:8px;display:inline-block;margin-top:3px}.qty{display:flex;align-items:center;gap:8px}.qty button{border:0;background:var(--pink);color:var(--wine);width:28px;height:28px;border-radius:50%;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:900;color:var(--wine);border-top:1px solid var(--line);padding-top:13px}.discount-row{display:flex;justify-content:space-between;font-size:13px;color:#2e7d32;margin-top:6px}
-.coupon-box{display:flex;gap:8px;margin-top:12px}
-.coupon-box input{flex:1;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:white;outline-color:var(--rose);font-size:13px}
-.coupon-box .btn{padding:9px 14px;font-size:13px}
-.coupon-msg{font-size:12px;margin-top:6px}
-.coupon-msg.ok{color:#2e7d32}.coupon-msg.err{color:#c62828}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:50;display:none;font-size:13px}
-.pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.pdetail-visual{height:230px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.pdetail-visual:before{content:"";position:absolute;width:150px;height:170px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.pdetail-visual:after{content:"♡  ✿  ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:95px}.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
-.admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}
-.admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}
-.admin-modal h2{color:var(--wine);margin:0 0 12px}
-.admin-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px;overflow-x:auto}
-.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}
-.admin-tab.active{background:var(--wine);color:white}
-.admin-product-list{display:grid;gap:8px;margin-top:12px;max-height:400px;overflow:auto}
-.admin-product-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:13px}
-.admin-product-row .info{flex:1;min-width:0}
-.admin-product-row .info strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.admin-product-row .info span{font-size:11px;color:var(--muted)}
-.admin-product-row .actions{display:flex;gap:5px}
-.admin-product-row .actions button{border:0;background:var(--pink);color:var(--wine);padding:5px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700}
-.admin-product-row .actions button.del{background:#fde0e0;color:#c62828}
-.admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}
-.admin-form .field{font-size:12px}
-.admin-form .field.full{grid-column:1/-1}
-.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}
-.admin-form .actions .btn{padding:8px 16px;font-size:13px}
-.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
-.admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}
-.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}
-.admin-order-details{font-size:12px;color:var(--ink);width:100%}
-@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr;}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#7c1f40">
+  <meta name="description" content="گلپوش؛ فروشگاه لباس خواب زنانه. مدل‌ها را ببینید و سفارش خود را ثبت کنید.">
+  <meta property="og:title" content="گلپوش | فروشگاه لباس خواب زنانه">
+  <meta property="og:description" content="انتخاب لباس خواب زنانه از فروشگاه گلپوش">
+  <title>گلپوش | فروشگاه لباس خواب زنانه</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    :root{--wine:#7c1f40;--wine2:#9f3658;--rose:#d77d91;--pink:#f8e6e8;--pale:#fff8f6;--ink:#4b2432;--muted:#876b73;--line:#efd3d9;--white:#fff;--shadow:0 12px 32px #6d234012}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--pale);color:var(--ink);font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.8}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}.topbar{background:var(--wine);color:#fff;text-align:center;padding:7px 12px;font-size:12px}header{position:sticky;top:0;z-index:10;background:#fffaf8ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}.brand{display:flex;align-items:center;gap:9px;color:var(--wine);font-weight:900;font-size:26px}.brandmark{display:grid;place-items:center;width:42px;height:42px;background:var(--pink);border-radius:50%;font-size:23px}.navlinks{display:flex;gap:22px;color:#704552;font-size:14px}.btn{border:0;border-radius:999px;padding:10px 17px;cursor:pointer;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:.18s}.btn:hover{transform:translateY(-1px)}.primary{background:var(--wine);color:#fff}.soft{background:var(--pink);color:var(--wine)}.outline{border:1px solid var(--line);background:#fff;color:var(--wine)}.cartbtn{white-space:nowrap}.count{background:var(--rose);color:#fff;border-radius:50%;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px}.hero{padding:45px 0 36px;background:radial-gradient(circle at 90% 15%,#f1cbd2 0,transparent 28%),linear-gradient(125deg,#fff7f3,#f8e3e7)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:center}.eyebrow{display:inline-block;background:#fff;color:var(--wine2);padding:5px 13px;border-radius:999px;font-size:12px}.hero h1{font-size:clamp(31px,4.4vw,51px);line-height:1.5;color:var(--wine);margin:13px 0}.hero p{color:#765560;max-width:570px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.hero-art{min-height:310px;border-radius:34px;background:linear-gradient(145deg,#f2cbd4,#fff0e9);display:grid;place-items:center;position:relative;overflow:hidden}.hero-art:before{content:"";width:45%;height:70%;background:linear-gradient(140deg,#fff7f3,#d98ca3);border-radius:48% 48% 24% 24%;transform:rotate(-8deg);box-shadow:inset -13px -10px 0 #7624420d,0 20px 35px #6d234022}.hero-art:after{content:"گلپوش  ✿  گلپوش";position:absolute;bottom:22px;color:#8f3656;letter-spacing:2px;font-weight:700}.floating{position:absolute;background:#fff;padding:10px 15px;border-radius:16px;box-shadow:var(--shadow);font-size:12px}.float-one{top:23px;right:22px}.float-two{bottom:62px;left:20px}.section{padding:48px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:20px}.section h2{font-size:clamp(23px,3vw,33px);color:var(--wine);margin:0}.section-head p{color:var(--muted);margin:4px 0 0;font-size:13px}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}.tools input,.tools select,.field input,.field textarea,.field select{border:1px solid var(--line);background:#fff;border-radius:13px;padding:11px 13px;outline:none;width:100%;color:var(--ink)}.tools input{flex:1;min-width:180px}.tools select{width:auto;min-width:150px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid var(--line);background:#fff;color:#754758;border-radius:999px;padding:7px 14px;cursor:pointer}.filter.active{background:var(--wine);border-color:var(--wine);color:#fff}.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:17px}.product{background:#fff;border:1px solid #f0dfe2;border-radius:21px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;min-width:0}.product-visual{height:205px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.product-visual:before{content:"";position:absolute;width:145px;height:165px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.product-visual:after{content:"♡  ✿  ♡";position:absolute;color:#a44969;font-size:20px;letter-spacing:8px;transform:rotate(-6deg);top:88px}.product-visual .tag{position:absolute;top:11px;right:11px;background:#fff;color:var(--wine);font-size:11px;border-radius:999px;padding:3px 9px;z-index:1}.product-info{padding:14px;display:flex;flex-direction:column;flex:1}.product-info h3{font-size:15px;margin:0 0 4px}.desc{font-size:12px;color:var(--muted);margin:0 0 12px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.price{font-weight:900;color:var(--wine);font-size:14px}.oldprice{font-size:11px;color:#aa9298;text-decoration:line-through}.add{margin-top:12px;width:100%}.empty{grid-column:1/-1;padding:25px;background:#fff;border:1px dashed var(--line);border-radius:18px;text-align:center;color:var(--muted)}.benefits{background:#fff0f1}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.benefit{padding:20px;background:#fff;border:1px solid var(--line);border-radius:19px}.benefit .ico{font-size:26px}.benefit h3{color:var(--wine);margin:6px 0 2px;font-size:16px}.benefit p{font-size:12px;color:var(--muted);margin:0}.custom{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;background:var(--wine);color:#fff;padding:28px;border-radius:26px}.custom h2{color:#fff;margin:0}.custom p{color:#f3dbe2;margin:5px 0 0;font-size:13px}.custom .btn{background:#fff;color:var(--wine)}footer{background:#f6dfe3;padding:30px 0 18px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:22px}.footer-title{font-size:19px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:12px;color:#765560}footer ul{padding-right:18px;margin:7px 0}.social{display:flex;gap:8px;flex-wrap:wrap}.social a{background:#fff;padding:7px 11px;border-radius:999px;color:var(--wine);font-size:12px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:20px;padding-top:13px;color:#947681;font-size:11px}.overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:15px}.overlay.show{display:flex}.modal{background:#fffaf8;border-radius:23px;width:min(620px,100%);max-height:92vh;overflow:auto;padding:22px;box-shadow:0 24px 70px #16040b40}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.modal-head h2{margin:0;color:var(--wine);font-size:22px}.close{border:0;background:var(--pink);color:var(--wine);width:37px;height:37px;border-radius:50%;cursor:pointer;font-size:20px}.cart-list{margin:15px 0}.cart-item{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.qty{display:flex;align-items:center;gap:10px}.qty button{border:0;background:var(--pink);color:var(--wine);border-radius:9px;width:30px;height:30px;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:900;color:var(--wine);padding:12px 0;border-top:1px solid var(--line)}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#754758}.field.full{grid-column:1/-1}.field textarea{resize:vertical;min-height:80px}.hint{font-size:11px;color:var(--muted)}.notice{background:#fff0f1;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:12px;color:#704552;margin:12px 0}.toast{position:fixed;bottom:18px;right:50%;transform:translateX(50%);z-index:60;background:#3c1828;color:#fff;padding:10px 17px;border-radius:999px;box-shadow:var(--shadow);display:none;max-width:92%;font-size:13px}.loading{opacity:.7;pointer-events:none}
+    @media(max-width:900px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.navlinks{gap:12px}.hero-grid{gap:20px}.hero-art{min-height:270px}}
+    @media(max-width:650px){.nav{flex-wrap:wrap}.brand{font-size:23px}.navlinks{order:3;width:100%;justify-content:center;padding-bottom:3px}.nav-actions{margin-right:auto}.hero{padding-top:27px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:220px;order:-1}.hero-art:before{height:67%;width:38%}.section{padding:36px 0}.section-head{align-items:start;flex-direction:column}.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product-visual{height:165px}.product-visual:before{width:112px;height:132px}.product-visual:after{top:69px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:13px}.price{font-size:12px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:22px}.footer-grid{grid-template-columns:1fr;gap:12px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.tools select{flex:1}}
+  </style>
 </head>
 <body>
-<div class="topbar">🌸 دوخت سفارشی با اندازه دلخواه شما | کد تخفیف سفارش اول: GOLPOOSH10</div>
-<header>
- <div class="wrap nav">
-  <a class="brand" id="brandLogo"><span class="brandmark">✿</span> گلپوش</a>
-  <nav class="navlinks"><a href="#products">محصولات</a><a href="#benefits">چرا گلپوش؟</a><a href="#reviews">نظرات</a><a href="#custom">دوخت سفارشی</a><a href="#contact">ارتباط با ما</a></nav>
-  <div class="nav-actions"><button class="btn soft cartbtn" onclick="openCart()">سبد خرید <span class="count" id="cartCount">۰</span></button></div>
- </div>
-</header>
-<main>
-<section class="hero">
- <div class="wrap hero-grid">
-  <div>
-   <span class="eyebrow">لباس خواب زنانه با عشق دوخته‌شده</span>
-   <h1>آرامشِ شب‌های تو،<br><span>به سبک گلپوش</span></h1>
-   <p>لباس خواب‌هایی لطیف و دوست‌داشتنی برای لحظه‌های استراحت شما؛ از مدل‌های آماده تا دوخت سفارشی متناسب با سلیقه و اندازه‌تان.</p>
-   <div class="hero-buttons"><a class="btn primary" href="#products">دیدن محصولات <span>←</span></a><a class="btn outline" href="#custom">سفارش دوخت سفارشی</a></div>
-   <div class="hero-notes"><span>♡ کیفیت و دوخت تمیز</span><span>♡ تنوع مدل و رنگ</span><span>♡ امکان سایز سفارشی</span></div>
-  </div>
-  <div class="hero-art" aria-label="نمای تزئینی پارچه‌های لباس خواب"><div class="fabric-stack"><div class="fabric f1">♡ ✿ ♡</div><div class="fabric f2">✿ ♡ ✿</div><div class="fabric f3">♡ ✿ ♡</div><div class="fabric f4">♡</div></div></div>
- </div>
-</section>
-<section class="section" id="products">
- <div class="wrap">
-  <div class="section-head"><div><h2>محبوب‌های گلپوش</h2><p>مدل موردعلاقه‌ات رو پیدا کن و به سبد خرید اضافه کن.</p></div><span class="hint">قیمت‌ها و محصولات این نسخه نمونه‌اند و قابل ویرایش هستند.</span></div>
-  <div class="toolbar">
-   <div class="searchbox"><input id="searchInput" placeholder="جستجو در محصولات..." oninput="onSearch()"><span>🔍</span></div>
-   <div class="sortbox"><select id="sortSelect" onchange="renderProducts()"><option value="default">مرتب‌سازی: پیش‌فرض</option><option value="cheap">ارزان‌ترین</option><option value="expensive">گران‌ترین</option><option value="discount">بیشترین تخفیف</option></select></div>
-  </div>
-  <div class="filters">
-   <button class="filter active" data-filter="همه">همه محصولات</button><button class="filter" data-filter="ساتن">ساتن</button><button class="filter" data-filter="نخی">نخی</button><button class="filter" data-filter="فانتزی">فانتزی</button>
-  </div>
-  <div class="products" id="productsGrid"></div>
- </div>
-</section>
-<section class="section benefits" id="benefits">
- <div class="wrap"><div class="section-head"><div><h2>چرا گلپوش؟</h2><p>جزئیات کوچک، تفاوت‌های دوست‌داشتنی می‌سازند.</p></div></div>
-  <div class="benefit-grid">
-   <div class="benefit"><div class="ico">🌷</div><h3>مدل‌ها و رنگ‌های متنوع</h3><p>برای سلیقه‌های مختلف، از طرح‌های ساده تا گل‌دار و فانتزی.</p></div>
-   <div class="benefit"><div class="ico">🧵</div><h3>توجه به دوخت و جزئیات</h3><p>تمرکز روی تمیزی دوخت، راحتی و انتخاب پارچه مناسب.</p></div>
-   <div class="benefit"><div class="ico">📏</div><h3>دوخت با اندازه دلخواه</h3><p>برای سفارش سفارشی، اندازه‌ها و مدل مدنظرت را برای ما بفرست.</p></div>
-  </div>
- </div>
-</section>
-<section class="section reviews" id="reviews">
- <div class="wrap"><div class="section-head"><div><h2>مشتری‌ها چه می‌گویند؟</h2><p>تجربه‌های واقعی از آرامش شب‌های گلپوشی.</p></div></div>
-  <div class="review-grid">
-   <div class="review"><div class="stars">★★★★★</div><p>«پارچه‌اش واقعاً لطیفه و دوختش تمیزه. سایز سفارشی گرفتم و دقیقاً اندازه بود. حتماً بازم سفارش می‌دم.»</p><div class="who">— مریم</div></div>
-   <div class="review"><div class="stars">★★★★★</div><p>«بسته‌بندی خیلی قشنگ بود و سریع رسید. رنگ ست ساتن صورتی دقیقاً مثل عکس بود. ممنون گلپوش 🌸»</p><div class="who">— سارا</div></div>
-   <div class="review"><div class="stars">★★★★☆</div><p>«کیفیت نخی‌ها عالیه، برای تابستون عالیه. فقط کمی زودتر می‌خواستم برسه که خب تقصیر پست بود.»</p><div class="who">— نگین</div></div>
-  </div>
- </div>
-</section>
-<section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
-</main>
-<footer id="contact"><div class="wrap">
- <div class="trust-badges">
-    <div class="trust-item">
-      <div class="icon">🛡️</div>
-      <div>
-        <h4>۷ روز ضمانت بازگشت وجه</h4>
-        <p>در صورت عدم رضایت، وجه شما بدون قید و شرط بازگردانده می‌شود.</p>
-      </div>
-    </div>
-    <div class="trust-item">
-      <div class="icon">🔄</div>
-      <div>
-        <h4>۷ روز مهلت مرجوعی کالا</h4>
-        <p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش.</p>
-      </div>
-    </div>
- </div>
- <div class="footer-grid">
-  <div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه؛ جایی برای راحتی، لطافت و انتخاب‌های دوست‌داشتنی.</p></div>
-  <div><strong>راه‌های ارتباطی</strong><ul><li>تلفن و سفارش: <a href="tel:09368550283">۰۹۳۶۸۵۵۰۲۸۳</a></li><li>اینستاگرام: @gol.pooshshop1</li><li>تلگرام: @golpooshshop1</li></ul></div>
-  <div><strong>ثبت سفارش</strong><p>محصول را به سبد خرید اضافه کن و سفارش را از طریق پیام‌رسان ارسال کن. پرداخت آنلاین پس از اتصال درگاه پرداخت فعال می‌شود.</p><div class="social"><a href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">اینستاگرام</a><a href="https://t.me/golpooshshop1" target="_blank" rel="noopener">تلگرام</a></div></div>
- </div>
- <div class="copyright">© گلپوش — تمامی حقوق محفوظ است. <span>نسخه اولیه فروشگاه</span></div>
-</div></footer>
-<div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
- <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
-  <div class="modal-head"><h2 id="cartTitle">سبد خرید شما</h2><button class="close" onclick="closeCart()" aria-label="بستن">×</button></div>
-  <div id="cartItems" class="cart-items"></div>
-  <div id="cartTotals"></div>
-  <div class="coupon-box">
-    <input id="couponInput" placeholder="کد تخفیف (مثلاً GOLPOOSH10)">
-    <button type="button" class="btn soft" onclick="applyCoupon()">اعمال</button>
-  </div>
-  <div id="couponMsg" class="coupon-msg"></div>
-  <form id="orderForm">
-   <div class="formgrid">
-    <label class="field">نام و نام خانوادگی <span class="req">(اجباری)</span><input name="name" required placeholder="نام شما"></label>
-    <label class="field">شماره تماس <span class="req">(اجباری)</span><input name="phone" required inputmode="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷"></label>
-    <label class="field full">آدرس دقیق <span class="req">(اجباری)</span><textarea name="address" required placeholder="شهر و آدرس دقیق"></textarea></label>
-    <label class="field">کد پستی <span class="req">(اجباری)</span><input name="postal" required placeholder="کد پستی ۱۰ رقمی"></label>
-    <label class="field">روش ارسال پیام سفارش<select name="channel"><option value="whatsapp">واتساپ</option><option value="telegram">تلگرام</option><option value="instagram">اینستاگرام (دایرکت)</option></select></label>
-    <label class="field">روش پرداخت<select name="payment"><option value="هماهنگی با فروشگاه">هماهنگی با فروشگاه</option><option value="پرداخت آنلاین پس از هماهنگی">پرداخت آنلاین پس از هماهنگی</option></select></label>
-   </div>
-   <p class="hint">این نسخه سفارش را در پیام‌رسان آماده می‌کند؛ پرداخت اینترنتی واقعی تا زمان اتصال درگاه معتبر فعال نیست.</p>
-   <div class="checkout-actions"><button class="btn primary" type="submit">📋 کپی سفارش و ارسال به ادمین</button><button class="btn outline" type="button" onclick="closeCartAndScroll()">ادامه خرید</button></div>
-  </form>
- </div>
-</div>
-<div class="overlay" id="productOverlay" onclick="if(event.target===this)closeProduct()">
- <div class="modal" role="dialog" aria-modal="true">
-  <div class="modal-head"><h2 id="pTitle">جزئیات محصول</h2><button class="close" onclick="closeProduct()" aria-label="بستن">×</button></div>
-  <div id="productDetail"></div>
- </div>
-</div>
-<div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
- <div class="modal" style="width:min(400px,100%)">
-  <div class="modal-head"><h2>ورود مدیر</h2><button class="close" onclick="closeAdminLogin()">×</button></div>
-  <input id="adminPass" type="password" placeholder="رمز مدیر" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px">
-  <button class="btn primary" style="width:100%" onclick="checkAdminPass()">ورود</button>
- </div>
-</div>
-<div class="admin-panel" id="adminPanel">
- <div class="admin-modal">
-  <div class="modal-head"><h2>⚙️ پنل مدیریت گلپوش</h2><button class="close" onclick="closeAdminPanel()">×</button></div>
-  <div class="admin-tabs">
-   <button class="admin-tab active" onclick="switchTab('list')">لیست محصولات</button>
-   <button class="admin-tab" onclick="switchTab('add')">➕ افزودن محصول</button>
-   <button class="admin-tab" onclick="switchTab('orders')">📦 سفارش‌ها</button>
-  </div>
-  <div id="tab-list">
-   <div class="admin-note">⚠️ تغییرات فقط روی همین مرورگر ذخیره می‌شود. برای اعمال روی سایت واقعی، کد را دستی عوض کنید.</div>
-   <div class="admin-product-list" id="adminProductList"></div>
-  </div>
-  <div id="tab-add" style="display:none">
-   <form id="addProductForm" class="admin-form" onsubmit="addNewProduct(event)">
-    <label class="field full">نام محصول<input name="name" required></label>
-    <label class="field">دسته‌بندی<select name="category"><option>ساتن</option><option>نخی</option><option>فانتزی</option></select></label>
-    <label class="field">قیمت (تومان)<input name="price" type="number" required min="0"></label>
-    <label class="field">قیمت قبلی (تخفیف)<input name="old" type="number" min="0" placeholder="اختیاری"></label>
-    <label class="field">برچسب<input name="tag" placeholder="مثلاً جدید"></label>
-    <label class="field full">توضیحات<input name="desc"></label>
-    <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5"></label>
-    <div class="actions">
-      <button class="btn primary" type="submit">افزودن محصول</button>
-      <button class="btn outline" type="button" onclick="resetProductForm()">پاک کردن فرم</button>
-    </div>
-   </form>
-  </div>
-  <div id="tab-orders" style="display:none">
-   <div class="admin-note">📦 این لیست مستقیماً از دیتابیس آنلاین خوانده می‌شود (تازه‌سازی خودکار).</div>
-   <div class="admin-product-list" id="adminOrderList"></div>
-  </div>
- </div>
-</div>
-<div class="toast" id="toast"></div>
+  <div class="topbar">🌸 گلپوش؛ برای لحظه‌های آرام و قشنگ تو</div>
+  <header><div class="wrap nav">
+    <a class="brand" href="#home" aria-label="صفحه اصلی گلپوش"><span class="brandmark">✿</span><span>گلپوش</span></a>
+    <nav class="navlinks" aria-label="ناوبری"><a href="#products">محصولات</a><a href="#benefits">چرا گلپوش؟</a><a href="#contact">ارتباط با ما</a></nav>
+    <div class="nav-actions"><button class="btn primary cartbtn" id="openCart">سبد خرید <span class="count" id="cartCount">۰</span></button></div>
+  </div></header>
+  <main>
+    <section class="hero" id="home"><div class="wrap hero-grid">
+      <div><span class="eyebrow">لطافت، راحتی، زیبایی</span><h1>شب‌های قشنگت،<br>با گلپوش 🌷</h1><p>مدل مورد علاقه‌ات را انتخاب کن، به سبد خرید اضافه کن و سفارشت را ثبت کن. برای موجودی و جزئیات ارسال با ما در ارتباط باش.</p><div class="hero-actions"><a class="btn primary" href="#products">دیدن محصولات</a><a class="btn outline" href="#contact">ارتباط با گلپوش</a></div></div>
+      <div class="hero-art" aria-label="تصویر گرافیکی گلپوش"><span class="floating float-one">✿ انتخاب با عشق</span><span class="floating float-two">راحتی هر شب</span></div>
+    </div></section>
+    <section class="section" id="products"><div class="wrap">
+      <div class="section-head"><div><h2>محصولات گلپوش</h2><p>مدل‌ها و قیمت‌ها از دیتابیس بارگذاری می‌شوند.</p></div><span class="hint" id="catalogStatus" role="status">در حال دریافت محصولات…</span></div>
+      <div class="tools"><input id="searchInput" type="search" placeholder="جست‌وجوی محصول…" aria-label="جست‌وجوی محصول"><select id="sortSelect" aria-label="مرتب‌سازی"><option value="default">ترتیب پیش‌فرض</option><option value="low">ارزان‌ترین</option><option value="high">گران‌ترین</option><option value="name">نام محصول</option></select></div>
+      <div class="filters" id="filters"><button class="filter active" data-filter="all">همه مدل‌ها</button><button class="filter" data-filter="ست خواب">ست خواب</button><button class="filter" data-filter="روب‌دوشامبر">روب‌دوشامبر</button><button class="filter" data-filter="راحتی">لباس راحتی</button></div>
+      <div class="products" id="productsGrid"><div class="empty">برای نمایش محصولات، تنظیمات Supabase را در فایل config.js وارد کن.</div></div>
+    </div></section>
+    <section class="section benefits" id="benefits"><div class="wrap"><div class="section-head"><div><h2>چرا گلپوش؟</h2><p>تجربه خرید ساده و شفاف</p></div></div><div class="benefit-grid"><article class="benefit"><div class="ico">🌷</div><h3>انتخاب راحت</h3><p>محصولات را ببین، جست‌وجو کن و به سبد خرید اضافه کن.</p></article><article class="benefit"><div class="ico">📦</div><h3>ثبت سفارش</h3><p>اطلاعات سفارش در دیتابیس ثبت می‌شود تا پیگیری آن راحت‌تر باشد.</p></article><article class="benefit"><div class="ico">💌</div><h3>ارتباط مستقیم</h3><p>بعد از ثبت سفارش می‌توانی از طریق پیام‌رسان با گلپوش هماهنگ کنی.</p></article></div></div></section>
+    <section class="section"><div class="wrap custom"><div><h2>دنبال مدل خاصی هستی؟</h2><p>برای پرسیدن درباره سایز، موجودی یا دوخت سفارشی با گلپوش پیام بده.</p></div><a class="btn" id="customWhatsapp" href="https://wa.me/989368550283" target="_blank" rel="noopener noreferrer">پیام به گلپوش</a></div></section>
+  </main>
+  <footer id="contact"><div class="wrap"><div class="footer-grid"><div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه. برای موجودی، سایزبندی و هزینه ارسال پیش از پرداخت با ما هماهنگ کن.</p></div><div><strong>دسترسی سریع</strong><ul><li><a href="#products">محصولات</a></li><li><a href="#benefits">چرا گلپوش؟</a></li><li><a href="#home">بازگشت به بالا</a></li></ul></div><div><strong>ارتباط با ما</strong><div class="social" style="margin-top:9px"><a id="whatsappLink" href="https://wa.me/989368550283" target="_blank" rel="noopener noreferrer">واتساپ</a><a id="telegramLink" href="https://t.me/golpooshshop1" target="_blank" rel="noopener noreferrer">تلگرام</a></div><p class="hint">شماره و آیدی‌ها را در config.js بررسی کن.</p></div></div><div class="copyright">© گلپوش — تمامی حقوق محفوظ است.</div></div></footer>
 
-<!-- Supabase Library -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script>
-/* ================= تنظیمات دیتابیس ================= */
-const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_NIHwah7xe8Ti_tjVW901EQ_nP2-8xi0';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-/* ================= داده‌های اولیه ================= */
-const DEFAULT_PRODUCTS = [
- {id:1,name:"ست خواب ساتن صورتی",category:"ساتن",price:890000,old:1050000,desc:"لطیف و براق • طرح قلب • مناسب شب‌های خاص",color:"#ed9fb5",tag:"پرفروش"},
- {id:2,name:"ست نخی گل‌دار",category:"نخی",price:690000,old:0,desc:"سبک و راحت • مناسب استفاده روزانه",color:"#e7c8b5",tag:"راحت و لطیف"},
- {id:3,name:"ست فانتزی رز",category:"فانتزی",price:790000,old:0,desc:"رنگ ملایم • طراحی دوست‌داشتنی",color:"#c98aa5",tag:"جدید"},
- {id:4,name:"ست خواب مشکی کلاسیک",category:"ساتن",price:950000,old:1100000,desc:"ساده و شیک • برش کلاسیک",color:"#55454f",tag:"شیک"},
- {id:5,name:"ست نخی شکوفه",category:"نخی",price:720000,old:0,desc:"طرح گل‌ریز • نرم و دلپذیر",color:"#e6c5cc",tag:"محبوب"},
- {id:6,name:"ست قلبی صورتی",category:"فانتزی",price:820000,old:0,desc:"طرح قلب • هدیه‌ای دوست‌داشتنی",color:"#f0b7c8",tag:"خاص"},
- {id:7,name:"ست ساتن یاسی",category:"ساتن",price:920000,old:0,desc:"رنگ یاسی • لطافت و درخشش",color:"#b99bbf",tag:"رنگ خاص"},
- {id:8,name:"ست نخی کرم",category:"نخی",price:650000,old:0,desc:"مینیمال • مناسب استراحت",color:"#e9d9c7",tag:"ساده"}
-];
-const SIZES = ["S","M","L","XL","سفارشی"];
-const COUPON = { code:"GOLPOOSH10", percent:10, label:"۱۰٪ تخفیف سفارش اول" };
-const ADMIN_PASS = "golpoosh1403";
-const LS_PRODUCTS = "golpoosh_products_v1";
-const LS_CART = "golpoosh_cart_v1";
-const LS_COUPON_USED = "golpoosh_coupon_used_v1";
-const LS_USED_PHONES = "golpoosh_used_phones_v1";
-
-/* ================= بارگذاری ================= */
-let products = loadProducts();
-let cart = loadCart();
-let activeFilter = "همه";
-let searchTerm = "";
-let selectedSize = {};
-let appliedCoupon = false;
-const fmt = n => new Intl.NumberFormat("fa-IR").format(n);
-
-function loadProducts(){
-  try{ const saved = JSON.parse(localStorage.getItem(LS_PRODUCTS)); if(Array.isArray(saved) && saved.length) return saved }catch(e){}
-  return JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
-}
-function saveProducts(){ try{ localStorage.setItem(LS_PRODUCTS, JSON.stringify(products)) }catch(e){} }
-function loadCart(){ try{ return JSON.parse(localStorage.getItem(LS_CART)) || {} }catch(e){ return {} } }
-function saveCart(){ try{ localStorage.setItem(LS_CART, JSON.stringify(cart)) }catch(e){} }
-function couponUsedBefore(){ try{ return localStorage.getItem(LS_COUPON_USED)==="1" }catch(e){ return false } }
-
-/* ================= محصولات ================= */
-function getFiltered(){
-  let list = products.filter(p=>activeFilter==="همه"||p.category===activeFilter);
-  if(searchTerm) list = list.filter(p=>p.name.includes(searchTerm)||p.desc.includes(searchTerm)||p.category.includes(searchTerm));
-  const sort = document.getElementById("sortSelect")?.value || "default";
-  if(sort==="cheap") list = [...list].sort((a,b)=>a.price-b.price);
-  if(sort==="expensive") list = [...list].sort((a,b)=>b.price-a.price);
-  if(sort==="discount") list = [...list].sort((a,b)=>((b.old-b.price)||0)-((a.old-a.price)||0));
-  return list;
-}
-function onSearch(){ searchTerm = document.getElementById("searchInput").value.trim(); renderProducts(); }
-
-function renderProducts(){
-  const grid=document.getElementById("productsGrid");
-  const shown=getFiltered();
-  if(!shown.length){ grid.innerHTML='<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>'; return }
-  grid.innerHTML=shown.map(p=>{
-    const sz = selectedSize[p.id] || "M";
-    const shareUrl = encodeURIComponent(location.href.split("#")[0] + "#products");
-    const shareText = encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`);
-    return `<article class="product">
-      <div class="product-visual" style="--cloth:${p.color}" onclick="openProduct(${p.id})"><span class="tag">${p.tag||""}</span></div>
-      <div class="product-info">
-        <h3 onclick="openProduct(${p.id})">${p.name}</h3>
-        <p class="desc">${p.desc}</p>
-        <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${p.old?`<span class="oldprice">${fmt(p.old)}</span>`:""}</div>
-        <div class="sizes">
-          ${SIZES.map(s=>`<button type="button" class="size-opt ${s===sz?'sel':''}" onclick="pickSize(${p.id},'${s}',this)">${s}</button>`).join("")}
-        </div>
-        <div class="share-row">
-          <a class="share-btn" href="https://wa.me/?text=${shareText}%20${shareUrl}" target="_blank" rel="noopener" title="اشتراک در واتساپ">🟢 واتساپ</a>
-          <a class="share-btn" href="https://t.me/share/url?url=${shareUrl}&text=${shareText}" target="_blank" rel="noopener" title="اشتراک در تلگرام">🔵 تلگرام</a>
-          <button type="button" class="share-btn" onclick="copyForInstagram(${p.id})" title="کپی برای اینستاگرام">🟣 اینستاگرام</button>
-        </div>
-        <button class="btn soft add" onclick="addToCart(${p.id})">＋ افزودن به سبد</button>
-      </div>
-    </article>`;
-  }).join("");
-}
-function pickSize(pid,size,el){
-  selectedSize[pid]=size;
-  el.parentElement.querySelectorAll(".size-opt").forEach(b=>b.classList.toggle("sel",b===el));
-}
-function copyForInstagram(id){
-  const p = products.find(x=>x.id===id);
-  const txt = `${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${location.href.split("#")[0]}#products`;
-  navigator.clipboard?.writeText(txt).then(()=>showToast("متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸")).catch(()=>showToast("کپی نشد؛ دستی کپی کن"));
-}
-
-/* ================= مودال جزئیات ================= */
-function openProduct(id){
-  const p = products.find(x=>x.id===id);
-  const sz = selectedSize[id] || "M";
-  const off = p.old ? ` <span class="oldprice">${fmt(p.old)}</span>` : "";
-  const shareUrl = encodeURIComponent(location.href.split("#")[0] + "#products");
-  const shareText = encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`);
-  document.getElementById("pTitle").textContent = p.name;
-  document.getElementById("productDetail").innerHTML = `
-    <div class="pdetail-grid">
-      <div class="pdetail-visual" style="--cloth:${p.color}"></div>
-      <div class="pdetail-info">
-        <h3>${p.name}</h3>
-        <p class="desc">${p.desc}</p>
-        <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${off}</div>
-        <p style="font-size:12px;color:var(--muted);margin:8px 0 0">دسته‌بندی: ${p.category}</p>
-        <div style="margin-top:12px;font-size:13px;color:#754758">انتخاب سایز:</div>
-        <div class="sizes" id="detailSizes">
-          ${SIZES.map(s=>`<button type="button" class="size-opt ${s===sz?'sel':''}" onclick="pickSize(${id},'${s}',this)">${s}</button>`).join("")}
-        </div>
-        <div class="share-row" style="margin-top:12px;justify-content:flex-start">
-          <a class="share-btn" href="https://wa.me/?text=${shareText}%20${shareUrl}" target="_blank" rel="noopener">🟢 واتساپ</a>
-          <a class="share-btn" href="https://t.me/share/url?url=${shareUrl}&text=${shareText}" target="_blank" rel="noopener">🔵 تلگرام</a>
-          <button type="button" class="share-btn" onclick="copyForInstagram(${id})">🟣 اینستاگرام</button>
-        </div>
-        <button class="btn primary add" onclick="addToCart(${id});closeProduct()">افزودن به سبد خرید</button>
-      </div>
-    </div>`;
-  document.getElementById("productOverlay").classList.add("show");
-  document.body.style.overflow="hidden";
-}
-function closeProduct(){ document.getElementById("productOverlay").classList.remove("show"); document.body.style.overflow="" }
-
-/* ================= سبد ================= */
-function addToCart(id){
-  const size = selectedSize[id] || "M";
-  if(!cart[id]) cart[id] = {};
-  cart[id][size] = (cart[id][size]||0) + 1;
-  saveCart(); updateCart(); showToast(`«${products.find(p=>p.id===id).name}» سایز ${size} اضافه شد 🌸`);
-}
-function updateCart(){
-  let count=0;
-  Object.values(cart).forEach(sizes=>Object.values(sizes).forEach(q=>count+=q));
-  document.getElementById("cartCount").textContent=fmt(count);
-
-  const rows=[];
-  Object.entries(cart).forEach(([id, sizes])=>{
-    const p = products.find(x=>x.id===Number(id));
-    if(!p) return;
-    Object.entries(sizes).forEach(([size,q])=>{
-      if(q<=0) return;
-      rows.push(`<div class="cart-item">
-        <div><strong>${p.name}</strong><div class="sz">سایز ${size}</div><div class="hint">${fmt(p.price)} تومان</div></div>
-        <div class="qty">
-          <button type="button" onclick="changeQty(${id},'${size}',-1)">−</button>
-          <span>${fmt(q)}</span>
-          <button type="button" onclick="changeQty(${id},'${size}',1)">＋</button>
-        </div>
-      </div>`);
-    });
-  });
-  document.getElementById("cartItems").innerHTML = rows.length ? rows.join("") : '<p class="hint">سبد خریدت هنوز خالیه. از محصولات یک مدل انتخاب کن 🌷</p>';
-
-  let subtotal=0;
-  Object.entries(cart).forEach(([id,sizes])=>{
-    const p=products.find(x=>x.id===Number(id)); if(!p) return;
-    Object.values(sizes).forEach(q=>subtotal += p.price*q);
-  });
-  const discount = appliedCoupon ? Math.round(subtotal * COUPON.percent/100) : 0;
-  const total = subtotal - discount;
-  document.getElementById("cartTotals").innerHTML = `
-    <div class="total"><span>جمع کل</span><span>${fmt(subtotal)} تومان</span></div>
-    ${appliedCoupon ? `<div class="discount-row"><span>${COUPON.label}</span><span>− ${fmt(discount)} تومان</span></div>` : ""}
-    <div class="total" style="border-top:0;padding-top:4px"><span>قابل پرداخت</span><span>${fmt(total)} تومان</span></div>
-  `;
-  window._cartTotal = total;
-  window._cartSubtotal = subtotal;
-  window._cartDiscount = discount;
-}
-function changeQty(id,size,d){
-  if(!cart[id] || !cart[id][size]) return;
-  cart[id][size] += d;
-  if(cart[id][size] <= 0) delete cart[id][size];
-  if(Object.keys(cart[id]).length===0) delete cart[id];
-  saveCart(); updateCart();
-}
-
-function applyCoupon(){
-  const input = document.getElementById("couponInput");
-  const msg = document.getElementById("couponMsg");
-  const code = input.value.trim().toUpperCase();
-  if(!code){ msg.className="coupon-msg err"; msg.textContent="کد تخفیف رو وارد کن."; return; }
-  if(code !== COUPON.code){ msg.className="coupon-msg err"; msg.textContent="کد تخفیف معتبر نیست."; return; }
-  if(couponUsedBefore()){ msg.className="coupon-msg err"; msg.textContent="این کد قبلاً روی این دستگاه استفاده شده (فقط برای سفارش اول)."; return; }
-  appliedCoupon = true;
-  msg.className="coupon-msg ok"; msg.textContent="✅ کد اعمال شد: " + COUPON.label;
-  updateCart();
-}
-
-function openCart(){ updateCart(); document.getElementById("cartOverlay").classList.add("show"); document.body.style.overflow="hidden" }
-function closeCart(){ document.getElementById("cartOverlay").classList.remove("show"); document.body.style.overflow="" }
-function closeCartAndScroll(){ closeCart(); document.getElementById("products").scrollIntoView({behavior:"smooth"}); }
-
-function showToast(s){const t=document.getElementById("toast");t.textContent=s;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",2400)}
-
-/* ================= فیلترها ================= */
-document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
-  activeFilter=b.dataset.filter;
-  document.querySelectorAll(".filter").forEach(x=>x.classList.toggle("active",x===b));
-  renderProducts();
-}));
-
-/* ================= ثبت سفارش (متصل به دیتابیس) ================= */
-document.getElementById("orderForm").addEventListener("submit", async function(e){
-  e.preventDefault();
-  
-  const submitBtn = this.querySelector('button[type="submit"]');
-  const originalText = submitBtn.innerHTML;
-  submitBtn.innerHTML = 'در حال ثبت... ⏳';
-  submitBtn.disabled = true;
-
-  let hasItem=false, subtotal=0; const lines=[];
-  Object.entries(cart).forEach(([id,sizes])=>{
-    const p=products.find(x=>x.id===Number(id)); if(!p) return;
-    Object.entries(sizes).forEach(([size,q])=>{
-      if(q<=0) return;
-      hasItem=true; subtotal += p.price*q;
-      lines.push(`• ${p.name} (سایز ${size}) × ${q} — ${fmt(p.price*q)} تومان`);
-    });
-  });
-  if(!hasItem){ 
-    showToast("اول یک محصول به سبد خرید اضافه کن"); 
-    submitBtn.innerHTML = originalText; submitBtn.disabled = false;
-    return;
-  }
-
-  const f=new FormData(this);
-  const name=f.get("name"),phone=f.get("phone"),address=f.get("address"),postal=f.get("postal"),channel=f.get("channel"),payment=f.get("payment");
-
-  if(appliedCoupon) {
-    let usedPhones = {};
-    try { usedPhones = JSON.parse(localStorage.getItem(LS_USED_PHONES)) || {}; } catch(e){}
-    const couponUsers = usedPhones[COUPON.code] || [];
-    if(couponUsers.includes(phone)) {
-        showToast("این شماره موبایل قبلاً از کد تخفیف استفاده کرده است! ❌");
-        submitBtn.innerHTML = originalText; submitBtn.disabled = false;
-        return; 
+  <div class="overlay" id="cartOverlay" role="dialog" aria-modal="true" aria-labelledby="cartTitle"><div class="modal"><div class="modal-head"><h2 id="cartTitle">سبد خرید و ثبت سفارش</h2><button class="close" id="closeCart" aria-label="بستن">×</button></div><div id="cartItems" class="cart-list"><p class="hint">سبد خرید خالی است.</p></div><div class="total"><span>جمع کالاها</span><span id="cartTotal">۰ تومان</span></div>
+    <form id="orderForm"><div class="form-grid"><label class="field">نام و نام خانوادگی<input name="name" required minlength="2" maxlength="120" autocomplete="name"></label><label class="field">شماره موبایل<input name="phone" type="tel" required inputmode="tel" autocomplete="tel" pattern="[0-9۰-۹+() -]{10,18}" placeholder="09123456789" title="شماره تماس معتبر وارد کن"></label><label class="field full">آدرس کامل<input name="address" required minlength="5" maxlength="1000" autocomplete="street-address"></label><label class="field">کد پستی<input name="postal" required inputmode="numeric" pattern="[0-9۰-۹]{10}" maxlength="10" placeholder="۱۰ رقم" title="کد پستی باید ۱۰ رقم باشد"></label><label class="field">روش هماهنگی<select name="channel"><option value="whatsapp">واتساپ</option><option value="telegram">تلگرام</option><option value="none">فعلاً فقط ثبت در سایت</option></select></label><label class="field full">توضیحات سفارش (اختیاری)<textarea name="notes" maxlength="1000" placeholder="مثلاً سایز یا رنگ موردنظر"></textarea></label></div>
+      <div class="notice">ثبت سفارش به‌معنای پرداخت نیست. تا وقتی درگاه پرداخت واقعی راه‌اندازی نشده، مبلغی از طریق این سایت دریافت نمی‌شود. موجودی و هزینه ارسال را با فروشگاه هماهنگ کن.</div><button class="btn primary" id="submitOrder" type="submit" style="width:100%">ثبت سفارش</button><p class="hint" id="orderStatus" role="status"></p></form>
+  </div></div><div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script>
+  (()=>{
+    'use strict';
+    const $=s=>document.querySelector(s);
+    const fmt=n=>new Intl.NumberFormat('fa-IR').format(Number(n)||0);
+    const escapeHTML=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const cfg=window.GOLPOOSH_CONFIG||{};
+    const supa=(window.supabase&&cfg.SUPABASE_URL&&cfg.SUPABASE_ANON_KEY&&!cfg.SUPABASE_URL.includes('YOUR_')&&!cfg.SUPABASE_ANON_KEY.includes('YOUR_'))?window.supabase.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY):null;
+    let products=[],cart={},activeFilter='all',busy=false;
+    const localCartKey='golpoosh_cart_v1';
+    try{cart=JSON.parse(localStorage.getItem(localCartKey)||'{}')||{}}catch{cart={}}
+    const showToast=s=>{const t=$('#toast');t.textContent=s;t.style.display='block';clearTimeout(window.__gpToast);window.__gpToast=setTimeout(()=>t.style.display='none',3000)};
+    const saveCart=()=>{try{localStorage.setItem(localCartKey,JSON.stringify(cart))}catch{}};
+    const safeProducts=()=>products.filter(p=>Number.isInteger(Number(p.id))&&Number(p.price)>=0);
+    function renderProducts(){
+      const q=$('#searchInput').value.trim().toLocaleLowerCase('fa-IR');let list=safeProducts().filter(p=>(activeFilter==='all'||p.category===activeFilter)&&(!q||`${p.name} ${p.description||''} ${p.category||''}`.toLocaleLowerCase('fa-IR').includes(q)));
+      const sort=$('#sortSelect').value;if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);if(sort==='name')list.sort((a,b)=>String(a.name).localeCompare(String(b.name),'fa'));
+      $('#productsGrid').innerHTML=list.length?list.map(p=>`<article class="product"><div class="product-visual" style="--cloth:${escapeHTML(/^#[0-9a-fA-F]{3,8}$/.test(p.color||'')?p.color:'#e8aabb')}"><span class="tag">${escapeHTML(p.tag||'گلپوش')}</span></div><div class="product-info"><h3>${escapeHTML(p.name)}</h3><p class="desc">${escapeHTML(p.description||'لطیف و راحت')}</p><div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${p.old_price&&p.old_price>p.price?`<span class="oldprice">${fmt(p.old_price)} تومان</span>`:''}</div><button class="btn soft add" data-add="${Number(p.id)}" ${p.stock<=0?'disabled':''}>${p.stock<=0?'ناموجود':'＋ افزودن به سبد'}</button></div></article>`).join(''):'<div class="empty">محصولی با این مشخصات پیدا نشد.</div>';
     }
-  }
-
-  const discount = appliedCoupon ? Math.round(subtotal * COUPON.percent/100) : 0;
-  const total = subtotal - discount;
-
-  const { data, error } = await supabase
-    .from('orders')
-    .insert([
-      {
-        customer_name: name,
-        phone: phone,
-        address: address,
-        postal_code: postal,
-        items: lines.join('\n'),
-        total_price: total,
-        status: 'new'
-      }
-    ]);
-
-  if (error) {
-    console.error("Error saving order:", error);
-    alert("خطا در برقراری ارتباط با سرور. لطفاً اینترنت خود را بررسی کنید یا دوباره تلاش کنید.");
-    submitBtn.innerHTML = originalText; submitBtn.disabled = false;
-    return;
-  }
-
-  let msg = `سلام گلپوش 🌸 می‌خواهم این سفارش را ثبت کنم:\n\n${lines.join("\n")}\n\nجمع کل: ${fmt(subtotal)} تومان`;
-  if(appliedCoupon) msg += `\nتخفیف (${COUPON.label}): − ${fmt(discount)} تومان`;
-  msg += `\nقابل پرداخت: ${fmt(total)} تومان\nنام: ${name}\nشماره تماس: ${phone}\nآدرس: ${address}\nکد پستی: ${postal}\nروش پرداخت: ${payment}\n\nلطفاً موجودی، سایز و هزینه ارسال را تأیید کنید.`;
-
-  closeCart();
-  navigator.clipboard?.writeText(msg).catch(()=>{});
-
-  if(channel==="whatsapp"){
-    alert("متن سفارش شما کپی شد 🌸\n\nاکنون به واتساپ منتقل می‌شوید. لطفاً متن کپی شده را برای ادمین ارسال کنید.");
-    window.open("https://wa.me/989368550283?text="+encodeURIComponent(msg),"_blank","noopener");
-  } else if(channel==="instagram"){
-    alert("متن سفارش شما با موفقیت کپی شد 🌸\n\nاکنون به اینستاگرام منتقل می‌شوید. لطفاً وارد دایرکت (پیوی) شوید و متن کپی شده را برای ادمین ارسال کنید.");
-    window.open("https://instagram.com/gol.pooshshop1","_blank","noopener");
-  } else {
-    alert("متن سفارش شما با موفقیت کپی شد 🌸\n\nاکنون به کانال تلگرام منتقل می‌شوید. لطفاً از پیام پین شده (سنجاق شده) در بالای کانال، آیدی ادمین را انتخاب کنید، وارد پیوی او شوید و متن کپی شده را برای او ارسال (Paste) کنید.");
-    window.open("https://t.me/golpooshshop1","_blank","noopener");
-  }
-
-  if(appliedCoupon){ 
-      try{ 
-          localStorage.setItem(LS_COUPON_USED,"1"); 
-          let usedPhones = JSON.parse(localStorage.getItem(LS_USED_PHONES)) || {};
-          if(!usedPhones[COUPON.code]) usedPhones[COUPON.code] = [];
-          usedPhones[COUPON.code].push(phone);
-          localStorage.setItem(LS_USED_PHONES, JSON.stringify(usedPhones));
-      }catch(e){} 
-      appliedCoupon=false; 
-  }
-
-  cart={}; saveCart(); updateCart();
-  document.getElementById("couponInput").value="";
-  document.getElementById("couponMsg").textContent="";
-  this.reset();
-  
-  submitBtn.innerHTML = originalText; 
-  submitBtn.disabled = false;
-});
-
-/* ================= پنل مدیریت ================= */
-let brandClicks = 0, brandTimer = null;
-document.getElementById("brandLogo").addEventListener("click", function(e) {
-  e.preventDefault();
-  brandClicks++;
-  clearTimeout(brandTimer);
-  brandTimer = setTimeout(function() { brandClicks = 0; }, 1500);
-  if (brandClicks >= 5) {
-    brandClicks = 0;
-    openAdminLogin();
-  }
-});
-
-function openAdminLogin(){ document.getElementById("adminLoginOverlay").classList.add("show"); document.getElementById("adminPass").value=""; }
-function closeAdminLogin(){ document.getElementById("adminLoginOverlay").classList.remove("show"); }
-function checkAdminPass(){
-  const v = document.getElementById("adminPass").value;
-  if(v === ADMIN_PASS){ closeAdminLogin(); openAdminPanel(); }
-  else showToast("رمز اشتباهه ❌");
-}
-function openAdminPanel(){ document.getElementById("adminPanel").classList.add("show"); renderAdminList(); renderAdminOrders(); switchTab('list'); }
-function closeAdminPanel(){ document.getElementById("adminPanel").classList.remove("show"); }
-
-function switchTab(name){
-  document.querySelectorAll(".admin-tab").forEach((b,i)=>{
-      b.classList.toggle("active", 
-          (name==='list'&&i===0) || 
-          (name==='add'&&i===1) || 
-          (name==='orders'&&i===2)
-      );
-  });
-  document.getElementById("tab-list").style.display = name==='list'?'block':'none';
-  document.getElementById("tab-add").style.display = name==='add'?'block':'none';
-  document.getElementById("tab-orders").style.display = name==='orders'?'block':'none';
-}
-
-function renderAdminList(){
-  const box = document.getElementById("adminProductList");
-  if(!products.length){ box.innerHTML='<p class="hint">هیچ محصولی نیست.</p>'; return }
-  box.innerHTML = products.map(p=>`
-    <div class="admin-product-row">
-      <div class="info">
-        <strong>${p.name}</strong>
-        <span>${p.category} • ${fmt(p.price)} تومان ${p.old?`(قبلی: ${fmt(p.old)})`:''}</span>
-      </div>
-      <div class="actions">
-        <button onclick="editProduct(${p.id})">ویرایش</button>
-        <button class="del" onclick="deleteProduct(${p.id})">حذف</button>
-      </div>
-    </div>
-  `).join("");
-}
-
-async function renderAdminOrders(){
-  const box = document.getElementById("adminOrderList");
-  box.innerHTML = '<p class="hint">در حال دریافت سفارش‌ها از سرور... ⏳</p>';
-  
-  const { data: orders, error } = await supabase
-    .from('orders')
-    .select('*')
-    .order('created_at', { ascending: false });
-
-  if (error) {
-    box.innerHTML = '<p class="hint" style="color:red">خطا در دریافت اطلاعات از سرور!</p>';
-    return;
-  }
-
-  if(!orders || !orders.length){ box.innerHTML='<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
-
-  box.innerHTML = orders.map(o=>{
-    const dateObj = new Date(o.created_at);
-    const dateStr = dateObj.toLocaleDateString('fa-IR') + " - " + dateObj.toLocaleTimeString('fa-IR', {hour: '2-digit', minute:'2-digit'});
-    const itemsHtml = (o.items || "").split('\n').map(i => `<span style="color:#754758">${i}</span>`).join("<br>");
-
-    return `
-    <div class="admin-product-row admin-order-card">
-      <div class="admin-order-header">
-          <span>${o.customer_name || 'بدون نام'}</span>
-          <span style="font-size:11px; color:#876b73">${dateStr}</span>
-      </div>
-      <div class="admin-order-details">
-          <strong>📞 تلفن:</strong> ${o.phone || '-'}<br>
-          <strong>📍 آدرس:</strong> ${o.address || '-'} (کدپستی: ${o.postal_code || '-'})<br>
-          <strong>🛒 محصولات:</strong><br>
-          ${itemsHtml}<br>
-          <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">
-              مبلغ نهایی: ${fmt(o.total_price || 0)} تومان
-          </strong>
-      </div>
-    </div>
-  `}).join("");
-}
-
-function deleteProduct(id){
-  if(!confirm("محصول حذف بشه؟")) return;
-  products = products.filter(p=>p.id!==id);
-  delete cart[id]; saveCart();
-  saveProducts(); renderAdminList(); renderProducts(); updateCart();
-  showToast("محصول حذف شد");
-}
-
-function editProduct(id){
-  const p = products.find(x=>x.id===id);
-  const name = prompt("نام محصول:", p.name); if(name===null) return;
-  const price = prompt("قیمت (تومان):", p.price); if(price===null) return;
-  const old = prompt("قیمت قبلی (برای تخفیف، 0 اگر نداره):", p.old||0); if(old===null) return;
-  const desc = prompt("توضیحات:", p.desc); if(desc===null) return;
-  const tag = prompt("برچسب:", p.tag||""); if(tag===null) return;
-  p.name = name.trim() || p.name;
-  p.price = Math.max(0, Number(price)||0);
-  p.old = Math.max(0, Number(old)||0);
-  p.desc = desc.trim();
-  p.tag = tag.trim();
-  saveProducts(); renderAdminList(); renderProducts(); updateCart();
-  showToast("ذخیره شد ✓");
-}
-
-function addNewProduct(e){
-  e.preventDefault();
-  const f = new FormData(e.target);
-  const newId = products.length ? Math.max(...products.map(p=>p.id))+1 : 1;
-  const p = {
-    id: newId,
-    name: f.get("name").trim(),
-    category: f.get("category"),
-    price: Math.max(0, Number(f.get("price"))||0),
-    old: Math.max(0, Number(f.get("old"))||0),
-    desc: f.get("desc").trim(),
-    tag: f.get("tag").trim(),
-    color: f.get("color").trim() || "#ed9fb5"
-  };
-  if(!p.name){ showToast("نام محصول لازمه"); return }
-  products.push(p);
-  saveProducts(); renderAdminList(); renderProducts(); resetProductForm();
-  showToast("محصول اضافه شد ✓"); switchTab('list');
-}
-function resetProductForm(){ document.getElementById("addProductForm").reset(); }
-
-/* ================= شروع ================= */
-renderProducts(); updateCart();
-</script>
+    function renderCart(){
+      const entries=Object.entries(cart).map(([id,qty])=>({p:products.find(p=>String(p.id)===String(id)),qty:Number(qty)})).filter(x=>x.p&&Number.isInteger(x.qty)&&x.qty>0);
+      const count=entries.reduce((s,x)=>s+x.qty,0),total=entries.reduce((s,x)=>s+Number(x.p.price)*x.qty,0);
+      $('#cartCount').textContent=fmt(count);$('#cartTotal').textContent=fmt(total)+' تومان';
+      $('#cartItems').innerHTML=entries.length?entries.map(({p,qty})=>`<div class="cart-item"><div><strong>${escapeHTML(p.name)}</strong><div class="hint">${fmt(p.price)} تومان</div></div><div class="qty"><button type="button" data-qty="${Number(p.id)}" data-delta="-1" aria-label="کم کردن">−</button><span>${fmt(qty)}</span><button type="button" data-qty="${Number(p.id)}" data-delta="1" aria-label="زیاد کردن" ${p.stock>0&&qty>=p.stock?'disabled':''}>＋</button></div></div>`).join(''):'<p class="hint">سبد خریدت هنوز خالیه. از محصولات یک مدل انتخاب کن 🌷</p>';
+      saveCart();return {entries,total};
+    }
+    async function loadProducts(){
+      if(!supa){$('#catalogStatus').textContent='تنظیمات دیتابیس کامل نیست';$('#productsGrid').innerHTML='<div class="empty">فایل config.js را باز کن و آدرس پروژه و کلید Publishable یا anon مربوط به Supabase را وارد کن. سپس صفحه را تازه کن.</div>';return}
+      $('#catalogStatus').textContent='در حال دریافت محصولات…';
+      const {data,error}=await supa.from('products').select('id,name,description,category,price,old_price,color,tag,stock,active').eq('active',true).order('sort_order',{ascending:true});
+      if(error){console.error('Product load error:',error);$('#catalogStatus').textContent='خطا در دریافت محصولات';$('#productsGrid').innerHTML='<div class="empty">دریافت محصولات ناموفق بود. جدول و سیاست‌های دیتابیس را بررسی کن.</div>';return}
+      products=(data||[]).map(p=>({...p,id:Number(p.id),price:Number(p.price),old_price:p.old_price==null?null:Number(p.old_price),stock:Number(p.stock)}));
+      for(const id of Object.keys(cart)){if(!products.some(p=>String(p.id)===String(id)))delete cart[id]}
+      $('#catalogStatus').textContent=`${fmt(products.length)} محصول`;renderProducts();renderCart();
+    }
+    function openCart(){renderCart();$('#cartOverlay').classList.add('show');document.body.style.overflow='hidden'}
+    function closeCart(){if(busy)return;$('#cartOverlay').classList.remove('show');document.body.style.overflow=''}
+    $('#openCart').addEventListener('click',openCart);$('#closeCart').addEventListener('click',closeCart);
+    $('#cartOverlay').addEventListener('click',e=>{if(e.target===$('#cartOverlay'))closeCart()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeCart()});
+    $('#productsGrid').addEventListener('click',e=>{const b=e.target.closest('[data-add]');if(!b)return;const id=String(b.dataset.add),p=products.find(x=>String(x.id)===id);if(!p)return;const next=(Number(cart[id])||0)+1;if(p.stock>0&&next>p.stock){showToast('تعداد انتخابی از موجودی بیشتر است');return}cart[id]=next;renderCart();showToast('به سبد خرید اضافه شد 🌸')});
+    $('#cartItems').addEventListener('click',e=>{const b=e.target.closest('[data-qty]');if(!b)return;const id=String(b.dataset.qty),p=products.find(x=>String(x.id)===id);if(!p)return;const next=(Number(cart[id])||0)+Number(b.dataset.delta);if(next<=0)delete cart[id];else if(p.stock>0&&next>p.stock){showToast('بیشتر از موجودی نمی‌توانی انتخاب کنی');return}else cart[id]=next;renderCart()});
+    $('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;activeFilter=b.dataset.filter;$('#filters').querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));renderProducts()});
+    $('#searchInput').addEventListener('input',renderProducts);$('#sortSelect').addEventListener('change',renderProducts);
+    $('#orderForm').addEventListener('submit',async e=>{
+      e.preventDefault();if(busy)return;if(!supa){showToast('اول تنظیمات Supabase را کامل کن');return}
+      const {entries}=renderCart();if(!entries.length){showToast('سبد خرید خالی است');return}
+      const f=new FormData(e.currentTarget),name=String(f.get('name')||'').trim(),phone=String(f.get('phone')||'').trim(),address=String(f.get('address')||'').trim(),postal=String(f.get('postal')||'').trim(),channel=String(f.get('channel')||'none'),notes=String(f.get('notes')||'').trim();
+      if(!name||!phone||!address||!postal){showToast('لطفاً اطلاعات ضروری را کامل کن');return}
+      const phoneDigits=phone.replace(/[\s()+-]/g,'').replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+      const postalDigits=postal.replace(/[۰-۹]/g,d=>String('۰۱۲۳۴۵۶۷۸۹'.indexOf(d)));
+      if(!/^\+?\d{10,15}$/.test(phoneDigits)){showToast('شماره تماس را بررسی کن');return}if(!/^\d{10}$/.test(postalDigits)){showToast('کد پستی باید ۱۰ رقم باشد');return}
+      busy=true;$('#submitOrder').disabled=true;$('#submitOrder').textContent='در حال ثبت…';$('#orderStatus').textContent='';
+      try{
+        const items=entries.map(({p,qty})=>({product_id:Number(p.id),quantity:qty}));
+        const {data,error}=await supa.rpc('create_order',{p_customer_name:name,p_phone:phoneDigits,p_address:address,p_postal_code:postalDigits,p_items:items,p_channel:channel,p_notes:notes});
+        if(error)throw error;
+        const orderId=typeof data==='object'&&data!==null?(data.order_id||data.id):data;
+        const total=entries.reduce((s,x)=>s+x.p.price*x.qty,0);
+        const lines=entries.map(({p,qty})=>`• ${p.name} × ${qty} — ${fmt(p.price*qty)} تومان`).join('\n');
+        const msg=`سلام گلپوش 🌸\nسفارش شماره: ${orderId||'ثبت‌شده'}\n${lines}\nجمع تقریبی: ${fmt(total)} تومان\nنام: ${name}\nتلفن: ${phoneDigits}\nآدرس: ${address}\nکد پستی: ${postalDigits}${notes?'\nتوضیحات: '+notes:''}\n\nلطفاً موجودی و هزینه ارسال را تأیید کنید. این پیام رسید پرداخت نیست.`;
+        cart={};saveCart();renderCart();e.currentTarget.reset();$('#orderStatus').textContent='سفارش در دیتابیس ثبت شد.';showToast('سفارش با موفقیت ثبت شد 🌷');
+        if(channel==='whatsapp'){const url='https://wa.me/'+String(cfg.WHATSAPP_NUMBER||'989368550283').replace(/\D/g,'')+'?text='+encodeURIComponent(msg);window.open(url,'_blank','noopener,noreferrer')}
+        else if(channel==='telegram'){try{await navigator.clipboard.writeText(msg);showToast('سفارش ثبت شد؛ متن پیام کپی شد')}catch{}window.open(cfg.TELEGRAM_URL||'https://t.me/golpooshshop1','_blank','noopener,noreferrer')}
+        setTimeout(()=>{closeCart();$('#orderStatus').textContent=''},1800);
+      }catch(err){console.error('Order creation failed:',err);$('#orderStatus').textContent='ثبت سفارش ناموفق بود. اتصال و تنظیمات دیتابیس را بررسی کن.';showToast('سفارش ثبت نشد؛ دوباره تلاش کن')}
+      finally{busy=false;$('#submitOrder').disabled=false;$('#submitOrder').textContent='ثبت سفارش'}
+    });
+    if(cfg.WHATSAPP_NUMBER){const u='https://wa.me/'+String(cfg.WHATSAPP_NUMBER).replace(/\D/g,'');$('#whatsappLink').href=u;$('#customWhatsapp').href=u}
+    if(cfg.TELEGRAM_URL)$('#telegramLink').href=cfg.TELEGRAM_URL;
+    renderCart();loadProducts();
+  })();
+  </script>
 </body>
 </html>
