@@ -151,7 +151,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field">روش پرداخت<select name="payment"><option value="هماهنگی با فروشگاه">هماهنگی با فروشگاه</option><option value="پرداخت آنلاین پس از هماهنگی">پرداخت آنلاین پس از هماهنگی</option></select></label>
    </div>
    <p class="hint">این نسخه سفارش را در پیام‌رسان آماده می‌کند؛ پرداخت اینترنتی واقعی تا زمان اتصال درگاه معتبر فعال نیست.</p>
-   <div class="checkout-actions"><button class="btn primary" type="submit">ارسال سفارش در پیام‌رسان</button><button class="btn outline" type="button" onclick="closeCartAndScroll()">ادامه خرید</button></div>
+   <div class="checkout-actions"><button class="btn primary" type="submit">📋 کپی سفارش و ارسال به ادمین</button><button class="btn outline" type="button" onclick="closeCartAndScroll()">ادامه خرید</button></div>
   </form>
  </div>
 </div>
@@ -464,18 +464,19 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
 
   closeCart();
 
-  // انتقال به پیام‌رسان
+  // کپی کردن متن سفارش برای همه حالت‌ها
+  navigator.clipboard?.writeText(msg).catch(()=>{});
+
   if(channel==="whatsapp"){
+    alert("متن سفارش شما کپی شد 🌸\n\nاکنون به واتساپ منتقل می‌شوید. لطفاً متن کپی شده را برای ادمین ارسال کنید.");
     window.open("https://wa.me/989368550283?text="+encodeURIComponent(msg),"_blank","noopener");
   } else if(channel==="instagram"){
-    navigator.clipboard?.writeText(msg).catch(()=>{});
+    alert("متن سفارش شما با موفقیت کپی شد 🌸\n\nاکنون به اینستاگرام منتقل می‌شوید. لطفاً وارد دایرکت (پیوی) شوید و متن کپی شده را برای ادمین ارسال کنید.");
     window.open("https://instagram.com/gol.pooshshop1","_blank","noopener");
-    showToast("متن سفارش کپی شد؛ در دایرکت اینستاگرام بچسبان 🌸");
   } else {
-    // انتقال به کانال تلگرام
-    navigator.clipboard?.writeText(msg).catch(()=>{});
+    // انتقال به کانال تلگرام با پیغام راهنما
+    alert("متن سفارش شما با موفقیت کپی شد 🌸\n\nاکنون به کانال تلگرام منتقل می‌شوید. لطفاً از پیام پین شده (سنجاق شده) در بالای کانال، آیدی ادمین را انتخاب کنید، وارد پیوی او شوید و متن کپی شده را برای او ارسال (Paste) کنید.");
     window.open("https://t.me/golpooshshop1","_blank","noopener");
-    showToast("متن سفارش کپی شد؛ در کانال تلگرام بچسبان 🌸");
   }
 
   // ثبت کد تخفیف به عنوان استفاده شده
