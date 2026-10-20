@@ -1,4 +1,4 @@
-htm1<!doctype html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="utf-8">
@@ -37,15 +37,15 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .coupon-box .btn{padding:9px 14px;font-size:13px}
 .coupon-msg{font-size:12px;margin-top:6px}
 .coupon-msg.ok{color:#2e7d32}.coupon-msg.err{color:#c62828}
-.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:50;display:none;font-size:13px}
 .pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.pdetail-visual{height:230px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.pdetail-visual:before{content:"";position:absolute;width:150px;height:170px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.pdetail-visual:after{content:"♡  ✿  ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:95px}.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
 /* admin panel */
 .admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}
 .admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}
 .admin-modal h2{color:var(--wine);margin:0 0 12px}
-.admin-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px}
-.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px}
+.admin-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px;overflow-x:auto}
+.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}
 .admin-tab.active{background:var(--wine);color:white}
 .admin-product-list{display:grid;gap:8px;margin-top:12px;max-height:400px;overflow:auto}
 .admin-product-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:13px}
@@ -61,6 +61,9 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .admin-form .actions{grid-column:1/-1;display:flex;gap:8px}
 .admin-form .actions .btn{padding:8px 16px;font-size:13px}
 .admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
+.admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}
+.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}
+.admin-order-details{font-size:12px;color:var(--ink);width:100%}
 @media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}}
 @media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}}
 </style>
@@ -140,9 +143,10 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <div id="couponMsg" class="coupon-msg"></div>
   <form id="orderForm">
    <div class="formgrid">
-    <label class="field">نام و نام خانوادگی<input name="name" required placeholder="نام شما"></label>
-    <label class="field">شماره تماس<input name="phone" required inputmode="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷"></label>
-    <label class="field full">آدرس و توضیحات ارسال<textarea name="address" required placeholder="شهر، آدرس و کدپستی (در صورت نیاز)"></textarea></label>
+    <label class="field">نام و نام خانوادگی <span class="req">(اجباری)</span><input name="name" required placeholder="نام شما"></label>
+    <label class="field">شماره تماس <span class="req">(اجباری)</span><input name="phone" required inputmode="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷"></label>
+    <label class="field full">آدرس دقیق <span class="req">(اجباری)</span><textarea name="address" required placeholder="شهر و آدرس دقیق"></textarea></label>
+    <label class="field">کد پستی <span class="req">(اجباری)</span><input name="postal" required placeholder="کد پستی ۱۰ رقمی"></label>
     <label class="field">روش ارسال پیام سفارش<select name="channel"><option value="whatsapp">واتساپ</option><option value="telegram">تلگرام</option><option value="instagram">اینستاگرام (دایرکت)</option></select></label>
     <label class="field">روش پرداخت<select name="payment"><option value="هماهنگی با فروشگاه">هماهنگی با فروشگاه</option><option value="پرداخت آنلاین پس از هماهنگی">پرداخت آنلاین پس از هماهنگی</option></select></label>
    </div>
@@ -161,7 +165,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
  <div class="modal" style="width:min(400px,100%)">
   <div class="modal-head"><h2>ورود مدیر</h2><button class="close" onclick="closeAdminLogin()">×</button></div>
-  <p class="hint">رمز پیش‌فرض: golpoosh1403</p>
   <input id="adminPass" type="password" placeholder="رمز مدیر" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px">
   <button class="btn primary" style="width:100%" onclick="checkAdminPass()">ورود</button>
  </div>
@@ -169,10 +172,11 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <!-- admin panel -->
 <div class="admin-panel" id="adminPanel">
  <div class="admin-modal">
-  <div class="modal-head"><h2>⚙️ پنل مدیریت محصولات</h2><button class="close" onclick="closeAdminPanel()">×</button></div>
+  <div class="modal-head"><h2>⚙️ پنل مدیریت گلپوش</h2><button class="close" onclick="closeAdminPanel()">×</button></div>
   <div class="admin-tabs">
    <button class="admin-tab active" onclick="switchTab('list')">لیست محصولات</button>
    <button class="admin-tab" onclick="switchTab('add')">➕ افزودن محصول</button>
+   <button class="admin-tab" onclick="switchTab('orders')">📦 سفارش‌ها</button>
   </div>
   <div id="tab-list">
    <div class="admin-note">⚠️ تغییرات فقط روی همین مرورگر ذخیره می‌شود. برای اعمال روی سایت واقعی، کد را دستی عوض کنید.</div>
@@ -192,6 +196,10 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
       <button class="btn outline" type="button" onclick="resetProductForm()">پاک کردن فرم</button>
     </div>
    </form>
+  </div>
+  <div id="tab-orders" style="display:none">
+   <div class="admin-note">⚠️ سفارش‌های زیر فقط در این مرورگر ذخیره شده‌اند. برای دریافت سفارش‌ها از مشتریان، باید به سرور (بک‌اند) متصل شوید.</div>
+   <div class="admin-product-list" id="adminOrderList"></div>
   </div>
  </div>
 </div>
@@ -213,11 +221,14 @@ const COUPON = { code:"GOLPOOSH10", percent:10, label:"۱۰٪ تخفیف سفا�
 const ADMIN_PASS = "golpoosh1403";
 const LS_PRODUCTS = "golpoosh_products_v1";
 const LS_CART = "golpoosh_cart_v1";
+const LS_ORDERS = "golpoosh_orders_v1";
 const LS_COUPON_USED = "golpoosh_coupon_used_v1";
+const LS_USED_PHONES = "golpoosh_used_phones_v1";
 
 /* ================= بارگذاری ================= */
 let products = loadProducts();
 let cart = loadCart();
+let orders = loadOrders();
 let activeFilter = "همه";
 let searchTerm = "";
 let selectedSize = {};
@@ -231,6 +242,8 @@ function loadProducts(){
 function saveProducts(){ try{ localStorage.setItem(LS_PRODUCTS, JSON.stringify(products)) }catch(e){} }
 function loadCart(){ try{ return JSON.parse(localStorage.getItem(LS_CART)) || {} }catch(e){ return {} } }
 function saveCart(){ try{ localStorage.setItem(LS_CART, JSON.stringify(cart)) }catch(e){} }
+function loadOrders(){ try{ return JSON.parse(localStorage.getItem(LS_ORDERS)) || [] }catch(e){ return [] } }
+function saveOrders(){ try{ localStorage.setItem(LS_ORDERS, JSON.stringify(orders)) }catch(e){} }
 function couponUsedBefore(){ try{ return localStorage.getItem(LS_COUPON_USED)==="1" }catch(e){ return false } }
 
 /* ================= محصولات ================= */
@@ -375,7 +388,7 @@ function applyCoupon(){
   const code = input.value.trim().toUpperCase();
   if(!code){ msg.className="coupon-msg err"; msg.textContent="کد تخفیف رو وارد کن."; return; }
   if(code !== COUPON.code){ msg.className="coupon-msg err"; msg.textContent="کد تخفیف معتبر نیست."; return; }
-  if(couponUsedBefore()){ msg.className="coupon-msg err"; msg.textContent="این کد قبلاً استفاده شده (فقط برای سفارش اول)."; return; }
+  if(couponUsedBefore()){ msg.className="coupon-msg err"; msg.textContent="این کد قبلاً روی این دستگاه استفاده شده (فقط برای سفارش اول)."; return; }
   appliedCoupon = true;
   msg.className="coupon-msg ok"; msg.textContent="✅ کد اعمال شد: " + COUPON.label;
   updateCart();
@@ -409,16 +422,49 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
   if(!hasItem){ showToast("اول یک محصول به سبد خرید اضافه کن"); return }
 
   const f=new FormData(e.target);
-  const name=f.get("name"),phone=f.get("phone"),address=f.get("address"),channel=f.get("channel"),payment=f.get("payment");
+  const name=f.get("name"),phone=f.get("phone"),address=f.get("address"),postal=f.get("postal"),channel=f.get("channel"),payment=f.get("payment");
+
+  // بررسی استفاده قبلی کد تخفیف با شماره موبایل
+  if(appliedCoupon) {
+    let usedPhones = {};
+    try { usedPhones = JSON.parse(localStorage.getItem(LS_USED_PHONES)) || {}; } catch(e){}
+    const couponUsers = usedPhones[COUPON.code] || [];
+    if(couponUsers.includes(phone)) {
+        showToast("این شماره موبایل قبلاً از کد تخفیف استفاده کرده است! ❌");
+        return; // توقف ثبت سفارش
+    }
+  }
+
   const discount = appliedCoupon ? Math.round(subtotal * COUPON.percent/100) : 0;
   const total = subtotal - discount;
 
   let msg = `سلام گلپوش 🌸 می‌خواهم این سفارش را ثبت کنم:\n\n${lines.join("\n")}\n\nجمع کل: ${fmt(subtotal)} تومان`;
   if(appliedCoupon) msg += `\nتخفیف (${COUPON.label}): − ${fmt(discount)} تومان`;
-  msg += `\nقابل پرداخت: ${fmt(total)} تومان\nنام: ${name}\nشماره تماس: ${phone}\nآدرس: ${address}\nروش پرداخت: ${payment}\n\nلطفاً موجودی، سایز و هزینه ارسال را تأیید کنید.`;
+  msg += `\nقابل پرداخت: ${fmt(total)} تومان\nنام: ${name}\nشماره تماس: ${phone}\nآدرس: ${address}\nکد پستی: ${postal}\nروش پرداخت: ${payment}\n\nلطفاً موجودی، سایز و هزینه ارسال را تأیید کنید.`;
+
+  // ذخیره سفارش در حافظه مرورگر
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('fa-IR') + " - " + now.toLocaleTimeString('fa-IR', {hour: '2-digit', minute:'2-digit'});
+  const orderData = {
+      id: Date.now(),
+      date: dateStr,
+      name: name,
+      phone: phone,
+      address: address,
+      postal: postal,
+      items: lines,
+      subtotal: subtotal,
+      discount: discount,
+      total: total,
+      channel: channel,
+      payment: payment
+  };
+  orders.push(orderData);
+  saveOrders();
 
   closeCart();
 
+  // انتقال به پیام‌رسان
   if(channel==="whatsapp"){
     window.open("https://wa.me/989368550283?text="+encodeURIComponent(msg),"_blank","noopener");
   } else if(channel==="instagram"){
@@ -426,13 +472,23 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
     window.open("https://instagram.com/gol.pooshshop1","_blank","noopener");
     showToast("متن سفارش کپی شد؛ در دایرکت اینستاگرام بچسبان 🌸");
   } else {
+    // انتقال به کانال تلگرام
     navigator.clipboard?.writeText(msg).catch(()=>{});
     window.open("https://t.me/golpooshshop1","_blank","noopener");
-    showToast("اگر متن کپی نشد، جزئیات سفارش را دستی ارسال کن");
+    showToast("متن سفارش کپی شد؛ در کانال تلگرام بچسبان 🌸");
   }
 
-  // مصرف کد تخفیف
-  if(appliedCoupon){ try{ localStorage.setItem(LS_COUPON_USED,"1") }catch(e){} appliedCoupon=false; }
+  // ثبت کد تخفیف به عنوان استفاده شده
+  if(appliedCoupon){ 
+      try{ 
+          localStorage.setItem(LS_COUPON_USED,"1"); 
+          let usedPhones = JSON.parse(localStorage.getItem(LS_USED_PHONES)) || {};
+          if(!usedPhones[COUPON.code]) usedPhones[COUPON.code] = [];
+          usedPhones[COUPON.code].push(phone);
+          localStorage.setItem(LS_USED_PHONES, JSON.stringify(usedPhones));
+      }catch(e){} 
+      appliedCoupon=false; 
+  }
 
   // خالی کردن سبد
   cart={}; saveCart(); updateCart();
@@ -458,13 +514,20 @@ function checkAdminPass(){
   if(v === ADMIN_PASS){ closeAdminLogin(); openAdminPanel(); }
   else showToast("رمز اشتباهه ❌");
 }
-function openAdminPanel(){ document.getElementById("adminPanel").classList.add("show"); renderAdminList(); switchTab('list'); }
+function openAdminPanel(){ document.getElementById("adminPanel").classList.add("show"); renderAdminList(); renderAdminOrders(); switchTab('list'); }
 function closeAdminPanel(){ document.getElementById("adminPanel").classList.remove("show"); }
 
 function switchTab(name){
-  document.querySelectorAll(".admin-tab").forEach((b,i)=>b.classList.toggle("active", (name==='list'&&i===0)||(name==='add'&&i===1)));
+  document.querySelectorAll(".admin-tab").forEach((b,i)=>{
+      b.classList.toggle("active", 
+          (name==='list'&&i===0) || 
+          (name==='add'&&i===1) || 
+          (name==='orders'&&i===2)
+      );
+  });
   document.getElementById("tab-list").style.display = name==='list'?'block':'none';
   document.getElementById("tab-add").style.display = name==='add'?'block':'none';
+  document.getElementById("tab-orders").style.display = name==='orders'?'block':'none';
 }
 
 function renderAdminList(){
@@ -479,6 +542,30 @@ function renderAdminList(){
       <div class="actions">
         <button onclick="editProduct(${p.id})">ویرایش</button>
         <button class="del" onclick="deleteProduct(${p.id})">حذف</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderAdminOrders(){
+  const box = document.getElementById("adminOrderList");
+  if(!orders.length){ box.innerHTML='<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
+  const reversed = [...orders].reverse(); // جدیدترین‌ها بالا
+  box.innerHTML = reversed.map(o=>`
+    <div class="admin-product-row admin-order-card">
+      <div class="admin-order-header">
+          <span>${o.name}</span>
+          <span style="font-size:11px; color:#876b73">${o.date}</span>
+      </div>
+      <div class="admin-order-details">
+          <strong>📞 تلفن:</strong> ${o.phone}<br>
+          <strong>📍 آدرس:</strong> ${o.address} (کدپستی: ${o.postal})<br>
+          <strong>🛒 محصولات:</strong><br>
+          ${o.items.map(i => `<span style="color:#754758">${i}</span>`).join("<br>")}<br>
+          <strong>💳 پرداخت:</strong> ${o.payment} | <strong>پیام‌رسان:</strong> ${o.channel}<br>
+          <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">
+              مبلغ نهایی: ${fmt(o.total)} تومان ${o.discount ? `(تخفیف: ${fmt(o.discount)})` : ''}
+          </strong>
       </div>
     </div>
   `).join("");
