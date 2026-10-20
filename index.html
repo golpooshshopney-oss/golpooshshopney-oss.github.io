@@ -198,13 +198,22 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    </form>
   </div>
   <div id="tab-orders" style="display:none">
-   <div class="admin-note">⚠️ سفارش‌های زیر فقط در این مرورگر ذخیره شده‌اند. برای دریافت سفارش‌ها از مشتریان، باید به سرور (بک‌اند) متصل شوید.</div>
+   <div class="admin-note">📦 این لیست مستقیماً از دیتابیس آنلاین خوانده می‌شود (تازه‌سازی خودکار).</div>
    <div class="admin-product-list" id="adminOrderList"></div>
   </div>
  </div>
 </div>
 <div class="toast" id="toast"></div>
+
+<!-- Supabase Library -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
+/* ================= تنظیمات دیتابیس (اینجا را تغییر دهید) ================= */
+const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
+const SUPABASE_KEY = 'YOUR_PUBLISHABLE_KEY'; // 🔴 کلید sb_publis... خودت را اینجا پیست کن
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
 /* ================= داده‌های اولیه ================= */
 const DEFAULT_PRODUCTS = [
  {id:1,name:"ست خواب ساتن صورتی",category:"ساتن",price:890000,old:1050000,desc:"لطیف و براق • طرح قلب • مناسب شب‌های خاص",color:"#ed9fb5",tag:"پرفروش"},
@@ -221,14 +230,12 @@ const COUPON = { code:"GOLPOOSH10", percent:10, label:"۱۰٪ تخفیف سفا�
 const ADMIN_PASS = "golpoosh1403";
 const LS_PRODUCTS = "golpoosh_products_v1";
 const LS_CART = "golpoosh_cart_v1";
-const LS_ORDERS = "golpoosh_orders_v1";
 const LS_COUPON_USED = "golpoosh_coupon_used_v1";
 const LS_USED_PHONES = "golpoosh_used_phones_v1";
 
 /* ================= بارگذاری ================= */
 let products = loadProducts();
 let cart = loadCart();
-let orders = loadOrders();
 let activeFilter = "همه";
 let searchTerm = "";
 let selectedSize = {};
@@ -242,8 +249,6 @@ function loadProducts(){
 function saveProducts(){ try{ localStorage.setItem(LS_PRODUCTS, JSON.stringify(products)) }catch(e){} }
 function loadCart(){ try{ return JSON.parse(localStorage.getItem(LS_CART)) || {} }catch(e){ return {} } }
 function saveCart(){ try{ localStorage.setItem(LS_CART, JSON.stringify(cart)) }catch(e){} }
-function loadOrders(){ try{ return JSON.parse(localStorage.getItem(LS_ORDERS)) || [] }catch(e){ return [] } }
-function saveOrders(){ try{ localStorage.setItem(LS_ORDERS, JSON.stringify(orders)) }catch(e){} }
 function couponUsedBefore(){ try{ return localStorage.getItem(LS_COUPON_USED)==="1" }catch(e){ return false } }
 
 /* ================= محصولات ================= */
@@ -407,9 +412,16 @@ document.querySelectorAll(".filter").forEach(b=>b.addEventListener("click",()=>{
   renderProducts();
 }));
 
-/* ================= ثبت سفارش ================= */
-document.getElementById("orderForm").addEventListener("submit",e=>{
+/* ================= ثبت سفارش (متصل به دیتابیس) ================= */
+document.getElementById("orderForm").addEventListener("submit", async function(e){
   e.preventDefault();
+  
+  // دکمه رو غیرفعال کن تا کاربر دوبار کلیک نکنه
+  const submitBtn = this.querySelector('button[type="submit"]');
+  const originalText = submitBtn.innerHTML;
+  submitBtn.innerHTML = 'در حال ثبت... ⏳';
+  submitBtn.disabled = true;
+
   let hasItem=false, subtotal=0; const lines=[];
   Object.entries(cart).forEach(([id,sizes])=>{
     const p=products.find(x=>x.id===Number(id)); if(!p) return;
@@ -419,9 +431,13 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
       lines.push(`• ${p.name} (سایز ${size}) × ${q} — ${fmt(p.price*q)} تومان`);
     });
   });
-  if(!hasItem){ showToast("اول یک محصول به سبد خرید اضافه کن"); return }
+  if(!hasItem){ 
+    showToast("اول یک محصول به سبد خرید اضافه کن"); 
+    submitBtn.innerHTML = originalText; submitBtn.disabled = false;
+    return;
+  }
 
-  const f=new FormData(e.target);
+  const f=new FormData(this);
   const name=f.get("name"),phone=f.get("phone"),address=f.get("address"),postal=f.get("postal"),channel=f.get("channel"),payment=f.get("payment");
 
   // بررسی استفاده قبلی کد تخفیف با شماره موبایل
@@ -431,40 +447,41 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
     const couponUsers = usedPhones[COUPON.code] || [];
     if(couponUsers.includes(phone)) {
         showToast("این شماره موبایل قبلاً از کد تخفیف استفاده کرده است! ❌");
-        return; // توقف ثبت سفارش
+        submitBtn.innerHTML = originalText; submitBtn.disabled = false;
+        return; 
     }
   }
 
   const discount = appliedCoupon ? Math.round(subtotal * COUPON.percent/100) : 0;
   const total = subtotal - discount;
 
+  // ذخیره در دیتابیس Supabase
+  const { data, error } = await supabase
+    .from('orders')
+    .insert([
+      {
+        customer_name: name,
+        phone: phone,
+        address: address,
+        postal_code: postal,
+        items: lines.join('\n'),
+        total_price: total,
+        status: 'new'
+      }
+    ]);
+
+  if (error) {
+    console.error("Error saving order:", error);
+    alert("خطا در برقراری ارتباط با سرور. لطفاً اینترنت خود را بررسی کنید یا دوباره تلاش کنید.");
+    submitBtn.innerHTML = originalText; submitBtn.disabled = false;
+    return;
+  }
+
   let msg = `سلام گلپوش 🌸 می‌خواهم این سفارش را ثبت کنم:\n\n${lines.join("\n")}\n\nجمع کل: ${fmt(subtotal)} تومان`;
   if(appliedCoupon) msg += `\nتخفیف (${COUPON.label}): − ${fmt(discount)} تومان`;
   msg += `\nقابل پرداخت: ${fmt(total)} تومان\nنام: ${name}\nشماره تماس: ${phone}\nآدرس: ${address}\nکد پستی: ${postal}\nروش پرداخت: ${payment}\n\nلطفاً موجودی، سایز و هزینه ارسال را تأیید کنید.`;
 
-  // ذخیره سفارش در حافظه مرورگر
-  const now = new Date();
-  const dateStr = now.toLocaleDateString('fa-IR') + " - " + now.toLocaleTimeString('fa-IR', {hour: '2-digit', minute:'2-digit'});
-  const orderData = {
-      id: Date.now(),
-      date: dateStr,
-      name: name,
-      phone: phone,
-      address: address,
-      postal: postal,
-      items: lines,
-      subtotal: subtotal,
-      discount: discount,
-      total: total,
-      channel: channel,
-      payment: payment
-  };
-  orders.push(orderData);
-  saveOrders();
-
   closeCart();
-
-  // کپی کردن متن سفارش برای همه حالت‌ها
   navigator.clipboard?.writeText(msg).catch(()=>{});
 
   if(channel==="whatsapp"){
@@ -474,7 +491,6 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
     alert("متن سفارش شما با موفقیت کپی شد 🌸\n\nاکنون به اینستاگرام منتقل می‌شوید. لطفاً وارد دایرکت (پیوی) شوید و متن کپی شده را برای ادمین ارسال کنید.");
     window.open("https://instagram.com/gol.pooshshop1","_blank","noopener");
   } else {
-    // انتقال به کانال تلگرام با پیغام راهنما
     alert("متن سفارش شما با موفقیت کپی شد 🌸\n\nاکنون به کانال تلگرام منتقل می‌شوید. لطفاً از پیام پین شده (سنجاق شده) در بالای کانال، آیدی ادمین را انتخاب کنید، وارد پیوی او شوید و متن کپی شده را برای او ارسال (Paste) کنید.");
     window.open("https://t.me/golpooshshop1","_blank","noopener");
   }
@@ -491,11 +507,14 @@ document.getElementById("orderForm").addEventListener("submit",e=>{
       appliedCoupon=false; 
   }
 
-  // خالی کردن سبد
+  // خالی کردن سبد و ریست فرم
   cart={}; saveCart(); updateCart();
   document.getElementById("couponInput").value="";
   document.getElementById("couponMsg").textContent="";
-  document.getElementById("orderForm").reset();
+  this.reset();
+  
+  submitBtn.innerHTML = originalText; 
+  submitBtn.disabled = false;
 });
 
 /* ================= پنل مدیریت ================= */
@@ -548,28 +567,46 @@ function renderAdminList(){
   `).join("");
 }
 
-function renderAdminOrders(){
+async function renderAdminOrders(){
   const box = document.getElementById("adminOrderList");
-  if(!orders.length){ box.innerHTML='<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
-  const reversed = [...orders].reverse(); // جدیدترین‌ها بالا
-  box.innerHTML = reversed.map(o=>`
+  box.innerHTML = '<p class="hint">در حال دریافت سفارش‌ها از سرور... ⏳</p>';
+  
+  // دریافت اطلاعات از دیتابیس
+  const { data: orders, error } = await supabase
+    .from('orders')
+    .select('*')
+    .order('created_at', { ascending: false }); // جدیدترین‌ها بالا
+
+  if (error) {
+    box.innerHTML = '<p class="hint" style="color:red">خطا در دریافت اطلاعات از سرور!</p>';
+    return;
+  }
+
+  if(!orders || !orders.length){ box.innerHTML='<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
+
+  box.innerHTML = orders.map(o=>{
+    // تبدیل تاریخ به شمسی
+    const dateObj = new Date(o.created_at);
+    const dateStr = dateObj.toLocaleDateString('fa-IR') + " - " + dateObj.toLocaleTimeString('fa-IR', {hour: '2-digit', minute:'2-digit'});
+    const itemsHtml = (o.items || "").split('\n').map(i => `<span style="color:#754758">${i}</span>`).join("<br>");
+
+    return `
     <div class="admin-product-row admin-order-card">
       <div class="admin-order-header">
-          <span>${o.name}</span>
-          <span style="font-size:11px; color:#876b73">${o.date}</span>
+          <span>${o.customer_name || 'بدون نام'}</span>
+          <span style="font-size:11px; color:#876b73">${dateStr}</span>
       </div>
       <div class="admin-order-details">
-          <strong>📞 تلفن:</strong> ${o.phone}<br>
-          <strong>📍 آدرس:</strong> ${o.address} (کدپستی: ${o.postal})<br>
+          <strong>📞 تلفن:</strong> ${o.phone || '-'}<br>
+          <strong>📍 آدرس:</strong> ${o.address || '-'} (کدپستی: ${o.postal_code || '-'})<br>
           <strong>🛒 محصولات:</strong><br>
-          ${o.items.map(i => `<span style="color:#754758">${i}</span>`).join("<br>")}<br>
-          <strong>💳 پرداخت:</strong> ${o.payment} | <strong>پیام‌رسان:</strong> ${o.channel}<br>
+          ${itemsHtml}<br>
           <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">
-              مبلغ نهایی: ${fmt(o.total)} تومان ${o.discount ? `(تخفیف: ${fmt(o.discount)})` : ''}
+              مبلغ نهایی: ${fmt(o.total_price || 0)} تومان
           </strong>
       </div>
     </div>
-  `).join("");
+  `}).join("");
 }
 
 function deleteProduct(id){
