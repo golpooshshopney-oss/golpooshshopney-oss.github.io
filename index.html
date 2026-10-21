@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#8b2345">
 <meta name="description" content="گلپوش؛ فروشگاه لباس خواب زنانه با امکان دوخت سفارشی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="گلپوش | فروشگاه لباس خواب زنانه">
+<meta property="og:description" content="لباس خواب زنانه با امکان دوخت سفارشی و اندازه دلخواه">
 <title>گلپوش | فروشگاه لباس خواب زنانه</title>
 <style>
 :root{--wine:#7c1f40;--wine2:#9f3658;--rose:#d77d91;--pink:#f8e6e8;--pale:#fff8f6;--ink:#4b2432;--muted:#876b73;--line:#efd3d9;--white:#fff;--shadow:0 12px 32px #6d234010}
@@ -21,7 +25,8 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .sortbox select{border:1px solid var(--line);border-radius:999px;padding:10px 15px;background:white;color:#754758;cursor:pointer;outline-color:var(--rose)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.filter{border:1px solid var(--line);background:white;color:#754758;border-radius:999px;padding:8px 15px;cursor:pointer}.filter.active{background:var(--wine);border-color:var(--wine);color:white}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:white;border:1px solid #f0dfe2;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 18px 40px #6d23401a}.product-visual{height:220px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden;cursor:pointer}.product-visual:before{content:"";position:absolute;width:160px;height:180px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.product-visual:after{content:"♡ ✿ ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:94px}.product-visual .tag{position:absolute;top:12px;right:12px;background:white;color:var(--wine);font-size:11px;border-radius:999px;padding:4px 9px;z-index:1}.product-info{padding:15px;display:flex;flex-direction:column;flex:1}.product-info h3{font-size:16px;margin:0 0 4px;cursor:pointer}.desc{font-size:12px;color:var(--muted);margin:0 0 12px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.price{font-weight:900;color:var(--wine)}.oldprice{font-size:11px;color:#aa9298;text-decoration:line-through}.add{margin-top:12px;width:100%}
-.sizes{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.size-opt{border:1px solid var(--line);background:white;color:#754758;border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:700;transition:.15s}.size-opt:hover{border-color:var(--rose)}.size-opt.sel{background:var(--wine);border-color:var(--wine);color:white}
+.sizes{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.size-opt{border:1px solid var(--line);background:white;color:#754758;border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:700;transition:.15s}.size-opt:hover{border-color:var(--rose)}.size-opt.sel{background:var(--wine);border-color:var(--wine);color:white}.size-opt.need{border-color:#c62828;box-shadow:0 0 0 2px #c6282833}
+.size-hint{font-size:11px;color:var(--muted);margin-top:6px}
 .share-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;justify-content:center}
 .share-btn{border:1px solid var(--line);background:white;color:var(--wine);border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
 .share-btn:hover{background:var(--pink);border-color:var(--rose)}
@@ -31,12 +36,6 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}.trust-item{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow)}.trust-item .icon{font-size:40px}.trust-item h4{margin:0 0 5px;color:var(--wine);font-size:16px}.trust-item p{margin:0;font-size:12px;color:var(--muted)}
 
 .ig-section { background: linear-gradient(135deg, #fff7f3, #f8e3e7); text-align: center; }
-.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 800px; margin: 20px auto 30px; }
-.ig-item { aspect-ratio: 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
-.ig-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
-.ig-item:hover img { transform: scale(1.1); }
-.ig-item .ig-overlay { position: absolute; inset: 0; background: #7c1f40aa; display: grid; place-items: center; color: white; font-size: 30px; opacity: 0; transition: .3s; }
-.ig-item:hover .ig-overlay { opacity: 1; }
 
 /* بخش پشت صحنه */
 .bts-section { background: #fff; }
@@ -54,7 +53,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .product-visual.has-img:before,.product-visual.has-img:after,.pdetail-visual.has-img:before,.pdetail-visual.has-img:after{display:none}.product-visual img,.pdetail-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .done{text-align:center;padding:10px 0 4px}.done .big{font-size:46px}.done p{margin:6px 0}.done .actions{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:16px}.done .code{display:inline-block;background:var(--pink);color:var(--wine);border-radius:10px;padding:2px 12px;font-weight:900}
-.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:80;display:none;font-size:13px}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:80;display:none;font-size:13px;max-width:92vw;text-align:center}
 .pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.pdetail-visual{height:230px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.pdetail-visual:before{content:"";position:absolute;width:150px;height:170px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.pdetail-visual:after{content:"♡ ✿ ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:95px}.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
 
 .admin-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
@@ -66,7 +65,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}.admin-form .field{font-size:12px}.admin-form .field.full{grid-column:1/-1}.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}.admin-form .actions .btn{padding:8px 16px;font-size:13px}.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
 .admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}.admin-order-details{font-size:12px;color:var(--ink);width:100%}.admin-order-card select{border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;color:var(--wine);font-size:12px;margin-top:6px}.admin-head-actions{display:flex;gap:8px;align-items:center}.admin-head-actions .btn{padding:7px 14px;font-size:12px}.admin-field-input{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:white}
 @media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}.bts-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:1fr 1fr;gap:10px}.admin-stats{grid-template-columns:1fr}.bts-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}.bts-grid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -98,7 +97,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 </section>
 <section class="section" id="products">
  <div class="wrap">
-  <div class="section-head"><div><h2>محبوب‌های گلپوش</h2><p>مدل موردعلاقه‌ات رو پیدا کن و به سبد خرید اضافه کن.</p></div></div>
+  <div class="section-head"><div><h2>محبوب‌های گلپوش</h2><p>مدل موردعلاقه‌ات رو پیدا کن، سایز رو انتخاب کن و به سبد خرید اضافه کن.</p></div></div>
   <div class="toolbar">
    <div class="searchbox"><input id="searchInput" placeholder="جستجو در محصولات..." aria-label="جستجو در محصولات" oninput="onSearch()"><span>🔍</span></div>
    <div class="sortbox"><select id="sortSelect" aria-label="مرتب‌سازی" onchange="renderProducts()"><option value="default">مرتب‌سازی: پیش‌فرض</option><option value="cheap">ارزان‌ترین</option><option value="expensive">گران‌ترین</option><option value="discount">بیشترین تخفیف</option></select></div>
@@ -131,13 +130,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 </section>
 <section class="section ig-section" id="instagram">
  <div class="wrap">
-   <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column;">
+   <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column; margin-bottom:18px;">
      <div><h2>ما را در اینستاگرام دنبال کنید</h2><p>جدیدترین محصولات و تخفیف‌ها را در پیج ما ببینید.</p></div>
-   </div>
-   <div class="ig-grid">
-     <a class="ig-item" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=400&q=80" alt="Instagram Post"><div class="ig-overlay">📷</div></a>
-     <a class="ig-item" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=400&q=80" alt="Instagram Post"><div class="ig-overlay">📷</div></a>
-     <a class="ig-item" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Instagram Post"><div class="ig-overlay">📷</div></a>
    </div>
    <a class="btn primary" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener" style="padding:12px 30px; font-size:15px;">Follow @gol.pooshshop1</a>
  </div>
@@ -200,7 +194,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 
 <!-- مودال جزئیات محصول -->
 <div class="overlay" id="productOverlay" onclick="if(event.target===this)closeProduct()">
- <div class="modal" role="dialog" aria-modal="true">
+ <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pTitle">
   <div class="modal-head"><h2 id="pTitle">جزئیات محصول</h2><button class="close" onclick="closeProduct()" aria-label="بستن">×</button></div>
   <div id="productDetail"></div>
  </div>
@@ -208,8 +202,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 
 <!-- مودال راهنمای سایز -->
 <div class="overlay" id="sizeGuideOverlay" onclick="if(event.target===this)closeSizeGuide()">
-  <div class="modal" style="width:min(500px,100%)">
-    <div class="modal-head"><h2>راهنمای انتخاب سایز 📏</h2><button class="close" onclick="closeSizeGuide()">×</button></div>
+  <div class="modal" role="dialog" aria-modal="true" style="width:min(500px,100%)">
+    <div class="modal-head"><h2>راهنمای انتخاب سایز 📏</h2><button class="close" onclick="closeSizeGuide()" aria-label="بستن">×</button></div>
     <div style="margin-top:15px; text-align:center;">
       <img id="sizeGuideImg" src="" alt="راهنمای سایز" style="max-width:100%; border-radius:15px; border:1px solid var(--line);">
     </div>
@@ -226,14 +220,14 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 
 <!-- مودال پیگیری سفارش -->
 <div class="overlay" id="trackOverlay" onclick="if(event.target===this)closeTrack()">
-  <div class="modal" style="width:min(450px,100%)">
-    <div class="modal-head"><h2>پیگیری سفارش</h2><button class="close" onclick="closeTrack()">×</button></div>
+  <div class="modal" role="dialog" aria-modal="true" style="width:min(450px,100%)">
+    <div class="modal-head"><h2>پیگیری سفارش</h2><button class="close" onclick="closeTrack()" aria-label="بستن">×</button></div>
     <div style="margin-top:14px">
       <label class="field" style="margin-bottom:10px">کد سفارش (پیگیری) <span class="req">*</span>
-        <input id="trackId" type="number" placeholder="مثلاً 12" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
+        <input id="trackId" type="text" inputmode="numeric" placeholder="مثلاً ۱۲" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
       </label>
       <label class="field" style="margin-bottom:15px">شماره تماس ثبت شده <span class="req">*</span>
-        <input id="trackPhone" type="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
+        <input id="trackPhone" type="tel" inputmode="tel" maxlength="11" placeholder="۰۹۱۲۱۲۳۴۵۶۷" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
       </label>
       <button class="btn primary" style="width:100%" onclick="checkTrack()">بررسی وضعیت</button>
       <div id="trackResult" style="margin-top:20px"></div>
@@ -243,10 +237,10 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 
 <!-- مودال ثبت نظر -->
 <div class="overlay" id="reviewOverlay" onclick="if(event.target===this)closeReviewForm()">
-  <div class="modal" style="width:min(450px,100%)">
-    <div class="modal-head"><h2>ثبت نظر یا سوال</h2><button class="close" onclick="closeReviewForm()">×</button></div>
+  <div class="modal" role="dialog" aria-modal="true" style="width:min(450px,100%)">
+    <div class="modal-head"><h2>ثبت نظر یا سوال</h2><button class="close" onclick="closeReviewForm()" aria-label="بستن">×</button></div>
     <div style="margin-top:14px; display:grid; gap:10px;">
-      <label class="field">نام شما <span class="req">*</span><input id="revName" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px"></label>
+      <label class="field">نام شما <span class="req">*</span><input id="revName" maxlength="60" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px"></label>
       <label class="field">امتیاز شما<select id="revRating" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px">
         <option value="5">⭐⭐⭐⭐⭐ (عالی)</option>
         <option value="4">⭐⭐⭐⭐ (خوب)</option>
@@ -254,8 +248,9 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
         <option value="2">⭐⭐ (ضعیف)</option>
         <option value="1">⭐ (بد)</option>
       </select></label>
-      <label class="field">متن نظر یا سوال <span class="req">*</span><textarea id="revText" rows="4" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;resize:vertical"></textarea></label>
-      <button class="btn primary" style="width:100%" onclick="submitReview()">ثبت نظر</button>
+      <label class="field">متن نظر یا سوال <span class="req">*</span><textarea id="revText" rows="4" maxlength="600" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;resize:vertical"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>وب‌سایت<input id="revWebsite" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn primary" style="width:100%" id="revSubmitBtn" onclick="submitReview()">ثبت نظر</button>
       <p class="hint">نظر شما پس از بررسی توسط مدیریت نمایش داده می‌شود.</p>
     </div>
   </div>
@@ -263,7 +258,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 
 <!-- ورود مدیر -->
 <div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
- <div class="modal" style="width:min(400px,100%)">
+ <div class="modal" role="dialog" aria-modal="true" style="width:min(400px,100%)">
   <div class="modal-head"><h2>ورود مدیر</h2><button class="close" onclick="closeAdminLogin()" aria-label="بستن">×</button></div>
   <div style="margin-top:14px">
    <input id="adminEmail" type="email" class="admin-field-input" placeholder="ایمیل مدیر" autocomplete="username" dir="ltr">
@@ -328,7 +323,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <div class="admin-note">📏 در این بخش می‌توانید عکس راهنمای سایز را آپلود کنید. این عکس در سایت به همه نمایش داده می‌شود.</div>
    <div class="admin-form" style="display:flex; flex-direction:column; align-items:center; padding:20px;">
      <p style="margin-bottom:10px;">عکس فعلی راهنمای سایز:</p>
-     <img id="adminSizeGuidePreview" src="" alt="راهنمای سایز" style="max-width:100%; max-height:250px; border-radius:12px; border:1px solid var(--line); margin-bottom:15px;">
+     <img id="adminSizeGuidePreview" src="" alt="راهنمای سایز" style="max-width:100%; max-height:250px; border-radius:12px; border:1px solid var(--line); margin-bottom:15px; display:none">
+     <p id="adminSizeGuideEmpty" class="hint" style="margin-bottom:15px">هنوز عکسی آپلود نشده است.</p>
      <p style="margin-bottom:10px;">آپلود عکس جدید:</p>
      <input type="file" accept="image/*" onchange="uploadSizeGuide(this)" style="padding:10px; border:1px dashed var(--rose); border-radius:10px; background:var(--pink);">
    </div>
@@ -343,7 +339,7 @@ const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_NIHwah7xe8Ti_tjVW901EQ_nP2-8xi0';
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
-let sizeGuideUrl = 'https://images.unsplash.com/photo-1529157179598-13d2b4b182a5?auto=format&fit=crop&w=600&q=80'; // پیش‌فرض
+let sizeGuideUrl = ''; // از دیتابیس خوانده می‌شود؛ تا آپلود، دکمه پیام «به‌زودی» نشان می‌دهد
 
 /* ================= داده‌های پایه ================= */
 const DEFAULT_PRODUCTS = [
@@ -357,11 +353,13 @@ const DEFAULT_PRODUCTS = [
  {id:8,name:"ست نخی کرم",category:"نخی",price:650000,old:0,desc:"مینیمال • مناسب استراحت",color:"#e9d9c7",tag:"ساده",active:true}
 ];
 
-// 🔴 سایزها (۱، ۲، ۳، ۴ و سفارشی)
-const SIZES = ["1", "2", "3", "4", "سفارشی"]; 
+// سایزها (۱، ۲، ۳، ۴ و سفارشی)
+const SIZES = ["1", "2", "3", "4", "سفارشی"];
 
 const MAX_QTY = 10;
 const LS_CART = "golpoosh_cart_v2";
+const LS_REVIEW_TS = "golpoosh_last_review";
+const REVIEW_COOLDOWN_MS = 60000;
 const STATUS_LABELS = {new:"جدید",processing:"در حال پردازش",shipped:"ارسال شد",done:"تکمیل شد",canceled:"لغو شد"};
 let products = [];
 let cart = loadCart();
@@ -380,18 +378,25 @@ const $ = id => document.getElementById(id);
 function loadCart(){ try{ const c = JSON.parse(localStorage.getItem(LS_CART)); return (c && typeof c === "object") ? c : {} }catch(e){ return {} } }
 function saveCart(){ try{ localStorage.setItem(LS_CART, JSON.stringify(cart)) }catch(e){} }
 function uuid(){ if(window.crypto && crypto.randomUUID) return crypto.randomUUID(); return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => { const r = Math.random()*16|0; return (c==="x" ? r : (r&3|8)).toString(16) }); }
+function productLink(id){ return location.href.split("#")[0] + "#p" + id; }
 
 /* ================= بارگذاری داده‌ها ================= */
 function safeUrl(u){ u = String(u || "").trim(); return /^https:\/\/[^\s"'<>]+$/i.test(u) ? u : ""; }
 const fromRow = r => ({id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", image:safeUrl(r.image_url), active:r.active!==false});
 
+function applySizeGuideToAdmin(){
+  const img = $("adminSizeGuidePreview"), empty = $("adminSizeGuideEmpty");
+  if(sizeGuideUrl){ img.src = sizeGuideUrl; img.style.display = "block"; empty.style.display = "none"; }
+  else { img.removeAttribute("src"); img.style.display = "none"; empty.style.display = "block"; }
+}
+
 async function loadSettings() {
   if(!sb) return;
-  const { data, error } = await sb.from("settings").select("size_guide_image").eq("id", 1).single();
-  if(!error && data && data.size_guide_image) {
-    sizeGuideUrl = data.size_guide_image;
-    $("adminSizeGuidePreview").src = sizeGuideUrl;
-  }
+  try{
+    const { data, error } = await sb.from("settings").select("size_guide_image").eq("id", 1).single();
+    if(!error && data && data.size_guide_image) sizeGuideUrl = safeUrl(data.size_guide_image);
+  }catch(e){ console.error(e) }
+  applySizeGuideToAdmin();
 }
 
 async function loadProducts(){
@@ -446,22 +451,22 @@ function getFiltered(){
 }
 function onSearch(){ searchTerm = $("searchInput").value.trim(); renderProducts(); }
 function sizeButtons(id, sz){ return SIZES.map(s => `<button type="button" class="size-opt ${s===sz?"sel":""}" data-sz-pid="${id}" data-size="${esc(s)}" onclick="pickSize(${id},'${esc(s)}')">${esc(s)}</button>`).join(""); }
-function shareParts(p){ return { url: encodeURIComponent(location.href.split("#")[0] + "#products"), text: encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`) }; }
+function shareParts(p){ return { url: encodeURIComponent(productLink(p.id)), text: encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`) }; }
 
 function renderProducts(){
   const grid = $("productsGrid");
   const shown = getFiltered();
   if(!shown.length){ grid.innerHTML = '<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>'; return }
   grid.innerHTML = shown.map(p => {
-    const sz = selectedSize[p.id] || "1";
+    const sz = selectedSize[p.id] || "";
     const sh = shareParts(p);
     return `<article class="product">
-      <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span></div>
+      <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" role="button" tabindex="0" aria-label="مشاهده ${esc(p.name)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span></div>
       <div class="product-info">
-        <h3 onclick="openProduct(${p.id})">${esc(p.name)}</h3>
+        <h3 role="button" tabindex="0" onclick="openProduct(${p.id})">${esc(p.name)}</h3>
         <p class="desc">${esc(p.desc)}</p>
         <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${p.old > p.price ? `<span class="oldprice">${fmt(p.old)}</span>` : ""}</div>
-        <div class="sizes">${sizeButtons(p.id, sz)}</div>
+        <div class="sizes" data-sizes-pid="${p.id}" role="group" aria-label="انتخاب سایز">${sizeButtons(p.id, sz)}</div>
         <div class="share-row">
           <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener" title="اشتراک در واتساپ">🟢 واتساپ</a>
           <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener" title="اشتراک در تلگرام">🔵 تلگرام</a>
@@ -472,14 +477,20 @@ function renderProducts(){
     </article>`;
   }).join("");
 }
-function pickSize(pid, size){ selectedSize[pid] = size; document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => b.classList.toggle("sel", b.dataset.size === size)); }
+function pickSize(pid, size){
+  selectedSize[pid] = size;
+  document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => { b.classList.toggle("sel", b.dataset.size === size); b.classList.remove("need"); });
+}
+function flagSizeNeeded(id){
+  document.querySelectorAll(`[data-sz-pid="${id}"]`).forEach(b => b.classList.add("need"));
+}
 function copyText(txt, okMsg){ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(() => showToast(okMsg)).catch(() => showToast("کپی نشد؛ دستی کپی کن")); } else showToast("کپی نشد؛ دستی کپی کن"); }
-function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${location.href.split("#")[0]}#products`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
+function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${productLink(id)}`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
 
 /* ================= مودال جزئیات ================= */
 function openProduct(id){
   const p = products.find(x => x.id === id); if(!p) return;
-  const sz = selectedSize[id] || "1";
+  const sz = selectedSize[id] || "";
   const off = p.old > p.price ? ` <span class="oldprice">${fmt(p.old)}</span>` : "";
   const sh = shareParts(p);
   $("pTitle").textContent = p.name;
@@ -492,13 +503,13 @@ function openProduct(id){
         <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${off}</div>
         <p style="font-size:12px;color:var(--muted);margin:8px 0 0">دسته‌بندی: ${esc(p.category)}</p>
         <div style="margin-top:12px;font-size:13px;color:#754758">انتخاب سایز:</div>
-        <div class="sizes">${sizeButtons(id, sz)}</div>
+        <div class="sizes" role="group" aria-label="انتخاب سایز">${sizeButtons(id, sz)}</div>
         <div class="share-row" style="margin-top:12px;justify-content:flex-start">
           <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener">🟢 واتساپ</a>
           <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener">🔵 تلگرام</a>
           <button type="button" class="share-btn" onclick="copyForInstagram(${id})">🟣 اینستاگرام</button>
         </div>
-        <button class="btn primary add" onclick="addToCart(${id});closeProduct()">افزودن به سبد خرید</button>
+        <button class="btn primary add" onclick="if(addToCart(${id}))closeProduct()">افزودن به سبد خرید</button>
       </div>
     </div>`;
   openOverlay("productOverlay");
@@ -507,24 +518,48 @@ function closeProduct(){ closeOverlay("productOverlay") }
 
 /* ================= راهنمای سایز ================= */
 function openSizeGuide() {
+  if(!sizeGuideUrl){ showToast("راهنمای سایز به‌زودی اضافه می‌شود 📏"); return }
   $("sizeGuideImg").src = sizeGuideUrl;
   openOverlay("sizeGuideOverlay");
 }
 function closeSizeGuide() { closeOverlay("sizeGuideOverlay"); }
 
 /* ================= مودال‌ها ================= */
-function openOverlay(id){ $(id).classList.add("show"); document.body.style.overflow = "hidden"; const c = $(id).querySelector(".close"); if(c) c.focus({preventScroll:true}); }
-function closeOverlay(id){ $(id).classList.remove("show"); if(!document.querySelector(".overlay.show,.admin-panel.show")) document.body.style.overflow = ""; }
-document.addEventListener("keydown", e => { if(e.key !== "Escape") return; ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false }); });
+let lastFocus = null;
+function openOverlay(id){ lastFocus = document.activeElement; $(id).classList.add("show"); document.body.style.overflow = "hidden"; const c = $(id).querySelector(".close"); if(c) c.focus({preventScroll:true}); }
+function closeOverlay(id){ $(id).classList.remove("show"); if(!document.querySelector(".overlay.show,.admin-panel.show")){ document.body.style.overflow = ""; if(lastFocus && document.contains(lastFocus)){ try{ lastFocus.focus({preventScroll:true}) }catch(e){} } } }
+const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+document.addEventListener("keydown", e => {
+  // دسترسی‌پذیری: Enter/Space روی عناصر role=button
+  if((e.key === "Enter" || e.key === " ") && e.target && e.target.matches && e.target.matches('[role="button"]')){ e.preventDefault(); e.target.click(); return; }
+  // Escape
+  if(e.key === "Escape"){
+    ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false });
+    return;
+  }
+  // قفل فوکوس داخل مودال باز
+  if(e.key === "Tab"){
+    const open = [...document.querySelectorAll(".overlay.show,.admin-panel.show")].pop();
+    if(!open) return;
+    const items = [...open.querySelectorAll(FOCUSABLE)].filter(el => el.offsetParent !== null);
+    if(!items.length) return;
+    const first = items[0], last = items[items.length - 1];
+    if(!open.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+    else if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
 
 /* ================= سبد ================= */
 function addToCart(id){
-  const p = products.find(x => x.id === id); if(!p) return;
-  const size = selectedSize[id] || "1";
+  const p = products.find(x => x.id === id); if(!p) return false;
+  const size = selectedSize[id];
+  if(!size){ flagSizeNeeded(id); showToast("اول سایز را انتخاب کن 📏"); return false }
   if(!cart[id]) cart[id] = {};
-  if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return }
+  if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return false }
   cart[id][size] = (cart[id][size] || 0) + 1;
   saveCart(); updateCart(); showToast(`«${p.name}» سایز ${size} اضافه شد 🌸`);
+  return true;
 }
 function cartLines(){ const out = []; Object.entries(cart).forEach(([id, sizes]) => { const p = products.find(x => x.id === Number(id)); if(!p) return; Object.entries(sizes).forEach(([size, q]) => { if(q > 0) out.push({p, size, q}) }); }); return out; }
 function updateCart(){
@@ -622,34 +657,46 @@ function openTrack(){
 }
 function closeTrack(){ closeOverlay('trackOverlay'); }
 async function checkTrack(){
-  const id = $('trackId').value;
-  const phone = $('trackPhone').value;
+  const idRaw = toLatin($('trackId').value).replace(/\s/g, "");
+  const phone = toLatin($('trackPhone').value).replace(/\s/g, "");
   const res = $('trackResult');
-  
-  if(!id || !phone){ 
-    res.innerHTML = '<p class="hint" style="color:#c62828">لطفاً کد سفارش و شماره موبایل را وارد کنید.</p>'; 
-    return; 
+
+  if(!idRaw || !phone){
+    res.innerHTML = '<p class="hint" style="color:#c62828">لطفاً کد سفارش و شماره موبایل را وارد کنید.</p>';
+    return;
+  }
+  if(!/^\d+$/.test(idRaw)){
+    res.innerHTML = '<p class="hint" style="color:#c62828">کد سفارش باید فقط عدد باشد.</p>';
+    return;
+  }
+  if(!/^09\d{9}$/.test(phone)){
+    res.innerHTML = '<p class="hint" style="color:#c62828">شماره تماس معتبر نیست (مثال: ۰۹۱۲۱۲۳۴۵۶۷).</p>';
+    return;
+  }
+  if(!sb){
+    res.innerHTML = '<p class="hint" style="color:#c62828">ارتباط با سرور برقرار نیست. صفحه را رفرش کنید.</p>';
+    return;
   }
   res.innerHTML = '<p class="hint">در حال بررسی... ⏳</p>';
-  
-  const { data, error } = await sb.rpc('track_order', { p_order_id: parseInt(id), p_phone: phone });
-  
+
+  const { data, error } = await sb.rpc('track_order', { p_order_id: parseInt(idRaw, 10), p_phone: phone });
+
   if(error || !data){
     res.innerHTML = '<p class="hint" style="color:#c62828">سفارشی با این مشخصات پیدا نشد. لطفاً کد و شماره را چک کنید.</p>';
     return;
   }
-  
+
   const statusLabels = { new: "جدید (در انتظار بررسی) ⏳", processing: "در حال پردازش 📦", shipped: "ارسال شده 🚚", done: "تکمیل شده ✅", canceled: "لغو شده ❌" };
   const st = statusLabels[data.status] || data.status;
   const date = new Date(data.created_at).toLocaleDateString('fa-IR');
   const price = new Intl.NumberFormat('fa-IR').format(data.total_price);
-  
+
   res.innerHTML = `
     <div style="background:#fff; border:1px solid var(--line); border-radius:15px; padding:15px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center">
-      <strong style="color:var(--wine); font-size:18px">سفارش #${data.id}</strong>
-      <div class="hint" style="margin-bottom:10px">تاریخ ثبت: ${date}</div>
-      <div style="margin-bottom:15px"><span style="display:inline-block; background:var(--pink); color:var(--wine); padding:5px 15px; border-radius:20px; font-weight:bold">${st}</span></div>
-      <div style="font-size:13px; color:var(--ink)"><strong>مبلغ کل:</strong> ${price} تومان</div>
+      <strong style="color:var(--wine); font-size:18px">سفارش #${esc(data.id)}</strong>
+      <div class="hint" style="margin-bottom:10px">تاریخ ثبت: ${esc(date)}</div>
+      <div style="margin-bottom:15px"><span style="display:inline-block; background:var(--pink); color:var(--wine); padding:5px 15px; border-radius:20px; font-weight:bold">${esc(st)}</span></div>
+      <div style="font-size:13px; color:var(--ink)"><strong>مبلغ کل:</strong> ${esc(price)} تومان</div>
     </div>
   `;
 }
@@ -668,36 +715,50 @@ async function loadReviews() {
     grid.innerHTML = '<div class="empty">هنوز نظری ثبت نشده است. اولین نفر باشید! 🌸</div>';
     return;
   }
-  grid.innerHTML = data.map(r => `
+  grid.innerHTML = data.map(r => {
+    const rt = Math.min(5, Math.max(0, Number(r.rating) || 0));
+    return `
     <div class="review">
-      <div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+      <div class="stars">${'★'.repeat(rt)}${'☆'.repeat(5-rt)}</div>
       <p>«${esc(r.text)}»</p>
       <div class="who">— ${esc(r.name)}</div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 function openReviewForm() {
   $('revName').value = '';
   $('revText').value = '';
   $('revRating').value = '5';
+  $('revWebsite').value = '';
   openOverlay('reviewOverlay');
 }
 function closeReviewForm() { closeOverlay('reviewOverlay'); }
 
 async function submitReview() {
+  if($('revWebsite').value){ closeReviewForm(); return; } // honeypot
   const name = $('revName').value.trim();
   const text = $('revText').value.trim();
-  const rating = parseInt($('revRating').value);
+  let rating = parseInt($('revRating').value, 10);
+  if(!(rating >= 1 && rating <= 5)) rating = 5;
   if(!name || !text) { showToast('لطفاً نام و متن نظر را وارد کنید'); return; }
+  if(text.length < 3) { showToast('متن نظر خیلی کوتاه است'); return; }
   if(!sb) { showToast('ارتباط با سرور برقرار نیست'); return; }
-  
-  const { error } = await sb.from('reviews').insert([{ name, text, rating, approved: false }]);
+
+  // محدودیت ساده سمت کاربر (محافظت واقعی باید در دیتابیس باشد)
+  let last = 0; try{ last = Number(localStorage.getItem(LS_REVIEW_TS)) || 0 }catch(e){}
+  const wait = REVIEW_COOLDOWN_MS - (Date.now() - last);
+  if(wait > 0){ showToast(`چند لحظه صبر کن و دوباره تلاش کن (${fmt(Math.ceil(wait/1000))} ثانیه)`); return; }
+
+  const btn = $('revSubmitBtn'); btn.disabled = true;
+  const { error } = await sb.from('reviews').insert([{ name: name.slice(0, 60), text: text.slice(0, 600), rating, approved: false }]);
+  btn.disabled = false;
   if(error) {
     console.error(error);
     showToast('خطا در ثبت نظر ❌');
     return;
   }
+  try{ localStorage.setItem(LS_REVIEW_TS, String(Date.now())) }catch(e){}
   showToast('نظر شما ثبت شد و پس از تایید مدیر نمایش داده می‌شود 🌸');
   closeReviewForm();
 }
@@ -706,6 +767,7 @@ async function submitReview() {
 let brandClicks = 0, brandTimer = null;
 $("brandLogo").addEventListener("click", function(e){
   e.preventDefault();
+  window.scrollTo({top:0, behavior:"smooth"});
   brandClicks++;
   clearTimeout(brandTimer);
   brandTimer = setTimeout(() => brandClicks = 0, 1500);
@@ -722,9 +784,9 @@ async function checkAdminPass(){
   const btn = $("adminLoginBtn"); btn.disabled = true;
   const { error } = await sb.auth.signInWithPassword({email, password});
   if(error || !(await isAdminSession())){ if(!error) await sb.auth.signOut(); btn.disabled = false; showToast("ایمیل یا رمز اشتباهه ❌"); return; }
-  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); openAdminPanel();
+  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await Promise.all([loadSettings(), loadProducts()]); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); openAdminPanel();
 }
-async function adminLogout(){ if(sb) await sb.auth.signOut(); closeAdminPanel(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); showToast("از پنل خارج شدی"); }
+async function adminLogout(){ if(sb) await sb.auth.signOut(); closeAdminPanel(); await Promise.all([loadSettings(), loadProducts()]); cleanCart(); renderProducts(); updateCart(); showToast("از پنل خارج شدی"); }
 function openAdminPanel(){ $("adminPanel").classList.add("show"); document.body.style.overflow = "hidden"; renderAdminList(); switchTab("list"); }
 function closeAdminPanel(){ $("adminPanel").classList.remove("show"); if(!document.querySelector(".overlay.show")) document.body.style.overflow = ""; }
 function switchTab(name){
@@ -738,7 +800,7 @@ function switchTab(name){
   if(name === "orders") renderAdminOrders();
   if(name === "reviews") renderAdminReviews();
   if(name === "bts") renderAdminBTS();
-  if(name === "settings") $("adminSizeGuidePreview").src = sizeGuideUrl;
+  if(name === "settings") applySizeGuideToAdmin();
 }
 
 function renderAdminList(){
@@ -753,7 +815,7 @@ async function renderAdminOrders(){
   const { data: orders, error } = await sb.from("orders").select("*").order("created_at", {ascending: false}).limit(200);
   if(error){ box.innerHTML = '<p class="hint" style="color:#c62828">خطا در دریافت اطلاعات از سرور! (مطمئن شو با حساب مدیر وارد شده‌ای)</p>'; return }
   if(!orders || !orders.length){ box.innerHTML = '<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
-  
+
   const totalOrders = orders.length;
   const newOrders = orders.filter(o => o.status === 'new').length;
   const totalRevenue = orders.filter(o => o.status !== 'canceled').reduce((sum, o) => sum + (o.total_price || 0), 0);
@@ -774,7 +836,7 @@ async function renderAdminOrders(){
     const opts = Object.entries(STATUS_LABELS).map(([k, v]) => `<option value="${k}" ${k===st?"selected":""}>${v}</option>`).join("");
     return ` <div class="admin-product-row admin-order-card"> <div class="admin-order-header"> <span>${esc(o.customer_name || "بدون نام")} <span style="font-size:11px;color:#876b73">#${esc(o.id)}</span></span> <span style="font-size:11px;color:#876b73">${esc(dateStr)}</span> </div> <div class="admin-order-details"> <strong>📞 تلفن:</strong> ${esc(o.phone || "-")}<br> <strong>📍 آدرس:</strong> ${esc(o.address || "-")} (کدپستی: ${esc(o.postal_code || "-")})<br> <strong>🛒 محصولات:</strong><br>${items}<br> ${o.coupon_code ? `<strong>🏷️ کد تخفیف:</strong> ${esc(o.coupon_code)} (− ${fmt(o.discount || 0)} تومان)<br>` : ""} <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">مبلغ نهایی: ${fmt(o.total_price || 0)} تومان</strong><br> <select data-id="${esc(o.id)}" onchange="setOrderStatus(this)" aria-label="وضعیت سفارش">${opts}</select> </div> </div>`;
   }).join("");
-  
+
   box.innerHTML = statsHtml + listHtml;
 }
 
@@ -784,20 +846,22 @@ async function renderAdminReviews() {
   const { data, error } = await sb.from("reviews").select("*").order("created_at", {ascending: false});
   if(error) { box.innerHTML = '<p class="hint" style="color:#c62828">خطا!</p>'; return; }
   if(!data || !data.length) { box.innerHTML = '<p class="hint">نظری ثبت نشده.</p>'; return; }
-  box.innerHTML = data.map(r => `
+  box.innerHTML = data.map(r => {
+    const rt = Math.min(5, Math.max(0, Number(r.rating) || 0));
+    return `
     <div class="admin-product-row admin-order-card">
       <div class="admin-order-header">
-        <span>${esc(r.name)} <span style="font-size:11px;color:#876b73">${'★'.repeat(r.rating)}</span></span>
+        <span>${esc(r.name)} <span style="font-size:11px;color:#876b73">${'★'.repeat(rt)}</span></span>
         <span style="font-size:11px;color:#876b73">${new Date(r.created_at).toLocaleDateString('fa-IR')}</span>
       </div>
       <div class="admin-order-details">
         <p style="margin:5px 0">${esc(r.text)}</p>
-        <button class="btn ${r.approved ? 'outline' : 'primary'}" onclick="toggleReviewStatus(${r.id}, ${!r.approved})" style="padding:4px 10px;font-size:12px">
+        <button class="btn ${r.approved ? 'outline' : 'primary'}" onclick="toggleReviewStatus(${Number(r.id)}, ${!r.approved})" style="padding:4px 10px;font-size:12px">
           ${r.approved ? 'لغو تایید' : 'تایید و نمایش'}
         </button>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 async function toggleReviewStatus(id, approved) {
@@ -814,11 +878,11 @@ async function renderAdminBTS() {
   box.innerHTML = data.map(item => `
     <div class="admin-product-row">
       <div class="info">
-        <img src="${esc(item.image_url)}" style="width:60px;height:60px;object-fit:cover;border-radius:8px;margin-bottom:5px;display:block">
+        <img src="${esc(item.image_url)}" alt="" style="width:60px;height:60px;object-fit:cover;border-radius:8px;margin-bottom:5px;display:block">
         <strong>${esc(item.caption || "بدون کپشن")}</strong>
       </div>
       <div class="actions">
-        <button class="del" onclick="deleteBTS(${item.id})">حذف</button>
+        <button class="del" onclick="deleteBTS(${Number(item.id)})">حذف</button>
       </div>
     </div>
   `).join('');
@@ -887,13 +951,13 @@ async function uploadSizeGuide(input){
     const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
     if(error) throw error;
     const { data } = sb.storage.from("product-images").getPublicUrl(path);
-    
+
     // آپدیت دیتابیس
     const { error: dbErr } = await sb.from("settings").update({ size_guide_image: data.publicUrl }).eq("id", 1);
     if(dbErr) throw dbErr;
-    
+
     sizeGuideUrl = data.publicUrl;
-    $("adminSizeGuidePreview").src = sizeGuideUrl;
+    applySizeGuideToAdmin();
     showToast("عکس راهنمای سایز با موفقیت آپلود و ذخیره شد ✓");
   }catch(e){
     console.error(e);
@@ -902,8 +966,21 @@ async function uploadSizeGuide(input){
   input.value = "";
 }
 
+/* ================= لینک مستقیم محصول (#p12) ================= */
+function openFromHash(){
+  const m = /^#p(\d+)$/.exec(location.hash);
+  if(!m) return;
+  const id = Number(m[1]);
+  if(products.some(p => p.id === id && p.active)) openProduct(id);
+}
+
 /* ================= شروع ================= */
-(async function init(){ await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); })();
+(async function init(){
+  await Promise.all([loadSettings(), loadProducts()]);
+  cleanCart(); renderProducts(); updateCart();
+  loadReviews(); loadBTS();
+  openFromHash();
+})();
 </script>
 </body>
 </html>
