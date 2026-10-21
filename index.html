@@ -45,6 +45,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .coupon-msg.ok{color:#2e7d32}.coupon-msg.err{color:#c62828}
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.product-visual.has-img:before,.product-visual.has-img:after,.pdetail-visual.has-img:before,.pdetail-visual.has-img:after{display:none}
+.product-visual img,.pdetail-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .done{text-align:center;padding:10px 0 4px}.done .big{font-size:46px}.done p{margin:6px 0}.done .actions{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:16px}.done .code{display:inline-block;background:var(--pink);color:var(--wine);border-radius:10px;padding:2px 12px;font-weight:900}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:80;display:none;font-size:13px}
 .pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.pdetail-visual{height:230px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.pdetail-visual:before{content:"";position:absolute;width:150px;height:170px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.pdetail-visual:after{content:"♡  ✿  ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:95px}.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
@@ -240,6 +242,12 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field full">توضیحات<input name="desc" maxlength="200"></label>
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
+    <div class="field full"><span>عکس محصول (اختیاری)</span>
+      <input type="hidden" name="image_url">
+      <input type="file" accept="image/*" onchange="uploadProductImage(this)">
+      <div id="imgPreview"></div>
+      <button type="button" class="btn outline" id="imgRemoveBtn" style="display:none;padding:6px 14px;font-size:12px;justify-self:start" onclick="setImagePreview('')">حذف عکس</button>
+    </div>
     <div class="actions">
       <button class="btn primary" type="submit" id="saveProductBtn">افزودن محصول</button>
       <button class="btn outline" type="button" onclick="resetProductForm()">پاک کردن فرم</button>
@@ -304,7 +312,8 @@ function uuid(){
 }
 
 /* ================= بارگذاری محصولات از دیتابیس ================= */
-const fromRow = r => ({id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", active:r.active!==false});
+function safeUrl(u){ u = String(u || "").trim(); return /^https:\/\/[^\s"'<>]+$/i.test(u) ? u : ""; }
+const fromRow = r => ({id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", image:safeUrl(r.image_url), active:r.active!==false});
 
 async function loadProducts(){
   if(sb){
@@ -361,7 +370,7 @@ function renderProducts(){
     const sz = selectedSize[p.id] || "M";
     const sh = shareParts(p);
     return `<article class="product">
-      <div class="product-visual" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})"><span class="tag">${esc(p.tag)}</span></div>
+      <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span></div>
       <div class="product-info">
         <h3 onclick="openProduct(${p.id})">${esc(p.name)}</h3>
         <p class="desc">${esc(p.desc)}</p>
@@ -400,7 +409,7 @@ function openProduct(id){
   $("pTitle").textContent = p.name;
   $("productDetail").innerHTML = `
     <div class="pdetail-grid">
-      <div class="pdetail-visual" style="--cloth:${safeColor(p.color)}"></div>
+      <div class="pdetail-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}">` : ""}</div>
       <div class="pdetail-info">
         <h3>${esc(p.name)}</h3>
         <p class="desc">${esc(p.desc)}</p>
@@ -721,6 +730,7 @@ function editProduct(id){
   f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price;
   f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color);
   f.active.value = p.active ? "1" : "0";
+  setImagePreview(p.image || "");
   $("saveProductBtn").textContent = "ذخیره تغییرات";
   $("tabAddBtn").textContent = "✏️ ویرایش محصول";
   switchTab("add");
@@ -736,7 +746,8 @@ async function saveProductForm(e){
     description: String(f.get("desc")).trim(),
     tag: String(f.get("tag")).trim(),
     color: safeColor(String(f.get("color")).trim()),
-    active: f.get("active") === "1"
+    active: f.get("active") === "1",
+    image_url: safeUrl(String(f.get("image_url") || "")) || null
   };
   if(!row.name){ showToast("نام محصول لازمه"); return }
   const btn = $("saveProductBtn"); btn.disabled = true;
@@ -754,8 +765,48 @@ function resetProductForm(){
   editingId = null;
   $("addProductForm").reset();
   $("addProductForm").elements.id.value = "";
+  setImagePreview("");
   $("saveProductBtn").textContent = "افزودن محصول";
   $("tabAddBtn").textContent = "➕ افزودن محصول";
+}
+
+/* ================= عکس محصول ================= */
+function setImagePreview(url){
+  $("addProductForm").elements.image_url.value = url || "";
+  $("imgPreview").innerHTML = url ? `<img src="${esc(url)}" alt="" style="width:100%;max-height:160px;object-fit:cover;border-radius:12px">` : "";
+  $("imgRemoveBtn").style.display = url ? "inline-flex" : "none";
+}
+function compressImage(file, maxSide = 1200){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const objUrl = URL.createObjectURL(file);
+    img.onload = () => {
+      const k = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const c = document.createElement("canvas");
+      c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(objUrl);
+      c.toBlob(b => b ? resolve(b) : reject(new Error("compress")), "image/jpeg", 0.85);
+    };
+    img.onerror = () => { URL.revokeObjectURL(objUrl); reject(new Error("load")); };
+    img.src = objUrl;
+  });
+}
+async function uploadProductImage(input){
+  const file = input.files && input.files[0];
+  if(!file) return;
+  if(!/^image\//.test(file.type)){ showToast("فقط فایل عکس انتخاب کن"); input.value = ""; return }
+  showToast("در حال آپلود عکس... ⏳");
+  try{
+    const blob = await compressImage(file);
+    const path = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+    const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
+    if(error) throw error;
+    const { data } = sb.storage.from("product-images").getPublicUrl(path);
+    setImagePreview(data.publicUrl);
+    showToast("عکس آپلود شد ✓ حالا «ذخیره» را بزن");
+  }catch(e){ console.error(e); showToast("آپلود نشد ❌ (SQL عکس اجرا شده؟)"); }
+  input.value = "";
 }
 
 /* ================= شروع ================= */
@@ -767,5 +818,4 @@ function resetProductForm(){
 })();
 </script>
 </body>
-
 </html>
