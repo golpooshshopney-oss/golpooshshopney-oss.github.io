@@ -38,6 +38,14 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .ig-item .ig-overlay { position: absolute; inset: 0; background: #7c1f40aa; display: grid; place-items: center; color: white; font-size: 30px; opacity: 0; transition: .3s; }
 .ig-item:hover .ig-overlay { opacity: 1; }
 
+/* بخش پشت صحنه */
+.bts-section { background: #fff; }
+.bts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 800px; margin: 20px auto 30px; }
+.bts-item { aspect-ratio: 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+.bts-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.bts-item:hover img { transform: scale(1.05); }
+.bts-item .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #000000cc); color: white; padding: 15px 10px 10px; font-size: 12px; }
+
 .custom{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:var(--wine);color:white;padding:30px;border-radius:28px}.custom h2{color:white}.custom p{color:#f3dbe2;margin-bottom:0}.custom .btn{background:white;color:var(--wine)}
 footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
 .overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{background:#fffaf8;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.modal h2{margin:0;color:var(--wine);font-size:24px}.close{border:0;background:var(--pink);color:var(--wine);width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
@@ -57,8 +65,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}.admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.admin-modal h2{color:var(--wine);margin:0 0 12px}.admin-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px;overflow-x:auto}.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}.admin-tab.active{background:var(--wine);color:white}.admin-product-list{display:grid;gap:8px;margin-top:12px;max-height:400px;overflow:auto}.admin-product-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:13px}.admin-product-row .info{flex:1;min-width:0}.admin-product-row .info strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.admin-product-row .info span{font-size:11px;color:var(--muted)}.admin-product-row .actions{display:flex;gap:5px}.admin-product-row .actions button{border:0;background:var(--pink);color:var(--wine);padding:5px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700}.admin-product-row .actions button.del{background:#fde0e0;color:#c62828}
 .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}.admin-form .field{font-size:12px}.admin-form .field.full{grid-column:1/-1}.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}.admin-form .actions .btn{padding:8px 16px;font-size:13px}.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
 .admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}.admin-order-details{font-size:12px;color:var(--ink);width:100%}.admin-order-card select{border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;color:var(--wine);font-size:12px;margin-top:6px}.admin-head-actions{display:flex;gap:8px;align-items:center}.admin-head-actions .btn{padding:7px 14px;font-size:12px}.admin-field-input{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:white}
-@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:1fr 1fr;gap:10px}.admin-stats{grid-template-columns:1fr}}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}.bts-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:1fr 1fr;gap:10px}.admin-stats{grid-template-columns:1fr}.bts-grid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -67,7 +75,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <header>
  <div class="wrap nav">
   <a class="brand" id="brandLogo" href="#"><span class="brandmark">✿</span> گلپوش</a>
-  <nav class="navlinks"><a href="#products">محصولات</a><a href="#benefits">چرا گلپوش؟</a><a href="#reviews">نظرات</a><a href="#custom">دوخت سفارشی</a><a href="#contact">ارتباط با ما</a></nav>
+  <nav class="navlinks"><a href="#products">محصولات</a><a href="#benefits">چرا گلپوش؟</a><a href="#reviews">نظرات</a><a href="#custom">دوخت سفارشی</a><a href="#behind-scenes">پشت صحنه</a><a href="#contact">ارتباط با ما</a></nav>
   <div class="nav-actions">
     <button class="btn outline" onclick="openTrack()" style="padding: 10px 14px; font-size: 13px;">پیگیری سفارش</button>
     <button class="btn outline" onclick="openSizeGuide()" style="padding: 10px 14px; font-size: 13px;">راهنمای سایز 📏</button>
@@ -135,6 +143,19 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </section>
 <section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
+
+<!-- بخش پشت صحنه سفارشات -->
+<section class="section bts-section" id="behind-scenes">
+ <div class="wrap">
+   <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column;">
+     <div><h2>پشت صحنه سفارشات شما</h2><p>نگاهی به مراحل بسته‌بندی و آماده‌سازی سفارشات شما با عشق.</p></div>
+   </div>
+   <div class="bts-grid" id="btsGrid">
+     <div class="empty" style="grid-column:1/-1">در حال بارگذاری...</div>
+   </div>
+ </div>
+</section>
+
 </main>
 <footer id="contact"><div class="wrap">
  <div class="trust-badges">
@@ -261,6 +282,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <button class="admin-tab" onclick="switchTab('add')" id="tabAddBtn">➕ افزودن محصول</button>
    <button class="admin-tab" onclick="switchTab('orders')">📦 سفارش‌ها</button>
    <button class="admin-tab" onclick="switchTab('reviews')">💬 نظرات</button>
+   <button class="admin-tab" onclick="switchTab('bts')">📸 پشت صحنه</button>
    <button class="admin-tab" onclick="switchTab('settings')">⚙️ تنظیمات</button>
   </div>
   <div id="tab-list">
@@ -292,6 +314,15 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <div id="tab-reviews" style="display:none">
    <div class="admin-note">💬 نظرات پس از تایید شما در سایت نمایش داده می‌شوند. <button class="btn soft" style="padding:3px 12px;font-size:12px;margin-right:8px" onclick="renderAdminReviews()">تازه‌سازی</button></div>
    <div class="admin-product-list" id="adminReviewList" style="max-height:none"></div>
+  </div>
+  <div id="tab-bts" style="display:none">
+   <div class="admin-note">📸 عکس‌های پشت صحنه سفارشات را اینجا آپلود کنید.</div>
+   <form id="btsForm" class="admin-form" onsubmit="addBTS(event)">
+     <label class="field full">انتخاب عکس <input type="file" accept="image/*" id="btsImage" required></label>
+     <label class="field full">کپشن (اختیاری) <input type="text" id="btsCaption" maxlength="100" placeholder="مثلاً: بسته‌بندی سفارش امروز..."></label>
+     <div class="actions"><button class="btn primary" type="submit">آپلود و انتشار</button></div>
+   </form>
+   <div class="admin-product-list" id="adminBTSList" style="margin-top:15px;"></div>
   </div>
   <div id="tab-settings" style="display:none">
    <div class="admin-note">📏 در این بخش می‌توانید عکس راهنمای سایز را آپلود کنید. این عکس در سایت به همه نمایش داده می‌شود.</div>
@@ -373,6 +404,23 @@ async function loadProducts(){
   }
   products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS)); return false;
 }
+
+async function loadBTS() {
+  if(!sb) return;
+  const grid = $("btsGrid");
+  const { data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false}).limit(9);
+  if(error || !data || !data.length) {
+    grid.innerHTML = '<div class="empty" style="grid-column:1/-1">به زودی عکس‌های پشت صحنه اینجا قرار می‌گیرد. 🌸</div>';
+    return;
+  }
+  grid.innerHTML = data.map(item => `
+    <div class="bts-item">
+      <img src="${esc(item.image_url)}" alt="${esc(item.caption || 'پشت صحنه')}" loading="lazy">
+      ${item.caption ? `<div class="caption">${esc(item.caption)}</div>` : ''}
+    </div>
+  `).join("");
+}
+
 function cleanCart(){
   Object.keys(cart).forEach(id => {
     const p = products.find(x => x.id === Number(id));
@@ -674,20 +722,22 @@ async function checkAdminPass(){
   const btn = $("adminLoginBtn"); btn.disabled = true;
   const { error } = await sb.auth.signInWithPassword({email, password});
   if(error || !(await isAdminSession())){ if(!error) await sb.auth.signOut(); btn.disabled = false; showToast("ایمیل یا رمز اشتباهه ❌"); return; }
-  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); openAdminPanel();
+  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); openAdminPanel();
 }
 async function adminLogout(){ if(sb) await sb.auth.signOut(); closeAdminPanel(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); showToast("از پنل خارج شدی"); }
 function openAdminPanel(){ $("adminPanel").classList.add("show"); document.body.style.overflow = "hidden"; renderAdminList(); switchTab("list"); }
 function closeAdminPanel(){ $("adminPanel").classList.remove("show"); if(!document.querySelector(".overlay.show")) document.body.style.overflow = ""; }
 function switchTab(name){
-  document.querySelectorAll(".admin-tab").forEach((b, i) => b.classList.toggle("active", (name==="list" && i===0) || (name==="add" && i===1) || (name==="orders" && i===2) || (name==="reviews" && i===3) || (name==="settings" && i===4)));
+  document.querySelectorAll(".admin-tab").forEach((b, i) => b.classList.toggle("active", (name==="list" && i===0) || (name==="add" && i===1) || (name==="orders" && i===2) || (name==="reviews" && i===3) || (name==="bts" && i===4) || (name==="settings" && i===5)));
   $("tab-list").style.display = name === "list" ? "block" : "none";
   $("tab-add").style.display = name === "add" ? "block" : "none";
   $("tab-orders").style.display = name === "orders" ? "block" : "none";
   $("tab-reviews").style.display = name === "reviews" ? "block" : "none";
+  $("tab-bts").style.display = name === "bts" ? "block" : "none";
   $("tab-settings").style.display = name === "settings" ? "block" : "none";
   if(name === "orders") renderAdminOrders();
   if(name === "reviews") renderAdminReviews();
+  if(name === "bts") renderAdminBTS();
   if(name === "settings") $("adminSizeGuidePreview").src = sizeGuideUrl;
 }
 
@@ -755,6 +805,55 @@ async function toggleReviewStatus(id, approved) {
   if(!error) { renderAdminReviews(); loadReviews(); }
 }
 
+async function renderAdminBTS() {
+  const box = $("adminBTSList");
+  box.innerHTML = '<p class="hint">در حال دریافت... ⏳</p>';
+  const { data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false});
+  if(error) { box.innerHTML = '<p class="hint" style="color:#c62828">خطا!</p>'; return; }
+  if(!data || !data.length) { box.innerHTML = '<p class="hint">هیچ عکسی آپلود نشده.</p>'; return; }
+  box.innerHTML = data.map(item => `
+    <div class="admin-product-row">
+      <div class="info">
+        <img src="${esc(item.image_url)}" style="width:60px;height:60px;object-fit:cover;border-radius:8px;margin-bottom:5px;display:block">
+        <strong>${esc(item.caption || "بدون کپشن")}</strong>
+      </div>
+      <div class="actions">
+        <button class="del" onclick="deleteBTS(${item.id})">حذف</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function deleteBTS(id) {
+  if(!confirm("حذف شود؟")) return;
+  const { error } = await sb.from("bts").delete().eq("id", id);
+  if(!error) { renderAdminBTS(); loadBTS(); showToast("حذف شد"); }
+}
+
+async function addBTS(e) {
+  e.preventDefault();
+  const file = $("btsImage").files[0];
+  const caption = $("btsCaption").value.trim();
+  if(!file) { showToast("عکس را انتخاب کن"); return; }
+  showToast("در حال آپلود... ⏳");
+  try {
+    const blob = await compressImage(file);
+    const path = `bts-${Date.now()}.jpg`;
+    const { error: uploadError } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg"});
+    if(uploadError) throw uploadError;
+    const { data } = sb.storage.from("product-images").getPublicUrl(path);
+    const { error: dbError } = await sb.from("bts").insert([{ image_url: data.publicUrl, caption }]);
+    if(dbError) throw dbError;
+    showToast("عکس آپلود شد ✓");
+    e.target.reset();
+    renderAdminBTS();
+    loadBTS();
+  } catch(err) {
+    console.error(err);
+    showToast("خطا در آپلود ❌");
+  }
+}
+
 async function setOrderStatus(sel){ const { error } = await sb.from("orders").update({status: sel.value}).eq("id", sel.dataset.id); showToast(error ? "ذخیره نشد ❌" : "وضعیت سفارش ذخیره شد ✓"); }
 async function deleteProduct(id){ if(!confirm("محصول حذف بشه؟")) return; const { error } = await sb.from("products").delete().eq("id", id); if(error){ console.error(error); showToast("حذف نشد ❌"); return } delete cart[id]; saveCart(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast("محصول حذف شد"); }
 function editProduct(id){ const p = products.find(x => x.id === id); if(!p) return; const f = $("addProductForm").elements; editingId = id; f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; setImagePreview(p.image || ""); $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; switchTab("add"); }
@@ -804,7 +903,7 @@ async function uploadSizeGuide(input){
 }
 
 /* ================= شروع ================= */
-(async function init(){ await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); })();
+(async function init(){ await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); })();
 </script>
 </body>
 </html>
