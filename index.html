@@ -636,12 +636,20 @@ async function checkAdminPass(){
   const email = $("adminEmail").value.trim(), password = $("adminPass").value;
   if(!email || !password){ showToast("ایمیل و رمز را وارد کن"); return }
   const btn = $("adminLoginBtn"); btn.disabled = true;
-  const { error } = await sb.auth.signInWithPassword({email, password});
-  if(error || !(await isAdminSession())){
-    if(!error) await sb.auth.signOut();
-    btn.disabled = false; showToast("ایمیل یا رمز اشتباهه ❌"); return;
+  try{
+    const { error } = await sb.auth.signInWithPassword({email, password});
+    if(error || !(await isAdminSession())){
+      if(!error) await sb.auth.signOut();
+      showToast(error && /fetch|network/i.test(error.message || "") ? "اتصال به سرور برقرار نشد" : "ایمیل یا رمز اشتباهه ❌");
+      return;
+    }
+  }catch(e){
+    console.error(e);
+    showToast("اتصال به سرور برقرار نشد؛ فیلترشکن را امتحان کن");
+    return;
+  }finally{
+    btn.disabled = false;
   }
-  btn.disabled = false;
   $("adminPass").value = "";
   closeAdminLogin();
   await loadProducts(); cleanCart(); renderProducts(); updateCart();
