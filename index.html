@@ -325,7 +325,10 @@ const DEFAULT_PRODUCTS = [
  {id:7,name:"ست ساتن یاسی",category:"ساتن",price:920000,old:0,desc:"رنگ یاسی • لطافت و درخشش",color:"#b99bbf",tag:"رنگ خاص",active:true},
  {id:8,name:"ست نخی کرم",category:"نخی",price:650000,old:0,desc:"مینیمال • مناسب استراحت",color:"#e9d9c7",tag:"ساده",active:true}
 ];
-const SIZES = ["S","M","L","XL","سفارشی"];
+
+// 🔴 سایزها اینجا تغییر کردن به 1, 2, 3
+const SIZES = ["1", "2", "3", "سفارشی"]; 
+
 const MAX_QTY = 10;
 const LS_CART = "golpoosh_cart_v2";
 const STATUS_LABELS = {new:"جدید",processing:"در حال پردازش",shipped:"ارسال شد",done:"تکمیل شد",canceled:"لغو شد"};
@@ -402,7 +405,7 @@ function renderProducts(){
   const shown = getFiltered();
   if(!shown.length){ grid.innerHTML = '<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>'; return }
   grid.innerHTML = shown.map(p => {
-    const sz = selectedSize[p.id] || "M";
+    const sz = selectedSize[p.id] || "1"; // پیش‌فرض به 1 تغییر کرد
     const sh = shareParts(p);
     return `<article class="product">
       <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span></div>
@@ -428,7 +431,7 @@ function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p)
 /* ================= مودال جزئیات ================= */
 function openProduct(id){
   const p = products.find(x => x.id === id); if(!p) return;
-  const sz = selectedSize[id] || "M";
+  const sz = selectedSize[id] || "1"; // پیش‌فرض به 1 تغییر کرد
   const off = p.old > p.price ? ` <span class="oldprice">${fmt(p.old)}</span>` : "";
   const sh = shareParts(p);
   $("pTitle").textContent = p.name;
@@ -469,7 +472,7 @@ document.addEventListener("keydown", e => { if(e.key !== "Escape") return; ["don
 /* ================= سبد ================= */
 function addToCart(id){
   const p = products.find(x => x.id === id); if(!p) return;
-  const size = selectedSize[id] || "M";
+  const size = selectedSize[id] || "1"; // پیش‌فرض به 1 تغییر کرد
   if(!cart[id]) cart[id] = {};
   if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return }
   cart[id][size] = (cart[id][size] || 0) + 1;
