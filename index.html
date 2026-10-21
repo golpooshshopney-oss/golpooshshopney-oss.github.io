@@ -95,12 +95,14 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </section>
 <section class="section reviews" id="reviews">
- <div class="wrap"><div class="section-head"><div><h2>مشتری‌ها چه می‌گویند؟</h2><p>نظرات مشتری‌ها درباره آرامش شب‌های گلپوشی.</p></div></div>
-  <div class="review-grid">
-   <div class="review"><div class="stars">★★★★★</div><p>«پارچه‌اش واقعاً لطیفه و دوختش تمیزه. سایز سفارشی گرفتم و دقیقاً اندازه بود. حتماً بازم سفارش می‌دم.»</p><div class="who">— مریم</div></div>
-   <div class="review"><div class="stars">★★★★★</div><p>«بسته‌بندی خیلی قشنگ بود و سریع رسید. رنگ ست ساتن صورتی دقیقاً مثل عکس بود. ممنون گلپوش 🌸»</p><div class="who">— سارا</div></div>
-   <div class="review"><div class="stars">★★★★☆</div><p>«کیفیت نخی‌ها عالیه، برای تابستون عالیه. فقط کمی زودتر می‌خواستم برسه که خب تقصیر پست بود.»</p><div class="who">— نگین</div></div>
-  </div>
+ <div class="wrap">
+   <div class="section-head">
+     <div><h2>مشتری‌ها چه می‌گویند؟</h2><p>نظرات و سوالات مشتری‌ها درباره گلپوش.</p></div>
+     <button class="btn primary" onclick="openReviewForm()">ثبت نظر / سوال</button>
+   </div>
+   <div class="review-grid" id="reviewGrid">
+     <div class="empty">در حال بارگذاری نظرات... 🌸</div>
+   </div>
  </div>
 </section>
 <section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
@@ -108,7 +110,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <footer id="contact"><div class="wrap">
  <div class="trust-badges">
     <div class="trust-item"><div class="icon">🛡️</div><div><h4>۷ روز ضمانت بازگشت وجه</h4><p>در صورت عدم رضایت، وجه شما بازگردانده می‌شود (به‌جز سفارش‌های دوخت سفارشی).</p></div></div>
-    <div class="trust-item"><div class="icon">🔄</div><div><h4>۷ روز مهلت مرجوعی کالا</h4><p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش (به‌جز دوخت سفارشی).</p></div></div>
+    <div class="trust-item"><div class="icon">🔄</div><div><h4>۷ روز مهلت مرجوعی کالا</h4><p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش. برای دوخت سفارشی، تغییرات در بازه زمانی ۷ روز بدون هزینه پذیرفته می‌شود.</p></div></div>
  </div>
  <div class="footer-grid">
   <div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه؛ جایی برای راحتی، لطافت و انتخاب‌های دوست‌داشتنی.</p></div>
@@ -179,6 +181,26 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   </div>
 </div>
 
+<!-- مودال ثبت نظر -->
+<div class="overlay" id="reviewOverlay" onclick="if(event.target===this)closeReviewForm()">
+  <div class="modal" style="width:min(450px,100%)">
+    <div class="modal-head"><h2>ثبت نظر یا سوال</h2><button class="close" onclick="closeReviewForm()">×</button></div>
+    <div style="margin-top:14px; display:grid; gap:10px;">
+      <label class="field">نام شما <span class="req">*</span><input id="revName" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px"></label>
+      <label class="field">امتیاز شما<select id="revRating" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px">
+        <option value="5">⭐⭐⭐⭐⭐ (عالی)</option>
+        <option value="4">⭐⭐⭐⭐ (خوب)</option>
+        <option value="3">⭐⭐⭐ (متوسط)</option>
+        <option value="2">⭐⭐ (ضعیف)</option>
+        <option value="1">⭐ (بد)</option>
+      </select></label>
+      <label class="field">متن نظر یا سوال <span class="req">*</span><textarea id="revText" rows="4" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;resize:vertical"></textarea></label>
+      <button class="btn primary" style="width:100%" onclick="submitReview()">ثبت نظر</button>
+      <p class="hint">نظر شما پس از بررسی توسط مدیریت نمایش داده می‌شود.</p>
+    </div>
+  </div>
+</div>
+
 <!-- ورود مدیر -->
 <div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
  <div class="modal" style="width:min(400px,100%)">
@@ -199,6 +221,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <button class="admin-tab active" onclick="switchTab('list')">لیست محصولات</button>
    <button class="admin-tab" onclick="switchTab('add')" id="tabAddBtn">➕ افزودن محصول</button>
    <button class="admin-tab" onclick="switchTab('orders')">📦 سفارش‌ها</button>
+   <button class="admin-tab" onclick="switchTab('reviews')">💬 نظرات</button>
   </div>
   <div id="tab-list">
    <div class="admin-note">✅ محصولات روی دیتابیس ذخیره می‌شوند و همین‌جا برای همه‌ی بازدیدکننده‌ها اعمال می‌شوند. محصول «مخفی» فقط برای مدیر دیده می‌شود.</div>
@@ -225,6 +248,10 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <div id="tab-orders" style="display:none">
    <div class="admin-note">📦 سفارش‌ها مستقیماً از دیتابیس خوانده می‌شوند. <button class="btn soft" style="padding:3px 12px;font-size:12px;margin-right:8px" onclick="renderAdminOrders()">تازه‌سازی</button></div>
    <div class="admin-product-list" id="adminOrderList" style="max-height:none"></div>
+  </div>
+  <div id="tab-reviews" style="display:none">
+   <div class="admin-note">💬 نظرات پس از تایید شما در سایت نمایش داده می‌شوند. <button class="btn soft" style="padding:3px 12px;font-size:12px;margin-right:8px" onclick="renderAdminReviews()">تازه‌سازی</button></div>
+   <div class="admin-product-list" id="adminReviewList" style="max-height:none"></div>
   </div>
  </div>
 </div>
@@ -369,7 +396,7 @@ function closeProduct(){ closeOverlay("productOverlay") }
 /* ================= مودال‌ها ================= */
 function openOverlay(id){ $(id).classList.add("show"); document.body.style.overflow = "hidden"; const c = $(id).querySelector(".close"); if(c) c.focus({preventScroll:true}); }
 function closeOverlay(id){ $(id).classList.remove("show"); if(!document.querySelector(".overlay.show,.admin-panel.show")) document.body.style.overflow = ""; }
-document.addEventListener("keydown", e => { if(e.key !== "Escape") return; ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false }); });
+document.addEventListener("keydown", e => { if(e.key !== "Escape") return; ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false }); });
 
 /* ================= سبد ================= */
 function addToCart(id){
@@ -508,6 +535,54 @@ async function checkTrack(){
   `;
 }
 
+/* ================= نظرات ================= */
+async function loadReviews() {
+  if(!sb) return;
+  const grid = $("reviewGrid");
+  grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
+  const { data, error } = await sb.from("reviews").select("*").eq("approved", true).order("created_at", {ascending: false}).limit(6);
+  if(error || !data) {
+    grid.innerHTML = '<div class="empty">خطا در دریافت نظرات!</div>';
+    return;
+  }
+  if(!data.length) {
+    grid.innerHTML = '<div class="empty">هنوز نظری ثبت نشده است. اولین نفر باشید! 🌸</div>';
+    return;
+  }
+  grid.innerHTML = data.map(r => `
+    <div class="review">
+      <div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+      <p>«${esc(r.text)}»</p>
+      <div class="who">— ${esc(r.name)}</div>
+    </div>
+  `).join('');
+}
+
+function openReviewForm() {
+  $('revName').value = '';
+  $('revText').value = '';
+  $('revRating').value = '5';
+  openOverlay('reviewOverlay');
+}
+function closeReviewForm() { closeOverlay('reviewOverlay'); }
+
+async function submitReview() {
+  const name = $('revName').value.trim();
+  const text = $('revText').value.trim();
+  const rating = parseInt($('revRating').value);
+  if(!name || !text) { showToast('لطفاً نام و متن نظر را وارد کنید'); return; }
+  if(!sb) { showToast('ارتباط با سرور برقرار نیست'); return; }
+  
+  const { error } = await sb.from('reviews').insert([{ name, text, rating, approved: false }]);
+  if(error) {
+    console.error(error);
+    showToast('خطا در ثبت نظر ❌');
+    return;
+  }
+  showToast('نظر شما ثبت شد و پس از تایید مدیر نمایش داده می‌شود 🌸');
+  closeReviewForm();
+}
+
 /* ================= پنل مدیریت ================= */
 let brandClicks = 0, brandTimer = null;
 $("brandLogo").addEventListener("click", function(e){
@@ -528,12 +603,20 @@ async function checkAdminPass(){
   const btn = $("adminLoginBtn"); btn.disabled = true;
   const { error } = await sb.auth.signInWithPassword({email, password});
   if(error || !(await isAdminSession())){ if(!error) await sb.auth.signOut(); btn.disabled = false; showToast("ایمیل یا رمز اشتباهه ❌"); return; }
-  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); openAdminPanel();
+  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); openAdminPanel();
 }
 async function adminLogout(){ if(sb) await sb.auth.signOut(); closeAdminPanel(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); showToast("از پنل خارج شدی"); }
 function openAdminPanel(){ $("adminPanel").classList.add("show"); document.body.style.overflow = "hidden"; renderAdminList(); switchTab("list"); }
 function closeAdminPanel(){ $("adminPanel").classList.remove("show"); if(!document.querySelector(".overlay.show")) document.body.style.overflow = ""; }
-function switchTab(name){ document.querySelectorAll(".admin-tab").forEach((b, i) => b.classList.toggle("active", (name==="list" && i===0) || (name==="add" && i===1) || (name==="orders" && i===2))); $("tab-list").style.display = name === "list" ? "block" : "none"; $("tab-add").style.display = name === "add" ? "block" : "none"; $("tab-orders").style.display = name === "orders" ? "block" : "none"; if(name === "orders") renderAdminOrders(); }
+function switchTab(name){
+  document.querySelectorAll(".admin-tab").forEach((b, i) => b.classList.toggle("active", (name==="list" && i===0) || (name==="add" && i===1) || (name==="orders" && i===2) || (name==="reviews" && i===3)));
+  $("tab-list").style.display = name === "list" ? "block" : "none";
+  $("tab-add").style.display = name === "add" ? "block" : "none";
+  $("tab-orders").style.display = name === "orders" ? "block" : "none";
+  $("tab-reviews").style.display = name === "reviews" ? "block" : "none";
+  if(name === "orders") renderAdminOrders();
+  if(name === "reviews") renderAdminReviews();
+}
 
 function renderAdminList(){
   const box = $("adminProductList");
@@ -555,6 +638,33 @@ async function renderAdminOrders(){
     const opts = Object.entries(STATUS_LABELS).map(([k, v]) => `<option value="${k}" ${k===st?"selected":""}>${v}</option>`).join("");
     return ` <div class="admin-product-row admin-order-card"> <div class="admin-order-header"> <span>${esc(o.customer_name || "بدون نام")} <span style="font-size:11px;color:#876b73">#${esc(o.id)}</span></span> <span style="font-size:11px;color:#876b73">${esc(dateStr)}</span> </div> <div class="admin-order-details"> <strong>📞 تلفن:</strong> ${esc(o.phone || "-")}<br> <strong>📍 آدرس:</strong> ${esc(o.address || "-")} (کدپستی: ${esc(o.postal_code || "-")})<br> <strong>🛒 محصولات:</strong><br>${items}<br> ${o.coupon_code ? `<strong>🏷️ کد تخفیف:</strong> ${esc(o.coupon_code)} (− ${fmt(o.discount || 0)} تومان)<br>` : ""} <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">مبلغ نهایی: ${fmt(o.total_price || 0)} تومان</strong><br> <select data-id="${esc(o.id)}" onchange="setOrderStatus(this)" aria-label="وضعیت سفارش">${opts}</select> </div> </div>`;
   }).join("");
+}
+
+async function renderAdminReviews() {
+  const box = $("adminReviewList");
+  box.innerHTML = '<p class="hint">در حال دریافت... ⏳</p>';
+  const { data, error } = await sb.from("reviews").select("*").order("created_at", {ascending: false});
+  if(error) { box.innerHTML = '<p class="hint" style="color:#c62828">خطا!</p>'; return; }
+  if(!data || !data.length) { box.innerHTML = '<p class="hint">نظری ثبت نشده.</p>'; return; }
+  box.innerHTML = data.map(r => `
+    <div class="admin-product-row admin-order-card">
+      <div class="admin-order-header">
+        <span>${esc(r.name)} <span style="font-size:11px;color:#876b73">${'★'.repeat(r.rating)}</span></span>
+        <span style="font-size:11px;color:#876b73">${new Date(r.created_at).toLocaleDateString('fa-IR')}</span>
+      </div>
+      <div class="admin-order-details">
+        <p style="margin:5px 0">${esc(r.text)}</p>
+        <button class="btn ${r.approved ? 'outline' : 'primary'}" onclick="toggleReviewStatus(${r.id}, ${!r.approved})" style="padding:4px 10px;font-size:12px">
+          ${r.approved ? 'لغو تایید' : 'تایید و نمایش'}
+        </button>
+      </div>
+    </div>
+  `).join('');
+}
+
+async function toggleReviewStatus(id, approved) {
+  const { error } = await sb.from("reviews").update({approved}).eq("id", id);
+  if(!error) { renderAdminReviews(); loadReviews(); }
 }
 
 async function setOrderStatus(sel){ const { error } = await sb.from("orders").update({status: sel.value}).eq("id", sel.dataset.id); showToast(error ? "ذخیره نشد ❌" : "وضعیت سفارش ذخیره شد ✓"); }
@@ -579,7 +689,7 @@ function compressImage(file, maxSide = 1200){ return new Promise((resolve, rejec
 async function uploadProductImage(input){ const file = input.files && input.files[0]; if(!file) return; if(!/^image\//.test(file.type)){ showToast("فقط فایل عکس انتخاب کن"); input.value = ""; return } showToast("در حال آپلود عکس... ⏳"); try{ const blob = await compressImage(file); const path = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`; const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"}); if(error) throw error; const { data } = sb.storage.from("product-images").getPublicUrl(path); setImagePreview(data.publicUrl); showToast("عکس آپلود شد ✓ حالا «ذخیره» را بزن"); }catch(e){ console.error(e); showToast("آپلود نشد ❌ (SQL عکس اجرا شده؟)"); } input.value = ""; }
 
 /* ================= شروع ================= */
-(async function init(){ await loadProducts(); cleanCart(); renderProducts(); updateCart(); })();
+(async function init(){ await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); })();
 </script>
 </body>
 </html>
