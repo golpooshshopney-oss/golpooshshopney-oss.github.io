@@ -30,18 +30,15 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .reviews{background:#fff0f1}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
 .trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}.trust-item{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow)}.trust-item .icon{font-size:40px}.trust-item h4{margin:0 0 5px;color:var(--wine);font-size:16px}.trust-item p{margin:0;font-size:12px;color:var(--muted)}
 
-/* بخش اینستاگرام */
-.ig-section { background: linear-gradient(135deg, #fff7f3, #f8e3e7); text-align: center; }
-.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 800px; margin: 20px auto 30px; }
-.ig-item { aspect-ratio: 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
-.ig-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
-.ig-item:hover img { transform: scale(1.1); }
-.ig-item .ig-overlay { position: absolute; inset: 0; background: #7c1f40aa; display: grid; place-items: center; color: white; font-size: 30px; opacity: 0; transition: .3s; }
-.ig-item:hover .ig-overlay { opacity: 1; }
+/* بخش اینستاگرام (بدون عکس فیک) */
+.ig-banner { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; border-radius: 25px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(220,39,67,0.3); margin-top: 20px; }
+.ig-banner h2 { color: white; margin: 0 0 10px; font-size: 28px; }
+.ig-banner p { color: #ffeef2; margin: 0 0 20px; font-size: 15px; }
+.ig-banner .btn { background: white; color: #dc2743; font-size: 16px; padding: 12px 30px; }
+.ig-banner .btn:hover { background: #f8e6e8; }
 
-/* بخش پشت صحنه (اینستاگرام استایل) */
 .bts-section { background: #fafafa; }
-.bts-feed { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px; }
+.bts-feed { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px; }
 .bts-card { background: #fff; border: 1px solid #dbdbdb; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
 .bts-header { display: flex; align-items: center; gap: 10px; padding: 12px 15px; }
 .bts-avatar { width: 32px; height: 32px; background: var(--wine); color: white; border-radius: 50%; display: grid; place-items: center; font-size: 18px; }
@@ -55,31 +52,30 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .custom{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:var(--wine);color:white;padding:30px;border-radius:28px}.custom h2{color:white}.custom p{color:#f3dbe2;margin-bottom:0}.custom .btn{background:white;color:var(--wine)}
 footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
 
-/* مودال‌ها */
 .overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{background:#fffaf8;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.modal h2{margin:0;color:var(--wine);font-size:24px}.close{border:0;background:var(--pink);color:var(--wine);width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
 
 .cart-items{display:grid;gap:10px;margin:18px 0}.cart-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:14px}.cart-item .sz{font-size:11px;color:var(--wine);background:var(--pink);padding:1px 8px;border-radius:8px;display:inline-block;margin-top:3px}.qty{display:flex;align-items:center;gap:8px}.qty button{border:0;background:var(--pink);color:var(--wine);width:28px;height:28px;border-radius:50%;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:900;color:var(--wine);border-top:1px solid var(--line);padding-top:13px}.discount-row{display:flex;justify-content:space-between;font-size:13px;color:#2e7d32;margin-top:6px}
 .coupon-box{display:flex;gap:8px;margin-top:12px}.coupon-box input{flex:1;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:white;outline-color:var(--rose);font-size:13px}.coupon-box .btn{padding:9px 14px;font-size:13px}.coupon-msg{font-size:12px;margin-top:6px}.coupon-msg.ok{color:#2e7d32}.coupon-msg.err{color:#c62828}
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 
-/* جزئیات محصول و گالری عکس */
 .pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
 .pdetail-visual{height:280px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden;margin-bottom:10px;cursor:zoom-in}
 .pdetail-visual:before{content:"";position:absolute;width:180px;height:200px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}
 .pdetail-visual:after{content:"♡ ✿ ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:120px}
 .pdetail-visual.has-img:before,.pdetail-visual.has-img:after{display:none}
-.pdetail-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.pdetail-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
 .gallery-thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;margin-bottom:10px}
 .gallery-thumb{width:60px;height:60px;border-radius:10px;object-fit:cover;cursor:pointer;border:2px solid transparent;flex-shrink:0}
 .gallery-thumb.active{border-color:var(--wine)}
 .pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
 
-/* زوم عکس */
-#zoomOverlay{position:fixed;inset:0;background:#000e;z-index:100;display:none;align-items:center;justify-content:center;overflow:hidden}
-#zoomOverlay.show{display:flex}
-#zoomOverlay img{max-width:100%;max-height:90vh;transition:transform .3s;cursor:zoom-in}
-#zoomOverlay img.zoomed{transform:scale(2);cursor:zoom-out}
-#zoomOverlay .close-zoom{position:absolute;top:20px;right:20px;color:white;font-size:40px;cursor:pointer;background:none;border:none}
+/* زوم عکس (با قابلیت جابه جایی) */
+#zoomOverlay{position:fixed;inset:0;background:#000e;z-index:100;display:none;align-items:center;justify-content:center;overflow:hidden;}
+#zoomOverlay.show{display:flex;}
+#zoomWrapper{width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:grab;}
+#zoomWrapper:active{cursor:grabbing;}
+#zoomImg{max-width:90%; max-height:90%; transition:transform 0.1s ease-out; pointer-events:none;}
+#zoomOverlay .close-zoom{position:absolute;top:20px;right:20px;color:white;font-size:40px;cursor:pointer;background:none;border:none;z-index:101;}
 
 /* پنل مدیریت */
 .admin-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
@@ -91,8 +87,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}.admin-form .field{font-size:12px}.admin-form .field.full{grid-column:1/-1}.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}.admin-form .actions .btn{padding:8px 16px;font-size:13px}.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
 .admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}.admin-order-details{font-size:12px;color:var(--ink);width:100%}.admin-order-card select{border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;color:var(--wine);font-size:12px;margin-top:6px}.admin-head-actions{display:flex;gap:8px;align-items:center}.admin-head-actions .btn{padding:7px 14px;font-size:12px}.admin-field-input{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:white}
 
-@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}.ig-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:220px}.review-grid{grid-template-columns:1fr}.ig-grid{grid-template-columns:1fr 1fr;gap:10px}.admin-stats{grid-template-columns:1fr}}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:220px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -155,22 +151,20 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    </div>
  </div>
 </section>
-<section class="section ig-section" id="instagram">
+
+<!-- بخش اینستاگرام (اصلاح شده) -->
+<section class="section" id="instagram" style="padding: 20px 0;">
  <div class="wrap">
-   <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column;">
-     <div><h2>ما را در اینستاگرام دنبال کنید</h2><p>جدیدترین محصولات و تخفیف‌ها را در پیج ما ببینید.</p></div>
+   <div class="ig-banner">
+     <h2>ما را در اینستاگرام دنبال کنید</h2>
+     <p>جدیدترین محصولات، تخفیف‌ها و پشت صحنه سفارشات را در پیج ما ببینید.</p>
+     <a class="btn" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">Follow @gol.pooshshop1 📷</a>
    </div>
-   <div class="ig-grid">
-     <a class="ig-item" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=400&q=80" alt="Instagram Post"><div class="ig-overlay">📷</div></a>
-     <a class="ig-item" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=400&q=80" alt="Instagram Post"><div class="ig-overlay">📷</div></a>
-     <a class="ig-item" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener"><img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" alt="Instagram Post"><div class="ig-overlay">📷</div></a>
-   </div>
-   <a class="btn primary" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener" style="padding:12px 30px; font-size:15px;">Follow @gol.pooshshop1</a>
  </div>
 </section>
+
 <section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
 
-<!-- بخش پشت صحنه سفارشات -->
 <section class="section bts-section" id="behind-scenes">
  <div class="wrap">
    <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column;">
@@ -196,7 +190,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  <div class="copyright">© گلپوش — تمامی حقوق محفوظ است.</div>
 </div></footer>
 
-<!-- مودال‌های سایت -->
 <div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
   <div class="modal-head"><h2 id="cartTitle">سبد خرید شما</h2><button class="close" onclick="closeCart()" aria-label="بستن">×</button></div>
@@ -283,12 +276,13 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 </div>
 
 <!-- مودال زوم عکس -->
-<div id="zoomOverlay" onclick="if(event.target===this)this.classList.remove('show')">
-  <button class="close-zoom" onclick="document.getElementById('zoomOverlay').classList.remove('show')">×</button>
-  <img id="zoomImg" src="" alt="زوم" onclick="this.classList.toggle('zoomed')">
+<div id="zoomOverlay" onclick="if(event.target===this)closeZoom()">
+  <button class="close-zoom" onclick="closeZoom()">×</button>
+  <div id="zoomWrapper">
+    <img id="zoomImg" src="" alt="زوم">
+  </div>
 </div>
 
-<!-- ورود مدیر -->
 <div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
  <div class="modal" style="width:min(400px,100%)">
   <div class="modal-head"><h2>ورود مدیر</h2><button class="close" onclick="closeAdminLogin()" aria-label="بستن">×</button></div>
@@ -300,7 +294,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </div>
 
-<!-- پنل مدیریت -->
 <div class="admin-panel" id="adminPanel">
  <div class="admin-modal">
   <div class="modal-head"><h2>⚙️ پنل مدیریت گلپوش</h2><div class="admin-head-actions"><button class="btn outline" onclick="adminLogout()">خروج</button><button class="close" onclick="closeAdminPanel()" aria-label="بستن">×</button></div></div>
@@ -313,7 +306,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <button class="admin-tab" onclick="switchTab('settings')">⚙️ تنظیمات</button>
   </div>
   <div id="tab-list">
-   <div class="admin-note">✅ محصولات روی دیتابیس ذخیره می‌شوند و همین‌جا برای همه‌ی بازدیدکننده‌ها اعمال می‌شوند. محصول «مخفی» فقط برای مدیر دیده می‌شود.</div>
+   <div class="admin-note">✅ محصولات روی دیتابیس ذخیره می‌شوند. محصول «مخفی» فقط برای مدیر دیده می‌شود.</div>
    <div class="admin-product-list" id="adminProductList"></div>
   </div>
   <div id="tab-add" style="display:none">
@@ -327,13 +320,16 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field full">توضیحات<input name="desc" maxlength="200"></label>
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
-    <div class="field full">
-      <span>عکس‌های محصول (چند عکس)</span>
+    
+    <!-- بخش آپلود چند عکس -->
+    <div class="field full" style="background:#fff8f6; padding:15px; border-radius:12px; border:1px dashed var(--rose);">
+      <span style="font-weight:bold; color:var(--wine); display:block; margin-bottom:10px;">📸 عکس‌های محصول (می‌توانید چند عکس انتخاب کنید)</span>
       <input type="hidden" name="images_json">
-      <input type="file" accept="image/*" multiple onchange="uploadProductImages(this)">
+      <input type="file" accept="image/*" multiple onchange="uploadProductImages(this)" style="margin-bottom:10px; background:white; padding:10px; border-radius:8px; width:100%;">
       <div id="imgPreviewContainer" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;"></div>
-      <button type="button" class="btn outline" id="imgRemoveBtn" style="display:none;padding:6px 14px;font-size:12px;justify-self:start;margin-top:10px" onclick="clearImagesPreview()">پاک کردن همه عکس‌ها</button>
+      <button type="button" class="btn outline" id="imgRemoveBtn" style="display:none;padding:6px 14px;font-size:12px;margin-top:10px" onclick="clearImagesPreview()">پاک کردن همه عکس‌ها</button>
     </div>
+
     <div class="actions">
       <button class="btn primary" type="submit" id="saveProductBtn">افزودن محصول</button>
       <button class="btn outline" type="button" onclick="resetProductForm()">پاک کردن فرم</button>
@@ -460,18 +456,16 @@ async function loadBTS() {
     return;
   }
   feed.innerHTML = data.map(item => {
-    const d = new Date(item.created_at).toLocaleDateString('fa-IR');
+    const d = item.created_at ? new Date(item.created_at).toLocaleDateString('fa-IR') : '';
     return `
     <div class="bts-card">
       <div class="bts-header">
         <div class="bts-avatar">✿</div>
         <div class="bts-user">golpooshshop1</div>
       </div>
-      <img src="${esc(item.image_url)}" alt="${esc(item.caption || 'پشت صحنه')}" class="bts-image" loading="lazy">
+      <img src="${item.image_url ? esc(item.image_url) : ''}" alt="${esc(item.caption || 'پشت صحنه')}" class="bts-image" loading="lazy">
       <div class="bts-actions">
-        <span>❤️</span>
-        <span>💬</span>
-        <span>📤</span>
+        <span>❤️</span><span>💬</span><span>📤</span>
       </div>
       <div class="bts-caption">
         <strong>golpooshshop1</strong> ${esc(item.caption || 'پشت صحنه سفارشات گلپوش')}
@@ -515,10 +509,12 @@ function renderProducts(){
   grid.innerHTML = shown.map(p => {
     const sz = selectedSize[p.id] || "1";
     const sh = shareParts(p);
-    const mainImg = p.images.length > 0 ? p.images[0] : "";
+    
+    const safeImages = Array.isArray(p.images) ? p.images : [];
+    const mainImg = safeImages.length > 0 ? safeImages[0] : (p.image || "");
     
     return `<article class="product">
-      <div class="product-visual ${mainImg ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})">${mainImg ? `<img src="${esc(mainImg)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span></div>
+      <div class="product-visual ${mainImg ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})">${mainImg ? `<img src="${esc(mainImg)}" alt="${esc(p.name)}" loading="lazy" style="z-index:2;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">` : ""}<span class="tag">${esc(p.tag)}</span></div>
       <div class="product-info">
         <h3 onclick="openProduct(${p.id})">${esc(p.name)}</h3>
         <p class="desc">${esc(p.desc)}</p>
@@ -545,10 +541,12 @@ function openProduct(id){
   const off = p.old > p.price ? ` <span class="oldprice">${fmt(p.old)}</span>` : "";
   const sh = shareParts(p);
   
-  const mainImg = p.images.length > 0 ? p.images[0] : "";
-  const thumbsHtml = p.images.length > 1 ? `
+  const safeImages = Array.isArray(p.images) ? p.images : [];
+  const mainImg = safeImages.length > 0 ? safeImages[0] : (p.image || "");
+  
+  const thumbsHtml = safeImages.length > 1 ? `
     <div class="gallery-thumbs">
-      ${p.images.map((img, i) => `<img src="${esc(img)}" class="gallery-thumb ${i===0?'active':''}" onclick="changeMainImage(this, '${esc(img)}')">`).join("")}
+      ${safeImages.map((img, i) => `<img src="${esc(img)}" class="gallery-thumb ${i===0?'active':''}" onclick="changeMainImage(this, '${esc(img)}')">`).join("")}
     </div>
   ` : "";
 
@@ -585,17 +583,97 @@ function changeMainImage(el, url){
   const img = document.getElementById('mainProductImg');
   if(img) img.src = url;
   const container = document.getElementById('mainProductImgContainer');
-  container.setAttribute('onclick', `openZoom('${url}')`);
+  if(container) container.setAttribute('onclick', `openZoom('${url}')`);
+}
+
+function closeProduct(){ closeOverlay("productOverlay") }
+
+/* ================= سیستم زوم و پن (جابه جایی) ================= */
+let scale = 1;
+let panning = false;
+let pointX = 0;
+let pointY = 0;
+let start = { x: 0, y: 0 };
+const zoomImg = document.getElementById("zoomImg");
+
+function setTransform() {
+  zoomImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
 }
 
 function openZoom(url){
   if(!url) return;
-  $("zoomImg").src = url;
-  $("zoomImg").classList.remove("zoomed");
+  zoomImg.src = url;
+  scale = 1; pointX = 0; pointY = 0; setTransform();
   $("zoomOverlay").classList.add("show");
 }
 
-function closeProduct(){ closeOverlay("productOverlay") }
+function closeZoom(){
+  $("zoomOverlay").classList.remove("show");
+}
+
+// منطق موس برای زوم
+zoomImg.onmousedown = function (e) {
+  e.preventDefault();
+  start = { x: e.clientX - pointX, y: e.clientY - pointY };
+  panning = true;
+};
+zoomImg.onmouseup = function () { panning = false; };
+zoomImg.onmouseleave = function () { panning = false; };
+zoomImg.onmousemove = function (e) {
+  e.preventDefault();
+  if (!panning) return;
+  pointX = (e.clientX - start.x);
+  pointY = (e.clientY - start.y);
+  setTransform();
+};
+zoomImg.onwheel = function (e) {
+  e.preventDefault();
+  let xs = (e.clientX - pointX) / scale;
+  let ys = (e.clientY - pointY) / scale;
+  let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+  (delta > 0) ? (scale *= 1.2) : (scale /= 1.2);
+  pointX = e.clientX - xs * scale;
+  pointY = e.clientY - ys * scale;
+  setTransform();
+};
+
+// منطق لمس برای موبایل
+let initialDistance = 0;
+zoomImg.ontouchstart = function(e) {
+  if (e.touches.length === 2) {
+    initialDistance = Math.hypot(
+      e.touches[0].pageX - e.touches[1].pageX,
+      e.touches[0].pageY - e.touches[1].pageY
+    );
+  } else if (e.touches.length === 1) {
+    panning = true;
+    start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY };
+  }
+};
+zoomImg.ontouchmove = function(e) {
+  e.preventDefault();
+  if (e.touches.length === 2) {
+    let dist = Math.hypot(
+      e.touches[0].pageX - e.touches[1].pageX,
+      e.touches[0].pageY - e.touches[1].pageY
+    );
+    if (initialDistance > 0) {
+      let k = dist / initialDistance;
+      scale *= k;
+      setTransform();
+      initialDistance = dist;
+    }
+  } else if (e.touches.length === 1 && panning) {
+    pointX = e.touches[0].clientX - start.x;
+    pointY = e.touches[0].clientY - start.y;
+    setTransform();
+  }
+};
+zoomImg.ontouchend = function() {
+  panning = false;
+  initialDistance = 0;
+};
+
 
 /* ================= راهنمای سایز ================= */
 function openSizeGuide() { $("sizeGuideImg").src = sizeGuideUrl; openOverlay("sizeGuideOverlay"); }
@@ -964,7 +1042,7 @@ function editProduct(id){
   const f = $("addProductForm").elements; 
   editingId = id; 
   f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; 
-  currentEditImages = [...p.images];
+  currentEditImages = Array.isArray(p.images) ? [...p.images] : [];
   renderEditImages(); 
   $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; 
   switchTab("add"); 
@@ -976,8 +1054,8 @@ function renderEditImages(){
   const container = $("imgPreviewContainer");
   container.innerHTML = currentEditImages.map((url, idx) => `
     <div style="position:relative; width:70px; height:70px;">
-      <img src="${esc(url)}" style="width:100%;height:100%;object-fit:cover;border-radius:8px">
-      <button type="button" onclick="removeEditImage(${idx})" style="position:absolute;top:-5px;right:-5px;background:red;color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:10px">×</button>
+      <img src="${esc(url)}" style="width:100%;height:100%;object-fit:cover;border-radius:8px; border:1px solid #ddd;">
+      <button type="button" onclick="removeEditImage(${idx})" style="position:absolute;top:-5px;right:-5px;background:red;color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:12px; display:grid; place-items:center;">×</button>
     </div>
   `).join("");
   $("imgRemoveBtn").style.display = currentEditImages.length ? "inline-flex" : "none";
@@ -999,7 +1077,7 @@ async function uploadProductImages(input){
   for (let i = 0; i < files.length; i++) {
     try {
       const blob = await compressImage(files[i]);
-      const path = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+      const path = `p-${Date.now()}-${i}.jpg`;
       const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
       if(error) throw error;
       const { data } = sb.storage.from("product-images").getPublicUrl(path);
