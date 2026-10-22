@@ -5,12 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#8b2345">
 <meta name="description" content="گلپوش؛ فروشگاه لباس خواب زنانه با امکان دوخت سفارشی">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:title" content="گلپوش | فروشگاه لباس خواب زنانه">
+<meta property="og:description" content="لباس خواب زنانه با امکان دوخت سفارشی و اندازه دلخواه">
 <title>گلپوش | فروشگاه لباس خواب زنانه</title>
 <style>
 :root{--wine:#7c1f40;--wine2:#9f3658;--rose:#d77d91;--pink:#f8e6e8;--pale:#fff8f6;--ink:#4b2432;--muted:#876b73;--line:#efd3d9;--white:#fff;--shadow:0 12px 32px #6d234010}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--pale);color:var(--ink);font-family:Tahoma,"Segoe UI",sans-serif;line-height:1.8}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
 .topbar{background:var(--wine);color:white;text-align:center;padding:8px 12px;font-size:13px}
-header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header{position:relative;z-index:10;background:#fffaf8;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;color:var(--wine);font-weight:900;font-size:29px;cursor:pointer;user-select:none}.brandmark{display:grid;place-items:center;width:44px;height:44px;background:var(--pink);border-radius:50%;font-size:24px}.navlinks{display:flex;gap:24px;color:#704552;font-size:14px}.nav-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.btn{border:0;border-radius:999px;padding:11px 18px;cursor:pointer;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}.primary{background:var(--wine);color:white}.soft{background:var(--pink);color:var(--wine)}.outline{border:1px solid var(--line);background:white;color:var(--wine)}.cartbtn{position:relative}.count{background:var(--rose);color:white;border-radius:50%;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px}
 .hero{padding:44px 0 35px;background:radial-gradient(circle at 90% 15%,#f1cbd2 0,transparent 28%),linear-gradient(125deg,#fff7f3,#f8e3e7)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow{display:inline-block;background:white;color:var(--wine2);padding:5px 13px;border-radius:999px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.35;margin:14px 0;color:var(--wine)}.hero h1 span{color:var(--rose)}.hero p{color:#765560;max-width:510px}.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}.hero-notes{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;font-size:13px;color:#7b5360}.hero-art{min-height:365px;border-radius:42% 42% 28px 28px;overflow:hidden;position:relative;background:linear-gradient(140deg,#e8b5c0,#fff0eb 55%,#c97b92);display:grid;place-items:center}.hero-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#fff7f1aa;top:28px;right:10%}.hero-art:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#a83e62aa;bottom:-70px;left:-35px}.fabric-stack{position:relative;z-index:1;display:grid;gap:0;transform:rotate(-5deg);filter:drop-shadow(0 18px 15px #63243b30)}.fabric{width:min(330px,70vw);height:74px;border-radius:16px 24px 10px 10px;border:2px solid #ffffffaa;margin-top:-7px;box-shadow:inset 0 0 0 2px #ffffff20;display:flex;align-items:center;justify-content:center;font-size:31px;color:#8e3d5b}.f1{background:repeating-linear-gradient(135deg,#f6c4d0 0 12px,#fbe0e3 12px 24px)}.f2{background:repeating-linear-gradient(45deg,#fff2e7 0 14px,#eac4c8 14px 18px)}.f3{background:repeating-linear-gradient(135deg,#c889a0 0 12px,#e2b1c0 12px 24px)}.f4{background:repeating-linear-gradient(45deg,#3f3940 0 13px,#6c5964 13px 16px);color:#f6dce4}
 .section{padding:52px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:23px}.section h2{font-size:clamp(25px,3vw,35px);color:var(--wine);margin:0}.section-head p{color:var(--muted);margin:5px 0 0;font-size:14px}
@@ -21,7 +25,8 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .sortbox select{border:1px solid var(--line);border-radius:999px;padding:10px 15px;background:white;color:#754758;cursor:pointer;outline-color:var(--rose)}
 .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.filter{border:1px solid var(--line);background:white;color:#754758;border-radius:999px;padding:8px 15px;cursor:pointer}.filter.active{background:var(--wine);border-color:var(--wine);color:white}
 .products{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.product{background:white;border:1px solid #f0dfe2;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column;transition:.2s}.product:hover{transform:translateY(-3px);box-shadow:0 18px 40px #6d23401a}.product-visual{height:220px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden;cursor:pointer}.product-visual:before{content:"";position:absolute;width:160px;height:180px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.product-visual:after{content:"♡ ✿ ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:94px}.product-visual .tag{position:absolute;top:12px;right:12px;background:white;color:var(--wine);font-size:11px;border-radius:999px;padding:4px 9px;z-index:1}.product-info{padding:15px;display:flex;flex-direction:column;flex:1}.product-info h3{font-size:16px;margin:0 0 4px;cursor:pointer}.desc{font-size:12px;color:var(--muted);margin:0 0 12px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto}.price{font-weight:900;color:var(--wine)}.oldprice{font-size:11px;color:#aa9298;text-decoration:line-through}.add{margin-top:12px;width:100%}
-.sizes{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.size-opt{border:1px solid var(--line);background:white;color:#754758;border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:700;transition:.15s}.size-opt:hover{border-color:var(--rose)}.size-opt.sel{background:var(--wine);border-color:var(--wine);color:white}
+.sizes{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}.size-opt{border:1px solid var(--line);background:white;color:#754758;border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:700;transition:.15s}.size-opt:hover{border-color:var(--rose)}.size-opt.sel{background:var(--wine);border-color:var(--wine);color:white}.size-opt.need{border-color:#c62828;box-shadow:0 0 0 2px #c6282833}
+.size-hint{font-size:11px;color:var(--muted);margin-top:6px}
 .share-row{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;justify-content:center}
 .share-btn{border:1px solid var(--line);background:white;color:var(--wine);border-radius:10px;padding:4px 10px;cursor:pointer;font-size:12px;transition:.15s;text-decoration:none;display:inline-flex;align-items:center;gap:4px}
 .share-btn:hover{background:var(--pink);border-color:var(--rose)}
@@ -30,65 +35,95 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .reviews{background:#fff0f1}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
 .trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}.trust-item{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow)}.trust-item .icon{font-size:40px}.trust-item h4{margin:0 0 5px;color:var(--wine);font-size:16px}.trust-item p{margin:0;font-size:12px;color:var(--muted)}
 
-.ig-banner { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; border-radius: 25px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(220,39,67,0.3); margin-top: 20px; }
-.ig-banner h2 { color: white; margin: 0 0 10px; font-size: 28px; }
-.ig-banner p { color: #ffeef2; margin: 0 0 20px; font-size: 15px; }
-.ig-banner .btn { background: white; color: #dc2743; font-size: 16px; padding: 12px 30px; }
-.ig-banner .btn:hover { background: #f8e6e8; }
+.ig-section { background: linear-gradient(135deg, #fff7f3, #f8e3e7); text-align: center; }
 
-.bts-section { background: #fafafa; }
-.bts-feed { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 25px; }
-.bts-card { background: #fff; border: 1px solid #dbdbdb; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-.bts-header { display: flex; align-items: center; gap: 10px; padding: 12px 15px; }
-.bts-avatar { width: 32px; height: 32px; background: var(--wine); color: white; border-radius: 50%; display: grid; place-items: center; font-size: 18px; }
-.bts-user { font-weight: 700; font-size: 14px; color: var(--ink); }
-.bts-image { width: 100%; aspect-ratio: 1; object-fit: cover; background: #f0f0f0; display: block; }
-.bts-actions { padding: 10px 15px 0; display: flex; gap: 15px; font-size: 22px; }
-.bts-caption { padding: 5px 15px 15px; font-size: 13px; line-height: 1.6; }
-.bts-caption strong { margin-left: 5px; }
-.bts-time { font-size: 10px; color: #8e8e8e; padding: 0 15px 15px; display: block; text-transform: uppercase; }
+/* بخش پشت صحنه */
+.bts-section { background: #fff; }
+.bts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 800px; margin: 20px auto 30px; }
+.bts-item { aspect-ratio: 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+.bts-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.bts-item:hover img { transform: scale(1.05); }
+.bts-item .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #000000cc); color: white; padding: 15px 10px 10px; font-size: 12px; }
 
 .custom{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:var(--wine);color:white;padding:30px;border-radius:28px}.custom h2{color:white}.custom p{color:#f3dbe2;margin-bottom:0}.custom .btn{background:white;color:var(--wine)}
 footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
-
 .overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{background:#fffaf8;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.modal h2{margin:0;color:var(--wine);font-size:24px}.close{border:0;background:var(--pink);color:var(--wine);width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
-
 .cart-items{display:grid;gap:10px;margin:18px 0}.cart-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:14px}.cart-item .sz{font-size:11px;color:var(--wine);background:var(--pink);padding:1px 8px;border-radius:8px;display:inline-block;margin-top:3px}.qty{display:flex;align-items:center;gap:8px}.qty button{border:0;background:var(--pink);color:var(--wine);width:28px;height:28px;border-radius:50%;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:900;color:var(--wine);border-top:1px solid var(--line);padding-top:13px}.discount-row{display:flex;justify-content:space-between;font-size:13px;color:#2e7d32;margin-top:6px}
 .coupon-box{display:flex;gap:8px;margin-top:12px}.coupon-box input{flex:1;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:white;outline-color:var(--rose);font-size:13px}.coupon-box .btn{padding:9px 14px;font-size:13px}.coupon-msg{font-size:12px;margin-top:6px}.coupon-msg.ok{color:#2e7d32}.coupon-msg.err{color:#c62828}
 .formgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}.field{display:grid;gap:5px;font-size:13px;color:#754758}.field.full{grid-column:1/-1}.field input,.field select,.field textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:white;padding:10px 12px;outline-color:var(--rose)}.field textarea{min-height:75px;resize:vertical}.checkout-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:16px}.hint{font-size:12px;color:var(--muted)}.req{color:#c62828;font-size:11px}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-
-.pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
-.pdetail-visual{height:280px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden;margin-bottom:10px;cursor:zoom-in}
-.pdetail-visual:before{content:"";position:absolute;width:180px;height:200px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}
-.pdetail-visual:after{content:"♡ ✿ ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:120px}
-.pdetail-visual.has-img:before,.pdetail-visual.has-img:after{display:none}
-.pdetail-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2}
-.gallery-thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:5px;margin-bottom:10px}
-.gallery-thumb{width:60px;height:60px;border-radius:10px;object-fit:cover;cursor:pointer;border:2px solid transparent;flex-shrink:0}
-.gallery-thumb.active{border-color:var(--wine)}
-.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
-
-#zoomOverlay{position:fixed;inset:0;background:#000e;z-index:100;display:none;align-items:center;justify-content:center;overflow:hidden;}
-#zoomOverlay.show{display:flex;}
-#zoomWrapper{width:100%; height:100%; display:flex; align-items:center; justify-content:center; overflow:hidden;}
-#zoomImg{max-width:90%; max-height:90%; transition:transform 0.1s ease-out; user-select:none; -webkit-user-drag:none; cursor:grab;}
-#zoomImg:active {cursor:grabbing;}
-#zoomOverlay .close-zoom{position:absolute;top:20px;right:20px;color:white;font-size:40px;cursor:pointer;background:none;border:none;z-index:101;}
+.product-visual.has-img:before,.product-visual.has-img:after,.pdetail-visual.has-img:before,.pdetail-visual.has-img:after{display:none}.product-visual img,.pdetail-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.done{text-align:center;padding:10px 0 4px}.done .big{font-size:46px}.done p{margin:6px 0}.done .actions{display:flex;flex-wrap:wrap;gap:9px;justify-content:center;margin-top:16px}.done .code{display:inline-block;background:var(--pink);color:var(--wine);border-radius:10px;padding:2px 12px;font-weight:900}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#3f2030;color:white;padding:11px 17px;border-radius:999px;z-index:80;display:none;font-size:13px;max-width:92vw;text-align:center}
+.pdetail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}.pdetail-visual{height:230px;border-radius:18px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f9dfe4,#fff4ed);overflow:hidden}.pdetail-visual:before{content:"";position:absolute;width:150px;height:170px;border-radius:48% 48% 25% 25%;background:var(--cloth,#e8aabb);box-shadow:inset -12px -8px 0 #00000008,0 12px 20px #63243b18;transform:rotate(-6deg)}.pdetail-visual:after{content:"♡ ✿ ♡";position:absolute;color:#a44969;font-size:21px;letter-spacing:9px;transform:rotate(-6deg);top:95px}.pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
 
 .admin-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
 .stat-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 12px; text-align: center; }
 .stat-card span { display: block; font-size: 11px; color: var(--muted); margin-bottom: 5px; }
 .stat-card strong { font-size: 18px; color: var(--wine); }
 
-.admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}.admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.admin-modal h2{color:var(--wine);margin:0 0 12px}.admin-tabs{display:flex;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px;overflow-x:auto}.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}.admin-tab.active{background:var(--wine);color:white}.admin-product-list{display:grid;gap:8px;margin-top:12px;max-height:400px;overflow:auto}.admin-product-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:13px}.admin-product-row .info{flex:1;min-width:0}.admin-product-row .info strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.admin-product-row .info span{font-size:11px;color:var(--muted)}.admin-product-row .actions{display:flex;gap:5px}.admin-product-row .actions button{border:0;background:var(--pink);color:var(--wine);padding:5px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700}.admin-product-row .actions button.del{background:#fde0e0;color:#c62828}
+.admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}.admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.admin-modal h2{color:var(--wine);margin:0 0 12px}.admin-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px}.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}.admin-tab.active{background:var(--wine);color:white}.admin-product-list{display:grid;gap:8px;margin-top:12px;max-height:400px;overflow:auto}.admin-product-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:13px}.admin-product-row .info{flex:1;min-width:0}.admin-product-row .info strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.admin-product-row .info span{font-size:11px;color:var(--muted)}.admin-product-row .actions{display:flex;gap:5px}.admin-product-row .actions button{border:0;background:var(--pink);color:var(--wine);padding:5px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700}.admin-product-row .actions button.del{background:#fde0e0;color:#c62828}
 .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}.admin-form .field{font-size:12px}.admin-form .field.full{grid-column:1/-1}.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}.admin-form .actions .btn{padding:8px 16px;font-size:13px}.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
 .admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}.admin-order-details{font-size:12px;color:var(--ink);width:100%}.admin-order-card select{border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;color:var(--wine);font-size:12px;margin-top:6px}.admin-head-actions{display:flex;gap:8px;align-items:center}.admin-head-actions .btn{padding:7px 14px;font-size:12px}.admin-field-input{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:white}
-
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--wine);color:white;padding:12px 22px;border-radius:14px;z-index:200;display:none;box-shadow:0 10px 40px #0004;font-size:14px;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
-
-@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:220px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}.bts-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}.bts-grid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.pcount{position:absolute;bottom:10px;left:10px;background:#000000a8;color:white;font-size:11px;border-radius:999px;padding:2px 9px;z-index:1}
+.pdetail-left{min-width:0}
+.pdetail-visual.has-img{cursor:zoom-in}
+.gallery-thumbs{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.gallery-thumbs button{width:52px;height:52px;border-radius:10px;border:2px solid var(--line);padding:0;overflow:hidden;cursor:pointer;background:white}
+.gallery-thumbs button.sel{border-color:var(--wine)}
+.gallery-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.img-thumbs{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.img-thumb{position:relative;width:84px}
+.img-thumb img{width:84px;height:84px;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.img-thumb .cover-badge{position:absolute;top:4px;right:4px;background:var(--wine);color:white;font-size:10px;border-radius:8px;padding:0 6px}
+.img-thumb .tb{display:flex;gap:4px;margin-top:4px}
+.img-thumb .tb button{flex:1;border:0;background:var(--pink);color:var(--wine);border-radius:6px;font-size:11px;padding:2px 0;cursor:pointer}
+.img-thumb .tb button.del{background:#fde0e0;color:#c62828}
+.lightbox{position:fixed;inset:0;z-index:100;background:#000000f2;display:none;flex-direction:column}
+.lightbox.show{display:flex}
+.lb-bar{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;color:white;font-size:13px}
+.lb-main{flex:1;position:relative;min-height:0}
+.lb-stage{position:absolute;inset:0;overflow:hidden;touch-action:none;display:grid;place-items:center;cursor:zoom-in;user-select:none}
+.lb-stage.zoomed{cursor:grab}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;transform-origin:center center;will-change:transform;-webkit-user-drag:none;user-select:none;pointer-events:none}
+.lb-btn{border:0;background:#ffffff26;color:white;width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;display:inline-grid;place-items:center}
+.lb-btn:hover{background:#ffffff44}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2}
+.lb-prev{right:10px}.lb-next{left:10px}
+.lb-tools{display:flex;gap:8px}
+.lb-hint{color:#ffffffaa;font-size:11px;text-align:center;padding:8px}
+.ig-wrap{max-width:935px}
+.ig-profile{display:flex;gap:30px;align-items:center;padding:6px 4px 22px}
+.ig-ring{flex:none;padding:3px;border-radius:50%;background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)}
+.ig-avatar{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font-size:40px;background:var(--pink);color:var(--wine);border:4px solid white}
+.ig-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ig-name{font-size:20px;color:var(--ink);direction:ltr}
+.ig-follow{padding:6px 18px;font-size:13px}
+.ig-stats{margin:8px 0;font-size:14px}
+.ig-bio{font-size:13px;color:#5a3a46}
+.ig-tabsbar{border-top:1px solid var(--line);display:flex;justify-content:center;margin-bottom:4px}
+.ig-tabsbar span{padding:10px 4px;border-top:2px solid var(--ink);margin-top:-1px;font-size:12px;letter-spacing:1px;font-weight:700;color:var(--ink)}
+.ig-feed{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.ig-tile{position:relative;aspect-ratio:1;border:0;padding:0;background:#f1e4e7;cursor:pointer;overflow:hidden;display:block}
+.ig-tile img{width:100%;height:100%;object-fit:cover;display:block}
+.ig-tile .ov{position:absolute;inset:0;background:#00000066;color:white;display:grid;place-items:center;font-size:12px;opacity:0;transition:.2s;padding:8px;text-align:center}
+.ig-tile:hover .ov,.ig-tile:focus-visible .ov{opacity:1}
+.post-modal{width:min(920px,100%);padding:0;position:relative;overflow:auto}
+.post-close{position:absolute;top:10px;left:10px;z-index:3}
+.post-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.post-img{background:#111;display:grid;place-items:center;min-height:240px;cursor:zoom-in}
+.post-img img{width:100%;max-height:80vh;object-fit:contain;display:block}
+.post-side{display:flex;flex-direction:column;min-height:0}
+.post-head{display:flex;align-items:center;gap:10px;padding:12px 56px 12px 14px;border-bottom:1px solid var(--line)}
+.post-head .mini{width:34px;height:34px;border-radius:50%;background:var(--pink);color:var(--wine);display:grid;place-items:center}
+.post-head b{direction:ltr}
+.post-cap{padding:14px;overflow:auto;flex:1;font-size:14px;white-space:pre-wrap}
+.post-foot{padding:10px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.post-foot .btn{padding:4px 12px;font-size:12px}
+@media(max-width:700px){.post-body{grid-template-columns:1fr}.ig-profile{gap:16px}.ig-avatar{width:70px;height:70px;font-size:30px}.ig-feed{gap:2px}}
 </style>
 </head>
 <body>
@@ -111,15 +146,14 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <span class="eyebrow">لباس خواب زنانه با عشق دوخته‌شده</span>
    <h1>آرامشِ شب‌های تو،<br><span>به سبک گلپوش</span></h1>
    <p>لباس خواب‌هایی لطیف و دوست‌داشتنی برای لحظه‌های استراحت شما؛ از مدل‌های آماده تا دوخت سفارشی متناسب با سلیقه و اندازه‌تان.</p>
-   <div class="hero-buttons"><a class="btn primary" href="#products">دیدن محصولات <span>←</span></a><a class="btn outline" href="#custom">سفارش دوخت سفارشی</a></div>
-   <div class="hero-notes"><span>♡ کیفیت و دوخت تمیز</span><span>♡ تنوع مدل و رنگ</span><span>♡ امکان سایز سفارشی</span></div>
+      <div class="hero-notes"><span>♡ کیفیت و دوخت تمیز</span><span>♡ تنوع مدل و رنگ</span><span>♡ امکان سایز سفارشی</span></div>
   </div>
   <div class="hero-art" aria-label="نمای تزئینی پارچه‌های لباس خواب"><div class="fabric-stack"><div class="fabric f1">♡ ✿ ♡</div><div class="fabric f2">✿ ♡ ✿</div><div class="fabric f3">♡ ✿ ♡</div><div class="fabric f4">♡</div></div></div>
  </div>
 </section>
 <section class="section" id="products">
  <div class="wrap">
-  <div class="section-head"><div><h2>محبوب‌های گلپوش</h2><p>مدل موردعلاقه‌ات رو پیدا کن و به سبد خرید اضافه کن.</p></div></div>
+  <div class="section-head"><div><h2>محبوب‌های گلپوش</h2><p>مدل موردعلاقه‌ات رو پیدا کن، سایز رو انتخاب کن و به سبد خرید اضافه کن.</p></div></div>
   <div class="toolbar">
    <div class="searchbox"><input id="searchInput" placeholder="جستجو در محصولات..." aria-label="جستجو در محصولات" oninput="onSearch()"><span>🔍</span></div>
    <div class="sortbox"><select id="sortSelect" aria-label="مرتب‌سازی" onchange="renderProducts()"><option value="default">مرتب‌سازی: پیش‌فرض</option><option value="cheap">ارزان‌ترین</option><option value="expensive">گران‌ترین</option><option value="discount">بیشترین تخفیف</option></select></div>
@@ -150,27 +184,32 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    </div>
  </div>
 </section>
-
-<section class="section" id="instagram" style="padding: 20px 0;">
+<section class="section ig-section" id="instagram">
  <div class="wrap">
-   <div class="ig-banner">
-     <h2>ما را در اینستاگرام دنبال کنید</h2>
-     <p>جدیدترین محصولات، تخفیف‌ها و پشت صحنه سفارشات را در پیج ما ببینید.</p>
-     <a class="btn" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">Follow @gol.pooshshop1 📷</a>
+   <div class="section-head" style="justify-content:center; align-items:center; text-align:center; flex-direction:column; margin-bottom:18px;">
+     <div><h2>ما را در اینستاگرام دنبال کنید</h2><p>جدیدترین محصولات و تخفیف‌ها را در پیج ما ببینید.</p></div>
    </div>
+   <a class="btn primary" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener" style="padding:12px 30px; font-size:15px;">Follow @gol.pooshshop1</a>
  </div>
 </section>
-
 <section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
 
+<!-- بخش پشت صحنه سفارشات -->
 <section class="section bts-section" id="behind-scenes">
- <div class="wrap">
-   <div class="section-head" style="justify-content:center; text-align:center; flex-direction:column;">
-     <div><h2>پشت صحنه سفارشات شما</h2><p>نگاهی به مراحل بسته‌بندی و آماده‌سازی سفارشات شما با عشق.</p></div>
-   </div>
-   <div class="bts-feed" id="btsFeed">
-     <div class="empty">در حال بارگذاری...</div>
-   </div>
+ <div class="wrap ig-wrap">
+  <div class="section-head" style="justify-content:center; align-items:center; text-align:center; flex-direction:column;">
+    <div><h2>پشت صحنه سفارشات شما</h2><p>نگاهی به مراحل بسته‌بندی و آماده‌سازی سفارش‌ها با عشق.</p></div>
+  </div>
+  <div class="ig-profile">
+    <div class="ig-ring"><div class="ig-avatar">✿</div></div>
+    <div class="ig-meta">
+      <div class="ig-top"><span class="ig-name">gol.pooshshop1</span><a class="btn primary ig-follow" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">دنبال‌کردن</a></div>
+      <div class="ig-stats"><b id="btsCount">۰</b> پست</div>
+      <div class="ig-bio"><b>گلپوش | لباس خواب زنانه</b><br>پشت‌صحنه بسته‌بندی و آماده‌سازی سفارش‌ها 🌸<br>دوخت سفارشی با اندازه دلخواه</div>
+    </div>
+  </div>
+  <div class="ig-tabsbar"><span>▦ پست‌ها</span></div>
+  <div class="ig-feed" id="btsGrid"><div class="empty" style="grid-column:1/-1">در حال بارگذاری...</div></div>
  </div>
 </section>
 
@@ -188,6 +227,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  <div class="copyright">© گلپوش — تمامی حقوق محفوظ است.</div>
 </div></footer>
 
+<!-- مودال سبد خرید -->
 <div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()">
  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
   <div class="modal-head"><h2 id="cartTitle">سبد خرید شما</h2><button class="close" onclick="closeCart()" aria-label="بستن">×</button></div>
@@ -215,22 +255,25 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </div>
 
+<!-- مودال جزئیات محصول -->
 <div class="overlay" id="productOverlay" onclick="if(event.target===this)closeProduct()">
- <div class="modal" role="dialog" aria-modal="true">
+ <div class="modal" role="dialog" aria-modal="true" aria-labelledby="pTitle">
   <div class="modal-head"><h2 id="pTitle">جزئیات محصول</h2><button class="close" onclick="closeProduct()" aria-label="بستن">×</button></div>
   <div id="productDetail"></div>
  </div>
 </div>
 
+<!-- مودال راهنمای سایز -->
 <div class="overlay" id="sizeGuideOverlay" onclick="if(event.target===this)closeSizeGuide()">
-  <div class="modal" style="width:min(500px,100%)">
-    <div class="modal-head"><h2>راهنمای انتخاب سایز 📏</h2><button class="close" onclick="closeSizeGuide()">×</button></div>
+  <div class="modal" role="dialog" aria-modal="true" style="width:min(500px,100%)">
+    <div class="modal-head"><h2>راهنمای انتخاب سایز 📏</h2><button class="close" onclick="closeSizeGuide()" aria-label="بستن">×</button></div>
     <div style="margin-top:15px; text-align:center;">
       <img id="sizeGuideImg" src="" alt="راهنمای سایز" style="max-width:100%; border-radius:15px; border:1px solid var(--line);">
     </div>
   </div>
 </div>
 
+<!-- مودال نتیجه ثبت سفارش -->
 <div class="overlay" id="doneOverlay" onclick="if(event.target===this)closeDone()">
  <div class="modal" role="dialog" aria-modal="true">
   <div class="modal-head"><h2>سفارش ثبت شد 🌸</h2><button class="close" onclick="closeDone()" aria-label="بستن">×</button></div>
@@ -238,15 +281,16 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </div>
 
+<!-- مودال پیگیری سفارش -->
 <div class="overlay" id="trackOverlay" onclick="if(event.target===this)closeTrack()">
-  <div class="modal" style="width:min(450px,100%)">
-    <div class="modal-head"><h2>پیگیری سفارش</h2><button class="close" onclick="closeTrack()">×</button></div>
+  <div class="modal" role="dialog" aria-modal="true" style="width:min(450px,100%)">
+    <div class="modal-head"><h2>پیگیری سفارش</h2><button class="close" onclick="closeTrack()" aria-label="بستن">×</button></div>
     <div style="margin-top:14px">
       <label class="field" style="margin-bottom:10px">کد سفارش (پیگیری) <span class="req">*</span>
-        <input id="trackId" type="number" placeholder="مثلاً 12" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
+        <input id="trackId" type="text" inputmode="numeric" placeholder="مثلاً ۱۲" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
       </label>
       <label class="field" style="margin-bottom:15px">شماره تماس ثبت شده <span class="req">*</span>
-        <input id="trackPhone" type="tel" placeholder="۰۹۱۲۱۲۳۴۵۶۷" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
+        <input id="trackPhone" type="tel" inputmode="tel" maxlength="11" placeholder="۰۹۱۲۱۲۳۴۵۶۷" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px">
       </label>
       <button class="btn primary" style="width:100%" onclick="checkTrack()">بررسی وضعیت</button>
       <div id="trackResult" style="margin-top:20px"></div>
@@ -254,11 +298,12 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   </div>
 </div>
 
+<!-- مودال ثبت نظر -->
 <div class="overlay" id="reviewOverlay" onclick="if(event.target===this)closeReviewForm()">
-  <div class="modal" style="width:min(450px,100%)">
-    <div class="modal-head"><h2>ثبت نظر یا سوال</h2><button class="close" onclick="closeReviewForm()">×</button></div>
+  <div class="modal" role="dialog" aria-modal="true" style="width:min(450px,100%)">
+    <div class="modal-head"><h2>ثبت نظر یا سوال</h2><button class="close" onclick="closeReviewForm()" aria-label="بستن">×</button></div>
     <div style="margin-top:14px; display:grid; gap:10px;">
-      <label class="field">نام شما <span class="req">*</span><input id="revName" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px"></label>
+      <label class="field">نام شما <span class="req">*</span><input id="revName" maxlength="60" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px"></label>
       <label class="field">امتیاز شما<select id="revRating" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px">
         <option value="5">⭐⭐⭐⭐⭐ (عالی)</option>
         <option value="4">⭐⭐⭐⭐ (خوب)</option>
@@ -266,22 +311,17 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
         <option value="2">⭐⭐ (ضعیف)</option>
         <option value="1">⭐ (بد)</option>
       </select></label>
-      <label class="field">متن نظر یا سوال <span class="req">*</span><textarea id="revText" rows="4" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;resize:vertical"></textarea></label>
-      <button class="btn primary" style="width:100%" onclick="submitReview()">ثبت نظر</button>
+      <label class="field">متن نظر یا سوال <span class="req">*</span><textarea id="revText" rows="4" maxlength="600" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;resize:vertical"></textarea></label>
+      <div class="hp" aria-hidden="true"><label>وب‌سایت<input id="revWebsite" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn primary" style="width:100%" id="revSubmitBtn" onclick="submitReview()">ثبت نظر</button>
       <p class="hint">نظر شما پس از بررسی توسط مدیریت نمایش داده می‌شود.</p>
     </div>
   </div>
 </div>
 
-<div id="zoomOverlay" onclick="if(event.target===this)closeZoom()">
-  <button class="close-zoom" onclick="closeZoom()">×</button>
-  <div id="zoomWrapper" onclick="if(event.target===this)closeZoom()">
-    <img id="zoomImg" src="" alt="زوم" onclick="event.stopPropagation();">
-  </div>
-</div>
-
+<!-- ورود مدیر -->
 <div class="overlay" id="adminLoginOverlay" onclick="if(event.target===this)closeAdminLogin()">
- <div class="modal" style="width:min(400px,100%)">
+ <div class="modal" role="dialog" aria-modal="true" style="width:min(400px,100%)">
   <div class="modal-head"><h2>ورود مدیر</h2><button class="close" onclick="closeAdminLogin()" aria-label="بستن">×</button></div>
   <div style="margin-top:14px">
    <input id="adminEmail" type="email" class="admin-field-input" placeholder="ایمیل مدیر" autocomplete="username" dir="ltr">
@@ -291,6 +331,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </div>
 
+<!-- پنل مدیریت -->
 <div class="admin-panel" id="adminPanel">
  <div class="admin-modal">
   <div class="modal-head"><h2>⚙️ پنل مدیریت گلپوش</h2><div class="admin-head-actions"><button class="btn outline" onclick="adminLogout()">خروج</button><button class="close" onclick="closeAdminPanel()" aria-label="بستن">×</button></div></div>
@@ -303,7 +344,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <button class="admin-tab" onclick="switchTab('settings')">⚙️ تنظیمات</button>
   </div>
   <div id="tab-list">
-   <div class="admin-note">✅ محصولات روی دیتابیس ذخیره می‌شوند. محصول «مخفی» فقط برای مدیر دیده می‌شود.</div>
+   <div class="admin-note">✅ محصولات روی دیتابیس ذخیره می‌شوند و همین‌جا برای همه‌ی بازدیدکننده‌ها اعمال می‌شوند. محصول «مخفی» فقط برای مدیر دیده می‌شود.</div>
+   <button class="btn primary" type="button" style="margin-top:12px" onclick="resetProductForm();switchTab('add')">➕ محصول جدید</button>
    <div class="admin-product-list" id="adminProductList"></div>
   </div>
   <div id="tab-add" style="display:none">
@@ -317,15 +359,10 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field full">توضیحات<input name="desc" maxlength="200"></label>
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
-    
-    <div class="field full" style="background:#fff8f6; padding:15px; border-radius:12px; border:1px dashed var(--rose);">
-      <span style="font-weight:bold; color:var(--wine); display:block; margin-bottom:10px;">📸 عکس‌های محصول (می‌توانید چند عکس انتخاب کنید)</span>
-      <input type="hidden" name="images_json">
-      <input type="file" accept="image/*" multiple onchange="uploadProductImages(this)" style="margin-bottom:10px; background:white; padding:10px; border-radius:8px; width:100%;">
-      <div id="imgPreviewContainer" style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;"></div>
-      <button type="button" class="btn outline" id="imgRemoveBtn" style="display:none;padding:6px 14px;font-size:12px;margin-top:10px" onclick="clearImagesPreview()">پاک کردن همه عکس‌ها</button>
-    </div>
-
+    <div class="field full"><span>عکس‌های محصول (تا ۸ عکس؛ عکس اول «کاور» است و روی کارت محصول نمایش داده می‌شود)</span>
+      <input type="file" accept="image/*" multiple onchange="uploadProductImages(this)">
+      <div id="imgPreview" class="img-thumbs"></div>
+      <span class="hint" id="imgCount"></span></div>
     <div class="actions">
       <button class="btn primary" type="submit" id="saveProductBtn">افزودن محصول</button>
       <button class="btn outline" type="button" onclick="resetProductForm()">پاک کردن فرم</button>
@@ -333,13 +370,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    </form>
   </div>
   <div id="tab-orders" style="display:none">
-   <div class="admin-note" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
-      <span>📦 سفارش‌ها مستقیماً از دیتابیس خوانده می‌شوند.</span>
-      <div>
-        <button class="btn primary" style="padding:4px 12px; font-size:12px;" onclick="exportToExcel()">📥 دانلود اکسل</button>
-        <button class="btn soft" style="padding:4px 12px;font-size:12px;" onclick="renderAdminOrders()">تازه‌سازی</button>
-      </div>
-   </div>
+   <div class="admin-note" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px"><span>📦 سفارش‌ها مستقیماً از دیتابیس خوانده می‌شوند.</span><span><button class="btn primary" style="padding:3px 12px;font-size:12px" onclick="exportToExcel()">📥 دانلود اکسل</button> <button class="btn soft" style="padding:3px 12px;font-size:12px" onclick="renderAdminOrders()">تازه‌سازی</button></span></div>
    <div class="admin-product-list" id="adminOrderList" style="max-height:none"></div>
   </div>
   <div id="tab-reviews" style="display:none">
@@ -350,7 +381,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <div class="admin-note">📸 عکس‌های پشت صحنه سفارشات را اینجا آپلود کنید.</div>
    <form id="btsForm" class="admin-form" onsubmit="addBTS(event)">
      <label class="field full">انتخاب عکس <input type="file" accept="image/*" id="btsImage" required></label>
-     <label class="field full">کپشن (اختیاری) <input type="text" id="btsCaption" maxlength="150" placeholder="مثلاً: بسته‌بندی سفارش امروز..."></label>
+     <label class="field full">کپشن (اختیاری) <input type="text" id="btsCaption" maxlength="100" placeholder="مثلاً: بسته‌بندی سفارش امروز..."></label>
      <div class="actions"><button class="btn primary" type="submit">آپلود و انتشار</button></div>
    </form>
    <div class="admin-product-list" id="adminBTSList" style="margin-top:15px;"></div>
@@ -359,28 +390,61 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <div class="admin-note">📏 در این بخش می‌توانید عکس راهنمای سایز را آپلود کنید. این عکس در سایت به همه نمایش داده می‌شود.</div>
    <div class="admin-form" style="display:flex; flex-direction:column; align-items:center; padding:20px;">
      <p style="margin-bottom:10px;">عکس فعلی راهنمای سایز:</p>
-     <img id="adminSizeGuidePreview" src="" alt="راهنمای سایز" style="max-width:100%; max-height:250px; border-radius:12px; border:1px solid var(--line); margin-bottom:15px;">
+     <img id="adminSizeGuidePreview" src="" alt="راهنمای سایز" style="max-width:100%; max-height:250px; border-radius:12px; border:1px solid var(--line); margin-bottom:15px; display:none">
+     <p id="adminSizeGuideEmpty" class="hint" style="margin-bottom:15px">هنوز عکسی آپلود نشده است.</p>
      <p style="margin-bottom:10px;">آپلود عکس جدید:</p>
      <input type="file" accept="image/*" onchange="uploadSizeGuide(this)" style="padding:10px; border:1px dashed var(--rose); border-radius:10px; background:var(--pink);">
    </div>
   </div>
  </div>
 </div>
+<div class="overlay" id="postOverlay" onclick="if(event.target===this)closePost()">
+ <div class="modal post-modal" role="dialog" aria-modal="true" aria-label="پست پشت‌صحنه">
+  <button class="close post-close" onclick="closePost()" aria-label="بستن">×</button>
+  <div class="post-body">
+   <div class="post-img" role="button" tabindex="0" aria-label="بزرگ‌نمایی عکس" onclick="openLightboxList([btsPosts[postIdx].url],0)"><img id="postImg" alt=""></div>
+   <div class="post-side">
+    <div class="post-head"><span class="mini">✿</span><b>gol.pooshshop1</b></div>
+    <div class="post-cap" id="postCap"></div>
+    <div class="post-foot"><span id="postDate"></span><span><button class="btn outline" type="button" onclick="postStep(-1)">قبلی</button> <span id="postPos"></span> <button class="btn outline" type="button" onclick="postStep(1)">بعدی</button></span></div>
+   </div>
+  </div>
+ </div>
+</div>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="نمایش بزرگ عکس">
+ <div class="lb-bar">
+  <button class="lb-btn" id="lbClose" type="button" onclick="closeLightbox()" aria-label="بستن">×</button>
+  <span id="lbCount"></span>
+  <div class="lb-tools"><button class="lb-btn" type="button" onclick="lbBtnZoom(1/1.4)" aria-label="کوچک‌نمایی">−</button><button class="lb-btn" type="button" onclick="lbReset()" aria-label="اندازه اصلی">⟲</button><button class="lb-btn" type="button" onclick="lbBtnZoom(1.4)" aria-label="بزرگ‌نمایی">+</button></div>
+ </div>
+ <div class="lb-main">
+  <div class="lb-stage" id="lbStage"><img id="lbImg" alt=""></div>
+  <button class="lb-btn lb-nav lb-prev" id="lbPrev" type="button" onclick="lbStep(-1)" aria-label="قبلی">›</button>
+  <button class="lb-btn lb-nav lb-next" id="lbNext" type="button" onclick="lbStep(1)" aria-label="بعدی">‹</button>
+ </div>
+ <div class="lb-hint">دو بار ضربه یا چرخ ماوس برای زوم • با دو انگشت بزرگ کن • بکش تا جابه‌جا شود</div>
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
 /* ================= تنظیمات دیتابیس ================= */
 const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_NIHwah7xe8Ti_tjVW901EQ_nP2-8xi0';
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
-let sizeGuideUrl = 'https://images.unsplash.com/photo-1529157179598-13d2b4b182a5?auto=format&fit=crop&w=600&q=80'; 
+const DEFAULT_SIZE_GUIDE = 'https://images.unsplash.com/photo-1529157179598-13d2b4b182a5?auto=format&fit=crop&w=600&q=80';
+let sizeGuideUrl = DEFAULT_SIZE_GUIDE, sizeGuideCustom = false, sizeGuideTried = false;
 
 /* ================= داده‌های پایه ================= */
-const SIZES = ["1", "2", "3", "4", "سفارشی"]; 
+
+// سایزها (۱، ۲، ۳، ۴ و سفارشی)
+const SIZES = ["1", "2", "3", "4", "سفارشی"];
+
 const MAX_QTY = 10;
+const MAX_IMAGES = 8;
 const LS_CART = "golpoosh_cart_v2";
+const LS_REVIEW_TS = "golpoosh_last_review";
+const REVIEW_COOLDOWN_MS = 60000;
 const STATUS_LABELS = {new:"جدید",processing:"در حال پردازش",shipped:"ارسال شد",done:"تکمیل شد",canceled:"لغو شد"};
 let products = [];
 let cart = loadCart();
@@ -391,11 +455,7 @@ let appliedCoupon = null;
 let orderKey = null;
 let lastMessage = "";
 let editingId = null;
-
-// کش برای محصولات (۳۰ ثانیه)
-let productsCache = null;
-let cacheTime = 0;
-
+let loadFailed = false;
 const fmt = n => new Intl.NumberFormat("fa-IR").format(n);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeColor = c => /^#[0-9a-f]{3,8}$/i.test(c || "") ? c : "#ed9fb5";
@@ -404,83 +464,85 @@ const $ = id => document.getElementById(id);
 function loadCart(){ try{ const c = JSON.parse(localStorage.getItem(LS_CART)); return (c && typeof c === "object") ? c : {} }catch(e){ return {} } }
 function saveCart(){ try{ localStorage.setItem(LS_CART, JSON.stringify(cart)) }catch(e){} }
 function uuid(){ if(window.crypto && crypto.randomUUID) return crypto.randomUUID(); return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => { const r = Math.random()*16|0; return (c==="x" ? r : (r&3|8)).toString(16) }); }
+function productLink(id){ return location.href.split("#")[0] + "#p" + id; }
 
 /* ================= بارگذاری داده‌ها ================= */
 function safeUrl(u){ u = String(u || "").trim(); return /^https:\/\/[^\s"'<>]+$/i.test(u) ? u : ""; }
-const fromRow = r => {
-  let imgs = r.images;
-  if(typeof imgs === 'string'){ try { imgs = JSON.parse(imgs); } catch(e) { imgs = []; } }
-  if(!Array.isArray(imgs)) imgs = [];
-  const mainImg = safeUrl(r.image_url);
-  if(mainImg && !imgs.includes(mainImg)) imgs.unshift(mainImg);
-  
-  return {id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", image: mainImg, images: imgs, active:r.active!==false};
+const parseImages = r => {
+  let a = r.images;
+  if(typeof a === "string"){ try{ a = JSON.parse(a) }catch(e){ a = [] } }
+  a = Array.isArray(a) ? a.map(safeUrl).filter(Boolean) : [];
+  const cover = safeUrl(r.image_url);
+  if(cover){ a = [cover].concat(a.filter(u => u !== cover)); }
+  return a.slice(0, MAX_IMAGES);
 };
+const fromRow = r => { const images = parseImages(r); return {id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", image:images[0]||"", images, active:r.active!==false}; };
+
+function applySizeGuideToAdmin(){
+  const img = $("adminSizeGuidePreview"), note = $("adminSizeGuideEmpty");
+  img.src = sizeGuideUrl; img.style.display = "block";
+  note.style.display = sizeGuideCustom ? "none" : "block";
+  note.textContent = "این عکس فقط نمونه است؛ عکس راهنمای سایز واقعی خودت را آپلود کن.";
+}
 
 async function loadSettings() {
   if(!sb) return;
-  const { data, error } = await sb.from("settings").select("size_guide_image").eq("id", 1).single();
-  if(!error && data && data.size_guide_image) {
-    sizeGuideUrl = data.size_guide_image;
-    $("adminSizeGuidePreview").src = sizeGuideUrl;
-  }
+  try{
+    const { data, error } = await sb.from("settings").select("size_guide_image").eq("id", 1).single();
+    { const u = (!error && data) ? safeUrl(data.size_guide_image) : ""; if(u){ sizeGuideUrl = u; sizeGuideCustom = true; } }
+  }catch(e){ console.error(e) }
+  applySizeGuideToAdmin();
 }
 
 async function loadProducts(){
-  // استفاده از کش (۳۰ ثانیه)
-  if (productsCache && (Date.now() - cacheTime < 30000)) {
-    products = productsCache;
-    return true;
-  }
-  
+  loadFailed = false;
   if(sb){
     try{
-      const { data, error } = await sb.from("products")
-        .select("id,name,category,price,old_price,description,color,tag,image_url,images,active")
-        .order("id");
-        
-      if(!error && Array.isArray(data) && data.length){ 
-        products = data.map(fromRow); 
-        productsCache = products;
-        cacheTime = Date.now();
-        return true 
-      }
+      const { data, error } = await sb.from("products").select("*").order("id");
+      if(!error && Array.isArray(data)){ products = data.map(fromRow); return true }
       if(error) console.error("products:", error);
     }catch(e){ console.error(e) }
   }
-  products = []; // دیگر هیچ محصول پیش‌فرضی وجود ندارد
+  loadFailed = true; products = []; return false;
+}
+async function retryLoad(){
+  $("productsGrid").innerHTML = '<div class="empty">در حال بارگذاری محصولات... 🌸</div>';
+  await loadProducts(); cleanCart(); renderProducts(); updateCart();
+}
+
+let btsPosts = [], postIdx = 0;
+async function loadBTS() {
+  if(!sb) return;
+  const grid = $("btsGrid");
+  const { data, error, count } = await sb.from("bts").select("*", {count:"exact"}).order("created_at", {ascending: false}).limit(12);
+  if(error || !data || !data.length) {
+    btsPosts = []; $("btsCount").textContent = fmt(0);
+    grid.innerHTML = '<div class="empty" style="grid-column:1/-1">به‌زودی عکس‌های پشت‌صحنه اینجا قرار می‌گیرد. 🌸</div>';
+    return;
+  }
+  btsPosts = data.map(d => ({url: safeUrl(d.image_url), caption: d.caption || "", at: d.created_at})).filter(p => p.url);
+  $("btsCount").textContent = fmt(typeof count === "number" ? count : btsPosts.length);
+  grid.innerHTML = btsPosts.map((p, i) => `<button type="button" class="ig-tile" onclick="openPost(${i})" aria-label="${esc(p.caption || ("پست " + (i + 1)))}"><img src="${esc(p.url)}" alt="${esc(p.caption || "پشت صحنه")}" loading="lazy"><span class="ov">${p.caption ? esc(p.caption.slice(0, 60)) : "🔍"}</span></button>`).join("");
+}
+function openPost(i){ postIdx = i; renderPost(); openOverlay("postOverlay"); }
+function renderPost(){
+  const p = btsPosts[postIdx]; if(!p) return;
+  $("postImg").src = p.url; $("postImg").alt = p.caption || "پشت صحنه";
+  $("postCap").innerHTML = '<b dir="ltr">gol.pooshshop1</b> ' + esc(p.caption || "");
+  $("postDate").textContent = p.at ? new Date(p.at).toLocaleDateString("fa-IR") : "";
+  $("postPos").textContent = `${fmt(postIdx + 1)} از ${fmt(btsPosts.length)}`;
+}
+function postStep(d){ const n = btsPosts.length; if(n < 2) return; postIdx = (postIdx + d + n) % n; renderPost(); }
+function closePost(){ closeOverlay("postOverlay") }
+function postHandleKey(e){
+  if(!$("postOverlay").classList.contains("show") || $("lightbox").classList.contains("show")) return false;
+  if(e.key === "ArrowLeft"){ postStep(1); return true }
+  if(e.key === "ArrowRight"){ postStep(-1); return true }
   return false;
 }
 
-async function loadBTS() {
-  if(!sb) return;
-  const feed = $("btsFeed");
-  const { data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false}).limit(10);
-  if(error || !data || !data.length) {
-    feed.innerHTML = '<div class="empty">به زودی عکس‌های پشت صحنه اینجا قرار می‌گیرد. 🌸</div>';
-    return;
-  }
-  feed.innerHTML = data.map(item => {
-    const d = item.created_at ? new Date(item.created_at).toLocaleDateString('fa-IR') : '';
-    return `
-    <div class="bts-card">
-      <div class="bts-header">
-        <div class="bts-avatar">✿</div>
-        <div class="bts-user">golpooshshop1</div>
-      </div>
-      <img src="${item.image_url ? esc(item.image_url) : ''}" alt="${esc(item.caption || 'پشت صحنه')}" class="bts-image" loading="lazy">
-      <div class="bts-actions">
-        <span>❤️</span><span>💬</span><span>📤</span>
-      </div>
-      <div class="bts-caption">
-        <strong>golpooshshop1</strong> ${esc(item.caption || 'پشت صحنه سفارشات گلپوش')}
-      </div>
-      <span class="bts-time">${d}</span>
-    </div>
-  `}).join("");
-}
-
 function cleanCart(){
+  if(loadFailed) return;
   Object.keys(cart).forEach(id => {
     const p = products.find(x => x.id === Number(id));
     if(!p || !p.active || typeof cart[id] !== "object"){ delete cart[id]; return }
@@ -504,36 +566,26 @@ function getFiltered(){
   return list;
 }
 function onSearch(){ searchTerm = $("searchInput").value.trim(); renderProducts(); }
-
-// اصلاح باگ انتخاب سایز (حالت دقیقا مثل کد اولیه)
-function sizeButtons(id, sz){ 
-  return SIZES.map(s => {
-    const isSel = (s === sz) ? "sel" : "";
-    return `<button type="button" class="size-opt ${isSel}" data-sz-pid="${id}" data-size="${esc(s)}" onclick="pickSize(${id},'${esc(s)}')">${esc(s)}</button>`;
-  }).join(""); 
-}
-
-function shareParts(p){ return { url: encodeURIComponent(location.href.split("#")[0] + "#products"), text: encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`) }; }
+function sizeButtons(id, sz){ return SIZES.map(s => `<button type="button" class="size-opt ${s===sz?"sel":""}" data-sz-pid="${id}" data-size="${esc(s)}" onclick="pickSize(${id},'${esc(s)}')">${esc(s)}</button>`).join(""); }
+function shareParts(p){ return { url: encodeURIComponent(productLink(p.id)), text: encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`) }; }
 
 function renderProducts(){
   const grid = $("productsGrid");
   const shown = getFiltered();
-  if(!shown.length){ grid.innerHTML = '<div class="empty">محصولی برای نمایش وجود ندارد 🌷</div>'; return }
+  if(!shown.length){
+    if(loadFailed){ grid.innerHTML = '<div class="empty">اتصال به سرور برقرار نشد 🌸<br><button class="btn primary" type="button" style="margin-top:12px" onclick="retryLoad()">تلاش دوباره</button></div>'; return }
+    grid.innerHTML = products.length ? '<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>' : '<div class="empty">هنوز محصولی اضافه نشده است 🌷</div>'; return
+  }
   grid.innerHTML = shown.map(p => {
-    // سایز انتخاب شده توسط کاربر (اگر انتخاب نکرده باشد، آندفایند است)
-    const sz = selectedSize[p.id];
+    const sz = selectedSize[p.id] || "";
     const sh = shareParts(p);
-    
-    const safeImages = Array.isArray(p.images) ? p.images : [];
-    const mainImg = safeImages.length > 0 ? safeImages[0] : (p.image || "");
-    
     return `<article class="product">
-      <div class="product-visual ${mainImg ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" onclick="openProduct(${p.id})">${mainImg ? `<img src="${esc(mainImg)}" alt="${esc(p.name)}" loading="lazy" style="z-index:2;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">` : ""}<span class="tag">${esc(p.tag)}</span></div>
+      <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" role="button" tabindex="0" aria-label="مشاهده ${esc(p.name)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span>${p.images.length > 1 ? `<span class="pcount">🖼 ${fmt(p.images.length)}</span>` : ""}</div>
       <div class="product-info">
-        <h3 onclick="openProduct(${p.id})">${esc(p.name)}</h3>
+        <h3 role="button" tabindex="0" onclick="openProduct(${p.id})">${esc(p.name)}</h3>
         <p class="desc">${esc(p.desc)}</p>
         <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${p.old > p.price ? `<span class="oldprice">${fmt(p.old)}</span>` : ""}</div>
-        <div class="sizes">${sizeButtons(p.id, sz)}</div>
+        <div class="sizes" data-sizes-pid="${p.id}" role="group" aria-label="انتخاب سایز">${sizeButtons(p.id, sz)}</div>
         <div class="share-row">
           <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener" title="اشتراک در واتساپ">🟢 واتساپ</a>
           <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener" title="اشتراک در تلگرام">🔵 تلگرام</a>
@@ -544,42 +596,29 @@ function renderProducts(){
     </article>`;
   }).join("");
 }
-
-// اصلاح نهایی تابع انتخاب سایز
-function pickSize(pid, size){ 
-  selectedSize[pid] = size; 
-  document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => {
-    b.classList.toggle("sel", b.dataset.size === size);
-  }); 
+function pickSize(pid, size){
+  selectedSize[pid] = size;
+  document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => { b.classList.toggle("sel", b.dataset.size === size); b.classList.remove("need"); });
 }
-
+function flagSizeNeeded(id){
+  document.querySelectorAll(`[data-sz-pid="${id}"]`).forEach(b => b.classList.add("need"));
+}
 function copyText(txt, okMsg){ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(() => showToast(okMsg)).catch(() => showToast("کپی نشد؛ دستی کپی کن")); } else showToast("کپی نشد؛ دستی کپی کن"); }
-function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${location.href.split("#")[0]}#products`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
+function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${productLink(id)}`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
 
 /* ================= مودال جزئیات ================= */
 function openProduct(id){
   const p = products.find(x => x.id === id); if(!p) return;
-  const sz = selectedSize[id]; // اگر انتخاب نشده بود undefined است
+  const sz = selectedSize[id] || "";
   const off = p.old > p.price ? ` <span class="oldprice">${fmt(p.old)}</span>` : "";
   const sh = shareParts(p);
-  
-  const safeImages = Array.isArray(p.images) ? p.images : [];
-  const mainImg = safeImages.length > 0 ? safeImages[0] : (p.image || "");
-  
-  const thumbsHtml = safeImages.length > 1 ? `
-    <div class="gallery-thumbs">
-      ${safeImages.map((img, i) => `<img src="${esc(img)}" class="gallery-thumb ${i===0?'active':''}" onclick="changeMainImage(this, '${esc(img)}')">`).join("")}
-    </div>
-  ` : "";
-
+  galleryIdx = 0;
   $("pTitle").textContent = p.name;
   $("productDetail").innerHTML = `
     <div class="pdetail-grid">
-      <div>
-        <div class="pdetail-visual ${mainImg ? "has-img" : ""}" id="mainProductImgContainer" style="--cloth:${safeColor(p.color)}" onclick="openZoom('${esc(mainImg)}')">
-          ${mainImg ? `<img src="${esc(mainImg)}" id="mainProductImg" alt="${esc(p.name)}">` : ""}
-        </div>
-        ${thumbsHtml}
+      <div class="pdetail-left">
+        <div class="pdetail-visual ${p.image ? "has-img" : ""}" id="galMain" style="--cloth:${safeColor(p.color)}" ${p.image ? `role="button" tabindex="0" aria-label="بزرگ‌نمایی عکس" onclick="openLightbox(${id},galleryIdx)"` : ""}>${p.image ? `<img id="galImg" src="${esc(p.image)}" alt="${esc(p.name)}">` : ""}</div>
+        ${p.images.length > 1 ? `<div class="gallery-thumbs">${p.images.map((u, i) => `<button type="button" class="${i === 0 ? "sel" : ""}" data-gi="${i}" onclick="setGallery(${id},${i})" aria-label="عکس ${fmt(i + 1)}"><img src="${esc(u)}" alt=""></button>`).join("")}</div>` : ""}
       </div>
       <div class="pdetail-info">
         <h3>${esc(p.name)}</h3>
@@ -587,143 +626,66 @@ function openProduct(id){
         <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${off}</div>
         <p style="font-size:12px;color:var(--muted);margin:8px 0 0">دسته‌بندی: ${esc(p.category)}</p>
         <div style="margin-top:12px;font-size:13px;color:#754758">انتخاب سایز:</div>
-        <div class="sizes">${sizeButtons(id, sz)}</div>
+        <div class="sizes" role="group" aria-label="انتخاب سایز">${sizeButtons(id, sz)}</div>
         <div class="share-row" style="margin-top:12px;justify-content:flex-start">
           <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener">🟢 واتساپ</a>
           <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener">🔵 تلگرام</a>
           <button type="button" class="share-btn" onclick="copyForInstagram(${id})">🟣 اینستاگرام</button>
         </div>
-        <button class="btn primary add" onclick="addToCart(${id});">افزودن به سبد خرید</button>
+        <button class="btn primary add" onclick="if(addToCart(${id}))closeProduct()">افزودن به سبد خرید</button>
       </div>
     </div>`;
   openOverlay("productOverlay");
 }
-
-function changeMainImage(el, url){
-  document.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  const img = document.getElementById('mainProductImg');
-  if(img) img.src = url;
-  const container = document.getElementById('mainProductImgContainer');
-  if(container) container.setAttribute('onclick', `openZoom('${url}')`);
-}
-
 function closeProduct(){ closeOverlay("productOverlay") }
 
-/* ================= سیستم زوم و پن ================= */
-let scale = 1;
-let panning = false;
-let pointX = 0;
-let pointY = 0;
-let start = { x: 0, y: 0 };
-const zoomImg = document.getElementById("zoomImg");
-
-function setTransform() {
-  zoomImg.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
-}
-
-function openZoom(url){
-  if(!url) return;
-  zoomImg.src = url;
-  scale = 1; pointX = 0; pointY = 0; setTransform();
-  $("zoomOverlay").classList.add("show");
-  document.body.style.overflow = "hidden";
-}
-
-function closeZoom(){
-  $("zoomOverlay").classList.remove("show");
-  document.body.style.overflow = "";
-}
-
-const zoomWrapper = document.getElementById("zoomWrapper");
-
-zoomWrapper.onmousedown = function (e) {
-  if (e.target !== zoomImg && e.target !== zoomWrapper) return;
-  e.preventDefault();
-  start = { x: e.clientX - pointX, y: e.clientY - pointY };
-  panning = true;
-};
-zoomWrapper.onmouseup = function () { panning = false; };
-zoomWrapper.onmouseleave = function () { panning = false; };
-zoomWrapper.onmousemove = function (e) {
-  if (!panning) return;
-  e.preventDefault();
-  pointX = (e.clientX - start.x);
-  pointY = (e.clientY - start.y);
-  setTransform();
-};
-zoomWrapper.onwheel = function (e) {
-  if (e.target !== zoomImg && e.target !== zoomWrapper) return;
-  e.preventDefault();
-  let xs = (e.clientX - pointX) / scale;
-  let ys = (e.clientY - pointY) / scale;
-  let delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
-  (delta > 0) ? (scale *= 1.2) : (scale /= 1.2);
-  pointX = e.clientX - xs * scale;
-  pointY = e.clientY - ys * scale;
-  setTransform();
-};
-
-let initialDistance = 0;
-zoomWrapper.ontouchstart = function(e) {
-  if (e.touches.length === 2) {
-    initialDistance = Math.hypot(
-      e.touches[0].pageX - e.touches[1].pageX,
-      e.touches[0].pageY - e.touches[1].pageY
-    );
-  } else if (e.touches.length === 1) {
-    panning = true;
-    start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY };
-  }
-};
-zoomWrapper.ontouchmove = function(e) {
-  e.preventDefault();
-  if (e.touches.length === 2) {
-    let dist = Math.hypot(
-      e.touches[0].pageX - e.touches[1].pageX,
-      e.touches[0].pageY - e.touches[1].pageY
-    );
-    if (initialDistance > 0) {
-      let k = dist / initialDistance;
-      scale *= k;
-      setTransform();
-      initialDistance = dist;
-    }
-  } else if (e.touches.length === 1 && panning) {
-    pointX = e.touches[0].clientX - start.x;
-    pointY = e.touches[0].clientY - start.y;
-    setTransform();
-  }
-};
-zoomWrapper.ontouchend = function() {
-  panning = false;
-  initialDistance = 0;
-};
-
 /* ================= راهنمای سایز ================= */
-function openSizeGuide() { $("sizeGuideImg").src = sizeGuideUrl; openOverlay("sizeGuideOverlay"); }
+async function openSizeGuide() {
+  if(!sizeGuideCustom && !sizeGuideTried && sb){ sizeGuideTried = true; await loadSettings(); }
+  const img = $("sizeGuideImg");
+  img.onerror = () => showToast("عکس راهنما بارگذاری نشد؛ دوباره تلاش کن");
+  img.src = sizeGuideUrl;
+  openOverlay("sizeGuideOverlay");
+}
 function closeSizeGuide() { closeOverlay("sizeGuideOverlay"); }
 
 /* ================= مودال‌ها ================= */
-function openOverlay(id){ $(id).classList.add("show"); document.body.style.overflow = "hidden"; const c = $(id).querySelector(".close"); if(c) c.focus({preventScroll:true}); }
-function closeOverlay(id){ $(id).classList.remove("show"); if(!document.querySelector(".overlay.show,.admin-panel.show")) document.body.style.overflow = ""; }
-document.addEventListener("keydown", e => { if(e.key !== "Escape") return; ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay","zoomOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false }); });
+let lastFocus = null;
+function openOverlay(id){ lastFocus = document.activeElement; $(id).classList.add("show"); document.body.style.overflow = "hidden"; const c = $(id).querySelector(".close"); if(c) c.focus({preventScroll:true}); }
+function closeOverlay(id){ $(id).classList.remove("show"); if(!document.querySelector(".overlay.show,.admin-panel.show")){ document.body.style.overflow = ""; if(lastFocus && document.contains(lastFocus)){ try{ lastFocus.focus({preventScroll:true}) }catch(e){} } } }
+const FOCUSABLE = 'a[href],button:not([disabled]),input:not([disabled]):not([tabindex="-1"]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+document.addEventListener("keydown", e => {
+  if(lbHandleKey(e) || postHandleKey(e)) return;
+  // دسترسی‌پذیری: Enter/Space روی عناصر role=button
+  if((e.key === "Enter" || e.key === " ") && e.target && e.target.matches && e.target.matches('[role="button"]')){ e.preventDefault(); e.target.click(); return; }
+  // Escape
+  if(e.key === "Escape"){
+    ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay","postOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false });
+    return;
+  }
+  // قفل فوکوس داخل مودال باز
+  if(e.key === "Tab"){
+    const open = [...document.querySelectorAll(".overlay.show,.admin-panel.show,.lightbox.show")].pop();
+    if(!open) return;
+    const items = [...open.querySelectorAll(FOCUSABLE)].filter(el => el.offsetParent !== null);
+    if(!items.length) return;
+    const first = items[0], last = items[items.length - 1];
+    if(!open.contains(document.activeElement)){ e.preventDefault(); first.focus(); }
+    else if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+    else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+  }
+});
 
 /* ================= سبد ================= */
 function addToCart(id){
-  const p = products.find(x => x.id === id); if(!p) return;
-  const size = selectedSize[id]; // اگر کاربر سایز انتخاب نکرده باشد، undefined است
-  
-  // باگ‌گیری شرط سایز: اگر سایز انتخاب نشده بود، ارور بده و اجازه اضافه شدن نده
-  if(!size){ 
-    showToast("لطفاً ابتدا سایز مورد نظر خود را انتخاب کنید 🌸"); 
-    return; 
-  }
-
+  const p = products.find(x => x.id === id); if(!p) return false;
+  const size = selectedSize[id];
+  if(!size){ flagSizeNeeded(id); showToast("اول سایز را انتخاب کن 📏"); return false }
   if(!cart[id]) cart[id] = {};
-  if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return }
+  if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return false }
   cart[id][size] = (cart[id][size] || 0) + 1;
   saveCart(); updateCart(); showToast(`«${p.name}» سایز ${size} اضافه شد 🌸`);
+  return true;
 }
 function cartLines(){ const out = []; Object.entries(cart).forEach(([id, sizes]) => { const p = products.find(x => x.id === Number(id)); if(!p) return; Object.entries(sizes).forEach(([size, q]) => { if(q > 0) out.push({p, size, q}) }); }); return out; }
 function updateCart(){
@@ -755,7 +717,7 @@ async function applyCoupon(){
   btn.disabled = false;
   if(error || !data){ appliedCoupon = null; msg.className = "coupon-msg err"; msg.textContent = error ? "خطا در بررسی کد؛ دوباره تلاش کن." : "کد تخفیف معتبر نیست."; updateCart(); return }
   appliedCoupon = {code, percent: Number(data.percent) || 0, label: data.label || "تخفیف"};
-  msg.className = "coupon-msg ok"; msg.textContent = "✅ کد اعمال شد: " + appliedCoupon.label;
+  msg.className = "coupon-msg ok"; msg.textContent = "✅ کد اعمال شد: " + appliedCoupon.label + " (استفاده‌ی نهایی هنگام ثبت سفارش بررسی می‌شود)";
   updateCart();
 }
 function openCart(){ updateCart(); openOverlay("cartOverlay") }
@@ -769,8 +731,8 @@ function showToast(s){ const t = $("toast"); t.textContent = s; t.style.display 
 document.querySelectorAll(".filter").forEach(b => b.addEventListener("click", () => { activeFilter = b.dataset.filter; document.querySelectorAll(".filter").forEach(x => x.classList.toggle("active", x === b)); renderProducts(); }));
 
 /* ================= ثبت سفارش ================= */
-const ERROR_TEXT = { invalid_phone: "شماره تماس معتبر نیست.", invalid_postal: "کد پستی باید ۱۰ رقم باشد.", invalid_name: "نام را کامل وارد کن.", invalid_address: "آدرس را کامل‌تر بنویس.", invalid_custom: "توضیح اندازه خیلی طولانی است.", custom_required: "برای سایز سفارشی، اندازه‌ها را بنویس.", empty_cart: "سبد خرید خالی است.", bad_item: "یکی از محصولات سبد دیگر موجود نیست.", bad_coupon: "کد تخفیف معتبر نیست.", coupon_used: "این شماره قبلاً از کد تخفیف استفاده کرده است ❌", too_many: "تعداد سفارش‌های این شماره زیاد بوده." };
-function errorText(err){ const m = String(err && err.message || ""); const k = Object.keys(ERROR_TEXT).find(k => m.includes(k)); return k ? ERROR_TEXT[k] : "خطا در ثبت سفارش. دوباره تلاش کن."; }
+const ERROR_TEXT = { invalid_phone: "شماره تماس معتبر نیست (مثال: ۰۹۱۲۱۲۳۴۵۶۷).", invalid_postal: "کد پستی باید ۱۰ رقم باشد.", invalid_name: "نام را کامل وارد کن.", invalid_address: "آدرس را کامل‌تر بنویس.", invalid_custom: "توضیح اندازه خیلی طولانی است.", custom_required: "برای سایز سفارشی، اندازه‌ها را بنویس.", empty_cart: "سبد خرید خالی است.", bad_item: "یکی از محصولات سبد دیگر موجود نیست؛ سبد را بازبینی کن.", bad_coupon: "کد تخفیف معتبر نیست.", coupon_used: "این شماره قبلاً از کد تخفیف استفاده کرده است ❌", too_many: "درخواست‌های سفارش در این لحظه زیاد است؛ چند دقیقه بعد دوباره تلاش کن یا از طریق پیام‌رسان سفارش بده." };
+function errorText(err){ const m = String(err && err.message || ""); const k = Object.keys(ERROR_TEXT).find(k => m.includes(k)); return k ? ERROR_TEXT[k] : "خطا در ثبت سفارش. اینترنت را بررسی کن و دوباره تلاش کن."; }
 
 $("orderForm").addEventListener("submit", async function(e){
   e.preventDefault();
@@ -778,7 +740,7 @@ $("orderForm").addEventListener("submit", async function(e){
   if(f.get("website")) return;
   const lines = cartLines();
   if(!lines.length){ showToast("اول یک محصول به سبد خرید اضافه کن"); return }
-  if(!sb){ alert("ارتباط با سرور برقرار نیست."); return }
+  if(!sb){ alert("ارتباط با سرور برقرار نیست. صفحه را رفرش کن."); return }
   const name = String(f.get("name")).trim();
   const phone = toLatin(f.get("phone")).replace(/\s/g, "");
   const address = String(f.get("address")).trim();
@@ -821,28 +783,46 @@ function openTrack(){
 }
 function closeTrack(){ closeOverlay('trackOverlay'); }
 async function checkTrack(){
-  const id = $('trackId').value;
-  const phone = $('trackPhone').value;
+  const idRaw = toLatin($('trackId').value).replace(/\s/g, "");
+  const phone = toLatin($('trackPhone').value).replace(/\s/g, "");
   const res = $('trackResult');
-  
-  if(!id || !phone){ res.innerHTML = '<p class="hint" style="color:#c62828">لطفاً کد سفارش و شماره موبایل را وارد کنید.</p>'; return; }
+
+  if(!idRaw || !phone){
+    res.innerHTML = '<p class="hint" style="color:#c62828">لطفاً کد سفارش و شماره موبایل را وارد کنید.</p>';
+    return;
+  }
+  if(!/^\d+$/.test(idRaw)){
+    res.innerHTML = '<p class="hint" style="color:#c62828">کد سفارش باید فقط عدد باشد.</p>';
+    return;
+  }
+  if(!/^09\d{9}$/.test(phone)){
+    res.innerHTML = '<p class="hint" style="color:#c62828">شماره تماس معتبر نیست (مثال: ۰۹۱۲۱۲۳۴۵۶۷).</p>';
+    return;
+  }
+  if(!sb){
+    res.innerHTML = '<p class="hint" style="color:#c62828">ارتباط با سرور برقرار نیست. صفحه را رفرش کنید.</p>';
+    return;
+  }
   res.innerHTML = '<p class="hint">در حال بررسی... ⏳</p>';
-  
-  const { data, error } = await sb.rpc('track_order', { p_order_id: parseInt(id), p_phone: phone });
-  
-  if(error || !data){ res.innerHTML = '<p class="hint" style="color:#c62828">سفارشی با این مشخصات پیدا نشد.</p>'; return; }
-  
-  const statusLabels = { new: "جدید ⏳", processing: "در حال پردازش 📦", shipped: "ارسال شده 🚚", done: "تکمیل شده ✅", canceled: "لغو شده ❌" };
+
+  const { data, error } = await sb.rpc('track_order', { p_order_id: parseInt(idRaw, 10), p_phone: phone });
+
+  if(error || !data){
+    res.innerHTML = '<p class="hint" style="color:#c62828">سفارشی با این مشخصات پیدا نشد. لطفاً کد و شماره را چک کنید.</p>';
+    return;
+  }
+
+  const statusLabels = { new: "جدید (در انتظار بررسی) ⏳", processing: "در حال پردازش 📦", shipped: "ارسال شده 🚚", done: "تکمیل شده ✅", canceled: "لغو شده ❌" };
   const st = statusLabels[data.status] || data.status;
   const date = new Date(data.created_at).toLocaleDateString('fa-IR');
   const price = new Intl.NumberFormat('fa-IR').format(data.total_price);
-  
+
   res.innerHTML = `
     <div style="background:#fff; border:1px solid var(--line); border-radius:15px; padding:15px; box-shadow:0 4px 15px rgba(0,0,0,0.05); text-align:center">
-      <strong style="color:var(--wine); font-size:18px">سفارش #${data.id}</strong>
-      <div class="hint" style="margin-bottom:10px">تاریخ ثبت: ${date}</div>
-      <div style="margin-bottom:15px"><span style="display:inline-block; background:var(--pink); color:var(--wine); padding:5px 15px; border-radius:20px; font-weight:bold">${st}</span></div>
-      <div style="font-size:13px; color:var(--ink)"><strong>مبلغ کل:</strong> ${price} تومان</div>
+      <strong style="color:var(--wine); font-size:18px">سفارش #${esc(data.id)}</strong>
+      <div class="hint" style="margin-bottom:10px">تاریخ ثبت: ${esc(date)}</div>
+      <div style="margin-bottom:15px"><span style="display:inline-block; background:var(--pink); color:var(--wine); padding:5px 15px; border-radius:20px; font-weight:bold">${esc(st)}</span></div>
+      <div style="font-size:13px; color:var(--ink)"><strong>مبلغ کل:</strong> ${esc(price)} تومان</div>
     </div>
   `;
 }
@@ -853,33 +833,58 @@ async function loadReviews() {
   const grid = $("reviewGrid");
   grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
   const { data, error } = await sb.from("reviews").select("*").eq("approved", true).order("created_at", {ascending: false}).limit(6);
-  if(error || !data) { grid.innerHTML = '<div class="empty">خطا در دریافت نظرات!</div>'; return; }
-  if(!data.length) { grid.innerHTML = '<div class="empty">هنوز نظری ثبت نشده است. اولین نفر باشید! 🌸</div>'; return; }
-  grid.innerHTML = data.map(r => `
+  if(error || !data) {
+    grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
+    return;
+  }
+  if(!data.length) {
+    grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
+    return;
+  }
+  grid.innerHTML = data.map(r => {
+    const rt = Math.min(5, Math.max(0, Number(r.rating) || 0));
+    return `
     <div class="review">
-      <div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5-r.rating)}</div>
+      <div class="stars">${'★'.repeat(rt)}${'☆'.repeat(5-rt)}</div>
       <p>«${esc(r.text)}»</p>
       <div class="who">— ${esc(r.name)}</div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 function openReviewForm() {
   $('revName').value = '';
   $('revText').value = '';
   $('revRating').value = '5';
+  $('revWebsite').value = '';
   openOverlay('reviewOverlay');
 }
 function closeReviewForm() { closeOverlay('reviewOverlay'); }
 
 async function submitReview() {
+  if($('revWebsite').value){ closeReviewForm(); return; } // honeypot
   const name = $('revName').value.trim();
   const text = $('revText').value.trim();
-  const rating = parseInt($('revRating').value);
+  let rating = parseInt($('revRating').value, 10);
+  if(!(rating >= 1 && rating <= 5)) rating = 5;
   if(!name || !text) { showToast('لطفاً نام و متن نظر را وارد کنید'); return; }
+  if(text.length < 3) { showToast('متن نظر خیلی کوتاه است'); return; }
   if(!sb) { showToast('ارتباط با سرور برقرار نیست'); return; }
-  const { error } = await sb.from('reviews').insert([{ name, text, rating, approved: false }]);
-  if(error) { showToast('خطا در ثبت نظر ❌'); return; }
+
+  // محدودیت ساده سمت کاربر (محافظت واقعی باید در دیتابیس باشد)
+  let last = 0; try{ last = Number(localStorage.getItem(LS_REVIEW_TS)) || 0 }catch(e){}
+  const wait = REVIEW_COOLDOWN_MS - (Date.now() - last);
+  if(wait > 0){ showToast(`چند لحظه صبر کن و دوباره تلاش کن (${fmt(Math.ceil(wait/1000))} ثانیه)`); return; }
+
+  const btn = $('revSubmitBtn'); btn.disabled = true;
+  const { error } = await sb.from('reviews').insert([{ name: name.slice(0, 60), text: text.slice(0, 600), rating, approved: false }]);
+  btn.disabled = false;
+  if(error) {
+    console.error(error);
+    showToast('خطا در ثبت نظر ❌');
+    return;
+  }
+  try{ localStorage.setItem(LS_REVIEW_TS, String(Date.now())) }catch(e){}
   showToast('نظر شما ثبت شد و پس از تایید مدیر نمایش داده می‌شود 🌸');
   closeReviewForm();
 }
@@ -888,6 +893,7 @@ async function submitReview() {
 let brandClicks = 0, brandTimer = null;
 $("brandLogo").addEventListener("click", function(e){
   e.preventDefault();
+  window.scrollTo({top:0, behavior:"smooth"});
   brandClicks++;
   clearTimeout(brandTimer);
   brandTimer = setTimeout(() => brandClicks = 0, 1500);
@@ -904,9 +910,9 @@ async function checkAdminPass(){
   const btn = $("adminLoginBtn"); btn.disabled = true;
   const { error } = await sb.auth.signInWithPassword({email, password});
   if(error || !(await isAdminSession())){ if(!error) await sb.auth.signOut(); btn.disabled = false; showToast("ایمیل یا رمز اشتباهه ❌"); return; }
-  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); openAdminPanel();
+  btn.disabled = false; $("adminPass").value = ""; closeAdminLogin(); await Promise.all([loadSettings(), loadProducts()]); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); openAdminPanel();
 }
-async function adminLogout(){ if(sb) await sb.auth.signOut(); closeAdminPanel(); await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); showToast("از پنل خارج شدی"); }
+async function adminLogout(){ if(sb) await sb.auth.signOut(); closeAdminPanel(); await Promise.all([loadSettings(), loadProducts()]); cleanCart(); renderProducts(); updateCart(); showToast("از پنل خارج شدی"); }
 function openAdminPanel(){ $("adminPanel").classList.add("show"); document.body.style.overflow = "hidden"; renderAdminList(); switchTab("list"); }
 function closeAdminPanel(){ $("adminPanel").classList.remove("show"); if(!document.querySelector(".overlay.show")) document.body.style.overflow = ""; }
 function switchTab(name){
@@ -920,7 +926,7 @@ function switchTab(name){
   if(name === "orders") renderAdminOrders();
   if(name === "reviews") renderAdminReviews();
   if(name === "bts") renderAdminBTS();
-  if(name === "settings") $("adminSizeGuidePreview").src = sizeGuideUrl;
+  if(name === "settings") applySizeGuideToAdmin();
 }
 
 function renderAdminList(){
@@ -929,76 +935,35 @@ function renderAdminList(){
   box.innerHTML = products.map(p => ` <div class="admin-product-row"> <div class="info"> <strong>${esc(p.name)}${p.active ? "" : " (مخفی)"}</strong> <span>${esc(p.category)} • ${fmt(p.price)} تومان ${p.old ? `(قبلی: ${fmt(p.old)})` : ""}</span> </div> <div class="actions"> <button onclick="editProduct(${p.id})">ویرایش</button> <button class="del" onclick="deleteProduct(${p.id})">حذف</button> </div> </div>`).join("");
 }
 
-async function exportToExcel() {
-  showToast("در حال آماده‌سازی فایل... ⏳");
-  const { data: orders, error } = await sb.from("orders").select("*").order("created_at", {ascending: false});
-  
-  if (error || !orders || !orders.length) { showToast("خطا در دریافت اطلاعات یا سفارشی وجود ندارد."); return; }
-
-  const excelData = orders.map(o => {
-    const d = new Date(o.created_at);
-    return {
-      "کد سفارش": o.id,
-      "تاریخ ثبت": d.toLocaleDateString("fa-IR") + " " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"}),
-      "نام مشتری": o.customer_name || "-",
-      "شماره تماس": o.phone || "-",
-      "کد پستی": o.postal_code || "-",
-      "آدرس": o.address || "-",
-      "محصولات": String(o.items || "").replace(/\n/g, " | "),
-      "تخفیف (تومان)": o.discount || 0,
-      "مبلغ کل (تومان)": o.total_price || 0,
-      "وضعیت سفارش": STATUS_LABELS[o.status] || o.status,
-      "پیام‌رسان": o.channel === "whatsapp" ? "واتساپ" : (o.channel === "telegram" ? "تلگرام" : "اینستاگرام"),
-      "روش پرداخت": o.payment || "-"
-    };
-  });
-
-  const ws = XLSX.utils.json_to_sheet(excelData);
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "سفارش‌های گلپوش");
-  XLSX.writeFile(wb, `سفارشات_گلپوش_${new Date().toISOString().split('T')[0]}.xlsx`);
-  showToast("فایل اکسل با موفقیت دانلود شد 🌸");
-}
-
 async function renderAdminOrders(){
   const box = $("adminOrderList");
   box.innerHTML = '<p class="hint">در حال دریافت سفارش‌ها از سرور... ⏳</p>';
-  
-  const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 15000));
-  const fetchPromise = sb.from("orders").select("*").order("created_at", {ascending: false}).limit(100);
-  
-  try {
-    const { data: orders, error } = await Promise.race([fetchPromise, timeoutPromise]);
-    if(error) throw error;
-    
-    if(!orders || !orders.length){ box.innerHTML = '<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
-    
-    const totalOrders = orders.length;
-    const newOrders = orders.filter(o => o.status === 'new').length;
-    const totalRevenue = orders.filter(o => o.status !== 'canceled').reduce((sum, o) => sum + (o.total_price || 0), 0);
+  const { data: orders, error } = await sb.from("orders").select("*").order("created_at", {ascending: false}).limit(200);
+  if(error){ box.innerHTML = '<p class="hint" style="color:#c62828">خطا در دریافت اطلاعات از سرور! (مطمئن شو با حساب مدیر وارد شده‌ای)</p>'; return }
+  if(!orders || !orders.length){ box.innerHTML = '<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
 
-    const statsHtml = `
-      <div class="admin-stats">
-        <div class="stat-card"><span>کل سفارش‌ها</span><strong>${fmt(totalOrders)}</strong></div>
-        <div class="stat-card"><span>سفارش‌های جدید</span><strong style="color:#2e7d32">${fmt(newOrders)}</strong></div>
-        <div class="stat-card"><span>درآمد کل (تومان)</span><strong>${fmt(totalRevenue)}</strong></div>
-      </div>
-    `;
+  const totalOrders = orders.length;
+  const newOrders = orders.filter(o => o.status === 'new').length;
+  const totalRevenue = orders.filter(o => o.status !== 'canceled').reduce((sum, o) => sum + (o.total_price || 0), 0);
 
-    const listHtml = orders.map(o => {
-      const d = new Date(o.created_at);
-      const dateStr = d.toLocaleDateString("fa-IR") + " - " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"});
-      const items = String(o.items || "").split("\n").map(i => `<span style="color:#754758">${esc(i)}</span>`).join("<br>");
-      const st = o.status || "new";
-      const opts = Object.entries(STATUS_LABELS).map(([k, v]) => `<option value="${k}" ${k===st?"selected":""}>${v}</option>`).join("");
-      return ` <div class="admin-product-row admin-order-card"> <div class="admin-order-header"> <span>${esc(o.customer_name || "بدون نام")} <span style="font-size:11px;color:#876b73">#${esc(o.id)}</span></span> <span style="font-size:11px;color:#876b73">${esc(dateStr)}</span> </div> <div class="admin-order-details"> <strong>📞 تلفن:</strong> ${esc(o.phone || "-")}<br> <strong>📍 آدرس:</strong> ${esc(o.address || "-")} (کدپستی: ${esc(o.postal_code || "-")})<br> <strong>🛒 محصولات:</strong><br>${items}<br> ${o.coupon_code ? `<strong>🏷️ کد تخفیف:</strong> ${esc(o.coupon_code)} (− ${fmt(o.discount || 0)} تومان)<br>` : ""} <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">مبلغ نهایی: ${fmt(o.total_price || 0)} تومان</strong><br> <select data-id="${esc(o.id)}" onchange="setOrderStatus(this)" aria-label="وضعیت سفارش">${opts}</select> </div> </div>`;
-    }).join("");
-    
-    box.innerHTML = statsHtml + listHtml;
-  } catch (err) {
-    console.error("Fetch orders error:", err);
-    box.innerHTML = '<p class="hint" style="color:#c62828">خطا در دریافت اطلاعات (احتمالاً اینترنت قطع است). لطفاً صفحه را رفرش کنید یا از فیلترشکن استفاده کنید.</p>';
-  }
+  const statsHtml = `
+    <div class="admin-stats">
+      <div class="stat-card"><span>کل سفارش‌ها (تا ۲۰۰ اخیر)</span><strong>${fmt(totalOrders)}</strong></div>
+      <div class="stat-card"><span>سفارش‌های جدید</span><strong style="color:#2e7d32">${fmt(newOrders)}</strong></div>
+      <div class="stat-card"><span>درآمد کل (تومان)</span><strong>${fmt(totalRevenue)}</strong></div>
+    </div>
+  `;
+
+  const listHtml = orders.map(o => {
+    const d = new Date(o.created_at);
+    const dateStr = d.toLocaleDateString("fa-IR") + " - " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"});
+    const items = String(o.items || "").split("\n").map(i => `<span style="color:#754758">${esc(i)}</span>`).join("<br>");
+    const st = o.status || "new";
+    const opts = Object.entries(STATUS_LABELS).map(([k, v]) => `<option value="${k}" ${k===st?"selected":""}>${v}</option>`).join("");
+    return ` <div class="admin-product-row admin-order-card"> <div class="admin-order-header"> <span>${esc(o.customer_name || "بدون نام")} <span style="font-size:11px;color:#876b73">#${esc(o.id)}</span></span> <span style="font-size:11px;color:#876b73">${esc(dateStr)}</span> </div> <div class="admin-order-details"> <strong>📞 تلفن:</strong> ${esc(o.phone || "-")}<br> <strong>📍 آدرس:</strong> ${esc(o.address || "-")} (کدپستی: ${esc(o.postal_code || "-")})<br> <strong>🛒 محصولات:</strong><br>${items}<br> ${o.coupon_code ? `<strong>🏷️ کد تخفیف:</strong> ${esc(o.coupon_code)} (− ${fmt(o.discount || 0)} تومان)<br>` : ""} <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">مبلغ نهایی: ${fmt(o.total_price || 0)} تومان</strong><br> <select data-id="${esc(o.id)}" onchange="setOrderStatus(this)" aria-label="وضعیت سفارش">${opts}</select> </div> </div>`;
+  }).join("");
+
+  box.innerHTML = statsHtml + listHtml;
 }
 
 async function renderAdminReviews() {
@@ -1007,20 +972,22 @@ async function renderAdminReviews() {
   const { data, error } = await sb.from("reviews").select("*").order("created_at", {ascending: false});
   if(error) { box.innerHTML = '<p class="hint" style="color:#c62828">خطا!</p>'; return; }
   if(!data || !data.length) { box.innerHTML = '<p class="hint">نظری ثبت نشده.</p>'; return; }
-  box.innerHTML = data.map(r => `
+  box.innerHTML = data.map(r => {
+    const rt = Math.min(5, Math.max(0, Number(r.rating) || 0));
+    return `
     <div class="admin-product-row admin-order-card">
       <div class="admin-order-header">
-        <span>${esc(r.name)} <span style="font-size:11px;color:#876b73">${'★'.repeat(r.rating)}</span></span>
+        <span>${esc(r.name)} <span style="font-size:11px;color:#876b73">${'★'.repeat(rt)}</span></span>
         <span style="font-size:11px;color:#876b73">${new Date(r.created_at).toLocaleDateString('fa-IR')}</span>
       </div>
       <div class="admin-order-details">
         <p style="margin:5px 0">${esc(r.text)}</p>
-        <button class="btn ${r.approved ? 'outline' : 'primary'}" onclick="toggleReviewStatus(${r.id}, ${!r.approved})" style="padding:4px 10px;font-size:12px">
+        <button class="btn ${r.approved ? 'outline' : 'primary'}" onclick="toggleReviewStatus(${Number(r.id)}, ${!r.approved})" style="padding:4px 10px;font-size:12px">
           ${r.approved ? 'لغو تایید' : 'تایید و نمایش'}
         </button>
       </div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 async function toggleReviewStatus(id, approved) {
@@ -1037,11 +1004,11 @@ async function renderAdminBTS() {
   box.innerHTML = data.map(item => `
     <div class="admin-product-row">
       <div class="info">
-        <img src="${esc(item.image_url)}" style="width:60px;height:60px;object-fit:cover;border-radius:8px;margin-bottom:5px;display:block">
+        <img src="${esc(item.image_url)}" alt="" style="width:60px;height:60px;object-fit:cover;border-radius:8px;margin-bottom:5px;display:block">
         <strong>${esc(item.caption || "بدون کپشن")}</strong>
       </div>
       <div class="actions">
-        <button class="del" onclick="deleteBTS(${item.id})">حذف</button>
+        <button class="del" onclick="deleteBTS(${Number(item.id)})">حذف</button>
       </div>
     </div>
   `).join('');
@@ -1079,110 +1046,51 @@ async function addBTS(e) {
 
 async function setOrderStatus(sel){ const { error } = await sb.from("orders").update({status: sel.value}).eq("id", sel.dataset.id); showToast(error ? "ذخیره نشد ❌" : "وضعیت سفارش ذخیره شد ✓"); }
 async function deleteProduct(id){ if(!confirm("محصول حذف بشه؟")) return; const { error } = await sb.from("products").delete().eq("id", id); if(error){ console.error(error); showToast("حذف نشد ❌"); return } delete cart[id]; saveCart(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast("محصول حذف شد"); }
-function editProduct(id){ 
-  const p = products.find(x => x.id === id); if(!p) return; 
-  const f = $("addProductForm").elements; 
-  editingId = id; 
-  f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; 
-  currentEditImages = Array.isArray(p.images) ? [...p.images] : [];
-  renderEditImages(); 
-  $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; 
-  switchTab("add"); 
-}
-
-let currentEditImages = [];
-
-function renderEditImages(){
-  const container = $("imgPreviewContainer");
-  container.innerHTML = currentEditImages.map((url, idx) => `
-    <div style="position:relative; width:70px; height:70px;">
-      <img src="${esc(url)}" style="width:100%;height:100%;object-fit:cover;border-radius:8px; border:1px solid #ddd;">
-      <button type="button" onclick="removeEditImage(${idx})" style="position:absolute;top:-5px;right:-5px;background:red;color:white;border:none;border-radius:50%;width:20px;height:20px;cursor:pointer;font-size:12px; display:grid; place-items:center;">×</button>
-    </div>
-  `).join("");
-  $("imgRemoveBtn").style.display = currentEditImages.length ? "inline-flex" : "none";
-}
-function removeEditImage(idx){
-  currentEditImages.splice(idx, 1);
-  renderEditImages();
-}
-function clearImagesPreview(){
-  currentEditImages = [];
-  renderEditImages();
-}
-
-async function uploadProductImages(input){
-  const files = input.files;
-  if(!files || !files.length) return;
-  showToast("در حال آپلود عکس‌ها... ⏳");
-  
-  for (let i = 0; i < files.length; i++) {
-    try {
-      const blob = await compressImage(files[i]);
-      const path = `p-${Date.now()}-${i}.jpg`;
-      const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
-      if(error) throw error;
-      const { data } = sb.storage.from("product-images").getPublicUrl(path);
-      currentEditImages.push(data.publicUrl);
-    } catch (e) {
-      console.error(e);
-    }
-  }
-  renderEditImages();
-  showToast("عکس‌ها آپلود شدند ✓");
-  input.value = "";
-}
-
+function editProduct(id){ const p = products.find(x => x.id === id); if(!p) return; const f = $("addProductForm").elements; editingId = id; f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; setImages(p.images || []); $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; switchTab("add"); }
 async function saveProductForm(e){
   e.preventDefault();
   const f = new FormData(e.target);
-  const row = { 
-    name: String(f.get("name")).trim(), 
-    category: f.get("category"), 
-    price: Math.max(0, Math.round(Number(f.get("price")) || 0)), 
-    old_price: Math.max(0, Math.round(Number(f.get("old")) || 0)), 
-    description: String(f.get("desc")).trim(), 
-    tag: String(f.get("tag")).trim(), 
-    color: safeColor(String(f.get("color")).trim()), 
-    active: f.get("active") === "1", 
-    image_url: currentEditImages.length > 0 ? currentEditImages[0] : null,
-    images: currentEditImages
-  };
-  
+  const row = { name: String(f.get("name")).trim(), category: f.get("category"), price: Math.max(0, Math.round(Number(f.get("price")) || 0)), old_price: Math.max(0, Math.round(Number(f.get("old")) || 0)), description: String(f.get("desc")).trim(), tag: String(f.get("tag")).trim(), color: safeColor(String(f.get("color")).trim()), active: f.get("active") === "1", image_url: formImages[0] || null, images: formImages.filter(u => safeUrl(u)) };
   if(!row.name){ showToast("نام محصول لازمه"); return }
   const btn = $("saveProductBtn"); btn.disabled = true;
   const q = editingId ? sb.from("products").update(row).eq("id", editingId) : sb.from("products").insert(row);
   const { error } = await q; btn.disabled = false;
-  if(error){ console.error(error); showToast("ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return }
+  if(error){ console.error(error); showToast(/images/.test(error.message || "") ? "ستون images در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : "ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return }
   const wasEdit = !!editingId; resetProductForm(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast(wasEdit ? "ذخیره شد ✓" : "محصول اضافه شد ✓"); switchTab("list");
 }
-function resetProductForm(){ 
-  editingId = null; 
-  $("addProductForm").reset(); 
-  $("addProductForm").elements.id.value = ""; 
-  currentEditImages = [];
-  renderEditImages();
-  $("saveProductBtn").textContent = "افزودن محصول"; 
-  $("tabAddBtn").textContent = "➕ افزودن محصول"; 
-}
+function resetProductForm(){ editingId = null; $("addProductForm").reset(); $("addProductForm").elements.id.value = ""; setImages([]); $("saveProductBtn").textContent = "افزودن محصول"; $("tabAddBtn").textContent = "➕ افزودن محصول"; }
 
-/* ================= عکس‌ها (فشرده‌سازی قوی‌تر) ================= */
-function compressImage(file, maxSide = 800){
-  return new Promise((resolve, reject) => {
-    const img = new Image();
-    const objUrl = URL.createObjectURL(file);
-    img.onload = () => {
-      const k = Math.min(1, maxSide / Math.max(img.width, img.height));
-      const c = document.createElement("canvas");
-      c.width = Math.round(img.width * k);
-      c.height = Math.round(img.height * k);
-      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
-      URL.revokeObjectURL(objUrl);
-      c.toBlob(b => b ? resolve(b) : reject(new Error("compress")), "image/jpeg", 0.7);
-    };
-    img.onerror = () => { URL.revokeObjectURL(objUrl); reject(new Error("load")); };
-    img.src = objUrl;
-  });
+/* ================= عکس‌ها ================= */
+let formImages = [];
+function renderImgPreview(){
+  $("imgPreview").innerHTML = formImages.map((u, i) => `<div class="img-thumb"><img src="${esc(u)}" alt="">${i === 0 ? '<span class="cover-badge">کاور</span>' : ''}<div class="tb">${i === 0 ? '' : `<button type="button" onclick="makeCover(${i})">کاور</button>`}<button type="button" class="del" onclick="removeImage(${i})">حذف</button></div></div>`).join("");
+  $("imgCount").textContent = formImages.length ? `${fmt(formImages.length)} از ${fmt(MAX_IMAGES)} عکس` : "";
+}
+function setImages(list){ formImages = (list || []).map(safeUrl).filter(Boolean).slice(0, MAX_IMAGES); renderImgPreview(); }
+function makeCover(i){ const u = formImages.splice(i, 1)[0]; formImages.unshift(u); renderImgPreview(); }
+function removeImage(i){ formImages.splice(i, 1); renderImgPreview(); }
+function compressImage(file, maxSide = 1200){ return new Promise((resolve, reject) => { const img = new Image(); const objUrl = URL.createObjectURL(file); img.onload = () => { const k = Math.min(1, maxSide / Math.max(img.width, img.height)); const c = document.createElement("canvas"); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext("2d").drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(objUrl); c.toBlob(b => b ? resolve(b) : reject(new Error("compress")), "image/jpeg", 0.85); }; img.onerror = () => { URL.revokeObjectURL(objUrl); reject(new Error("load")); }; img.src = objUrl; }); }
+
+async function uploadProductImages(input){
+  const files = Array.from(input.files || []); input.value = "";
+  if(!files.length) return;
+  const room = MAX_IMAGES - formImages.length;
+  if(room <= 0){ showToast(`حداکثر ${fmt(MAX_IMAGES)} عکس برای هر محصول`); return }
+  const take = files.filter(f => /^image\//.test(f.type)).slice(0, room);
+  if(!take.length){ showToast("فقط فایل عکس انتخاب کن"); return }
+  let ok = 0, fail = 0;
+  for(let i = 0; i < take.length; i++){
+    showToast(`در حال آپلود ${fmt(i + 1)} از ${fmt(take.length)}... ⏳`);
+    try{
+      const blob = await compressImage(take[i]);
+      const path = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+      const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
+      if(error) throw error;
+      const { data } = sb.storage.from("product-images").getPublicUrl(path);
+      formImages.push(data.publicUrl); ok++; renderImgPreview();
+    }catch(e){ console.error(e); fail++ }
+  }
+  showToast(fail ? `${fmt(ok)} عکس آپلود شد، ${fmt(fail)} عکس ناموفق ❌` : `${fmt(ok)} عکس آپلود شد ✓ حالا «ذخیره» را بزن`);
 }
 
 async function uploadSizeGuide(input){
@@ -1196,31 +1104,169 @@ async function uploadSizeGuide(input){
     const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
     if(error) throw error;
     const { data } = sb.storage.from("product-images").getPublicUrl(path);
+
+    // آپدیت دیتابیس
     const { error: dbErr } = await sb.from("settings").update({ size_guide_image: data.publicUrl }).eq("id", 1);
     if(dbErr) throw dbErr;
-    sizeGuideUrl = data.publicUrl;
-    $("adminSizeGuidePreview").src = sizeGuideUrl;
-    showToast("عکس راهنمای سایز با موفقیت آپلود شد ✓");
+
+    sizeGuideUrl = data.publicUrl; sizeGuideCustom = true;
+    applySizeGuideToAdmin();
+    showToast("عکس راهنمای سایز با موفقیت آپلود و ذخیره شد ✓");
   }catch(e){
     console.error(e);
-    showToast("آپلود نشد ❌");
+    showToast("آپلود نشد ❌ (تنظیمات Storage رو چک کن)");
   }
   input.value = "";
 }
 
+/* ================= گالری و زوم عکس ================= */
+let galleryIdx = 0;
+function setGallery(pid, i){
+  const p = products.find(x => x.id === pid); if(!p || !p.images[i]) return;
+  galleryIdx = i;
+  const img = $("galImg"); if(img) img.src = p.images[i];
+  document.querySelectorAll(".gallery-thumbs button").forEach(b => b.classList.toggle("sel", Number(b.dataset.gi) === i));
+}
+function openLightbox(pid, idx){ const p = products.find(x => x.id === pid); if(!p || !p.images.length) return; openLightboxList(p.images, idx || 0); }
+
+const lb = {list:[], i:0, s:1, x:0, y:0, ptrs:new Map(), startDist:0, startS:1, sx:0, sy:0, moved:false, lastTap:0, ret:null};
+function lbApply(){ $("lbImg").style.transform = `translate(${lb.x}px,${lb.y}px) scale(${lb.s})`; $("lbStage").classList.toggle("zoomed", lb.s > 1.01); }
+function lbClamp(){
+  const st = $("lbStage").getBoundingClientRect(), img = $("lbImg");
+  const mx = Math.max(0, (img.offsetWidth * lb.s - st.width) / 2), my = Math.max(0, (img.offsetHeight * lb.s - st.height) / 2);
+  lb.x = Math.min(mx, Math.max(-mx, lb.x)); lb.y = Math.min(my, Math.max(-my, lb.y));
+}
+function lbReset(){ lb.s = 1; lb.x = 0; lb.y = 0; lb.ptrs.clear(); lbApply(); }
+function lbZoomAt(ns, cx, cy){
+  ns = Math.min(5, Math.max(1, ns));
+  const st = $("lbStage").getBoundingClientRect();
+  const ox = cx - (st.left + st.width / 2), oy = cy - (st.top + st.height / 2), k = ns / lb.s;
+  lb.x = ox - (ox - lb.x) * k; lb.y = oy - (oy - lb.y) * k; lb.s = ns;
+  if(lb.s <= 1.001){ lb.s = 1; lb.x = 0; lb.y = 0 }
+  lbClamp(); lbApply();
+}
+function lbBtnZoom(f){ const r = $("lbStage").getBoundingClientRect(); lbZoomAt(lb.s * f, r.left + r.width / 2, r.top + r.height / 2); }
+function lbShow(){
+  const n = lb.list.length;
+  $("lbImg").src = lb.list[lb.i];
+  $("lbCount").textContent = n > 1 ? `${fmt(lb.i + 1)} از ${fmt(n)}` : "";
+  $("lbPrev").style.display = $("lbNext").style.display = n > 1 ? "" : "none";
+  lbReset();
+  if(n > 1){ const nx = new Image(); nx.src = lb.list[(lb.i + 1) % n]; }
+}
+function openLightboxList(list, idx){
+  const l = (list || []).map(safeUrl).filter(Boolean); if(!l.length) return;
+  lb.list = l; lb.i = Math.min(Math.max(0, idx | 0), l.length - 1); lb.ret = document.activeElement;
+  lbShow(); $("lightbox").classList.add("show"); document.body.style.overflow = "hidden";
+  $("lbClose").focus({preventScroll:true});
+}
+function closeLightbox(){
+  $("lightbox").classList.remove("show");
+  if(!document.querySelector(".overlay.show,.admin-panel.show")) document.body.style.overflow = "";
+  if(lb.ret && document.contains(lb.ret)){ try{ lb.ret.focus({preventScroll:true}) }catch(e){} }
+  lb.ret = null;
+}
+function lbStep(d){ const n = lb.list.length; if(n < 2) return; lb.i = (lb.i + d + n) % n; lbShow(); }
+function lbHandleKey(e){
+  if(!$("lightbox").classList.contains("show")) return false;
+  switch(e.key){
+    case "Escape": closeLightbox(); return true;
+    case "ArrowLeft": lbStep(1); return true;
+    case "ArrowRight": lbStep(-1); return true;
+    case "+": case "=": lbBtnZoom(1.4); return true;
+    case "-": lbBtnZoom(1 / 1.4); return true;
+    case "0": lbReset(); return true;
+  }
+  return false;
+}
+(function initLightbox(){
+  const st = $("lbStage");
+  st.addEventListener("pointerdown", e => {
+    try{ st.setPointerCapture(e.pointerId) }catch(err){}
+    lb.ptrs.set(e.pointerId, {x:e.clientX, y:e.clientY});
+    lb.sx = e.clientX; lb.sy = e.clientY; lb.moved = false;
+    if(lb.ptrs.size === 2){ const [a, b] = Array.from(lb.ptrs.values()); lb.startDist = Math.hypot(a.x - b.x, a.y - b.y); lb.startS = lb.s; }
+  });
+  st.addEventListener("pointermove", e => {
+    const p = lb.ptrs.get(e.pointerId); if(!p) return;
+    const dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+    if(Math.abs(e.clientX - lb.sx) + Math.abs(e.clientY - lb.sy) > 6) lb.moved = true;
+    if(lb.ptrs.size === 2){
+      const [a, b] = Array.from(lb.ptrs.values()), d = Math.hypot(a.x - b.x, a.y - b.y);
+      if(lb.startDist > 0) lbZoomAt(lb.startS * d / lb.startDist, (a.x + b.x) / 2, (a.y + b.y) / 2);
+    } else if(lb.s > 1.01){ lb.x += dx; lb.y += dy; lbClamp(); lbApply(); }
+  });
+  const end = e => {
+    if(!lb.ptrs.has(e.pointerId)) return;
+    lb.ptrs.delete(e.pointerId);
+    if(lb.ptrs.size === 0 && e.type === "pointerup"){
+      const dx = e.clientX - lb.sx, dy = e.clientY - lb.sy;
+      if(lb.s <= 1.01 && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5){ lbStep(dx < 0 ? 1 : -1); return }
+      if(!lb.moved){
+        const now = Date.now();
+        if(now - lb.lastTap < 300){ lb.lastTap = 0; lbZoomAt(lb.s > 1.01 ? 1 : 2.5, e.clientX, e.clientY) } else lb.lastTap = now;
+      }
+    }
+  };
+  st.addEventListener("pointerup", end); st.addEventListener("pointercancel", end);
+  st.addEventListener("wheel", e => { e.preventDefault(); lbZoomAt(lb.s * (e.deltaY < 0 ? 1.2 : 1 / 1.2), e.clientX, e.clientY); }, {passive:false});
+})();
+
+/* ================= خروجی اکسل (کتابخانه فقط هنگام نیاز بارگذاری می‌شود) ================= */
+function loadScriptOnce(src){
+  return new Promise((resolve, reject) => {
+    if(window.XLSX) return resolve();
+    const el = document.createElement("script"); el.src = src; el.onload = () => resolve(); el.onerror = () => reject(new Error("load"));
+    document.head.appendChild(el);
+  });
+}
+const xlSafe = v => { v = String(v == null ? "" : v); return /^[=+\-@]/.test(v) ? "'" + v : v; };
+async function exportToExcel(){
+  showToast("در حال آماده‌سازی فایل... ⏳");
+  try{
+    await loadScriptOnce("https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js");
+    const { data: orders, error } = await sb.from("orders").select("*").order("created_at", {ascending:false}).limit(2000);
+    if(error) throw error;
+    if(!orders || !orders.length){ showToast("سفارشی برای خروجی وجود ندارد"); return }
+    const rows = orders.map(o => {
+      const d = new Date(o.created_at);
+      return {
+        "کد سفارش": o.id,
+        "تاریخ ثبت": d.toLocaleDateString("fa-IR") + " " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"}),
+        "نام مشتری": xlSafe(o.customer_name || "-"),
+        "شماره تماس": xlSafe(o.phone || "-"),
+        "کد پستی": xlSafe(o.postal_code || "-"),
+        "آدرس": xlSafe(o.address || "-"),
+        "محصولات": xlSafe(String(o.items || "").replace(/\n/g, " | ")),
+        "اندازه‌های سفارشی": xlSafe(o.custom_size || ""),
+        "کد تخفیف": xlSafe(o.coupon_code || ""),
+        "تخفیف (تومان)": o.discount || 0,
+        "مبلغ کل (تومان)": o.total_price || 0,
+        "وضعیت": STATUS_LABELS[o.status] || o.status || "",
+        "روش پرداخت": xlSafe(o.payment || "-")
+      };
+    });
+    const ws = XLSX.utils.json_to_sheet(rows), wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "سفارش‌های گلپوش");
+    XLSX.writeFile(wb, `golpoosh-orders-${new Date().toISOString().slice(0, 10)}.xlsx`);
+    showToast("فایل اکسل دانلود شد 🌸");
+  }catch(e){ console.error(e); showToast("ساخت فایل اکسل ناموفق بود ❌ (اینترنت را بررسی کن)"); }
+}
+
+/* ================= لینک مستقیم محصول (#p12) ================= */
+function openFromHash(){
+  const m = /^#p(\d+)$/.exec(location.hash);
+  if(!m) return;
+  const id = Number(m[1]);
+  if(products.some(p => p.id === id && p.active)) openProduct(id);
+}
+
 /* ================= شروع ================= */
-(async function init(){ 
-  await loadSettings(); 
-  await loadProducts(); 
-  cleanCart(); 
-  renderProducts(); 
-  updateCart(); 
-  
-  // لود تنبل (Lazy) برای نظرات و پشت صحنه با تاخیر ۵۰۰ میلی‌ثانیه
-  setTimeout(() => {
-    loadReviews(); 
-    loadBTS(); 
-  }, 500); 
+(async function init(){
+  await Promise.all([loadSettings(), loadProducts()]);
+  cleanCart(); renderProducts(); updateCart();
+  loadReviews(); loadBTS();
+  openFromHash();
 })();
 </script>
 </body>
