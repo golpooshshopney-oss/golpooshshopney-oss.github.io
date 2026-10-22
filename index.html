@@ -177,8 +177,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 </main>
 <footer id="contact"><div class="wrap">
  <div class="trust-badges">
-    <div class="trust-item"><div class="icon">🛡️</div><div><h4>۷ روز ضمانت بازگشت وجه</h4><p>در صورت عدم رضایت، وجه شما بازگردانده می‌شود (به‌جز سفارش‌های دوخت سفارشی).</p></div></div>
-    <div class="trust-item"><div class="icon">🔄</div><div><h4>۷ روز مهلت مرجوعی کالا</h4><p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش. برای دوخت سفارشی، تغییرات در بازه زمانی ۷ روز بدون هزینه پذیرفته می‌شود.</p></div></div>
+    <div class="trust-item"><div class="icon">🛡️</div><h4>۷ روز ضمانت بازگشت وجه</h4><p>در صورت عدم رضایت، وجه شما بازگردانده می‌شود (به‌جز سفارش‌های دوخت سفارشی).</p></div>
+    <div class="trust-item"><div class="icon">🔄</div><h4>۷ روز مهلت مرجوعی کالا</h4><p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش. برای دوخت سفارشی، تغییرات در بازه زمانی ۷ روز بدون هزینه پذیرفته می‌شود.</p></div>
  </div>
  <div class="footer-grid">
   <div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه؛ جایی برای راحتی، لطافت و انتخاب‌های دوست‌داشتنی.</p></div>
@@ -515,7 +515,7 @@ function getFiltered(){
 }
 function onSearch(){ searchTerm = $("searchInput").value.trim(); renderProducts(); }
 
-// اصلاح باگ انتخاب سایز
+// اصلاح باگ انتخاب سایز (حالت دقیقا مثل کد اولیه)
 function sizeButtons(id, sz){ 
   return SIZES.map(s => {
     const isSel = (s === sz) ? "sel" : "";
@@ -530,7 +530,8 @@ function renderProducts(){
   const shown = getFiltered();
   if(!shown.length){ grid.innerHTML = '<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>'; return }
   grid.innerHTML = shown.map(p => {
-    const sz = selectedSize[p.id] || "1";
+    // سایز انتخاب شده توسط کاربر (اگر انتخاب نکرده باشد، آندفایند است)
+    const sz = selectedSize[p.id];
     const sh = shareParts(p);
     
     const safeImages = Array.isArray(p.images) ? p.images : [];
@@ -554,7 +555,7 @@ function renderProducts(){
   }).join("");
 }
 
-// اصلاح باگ تابع انتخاب سایز
+// اصلاح نهایی تابع انتخاب سایز
 function pickSize(pid, size){ 
   selectedSize[pid] = size; 
   document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => {
@@ -568,7 +569,7 @@ function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p)
 /* ================= مودال جزئیات ================= */
 function openProduct(id){
   const p = products.find(x => x.id === id); if(!p) return;
-  const sz = selectedSize[id] || "1";
+  const sz = selectedSize[id]; // اگر انتخاب نشده بود undefined است
   const off = p.old > p.price ? ` <span class="oldprice">${fmt(p.old)}</span>` : "";
   const sh = shareParts(p);
   
@@ -602,7 +603,7 @@ function openProduct(id){
           <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener">🔵 تلگرام</a>
           <button type="button" class="share-btn" onclick="copyForInstagram(${id})">🟣 اینستاگرام</button>
         </div>
-        <button class="btn primary add" onclick="addToCart(${id});closeProduct()">افزودن به سبد خرید</button>
+        <button class="btn primary add" onclick="addToCart(${id});">افزودن به سبد خرید</button>
       </div>
     </div>`;
   openOverlay("productOverlay");
@@ -721,7 +722,14 @@ document.addEventListener("keydown", e => { if(e.key !== "Escape") return; ["don
 /* ================= سبد ================= */
 function addToCart(id){
   const p = products.find(x => x.id === id); if(!p) return;
-  const size = selectedSize[id] || "1";
+  const size = selectedSize[id]; // اگر کاربر سایز انتخاب نکرده باشد، undefined است
+  
+  // باگ‌گیری شرط سایز: اگر سایز انتخاب نشده بود، ارور بده و اجازه اضافه شدن نده
+  if(!size){ 
+    showToast("لطفاً ابتدا سایز مورد نظر خود را انتخاب کنید 🌸"); 
+    return; 
+  }
+
   if(!cart[id]) cart[id] = {};
   if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return }
   cart[id][size] = (cart[id][size] || 0) + 1;
