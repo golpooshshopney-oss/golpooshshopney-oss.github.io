@@ -514,7 +514,15 @@ function getFiltered(){
   return list;
 }
 function onSearch(){ searchTerm = $("searchInput").value.trim(); renderProducts(); }
-function sizeButtons(id, sz){ return SIZES.map(s => `<button type="button" class="size-opt ${s===sz?"sel":""}" data-sz-pid="${id}" data-size="${esc(s)}" onclick="pickSize(${id},'${esc(s)}')">${esc(s)}</button>`).join(""); }
+
+// اصلاح باگ انتخاب سایز
+function sizeButtons(id, sz){ 
+  return SIZES.map(s => {
+    const isSel = (s === sz) ? "sel" : "";
+    return `<button type="button" class="size-opt ${isSel}" data-sz-pid="${id}" data-size="${esc(s)}" onclick="pickSize(${id},'${esc(s)}')">${esc(s)}</button>`;
+  }).join(""); 
+}
+
 function shareParts(p){ return { url: encodeURIComponent(location.href.split("#")[0] + "#products"), text: encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`) }; }
 
 function renderProducts(){
@@ -545,7 +553,15 @@ function renderProducts(){
     </article>`;
   }).join("");
 }
-function pickSize(pid, size){ selectedSize[pid] = size; document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => b.classList.toggle("sel", b.dataset.size === size)); }
+
+// اصلاح باگ تابع انتخاب سایز
+function pickSize(pid, size){ 
+  selectedSize[pid] = size; 
+  document.querySelectorAll(`[data-sz-pid="${pid}"]`).forEach(b => {
+    b.classList.toggle("sel", b.dataset.size === size);
+  }); 
+}
+
 function copyText(txt, okMsg){ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(() => showToast(okMsg)).catch(() => showToast("کپی نشد؛ دستی کپی کن")); } else showToast("کپی نشد؛ دستی کپی کن"); }
 function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${location.href.split("#")[0]}#products`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
 
