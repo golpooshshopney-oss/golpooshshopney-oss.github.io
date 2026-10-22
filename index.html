@@ -30,7 +30,6 @@ header{position:sticky;top:0;z-index:10;background:#fffaf8ee;backdrop-filter:blu
 .reviews{background:#fff0f1}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
 .trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}.trust-item{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow)}.trust-item .icon{font-size:40px}.trust-item h4{margin:0 0 5px;color:var(--wine);font-size:16px}.trust-item p{margin:0;font-size:12px;color:var(--muted)}
 
-/* بخش اینستاگرام (بدون عکس فیک) */
 .ig-banner { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; border-radius: 25px; padding: 40px 20px; text-align: center; box-shadow: 0 10px 30px rgba(220,39,67,0.3); margin-top: 20px; }
 .ig-banner h2 { color: white; margin: 0 0 10px; font-size: 28px; }
 .ig-banner p { color: #ffeef2; margin: 0 0 20px; font-size: 15px; }
@@ -69,15 +68,13 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .gallery-thumb.active{border-color:var(--wine)}
 .pdetail-info h3{color:var(--wine);margin:0 0 6px}.pdetail-info .desc{font-size:13px}.pdetail-info .price{font-size:20px}
 
-/* زوم عکس (با قابلیت جابه جایی) */
 #zoomOverlay{position:fixed;inset:0;background:#000e;z-index:100;display:none;align-items:center;justify-content:center;overflow:hidden;}
 #zoomOverlay.show{display:flex;}
-#zoomWrapper{width:100%; height:100%; display:flex; align-items:center; justify-content:center; cursor:grab;}
-#zoomWrapper:active{cursor:grabbing;}
-#zoomImg{max-width:90%; max-height:90%; transition:transform 0.1s ease-out; pointer-events:none;}
+#zoomWrapper{width:100%; height:100%; display:flex; align-items:center; justify-content:center; overflow:hidden;}
+#zoomImg{max-width:90%; max-height:90%; transition:transform 0.1s ease-out; user-select:none; -webkit-user-drag:none; cursor:grab;}
+#zoomImg:active {cursor:grabbing;}
 #zoomOverlay .close-zoom{position:absolute;top:20px;right:20px;color:white;font-size:40px;cursor:pointer;background:none;border:none;z-index:101;}
 
-/* پنل مدیریت */
 .admin-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 15px; }
 .stat-card { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 12px; text-align: center; }
 .stat-card span { display: block; font-size: 11px; color: var(--muted); margin-bottom: 5px; }
@@ -152,7 +149,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  </div>
 </section>
 
-<!-- بخش اینستاگرام (اصلاح شده) -->
 <section class="section" id="instagram" style="padding: 20px 0;">
  <div class="wrap">
    <div class="ig-banner">
@@ -275,11 +271,10 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   </div>
 </div>
 
-<!-- مودال زوم عکس -->
 <div id="zoomOverlay" onclick="if(event.target===this)closeZoom()">
   <button class="close-zoom" onclick="closeZoom()">×</button>
-  <div id="zoomWrapper">
-    <img id="zoomImg" src="" alt="زوم">
+  <div id="zoomWrapper" onclick="if(event.target===this)closeZoom()">
+    <img id="zoomImg" src="" alt="زوم" onclick="event.stopPropagation();">
   </div>
 </div>
 
@@ -321,7 +316,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
     
-    <!-- بخش آپلود چند عکس -->
     <div class="field full" style="background:#fff8f6; padding:15px; border-radius:12px; border:1px dashed var(--rose);">
       <span style="font-weight:bold; color:var(--wine); display:block; margin-bottom:10px;">📸 عکس‌های محصول (می‌توانید چند عکس انتخاب کنید)</span>
       <input type="hidden" name="images_json">
@@ -605,28 +599,34 @@ function openZoom(url){
   zoomImg.src = url;
   scale = 1; pointX = 0; pointY = 0; setTransform();
   $("zoomOverlay").classList.add("show");
+  document.body.style.overflow = "hidden";
 }
 
 function closeZoom(){
   $("zoomOverlay").classList.remove("show");
+  document.body.style.overflow = "";
 }
 
-// منطق موس برای زوم
-zoomImg.onmousedown = function (e) {
+// هندل کردن موس روی Wrapper
+const zoomWrapper = document.getElementById("zoomWrapper");
+
+zoomWrapper.onmousedown = function (e) {
+  if (e.target !== zoomImg && e.target !== zoomWrapper) return;
   e.preventDefault();
   start = { x: e.clientX - pointX, y: e.clientY - pointY };
   panning = true;
 };
-zoomImg.onmouseup = function () { panning = false; };
-zoomImg.onmouseleave = function () { panning = false; };
-zoomImg.onmousemove = function (e) {
-  e.preventDefault();
+zoomWrapper.onmouseup = function () { panning = false; };
+zoomWrapper.onmouseleave = function () { panning = false; };
+zoomWrapper.onmousemove = function (e) {
   if (!panning) return;
+  e.preventDefault();
   pointX = (e.clientX - start.x);
   pointY = (e.clientY - start.y);
   setTransform();
 };
-zoomImg.onwheel = function (e) {
+zoomWrapper.onwheel = function (e) {
+  if (e.target !== zoomImg && e.target !== zoomWrapper) return;
   e.preventDefault();
   let xs = (e.clientX - pointX) / scale;
   let ys = (e.clientY - pointY) / scale;
@@ -637,9 +637,9 @@ zoomImg.onwheel = function (e) {
   setTransform();
 };
 
-// منطق لمس برای موبایل
+// هندل کردن لمس برای موبایل
 let initialDistance = 0;
-zoomImg.ontouchstart = function(e) {
+zoomWrapper.ontouchstart = function(e) {
   if (e.touches.length === 2) {
     initialDistance = Math.hypot(
       e.touches[0].pageX - e.touches[1].pageX,
@@ -650,7 +650,7 @@ zoomImg.ontouchstart = function(e) {
     start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY };
   }
 };
-zoomImg.ontouchmove = function(e) {
+zoomWrapper.ontouchmove = function(e) {
   e.preventDefault();
   if (e.touches.length === 2) {
     let dist = Math.hypot(
@@ -669,7 +669,7 @@ zoomImg.ontouchmove = function(e) {
     setTransform();
   }
 };
-zoomImg.ontouchend = function() {
+zoomWrapper.ontouchend = function() {
   panning = false;
   initialDistance = 0;
 };
