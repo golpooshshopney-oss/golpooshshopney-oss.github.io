@@ -16,10 +16,7 @@
 .topbar{background:var(--wine);color:white;text-align:center;padding:8px 12px;font-size:13px}
 header{position:relative;z-index:10;background:#fffaf8;border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px 0}.brand{display:flex;align-items:center;gap:10px;color:var(--wine);font-weight:900;font-size:29px;cursor:pointer;user-select:none}.brandmark{display:grid;place-items:center;width:44px;height:44px;background:var(--pink);border-radius:50%;font-size:24px}.navlinks{display:flex;gap:24px;color:#704552;font-size:14px}.nav-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.btn{border:0;border-radius:999px;padding:11px 18px;cursor:pointer;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn:hover{transform:translateY(-1px)}.btn:disabled{opacity:.6;cursor:not-allowed;transform:none}.primary{background:var(--wine);color:white}.soft{background:var(--pink);color:var(--wine)}.outline{border:1px solid var(--line);background:white;color:var(--wine)}.cartbtn{position:relative}.count{background:var(--rose);color:white;border-radius:50%;min-width:22px;height:22px;display:inline-grid;place-items:center;font-size:12px}
-.hero{padding:44px 0 35px;background:radial-gradient(circle at 90% 15%,#f1cbd2 0,transparent 28%),linear-gradient(125deg,#fff7f3,#f8e3e7)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow{display:inline-block;background:white;color:var(--wine2);padding:5px 13px;border-radius:999px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.35;margin:14px 0;color:var(--wine)}.hero h1 span{color:var(--rose)}.hero p{color:#765560;max-width:510px}.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}.hero-notes{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;font-size:13px;color:#7b5360}
-.hero-art{min-height:365px;border-radius:42% 42% 28px 28px;overflow:hidden;position:relative;background:linear-gradient(140deg,#e8b5c0,#fff0eb 55%,#c97b92);display:grid;place-items:center; padding: 20px;}
-.hero-logo-img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;display:block; z-index:2;}
-.hero-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#fff7f1aa;top:28px;right:10%}.hero-art:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#a83e62aa;bottom:-70px;left:-35px}
+.hero{padding:44px 0 35px;background:radial-gradient(circle at 90% 15%,#f1cbd2 0,transparent 28%),linear-gradient(125deg,#fff7f3,#f8e3e7)}.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:34px;align-items:center}.eyebrow{display:inline-block;background:white;color:var(--wine2);padding:5px 13px;border-radius:999px;font-size:13px;font-weight:700}.hero h1{font-size:clamp(34px,5vw,58px);line-height:1.35;margin:14px 0;color:var(--wine)}.hero h1 span{color:var(--rose)}.hero p{color:#765560;max-width:510px}.hero-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}.hero-notes{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px;font-size:13px;color:#7b5360}.hero-art{min-height:365px;border-radius:42% 42% 28px 28px;overflow:hidden;position:relative;background:linear-gradient(140deg,#e8b5c0,#fff0eb 55%,#c97b92);display:grid;place-items:center}.hero-art:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;background:#fff7f1aa;top:28px;right:10%}.hero-art:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#a83e62aa;bottom:-70px;left:-35px}.fabric-stack{position:relative;z-index:1;display:grid;gap:0;transform:rotate(-5deg);filter:drop-shadow(0 18px 15px #63243b30)}.fabric{width:min(330px,70vw);height:74px;border-radius:16px 24px 10px 10px;border:2px solid #ffffffaa;margin-top:-7px;box-shadow:inset 0 0 0 2px #ffffff20;display:flex;align-items:center;justify-content:center;font-size:31px;color:#8e3d5b}.f1{background:repeating-linear-gradient(135deg,#f6c4d0 0 12px,#fbe0e3 12px 24px)}.f2{background:repeating-linear-gradient(45deg,#fff2e7 0 14px,#eac4c8 14px 18px)}.f3{background:repeating-linear-gradient(135deg,#c889a0 0 12px,#e2b1c0 12px 24px)}.f4{background:repeating-linear-gradient(45deg,#3f3940 0 13px,#6c5964 13px 16px);color:#f6dce4}
 .section{padding:52px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:23px}.section h2{font-size:clamp(25px,3vw,35px);color:var(--wine);margin:0}.section-head p{color:var(--muted);margin:5px 0 0;font-size:14px}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;align-items:center}
 .searchbox{flex:1;min-width:200px;position:relative}
@@ -40,8 +37,16 @@ header{position:relative;z-index:10;background:#fffaf8;border-bottom:1px solid v
 
 .ig-section { background: linear-gradient(135deg, #fff7f3, #f8e3e7); text-align: center; }
 
+/* بخش پشت صحنه */
+.bts-section { background: #fff; }
+.bts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; max-width: 800px; margin: 20px auto 30px; }
+.bts-item { aspect-ratio: 1; border-radius: 15px; overflow: hidden; position: relative; box-shadow: var(--shadow); }
+.bts-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+.bts-item:hover img { transform: scale(1.05); }
+.bts-item .caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, #000000cc); color: white; padding: 15px 10px 10px; font-size: 12px; }
+
 .custom{display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;background:var(--wine);color:white;padding:30px;border-radius:28px}.custom h2{color:white}.custom p{color:#f3dbe2;margin-bottom:0}.custom .btn{background:white;color:var(--wine)}
-footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a, .social button{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px;border:none;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
+footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:25px}.footer-title{font-size:20px;font-weight:900;color:var(--wine)}footer p,footer li{font-size:13px;color:#765560}footer ul{padding-right:18px;margin:8px 0}.social{display:flex;gap:10px;flex-wrap:wrap}.social a{background:white;padding:8px 12px;border-radius:999px;color:var(--wine);font-size:13px}.copyright{text-align:center;border-top:1px solid #e7c5cd;margin-top:24px;padding-top:15px;color:#947681;font-size:12px}
 .overlay{position:fixed;inset:0;background:#2b101bb0;z-index:30;display:none;align-items:center;justify-content:center;padding:16px}.overlay.show{display:flex}.modal{background:#fffaf8;width:min(600px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:12px}.modal h2{margin:0;color:var(--wine);font-size:24px}.close{border:0;background:var(--pink);color:var(--wine);width:38px;height:38px;border-radius:50%;font-size:23px;cursor:pointer}
 .cart-items{display:grid;gap:10px;margin:18px 0}.cart-item{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:14px}.cart-item .sz{font-size:11px;color:var(--wine);background:var(--pink);padding:1px 8px;border-radius:8px;display:inline-block;margin-top:3px}.qty{display:flex;align-items:center;gap:8px}.qty button{border:0;background:var(--pink);color:var(--wine);width:28px;height:28px;border-radius:50%;cursor:pointer}.total{display:flex;justify-content:space-between;font-weight:900;color:var(--wine);border-top:1px solid var(--line);padding-top:13px}.discount-row{display:flex;justify-content:space-between;font-size:13px;color:#2e7d32;margin-top:6px}
 .coupon-box{display:flex;gap:8px;margin-top:12px}.coupon-box input{flex:1;border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:white;outline-color:var(--rose);font-size:13px}.coupon-box .btn{padding:9px 14px;font-size:13px}.coupon-msg{font-size:12px;margin-top:6px}.coupon-msg.ok{color:#2e7d32}.coupon-msg.err{color:#c62828}
@@ -59,8 +64,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .admin-panel{position:fixed;inset:0;background:#2b101bd0;z-index:60;display:none;align-items:center;justify-content:center;padding:16px}.admin-panel.show{display:flex}.admin-modal{background:#fffaf8;width:min(900px,100%);max-height:92vh;overflow:auto;border-radius:24px;padding:23px;box-shadow:0 20px 80px #0003}.admin-modal h2{color:var(--wine);margin:0 0 12px}.admin-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;border-bottom:1px solid var(--line);padding-bottom:10px}.admin-tab{border:0;background:transparent;color:#754758;padding:6px 12px;border-radius:10px;cursor:pointer;font-weight:700;font-size:13px;white-space:nowrap}.admin-tab.active{background:var(--wine);color:white}.admin-product-list{display:grid;gap:8px;margin-top:12px;max-height:400px;overflow:auto}.admin-product-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:white;border:1px solid var(--line);padding:10px 12px;border-radius:12px;font-size:13px}.admin-product-row .info{flex:1;min-width:0}.admin-product-row .info strong{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.admin-product-row .info span{font-size:11px;color:var(--muted)}.admin-product-row .actions{display:flex;gap:5px}.admin-product-row .actions button{border:0;background:var(--pink);color:var(--wine);padding:5px 10px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:700}.admin-product-row .actions button.del{background:#fde0e0;color:#c62828}
 .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}.admin-form .field{font-size:12px}.admin-form .field.full{grid-column:1/-1}.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}.admin-form .actions .btn{padding:8px 16px;font-size:13px}.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
 .admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}.admin-order-details{font-size:12px;color:var(--ink);width:100%}.admin-order-card select{border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;color:var(--wine);font-size:12px;margin-top:6px}.admin-head-actions{display:flex;gap:8px;align-items:center}.admin-head-actions .btn{padding:7px 14px;font-size:12px}.admin-field-input{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:white}
-@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}.bts-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}.bts-grid{grid-template-columns:1fr 1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 .pcount{position:absolute;bottom:10px;left:10px;background:#000000a8;color:white;font-size:11px;border-radius:999px;padding:2px 9px;z-index:1}
@@ -91,7 +96,34 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .lb-tools{display:flex;gap:8px}
 .lb-hint{color:#ffffffaa;font-size:11px;text-align:center;padding:8px}
 .ig-wrap{max-width:935px}
-@media(max-width:700px){.ig-feed{gap:2px}}
+.ig-profile{display:flex;gap:30px;align-items:center;padding:6px 4px 22px}
+.ig-ring{flex:none;padding:3px;border-radius:50%;background:linear-gradient(45deg,#f9ce34,#ee2a7b,#6228d7)}
+.ig-avatar{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font-size:40px;background:var(--pink);color:var(--wine);border:4px solid white}
+.ig-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.ig-name{font-size:20px;color:var(--ink);direction:ltr}
+.ig-follow{padding:6px 18px;font-size:13px}
+.ig-stats{margin:8px 0;font-size:14px}
+.ig-bio{font-size:13px;color:#5a3a46}
+.ig-tabsbar{border-top:1px solid var(--line);display:flex;justify-content:center;margin-bottom:4px}
+.ig-tabsbar span{padding:10px 4px;border-top:2px solid var(--ink);margin-top:-1px;font-size:12px;letter-spacing:1px;font-weight:700;color:var(--ink)}
+.ig-feed{display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+.ig-tile{position:relative;aspect-ratio:1;border:0;padding:0;background:#f1e4e7;cursor:pointer;overflow:hidden;display:block}
+.ig-tile img{width:100%;height:100%;object-fit:cover;display:block}
+.ig-tile .ov{position:absolute;inset:0;background:#00000066;color:white;display:grid;place-items:center;font-size:12px;opacity:0;transition:.2s;padding:8px;text-align:center}
+.ig-tile:hover .ov,.ig-tile:focus-visible .ov{opacity:1}
+.post-modal{width:min(920px,100%);padding:0;position:relative;overflow:auto}
+.post-close{position:absolute;top:10px;left:10px;z-index:3}
+.post-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}
+.post-img{background:#111;display:grid;place-items:center;min-height:240px;cursor:zoom-in}
+.post-img img{width:100%;max-height:80vh;object-fit:contain;display:block}
+.post-side{display:flex;flex-direction:column;min-height:0}
+.post-head{display:flex;align-items:center;gap:10px;padding:12px 56px 12px 14px;border-bottom:1px solid var(--line)}
+.post-head .mini{width:34px;height:34px;border-radius:50%;background:var(--pink);color:var(--wine);display:grid;place-items:center}
+.post-head b{direction:ltr}
+.post-cap{padding:14px;overflow:auto;flex:1;font-size:14px;white-space:pre-wrap}
+.post-foot{padding:10px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.post-foot .btn{padding:4px 12px;font-size:12px}
+@media(max-width:700px){.post-body{grid-template-columns:1fr}.ig-profile{gap:16px}.ig-avatar{width:70px;height:70px;font-size:30px}.ig-feed{gap:2px}}
 </style>
 </head>
 <body>
@@ -114,12 +146,9 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <span class="eyebrow">لباس خواب زنانه با عشق دوخته‌شده</span>
    <h1>آرامشِ شب‌های تو،<br><span>به سبک گلپوش</span></h1>
    <p>لباس خواب‌هایی لطیف و دوست‌داشتنی برای لحظه‌های استراحت شما؛ از مدل‌های آماده تا دوخت سفارشی متناسب با سلیقه و اندازه‌تان.</p>
-   <div class="hero-notes"><span>♡ کیفیت و دوخت تمیز</span><span>♡ تنوع مدل و رنگ</span><span>♡ امکان سایز سفارشی</span></div>
+      <div class="hero-notes"><span>♡ کیفیت و دوخت تمیز</span><span>♡ تنوع مدل و رنگ</span><span>♡ امکان سایز سفارشی</span></div>
   </div>
-  <div class="hero-art" aria-label="لوگوی گلپوش">
-     <!-- عکس لوگو را با نام logo.jpg در کنار همین فایل قرار دهید -->
-     <img src="logo.jpg" alt="لوگوی گلپوش" class="hero-logo-img">
-  </div>
+  <div class="hero-art" aria-label="نمای تزئینی پارچه‌های لباس خواب"><div class="fabric-stack"><div class="fabric f1">♡ ✿ ♡</div><div class="fabric f2">✿ ♡ ✿</div><div class="fabric f3">♡ ✿ ♡</div><div class="fabric f4">♡</div></div></div>
  </div>
 </section>
 <section class="section" id="products">
@@ -158,14 +187,14 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <section class="section ig-section" id="instagram">
  <div class="wrap">
    <div class="section-head" style="justify-content:center; align-items:center; text-align:center; flex-direction:column; margin-bottom:18px;">
-     <div><h2>ما را در اینستاگرام دنبال کنید</h2></div>
+     <div><h2>ما را در اینستاگرام دنبال کنید</h2><p>جدیدترین محصولات و تخفیف‌ها را در پیج ما ببینید.</p></div>
    </div>
    <a class="btn primary" href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener" style="padding:12px 30px; font-size:15px;">Follow @gol.pooshshop1</a>
  </div>
 </section>
 <section class="section" id="custom"><div class="wrap custom"><div><h2>لباس خواب دقیقاً به اندازه‌ی تو</h2><p>مدل، رنگ و اندازه دلخواهت رو انتخاب کن؛ برای هماهنگی دوخت سفارشی با ما در ارتباط باش.</p></div><a class="btn" href="https://t.me/golpooshshop1" target="_blank" rel="noopener">درخواست دوخت سفارشی ↗</a></div></section>
 
-<!-- بخش پشت صحنه سفارشات (طبق کد اصلی شما دست‌نخورده باقی مانده است) -->
+<!-- بخش پشت صحنه سفارشات -->
 <section class="section bts-section" id="behind-scenes">
  <div class="wrap ig-wrap">
   <div class="section-head" style="justify-content:center; align-items:center; text-align:center; flex-direction:column;">
@@ -193,15 +222,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
  <div class="footer-grid">
   <div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه؛ جایی برای راحتی، لطافت و انتخاب‌های دوست‌داشتنی.</p></div>
   <div><strong>راه‌های ارتباطی</strong><ul><li>تلفن و سفارش: <a href="tel:09368550283">۰۹۳۶۸۵۵۰۲۸۳</a></li><li>اینستاگرام: @gol.pooshshop1</li><li>تلگرام: @golpooshshop1</li></ul></div>
-  <div>
-    <strong>ثبت سفارش</strong>
-    <p style="margin-bottom:10px">برای ثبت سفارش روی دکمه زیر کلیک کنید.</p>
-    <div class="social">
-      <button type="button" onclick="openHowToOrder()">📝 نحوه ثبت سفارش</button>
-      <a href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">اینستاگرام</a>
-      <a href="https://t.me/golpooshshop1" target="_blank" rel="noopener">تلگرام</a>
-    </div>
-  </div>
+  <div><strong>ثبت سفارش</strong><p>محصول را به سبد خرید اضافه کن و سفارش را ثبت کن؛ سپس متن سفارش را از طریق پیام‌رسان برای ما بفرست. پرداخت آنلاین پس از اتصال درگاه پرداخت فعال می‌شود.</p><div class="social"><a href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">اینستاگرام</a><a href="https://t.me/golpooshshop1" target="_blank" rel="noopener">تلگرام</a></div></div>
  </div>
  <div class="copyright">© گلپوش — تمامی حقوق محفوظ است.</div>
 </div></footer>
@@ -248,17 +269,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <div class="modal-head"><h2>راهنمای انتخاب سایز 📏</h2><button class="close" onclick="closeSizeGuide()" aria-label="بستن">×</button></div>
     <div style="margin-top:15px; text-align:center;">
       <img id="sizeGuideImg" src="" alt="راهنمای سایز" style="max-width:100%; border-radius:15px; border:1px solid var(--line);">
-    </div>
-  </div>
-</div>
-
-<!-- مودال نحوه ثبت سفارش -->
-<div class="overlay" id="howToOrderOverlay" onclick="if(event.target===this)closeHowToOrder()">
-  <div class="modal" role="dialog" aria-modal="true" style="width:min(500px,100%)">
-    <div class="modal-head"><h2>📝 نحوه ثبت سفارش</h2><button class="close" onclick="closeHowToOrder()" aria-label="بستن">×</button></div>
-    <div style="margin-top:15px; font-size:14px; color:var(--ink); line-height:2;">
-      <p>محصول را به سبد خرید اضافه کن و سفارش را ثبت کن؛ سپس متن سفارش را از طریق پیام‌رسان برای ما بفرست.</p>
-      <p>پرداخت آنلاین پس از اتصال درگاه پرداخت فعال می‌شود.</p>
     </div>
   </div>
 </div>
@@ -384,6 +394,19 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
      <p id="adminSizeGuideEmpty" class="hint" style="margin-bottom:15px">هنوز عکسی آپلود نشده است.</p>
      <p style="margin-bottom:10px;">آپلود عکس جدید:</p>
      <input type="file" accept="image/*" onchange="uploadSizeGuide(this)" style="padding:10px; border:1px dashed var(--rose); border-radius:10px; background:var(--pink);">
+   </div>
+  </div>
+ </div>
+</div>
+<div class="overlay" id="postOverlay" onclick="if(event.target===this)closePost()">
+ <div class="modal post-modal" role="dialog" aria-modal="true" aria-label="پست پشت‌صحنه">
+  <button class="close post-close" onclick="closePost()" aria-label="بستن">×</button>
+  <div class="post-body">
+   <div class="post-img" role="button" tabindex="0" aria-label="بزرگ‌نمایی عکس" onclick="openLightboxList([btsPosts[postIdx].url],0)"><img id="postImg" alt=""></div>
+   <div class="post-side">
+    <div class="post-head"><span class="mini">✿</span><b>gol.pooshshop1</b></div>
+    <div class="post-cap" id="postCap"></div>
+    <div class="post-foot"><span id="postDate"></span><span><button class="btn outline" type="button" onclick="postStep(-1)">قبلی</button> <span id="postPos"></span> <button class="btn outline" type="button" onclick="postStep(1)">بعدی</button></span></div>
    </div>
   </div>
  </div>
@@ -626,9 +649,6 @@ async function openSizeGuide() {
 }
 function closeSizeGuide() { closeOverlay("sizeGuideOverlay"); }
 
-function openHowToOrder() { openOverlay("howToOrderOverlay"); }
-function closeHowToOrder() { closeOverlay("howToOrderOverlay"); }
-
 /* ================= مودال‌ها ================= */
 let lastFocus = null;
 function openOverlay(id){ lastFocus = document.activeElement; $(id).classList.add("show"); document.body.style.overflow = "hidden"; const c = $(id).querySelector(".close"); if(c) c.focus({preventScroll:true}); }
@@ -640,7 +660,7 @@ document.addEventListener("keydown", e => {
   if((e.key === "Enter" || e.key === " ") && e.target && e.target.matches && e.target.matches('[role="button"]')){ e.preventDefault(); e.target.click(); return; }
   // Escape
   if(e.key === "Escape"){
-    ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay","postOverlay","howToOrderOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false });
+    ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay","postOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false });
     return;
   }
   // قفل فوکوس داخل مودال باز
