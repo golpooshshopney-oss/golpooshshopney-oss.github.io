@@ -177,8 +177,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 </main>
 <footer id="contact"><div class="wrap">
  <div class="trust-badges">
-    <div class="trust-item"><div class="icon">🛡️</div><h4>۷ روز ضمانت بازگشت وجه</h4><p>در صورت عدم رضایت، وجه شما بازگردانده می‌شود (به‌جز سفارش‌های دوخت سفارشی).</p></div>
-    <div class="trust-item"><div class="icon">🔄</div><h4>۷ روز مهلت مرجوعی کالا</h4><p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش. برای دوخت سفارشی، تغییرات در بازه زمانی ۷ روز بدون هزینه پذیرفته می‌شود.</p></div>
+    <div class="trust-item"><div class="icon">🛡️</div><div><h4>۷ روز ضمانت بازگشت وجه</h4><p>در صورت عدم رضایت، وجه شما بازگردانده می‌شود (به‌جز سفارش‌های دوخت سفارشی).</p></div></div>
+    <div class="trust-item"><div class="icon">🔄</div><div><h4>۷ روز مهلت مرجوعی کالا</h4><p>امکان تعویض یا مرجوعی کالا تا ۷ روز پس از دریافت سفارش. برای دوخت سفارشی، تغییرات در بازه زمانی ۷ روز بدون هزینه پذیرفته می‌شود.</p></div></div>
  </div>
  <div class="footer-grid">
   <div><div class="footer-title">گلپوش ✿</div><p>فروشگاه لباس خواب زنانه؛ جایی برای راحتی، لطافت و انتخاب‌های دوست‌داشتنی.</p></div>
@@ -378,17 +378,6 @@ const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE
 let sizeGuideUrl = 'https://images.unsplash.com/photo-1529157179598-13d2b4b182a5?auto=format&fit=crop&w=600&q=80'; 
 
 /* ================= داده‌های پایه ================= */
-const DEFAULT_PRODUCTS = [
- {id:1,name:"ست خواب ساتن صورتی",category:"ساتن",price:890000,old:1050000,desc:"لطیف و براق • طرح قلب • مناسب شب‌های خاص",color:"#ed9fb5",tag:"پرفروش",active:true,images:[]},
- {id:2,name:"ست نخی گل‌دار",category:"نخی",price:690000,old:0,desc:"سبک و راحت • مناسب استفاده روزانه",color:"#e7c8b5",tag:"راحت و لطیف",active:true,images:[]},
- {id:3,name:"ست فانتزی رز",category:"فانتزی",price:790000,old:0,desc:"رنگ ملایم • طراحی دوست‌داشتنی",color:"#c98aa5",tag:"جدید",active:true,images:[]},
- {id:4,name:"ست خواب مشکی کلاسیک",category:"ساتن",price:950000,old:1100000,desc:"ساده و شیک • برش کلاسیک",color:"#55454f",tag:"شیک",active:true,images:[]},
- {id:5,name:"ست نخی شکوفه",category:"نخی",price:720000,old:0,desc:"طرح گل‌ریز • نرم و دلپذیر",color:"#e6c5cc",tag:"محبوب",active:true,images:[]},
- {id:6,name:"ست قلبی صورتی",category:"فانتزی",price:820000,old:0,desc:"طرح قلب • هدیه‌ای دوست‌داشتنی",color:"#f0b7c8",tag:"خاص",active:true,images:[]},
- {id:7,name:"ست ساتن یاسی",category:"ساتن",price:920000,old:0,desc:"رنگ یاسی • لطافت و درخشش",color:"#b99bbf",tag:"رنگ خاص",active:true,images:[]},
- {id:8,name:"ست نخی کرم",category:"نخی",price:650000,old:0,desc:"مینیمال • مناسب استراحت",color:"#e9d9c7",tag:"ساده",active:true,images:[]}
-];
-
 const SIZES = ["1", "2", "3", "4", "سفارشی"]; 
 const MAX_QTY = 10;
 const LS_CART = "golpoosh_cart_v2";
@@ -459,7 +448,8 @@ async function loadProducts(){
       if(error) console.error("products:", error);
     }catch(e){ console.error(e) }
   }
-  products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS)); return false;
+  products = []; // دیگر هیچ محصول پیش‌فرضی وجود ندارد
+  return false;
 }
 
 async function loadBTS() {
@@ -528,7 +518,7 @@ function shareParts(p){ return { url: encodeURIComponent(location.href.split("#"
 function renderProducts(){
   const grid = $("productsGrid");
   const shown = getFiltered();
-  if(!shown.length){ grid.innerHTML = '<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>'; return }
+  if(!shown.length){ grid.innerHTML = '<div class="empty">محصولی برای نمایش وجود ندارد 🌷</div>'; return }
   grid.innerHTML = shown.map(p => {
     // سایز انتخاب شده توسط کاربر (اگر انتخاب نکرده باشد، آندفایند است)
     const sz = selectedSize[p.id];
