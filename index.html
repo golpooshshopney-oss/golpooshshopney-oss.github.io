@@ -84,6 +84,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .admin-form{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;background:white;border:1px solid var(--line);padding:14px;border-radius:14px}.admin-form .field{font-size:12px}.admin-form .field.full{grid-column:1/-1}.admin-form .actions{grid-column:1/-1;display:flex;gap:8px}.admin-form .actions .btn{padding:8px 16px;font-size:13px}.admin-note{font-size:11px;color:#a4647a;background:#fff0f1;padding:8px 12px;border-radius:10px;margin-top:10px}
 .admin-order-card{flex-direction:column;align-items:flex-start;gap:5px;padding:15px;margin-bottom:10px}.admin-order-header{display:flex;justify-content:space-between;width:100%;font-weight:bold;color:var(--wine);border-bottom:1px solid var(--pink);padding-bottom:5px;margin-bottom:5px}.admin-order-details{font-size:12px;color:var(--ink);width:100%}.admin-order-card select{border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;color:var(--wine);font-size:12px;margin-top:6px}.admin-head-actions{display:flex;gap:8px;align-items:center}.admin-head-actions .btn{padding:7px 14px;font-size:12px}.admin-field-input{width:100%;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:10px;background:white}
 
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--wine);color:white;padding:12px 22px;border-radius:14px;z-index:200;display:none;box-shadow:0 10px 40px #0004;font-size:14px;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+
 @media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.hero-grid{gap:20px}.navlinks{gap:12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:220px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -400,6 +402,11 @@ let appliedCoupon = null;
 let orderKey = null;
 let lastMessage = "";
 let editingId = null;
+
+// کش برای محصولات (۳۰ ثانیه)
+let productsCache = null;
+let cacheTime = 0;
+
 const fmt = n => new Intl.NumberFormat("fa-IR").format(n);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeColor = c => /^#[0-9a-f]{3,8}$/i.test(c || "") ? c : "#ed9fb5";
@@ -431,10 +438,24 @@ async function loadSettings() {
 }
 
 async function loadProducts(){
+  // استفاده از کش (۳۰ ثانیه)
+  if (productsCache && (Date.now() - cacheTime < 30000)) {
+    products = productsCache;
+    return true;
+  }
+  
   if(sb){
     try{
-      const { data, error } = await sb.from("products").select("*").order("id");
-      if(!error && Array.isArray(data) && data.length){ products = data.map(fromRow); return true }
+      const { data, error } = await sb.from("products")
+        .select("id,name,category,price,old_price,description,color,tag,image_url,images,active")
+        .order("id");
+        
+      if(!error && Array.isArray(data) && data.length){ 
+        products = data.map(fromRow); 
+        productsCache = products;
+        cacheTime = Date.now();
+        return true 
+      }
       if(error) console.error("products:", error);
     }catch(e){ console.error(e) }
   }
@@ -582,7 +603,7 @@ function changeMainImage(el, url){
 
 function closeProduct(){ closeOverlay("productOverlay") }
 
-/* ================= سیستم زوم و پن (جابه جایی) ================= */
+/* ================= سیستم زوم و پن ================= */
 let scale = 1;
 let panning = false;
 let pointX = 0;
@@ -607,7 +628,6 @@ function closeZoom(){
   document.body.style.overflow = "";
 }
 
-// هندل کردن موس روی Wrapper
 const zoomWrapper = document.getElementById("zoomWrapper");
 
 zoomWrapper.onmousedown = function (e) {
@@ -637,7 +657,6 @@ zoomWrapper.onwheel = function (e) {
   setTransform();
 };
 
-// هندل کردن لمس برای موبایل
 let initialDistance = 0;
 zoomWrapper.ontouchstart = function(e) {
   if (e.touches.length === 2) {
@@ -673,7 +692,6 @@ zoomWrapper.ontouchend = function() {
   panning = false;
   initialDistance = 0;
 };
-
 
 /* ================= راهنمای سایز ================= */
 function openSizeGuide() { $("sizeGuideImg").src = sizeGuideUrl; openOverlay("sizeGuideOverlay"); }
@@ -931,32 +949,42 @@ async function exportToExcel() {
 async function renderAdminOrders(){
   const box = $("adminOrderList");
   box.innerHTML = '<p class="hint">در حال دریافت سفارش‌ها از سرور... ⏳</p>';
-  const { data: orders, error } = await sb.from("orders").select("*").order("created_at", {ascending: false}).limit(200);
-  if(error){ box.innerHTML = '<p class="hint" style="color:#c62828">خطا در دریافت اطلاعات از سرور!</p>'; return }
-  if(!orders || !orders.length){ box.innerHTML = '<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
   
-  const totalOrders = orders.length;
-  const newOrders = orders.filter(o => o.status === 'new').length;
-  const totalRevenue = orders.filter(o => o.status !== 'canceled').reduce((sum, o) => sum + (o.total_price || 0), 0);
-
-  const statsHtml = `
-    <div class="admin-stats">
-      <div class="stat-card"><span>کل سفارش‌ها</span><strong>${fmt(totalOrders)}</strong></div>
-      <div class="stat-card"><span>سفارش‌های جدید</span><strong style="color:#2e7d32">${fmt(newOrders)}</strong></div>
-      <div class="stat-card"><span>درآمد کل (تومان)</span><strong>${fmt(totalRevenue)}</strong></div>
-    </div>
-  `;
-
-  const listHtml = orders.map(o => {
-    const d = new Date(o.created_at);
-    const dateStr = d.toLocaleDateString("fa-IR") + " - " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"});
-    const items = String(o.items || "").split("\n").map(i => `<span style="color:#754758">${esc(i)}</span>`).join("<br>");
-    const st = o.status || "new";
-    const opts = Object.entries(STATUS_LABELS).map(([k, v]) => `<option value="${k}" ${k===st?"selected":""}>${v}</option>`).join("");
-    return ` <div class="admin-product-row admin-order-card"> <div class="admin-order-header"> <span>${esc(o.customer_name || "بدون نام")} <span style="font-size:11px;color:#876b73">#${esc(o.id)}</span></span> <span style="font-size:11px;color:#876b73">${esc(dateStr)}</span> </div> <div class="admin-order-details"> <strong>📞 تلفن:</strong> ${esc(o.phone || "-")}<br> <strong>📍 آدرس:</strong> ${esc(o.address || "-")} (کدپستی: ${esc(o.postal_code || "-")})<br> <strong>🛒 محصولات:</strong><br>${items}<br> ${o.coupon_code ? `<strong>🏷️ کد تخفیف:</strong> ${esc(o.coupon_code)} (− ${fmt(o.discount || 0)} تومان)<br>` : ""} <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">مبلغ نهایی: ${fmt(o.total_price || 0)} تومان</strong><br> <select data-id="${esc(o.id)}" onchange="setOrderStatus(this)" aria-label="وضعیت سفارش">${opts}</select> </div> </div>`;
-  }).join("");
+  const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('timeout')), 15000));
+  const fetchPromise = sb.from("orders").select("*").order("created_at", {ascending: false}).limit(100);
   
-  box.innerHTML = statsHtml + listHtml;
+  try {
+    const { data: orders, error } = await Promise.race([fetchPromise, timeoutPromise]);
+    if(error) throw error;
+    
+    if(!orders || !orders.length){ box.innerHTML = '<p class="hint">هنوز سفارشی ثبت نشده است.</p>'; return }
+    
+    const totalOrders = orders.length;
+    const newOrders = orders.filter(o => o.status === 'new').length;
+    const totalRevenue = orders.filter(o => o.status !== 'canceled').reduce((sum, o) => sum + (o.total_price || 0), 0);
+
+    const statsHtml = `
+      <div class="admin-stats">
+        <div class="stat-card"><span>کل سفارش‌ها</span><strong>${fmt(totalOrders)}</strong></div>
+        <div class="stat-card"><span>سفارش‌های جدید</span><strong style="color:#2e7d32">${fmt(newOrders)}</strong></div>
+        <div class="stat-card"><span>درآمد کل (تومان)</span><strong>${fmt(totalRevenue)}</strong></div>
+      </div>
+    `;
+
+    const listHtml = orders.map(o => {
+      const d = new Date(o.created_at);
+      const dateStr = d.toLocaleDateString("fa-IR") + " - " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"});
+      const items = String(o.items || "").split("\n").map(i => `<span style="color:#754758">${esc(i)}</span>`).join("<br>");
+      const st = o.status || "new";
+      const opts = Object.entries(STATUS_LABELS).map(([k, v]) => `<option value="${k}" ${k===st?"selected":""}>${v}</option>`).join("");
+      return ` <div class="admin-product-row admin-order-card"> <div class="admin-order-header"> <span>${esc(o.customer_name || "بدون نام")} <span style="font-size:11px;color:#876b73">#${esc(o.id)}</span></span> <span style="font-size:11px;color:#876b73">${esc(dateStr)}</span> </div> <div class="admin-order-details"> <strong>📞 تلفن:</strong> ${esc(o.phone || "-")}<br> <strong>📍 آدرس:</strong> ${esc(o.address || "-")} (کدپستی: ${esc(o.postal_code || "-")})<br> <strong>🛒 محصولات:</strong><br>${items}<br> ${o.coupon_code ? `<strong>🏷️ کد تخفیف:</strong> ${esc(o.coupon_code)} (− ${fmt(o.discount || 0)} تومان)<br>` : ""} <strong style="color:var(--wine);font-size:14px;margin-top:5px;display:inline-block">مبلغ نهایی: ${fmt(o.total_price || 0)} تومان</strong><br> <select data-id="${esc(o.id)}" onchange="setOrderStatus(this)" aria-label="وضعیت سفارش">${opts}</select> </div> </div>`;
+    }).join("");
+    
+    box.innerHTML = statsHtml + listHtml;
+  } catch (err) {
+    console.error("Fetch orders error:", err);
+    box.innerHTML = '<p class="hint" style="color:#c62828">خطا در دریافت اطلاعات (احتمالاً اینترنت قطع است). لطفاً صفحه را رفرش کنید یا از فیلترشکن استفاده کنید.</p>';
+  }
 }
 
 async function renderAdminReviews() {
@@ -1124,8 +1152,24 @@ function resetProductForm(){
   $("tabAddBtn").textContent = "➕ افزودن محصول"; 
 }
 
-/* ================= عکس‌ها ================= */
-function compressImage(file, maxSide = 1200){ return new Promise((resolve, reject) => { const img = new Image(); const objUrl = URL.createObjectURL(file); img.onload = () => { const k = Math.min(1, maxSide / Math.max(img.width, img.height)); const c = document.createElement("canvas"); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext("2d").drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(objUrl); c.toBlob(b => b ? resolve(b) : reject(new Error("compress")), "image/jpeg", 0.85); }; img.onerror = () => { URL.revokeObjectURL(objUrl); reject(new Error("load")); }; img.src = objUrl; }); }
+/* ================= عکس‌ها (فشرده‌سازی قوی‌تر) ================= */
+function compressImage(file, maxSide = 800){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    const objUrl = URL.createObjectURL(file);
+    img.onload = () => {
+      const k = Math.min(1, maxSide / Math.max(img.width, img.height));
+      const c = document.createElement("canvas");
+      c.width = Math.round(img.width * k);
+      c.height = Math.round(img.height * k);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(objUrl);
+      c.toBlob(b => b ? resolve(b) : reject(new Error("compress")), "image/jpeg", 0.7);
+    };
+    img.onerror = () => { URL.revokeObjectURL(objUrl); reject(new Error("load")); };
+    img.src = objUrl;
+  });
+}
 
 async function uploadSizeGuide(input){
   const file = input.files && input.files[0];
@@ -1151,7 +1195,19 @@ async function uploadSizeGuide(input){
 }
 
 /* ================= شروع ================= */
-(async function init(){ await loadSettings(); await loadProducts(); cleanCart(); renderProducts(); updateCart(); loadReviews(); loadBTS(); })();
+(async function init(){ 
+  await loadSettings(); 
+  await loadProducts(); 
+  cleanCart(); 
+  renderProducts(); 
+  updateCart(); 
+  
+  // لود تنبل (Lazy) برای نظرات و پشت صحنه با تاخیر ۵۰۰ میلی‌ثانیه
+  setTimeout(() => {
+    loadReviews(); 
+    loadBTS(); 
+  }, 500); 
+})();
 </script>
 </body>
 </html>
