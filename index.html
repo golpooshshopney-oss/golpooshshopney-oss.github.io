@@ -50,7 +50,7 @@ header{position:relative;z-index:10;background:#fffaf8;border-bottom:1px solid v
 .share-btn:hover{background:var(--pink);border-color:var(--rose)}
 .empty{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted)}
 .benefits{background:#fff0f1}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{padding:23px;background:white;border:1px solid var(--line);border-radius:20px}.benefit .ico{font-size:27px}.benefit h3{color:var(--wine);margin:8px 0 3px;font-size:17px}.benefit p{font-size:13px;color:var(--muted);margin:0}
-.reviews{background:#fff0f1}.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
+.reviews{background:#fff0f1}.review-grid{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px}.review-grid::-webkit-scrollbar{display:none}.review-grid .review{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;min-width:0}.review-grid .empty{flex:0 0 100%}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
 .trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}.trust-item{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow)}.trust-item .icon{font-size:40px}.trust-item h4{margin:0 0 5px;color:var(--wine);font-size:16px}.trust-item p{margin:0;font-size:12px;color:var(--muted)}
 
 .ig-section { background: linear-gradient(135deg, #fff7f3, #f8e3e7); text-align: center; }
@@ -80,8 +80,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .settings-block{display:flex;flex-direction:column;align-items:center;padding:20px;gap:6px}
 .settings-block .pv{max-width:100%;max-height:250px;border-radius:12px;border:1px solid var(--line);margin-bottom:10px;display:none}
 .settings-block .file{padding:10px;border:1px dashed var(--rose);border-radius:10px;background:var(--pink)}
-@media(max-width:900px){.hero-grid{gap:20px}.navlinks{gap:6px 12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid{grid-template-columns:1fr}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.products .product{flex-basis:calc((100% - 11px)/2)}.car-btn{width:36px;height:36px;font-size:20px}.car-prev{right:-6px}.car-next{left:-6px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr}}
+@media(max-width:900px){.hero-grid{gap:20px}.navlinks{gap:6px 12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid .review{flex-basis:calc((100% - 18px)/2)}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.products .product{flex-basis:calc((100% - 11px)/2)}.car-btn{width:36px;height:36px;font-size:20px}.car-prev{right:-6px}.car-next{left:-6px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid .review{flex-basis:100%}.admin-stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 .pcount{position:absolute;bottom:10px;left:10px;background:#000000a8;color:white;font-size:11px;border-radius:999px;padding:2px 9px;z-index:1}
@@ -138,6 +138,20 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .post-foot{padding:10px 14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
 .post-foot .btn{padding:4px 12px;font-size:12px}
 @media(max-width:700px){.post-body{grid-template-columns:1fr}}
+
+/* صفحه‌ی «مشاهده همه» (محصولات / پشت‌صحنه) */
+.viewall{text-align:center;margin-top:22px}
+.allpage{position:fixed;inset:0;z-index:25;background:var(--pale);display:none;flex-direction:column}
+.allpage.show{display:flex}
+.allpage-bar{display:flex;align-items:center;gap:12px;padding:12px 4%;background:#fffaf8;border-bottom:1px solid var(--line);flex:0 0 auto}
+.allpage-bar h2{margin:0;font-size:19px;color:var(--wine);flex:1}
+.allpage-bar .btn{padding:9px 16px;font-size:13px;white-space:nowrap}
+.allpage-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;padding:18px 0 48px}
+.all-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.all-grid.bts{grid-template-columns:repeat(4,1fr);gap:8px}
+.all-grid .product{min-width:0}
+@media(max-width:900px){.all-grid{grid-template-columns:repeat(2,1fr)}.all-grid.bts{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:620px){.all-grid{gap:11px}.all-grid.bts{grid-template-columns:repeat(2,1fr);gap:6px}}
 </style>
 </head>
 <body>
@@ -184,6 +198,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <button class="car-btn car-next" type="button" onclick="carousels.products.step(1,true)" aria-label="محصولات بعدی">‹</button>
    <div class="car-dots" id="carDots"></div>
   </div>
+  <div class="viewall"><button class="btn primary" type="button" onclick="openAllPage('products')">مشاهده همه محصولات ‹</button></div>
  </div>
 </section>
 <section class="section benefits" id="benefits">
@@ -201,9 +216,14 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
      <div><h2>مشتری‌ها چه می‌گویند؟</h2><p>نظرات و سوالات مشتری‌ها درباره گلپوش.</p></div>
      <button class="btn primary" onclick="openReviewForm()">ثبت نظر / سوال</button>
    </div>
-   <div class="review-grid" id="reviewGrid">
-     <div class="empty">در حال بارگذاری نظرات... 🌸</div>
-   </div>
+   <div class="carousel" id="reviewsCarousel">
+      <button class="car-btn car-prev" type="button" onclick="carousels.reviews.step(-1,true)" aria-label="نظر قبلی">›</button>
+      <div class="review-grid" id="reviewGrid">
+        <div class="empty">در حال بارگذاری نظرات... 🌸</div>
+      </div>
+      <button class="car-btn car-next" type="button" onclick="carousels.reviews.step(1,true)" aria-label="نظر بعدی">‹</button>
+      <div class="car-dots" id="revDots"></div>
+    </div>
  </div>
 </section>
 <section class="section ig-section" id="instagram">
@@ -229,10 +249,17 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <button class="car-btn car-next" type="button" onclick="carousels.bts.step(1,true)" aria-label="پست بعدی">‹</button>
    <div class="car-dots" id="btsDots"></div>
   </div>
+  <div class="viewall" id="btsAllWrap" style="display:none"><button class="btn primary" type="button" onclick="openAllPage('bts')">مشاهده همه عکس‌ها ‹</button></div>
  </div>
 </section>
 
 </main>
+
+<!-- صفحه‌ی مشاهده همه -->
+<div class="allpage" id="allPage" role="dialog" aria-modal="true" aria-labelledby="allTitle">
+ <div class="allpage-bar"><button class="btn soft" type="button" onclick="closeAllPage()">→ بازگشت</button><h2 id="allTitle"></h2></div>
+ <div class="allpage-body" id="allBody"><div class="wrap"><div class="all-grid" id="allGrid"></div></div></div>
+</div>
 <footer id="contact"><div class="wrap">
  <div class="trust-badges">
     <div class="trust-item"><div class="icon">🛡️</div><div><h4>۷ روز ضمانت بازگشت وجه</h4><p>در صورت عدم رضایت، وجه شما بازگردانده می‌شود (به‌جز سفارش‌های دوخت سفارشی).</p></div></div>
@@ -249,7 +276,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 <div class="overlay" id="howOverlay" onclick="if(event.target===this)closeHow()">
  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="howTitle" style="width:min(480px,100%)">
   <div class="modal-head"><h2 id="howTitle">نحوه سفارش</h2><button class="close" onclick="closeHow()" aria-label="بستن">×</button></div>
-  <p style="font-size:14px;color:#765560;margin:14px 0">محصول را به سبد خرید اضافه کن و سفارش را ثبت کن؛ سپس متن سفارش را از طریق پیام‌رسان برای ما بفرست. پرداخت آنلاین پس از اتصال درگاه پرداخت فعال می‌شود.</p>
+  <p style="font-size:14px;color:#765560;margin:14px 0 6px;font-weight:700">مشتری عزیزم 🌸 سفارشات شما به محض ثبت سفارش برای ادمین ارسال می‌شود.</p>
+  <p style="font-size:14px;color:#765560;margin:0 0 14px">لطفاً متن را کپی کرده و وارد کانال تلگرام ما شوید و برای آیدی ادمین که در کانال سنجاق شده است ارسال کنید تا ما با شما در ارتباط باشیم. ممنون از شما 🌷</p>
   <div class="social"><a href="https://instagram.com/gol.pooshshop1" target="_blank" rel="noopener">اینستاگرام</a><a href="https://t.me/golpooshshop1" target="_blank" rel="noopener">تلگرام</a></div>
  </div>
 </div>
@@ -571,20 +599,52 @@ async function loadBTS() {
   const emptyMsg = '<div class="empty">به‌زودی عکس‌های پشت‌صحنه اینجا قرار می‌گیرد. 🌸</div>';
   let data = null, error = null;
   if(sb){
-    try{ ({ data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false}).limit(20)); }
+    try{ ({ data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false}).limit(200)); }
     catch(e){ error = e; }
   }
   if(error || !data || !data.length) {
     btsPosts = [];
-    grid.innerHTML = emptyMsg;
+    grid.innerHTML = emptyMsg; $("btsAllWrap").style.display = "none";
     carousels.bts.refresh(true);
     return;
   }
   btsPosts = data.map(d => ({url: safeUrl(d.image_url), caption: d.caption || "", at: d.created_at})).filter(p => p.url);
-  if(!btsPosts.length){ grid.innerHTML = emptyMsg; carousels.bts.refresh(true); return; }
-  grid.innerHTML = btsPosts.map((p, i) => `<button type="button" class="ig-tile" onclick="openPost(${i})" aria-label="${esc(p.caption || ("پست " + (i + 1)))}"><img src="${esc(p.url)}" alt="${esc(p.caption || "پشت صحنه")}" loading="lazy"><span class="ov">${p.caption ? esc(p.caption.slice(0, 60)) : "🔍"}</span></button>`).join("");
+  if(!btsPosts.length){ grid.innerHTML = emptyMsg; $("btsAllWrap").style.display = "none"; carousels.bts.refresh(true); return; }
+  grid.innerHTML = btsPosts.slice(0, BTS_SLIDER_MAX).map(btsTileHTML).join("");
+  $("btsAllWrap").style.display = "";
   carousels.bts.refresh(true);
+  if(allKind === "bts") renderAllPage();
 }
+const BTS_SLIDER_MAX = 12;
+function btsTileHTML(p, i){ return `<button type="button" class="ig-tile" onclick="openPost(${i})" aria-label="${esc(p.caption || ("پست " + (i + 1)))}"><img src="${esc(p.url)}" alt="${esc(p.caption || "پشت صحنه")}" loading="lazy"><span class="ov">${p.caption ? esc(p.caption.slice(0, 60)) : "🔍"}</span></button>`; }
+
+/* ================= صفحه‌ی مشاهده همه ================= */
+let allKind = "";
+function renderAllPage(){
+  const grid = $("allGrid");
+  if(allKind === "products"){
+    $("allTitle").textContent = "همه محصولات گلپوش";
+    grid.className = "all-grid";
+    const list = products.filter(p => p.active);
+    grid.innerHTML = list.length ? list.map(productCardHTML).join("") : (loadFailed ? '<div class="empty">اتصال به سرور برقرار نشد 🌸<br><button class="btn primary" type="button" style="margin-top:12px" onclick="retryLoad()">تلاش دوباره</button></div>' : '<div class="empty">هنوز محصولی اضافه نشده است 🌷</div>');
+  } else if(allKind === "bts"){
+    $("allTitle").textContent = "همه عکس‌های پشت صحنه";
+    grid.className = "all-grid bts";
+    grid.innerHTML = btsPosts.length ? btsPosts.map(btsTileHTML).join("") : '<div class="empty">هنوز عکسی اضافه نشده است 🌸</div>';
+  }
+}
+function openAllPage(kind){
+  allKind = kind; renderAllPage();
+  $("allPage").classList.add("show"); document.body.style.overflow = "hidden"; $("allBody").scrollTop = 0;
+  try{ history.pushState({allpage:1}, "") }catch(e){}
+}
+function hideAllPage(){
+  const el = $("allPage"); if(!el.classList.contains("show")) return;
+  el.classList.remove("show"); allKind = ""; $("allGrid").innerHTML = "";
+  if(!document.querySelector(".overlay.show,.admin-panel.show")) document.body.style.overflow = "";
+}
+function closeAllPage(){ if(history.state && history.state.allpage){ history.back(); } else hideAllPage(); }
+window.addEventListener("popstate", hideAllPage);
 function openPost(i){ postIdx = i; renderPost(); openOverlay("postOverlay"); }
 function renderPost(){
   const p = btsPosts[postIdx]; if(!p) return;
@@ -630,7 +690,7 @@ function onSearch(){ searchTerm = $("searchInput").value.trim(); renderProducts(
 function sizeButtons(id, sz){ return SIZES.map(s => `<button type="button" class="size-opt ${s===sz?"sel":""}" data-sz-pid="${id}" data-size="${esc(s)}" onclick="pickSize(${id},'${esc(s)}')">${esc(s)}</button>`).join(""); }
 function shareParts(p){ return { url: encodeURIComponent(productLink(p.id)), text: encodeURIComponent(`این محصول گلپوش رو ببین: ${p.name} — ${fmt(p.price)} تومان`) }; }
 
-function renderProducts(){ renderProductsInner(); carousels.products.refresh(true); }
+function renderProducts(){ renderProductsInner(); carousels.products.refresh(true); if(allKind) renderAllPage(); }
 function renderProductsInner(){
   const grid = $("productsGrid");
   const shown = getFiltered();
@@ -638,7 +698,9 @@ function renderProductsInner(){
     if(loadFailed){ grid.innerHTML = '<div class="empty">اتصال به سرور برقرار نشد 🌸<br><button class="btn primary" type="button" style="margin-top:12px" onclick="retryLoad()">تلاش دوباره</button></div>'; return }
     grid.innerHTML = products.length ? '<div class="empty">چیزی پیدا نشد 🌷 فیلتر یا جستجو رو تغییر بده.</div>' : '<div class="empty">هنوز محصولی اضافه نشده است 🌷</div>'; return
   }
-  grid.innerHTML = shown.map(p => {
+  grid.innerHTML = shown.map(productCardHTML).join("");
+}
+function productCardHTML(p){
     const sz = selectedSize[p.id] || "";
     const sh = shareParts(p);
     return `<article class="product">
@@ -656,7 +718,6 @@ function renderProductsInner(){
         <button class="btn soft add" onclick="addToCart(${p.id})">＋ افزودن به سبد</button>
       </div>
     </article>`;
-  }).join("");
 }
 function pickSize(pid, size){
   selectedSize[pid] = size;
@@ -727,7 +788,8 @@ document.addEventListener("keydown", e => {
   if((e.key === "Enter" || e.key === " ") && e.target && e.target.matches && e.target.matches('[role="button"]')){ e.preventDefault(); e.target.click(); return; }
   // Escape
   if(e.key === "Escape"){
-    ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay","howOverlay","postOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false });
+    const closed = ["doneOverlay","adminLoginOverlay","productOverlay","cartOverlay","trackOverlay","reviewOverlay","sizeGuideOverlay","howOverlay","postOverlay"].some(id => { if($(id).classList.contains("show")){ closeOverlay(id); return true } return false });
+    if(!closed && $("allPage").classList.contains("show")) closeAllPage();
     return;
   }
   // قفل فوکوس داخل مودال باز
@@ -899,13 +961,10 @@ async function loadReviews() {
   if(!sb) return;
   const grid = $("reviewGrid");
   grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
-  const { data, error } = await sb.from("reviews").select("*").eq("approved", true).order("created_at", {ascending: false}).limit(6);
-  if(error || !data) {
+  const { data, error } = await sb.from("reviews").select("*").eq("approved", true).order("created_at", {ascending: false}).limit(20);
+  if(error || !data || !data.length) {
     grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
-    return;
-  }
-  if(!data.length) {
-    grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
+    carousels.reviews.refresh(true);
     return;
   }
   grid.innerHTML = data.map(r => {
@@ -917,6 +976,7 @@ async function loadReviews() {
       <div class="who">— ${esc(r.name)}</div>
     </div>`;
   }).join('');
+  carousels.reviews.refresh(true);
 }
 
 function openReviewForm() {
@@ -1359,7 +1419,7 @@ async function exportToExcel(){
 }
 
 
-/* ================= اسلایدرها (محصولات + پشت صحنه): خودکار هر ۴ ثانیه + دستی ================= */
+/* ================= اسلایدرها (محصولات + پشت صحنه + نظرات): خودکار هر ۴ ثانیه + دستی ================= */
 const CAR_INTERVAL = 4000, CAR_PAUSE_AFTER_TOUCH = 10000;
 const carousels = {};
 function makeCarousel(key, cfg){
@@ -1419,7 +1479,7 @@ function makeCarousel(key, cfg){
     st.timer = setInterval(() => {
       if(document.hidden || st.hover || !st.visible || Date.now() < st.pausedUntil) return;
       // مودال / پنل مدیر / لایت‌باکس باز است (مثلاً کاربر پست را باز کرده و دارد نگاه می‌کند) → حرکت نکن
-      if(document.querySelector(".overlay.show,.admin-panel.show,.lightbox.show")) return;
+      if(document.querySelector(".overlay.show,.admin-panel.show,.lightbox.show,.allpage.show")) return;
       step(1, false);
     }, CAR_INTERVAL);
   }
@@ -1427,6 +1487,7 @@ function makeCarousel(key, cfg){
 }
 makeCarousel("products", {track:"productsGrid", root:"carousel", dots:"carDots", item:".product"});
 makeCarousel("bts", {track:"btsGrid", root:"btsCarousel", dots:"btsDots", item:".ig-tile"});
+makeCarousel("reviews", {track:"reviewGrid", root:"reviewsCarousel", dots:"revDots", item:".review"});
 
 /* ================= لینک مستقیم محصول (#p12) ================= */
 function openFromHash(){
