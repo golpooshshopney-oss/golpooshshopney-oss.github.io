@@ -468,6 +468,7 @@ const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_NIHwah7xe8Ti_tjVW901EQ_nP2-8xi0';
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
+let settingsFailed = false;
 let sizeGuideUrl = ""; // عکس راهنمای سایز: آپلود فقط توسط مدیر، نمایش برای همه
 let heroUrl = "";
 
@@ -537,6 +538,7 @@ async function loadSettings() {
   if(!sb){ applyHero(); return; }
   try{
     const { data, error } = await sb.from("settings").select("hero_image,size_guide_image").eq("id", 1).maybeSingle();
+    settingsFailed = !!error;
     if(error) console.error("settings read failed (RLS یا نبودن ستون):", error);
     if(!error && data){
       heroUrl = safeUrl(data.hero_image);
@@ -706,7 +708,7 @@ function closeHow(){ closeOverlay("howOverlay") }
 /* ================= راهنمای سایز ================= */
 async function openSizeGuide() {
   if(!sizeGuideUrl && sb) await loadSettings();
-  if(!sizeGuideUrl){ showToast("راهنمای سایز به‌زودی اضافه می‌شود 🌸"); return; }
+  if(!sizeGuideUrl){ showToast(settingsFailed ? "بارگذاری راهنمای سایز انجام نشد؛ دوباره تلاش کن 🌸" : "راهنمای سایز به‌زودی اضافه می‌شود 🌸"); return; }
   const img = $("sizeGuideImg");
   img.onerror = () => showToast("عکس راهنما بارگذاری نشد؛ دوباره تلاش کن");
   img.src = sizeGuideUrl;
@@ -1357,8 +1359,8 @@ async function exportToExcel(){
 }
 
 
-/* ================= اسلایدرها (محصولات + پشت صحنه): خودکار هر ۵ ثانیه + دستی ================= */
-const CAR_INTERVAL = 5000, CAR_PAUSE_AFTER_TOUCH = 10000;
+/* ================= اسلایدرها (محصولات + پشت صحنه): خودکار هر ۴ ثانیه + دستی ================= */
+const CAR_INTERVAL = 4000, CAR_PAUSE_AFTER_TOUCH = 10000;
 const carousels = {};
 function makeCarousel(key, cfg){
   const el = $(cfg.track), root = $(cfg.root), dotsEl = $(cfg.dots);
