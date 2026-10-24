@@ -50,7 +50,7 @@ header{position:relative;z-index:10;background:#fffaf8;border-bottom:1px solid v
 .share-btn:hover{background:var(--pink);border-color:var(--rose)}
 .empty{grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--muted)}
 .benefits{background:#fff0f1}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.benefit{padding:23px;background:white;border:1px solid var(--line);border-radius:20px}.benefit .ico{font-size:27px}.benefit h3{color:var(--wine);margin:8px 0 3px;font-size:17px}.benefit p{font-size:13px;color:var(--muted);margin:0}
-.reviews{background:#fff0f1}.review-grid{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px}.review-grid::-webkit-scrollbar{display:none}.review-grid .review{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;min-width:0}.review-grid .empty{flex:0 0 100%}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}
+.reviews{background:#fff0f1}.review-grid{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:4px 2px}.review-grid::-webkit-scrollbar{display:none}.review-grid .review{flex:0 0 calc((100% - 36px)/3);scroll-snap-align:start;min-width:0}.review-grid .empty{flex:0 0 100%}.review{background:white;border:1px solid var(--line);border-radius:20px;padding:20px}.review .stars{color:#e8a52e;font-size:15px;letter-spacing:2px}.review p{font-size:13px;color:#6d4a56;margin:10px 0}.review .who{font-size:12px;color:var(--wine);font-weight:700}.review .reply{background:var(--pink);border-radius:14px;padding:9px 12px;margin-top:12px;font-size:12px;color:#6d4a56}.review .reply b{display:block;color:var(--wine);margin-bottom:2px}
 .trust-badges{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:0 0 30px}.trust-item{background:white;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;align-items:center;gap:15px;box-shadow:var(--shadow)}.trust-item .icon{font-size:40px}.trust-item h4{margin:0 0 5px;color:var(--wine);font-size:16px}.trust-item p{margin:0;font-size:12px;color:var(--muted)}
 
 .ig-section { background: linear-gradient(135deg, #fff7f3, #f8e3e7); text-align: center; }
@@ -369,7 +369,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
       <label class="field">متن نظر یا سوال <span class="req">*</span><textarea id="revText" rows="4" maxlength="600" style="width:100%;border:1px solid var(--line);border-radius:12px;padding:10px;resize:vertical"></textarea></label>
       <div class="hp" aria-hidden="true"><label>وب‌سایت<input id="revWebsite" tabindex="-1" autocomplete="off"></label></div>
       <button class="btn primary" style="width:100%" id="revSubmitBtn" onclick="submitReview()">ثبت نظر</button>
-      <p class="hint">نظر شما پس از بررسی توسط مدیریت نمایش داده می‌شود.</p>
     </div>
   </div>
 </div>
@@ -429,7 +428,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <div class="admin-product-list" id="adminOrderList" style="max-height:none"></div>
   </div>
   <div id="tab-reviews" style="display:none">
-   <div class="admin-note">💬 نظرات پس از تایید شما در سایت نمایش داده می‌شوند. <button class="btn soft" style="padding:3px 12px;font-size:12px;margin-right:8px" onclick="renderAdminReviews()">تازه‌سازی</button></div>
+   <div class="admin-note">💬 نظرات مشتری‌ها بلافاصله در سایت نمایش داده می‌شوند؛ از اینجا می‌توانی پاسخ بدهی یا نظر را حذف کنی. <button class="btn soft" style="padding:3px 12px;font-size:12px;margin-right:8px" onclick="renderAdminReviews()">تازه‌سازی</button></div>
    <div class="admin-product-list" id="adminReviewList" style="max-height:none"></div>
   </div>
   <div id="tab-bts" style="display:none">
@@ -961,7 +960,7 @@ async function loadReviews() {
   if(!sb) return;
   const grid = $("reviewGrid");
   grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
-  const { data, error } = await sb.from("reviews").select("*").eq("approved", true).order("created_at", {ascending: false}).limit(20);
+  const { data, error } = await sb.from("reviews").select("*").order("created_at", {ascending: false}).limit(20);
   if(error || !data || !data.length) {
     grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
     carousels.reviews.refresh(true);
@@ -974,6 +973,7 @@ async function loadReviews() {
       <div class="stars">${'★'.repeat(rt)}${'☆'.repeat(5-rt)}</div>
       <p>«${esc(r.text)}»</p>
       <div class="who">— ${esc(r.name)}</div>
+      ${r.admin_reply ? `<div class="reply"><b>پاسخ گلپوش 🌸</b>${esc(r.admin_reply)}</div>` : ''}
     </div>`;
   }).join('');
   carousels.reviews.refresh(true);
@@ -1004,7 +1004,7 @@ async function submitReview() {
   if(wait > 0){ showToast(`چند لحظه صبر کن و دوباره تلاش کن (${fmt(Math.ceil(wait/1000))} ثانیه)`); return; }
 
   const btn = $('revSubmitBtn'); btn.disabled = true;
-  const { error } = await sb.from('reviews').insert([{ name: name.slice(0, 60), text: text.slice(0, 600), rating, approved: false }]);
+  const { error } = await sb.from('reviews').insert([{ name: name.slice(0, 60), text: text.slice(0, 600), rating, approved: true }]);
   btn.disabled = false;
   if(error) {
     console.error(error);
@@ -1012,8 +1012,9 @@ async function submitReview() {
     return;
   }
   try{ localStorage.setItem(LS_REVIEW_TS, String(Date.now())) }catch(e){}
-  showToast('نظر شما ثبت شد و پس از تایید مدیر نمایش داده می‌شود 🌸');
+  showToast('نظر شما ثبت شد 🌸 ممنون از شما');
   closeReviewForm();
+  loadReviews();
 }
 
 /* ================= پنل مدیریت ================= */
@@ -1101,6 +1102,7 @@ async function renderAdminReviews() {
   if(!data || !data.length) { box.innerHTML = '<p class="hint">نظری ثبت نشده.</p>'; return; }
   box.innerHTML = data.map(r => {
     const rt = Math.min(5, Math.max(0, Number(r.rating) || 0));
+    const id = Number(r.id);
     return `
     <div class="admin-product-row admin-order-card">
       <div class="admin-order-header">
@@ -1109,17 +1111,30 @@ async function renderAdminReviews() {
       </div>
       <div class="admin-order-details">
         <p style="margin:5px 0">${esc(r.text)}</p>
-        <button class="btn ${r.approved ? 'outline' : 'primary'}" onclick="toggleReviewStatus(${Number(r.id)}, ${!r.approved})" style="padding:4px 10px;font-size:12px">
-          ${r.approved ? 'لغو تایید' : 'تایید و نمایش'}
-        </button>
+        <textarea id="rr-${id}" class="admin-field-input" rows="2" maxlength="400" placeholder="پاسخ مدیر (خالی بگذاری، پاسخ حذف می‌شود)">${esc(r.admin_reply || "")}</textarea>
+        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+          <button class="btn primary" onclick="saveReviewReply(${id})" style="padding:5px 14px;font-size:12px">ذخیره پاسخ</button>
+          <button class="btn outline" onclick="deleteReview(${id})" style="padding:5px 14px;font-size:12px;color:#c62828">حذف نظر</button>
+        </div>
       </div>
     </div>`;
   }).join('');
 }
 
-async function toggleReviewStatus(id, approved) {
-  const { error } = await sb.from("reviews").update({approved}).eq("id", id);
-  if(!error) { renderAdminReviews(); loadReviews(); }
+async function saveReviewReply(id) {
+  const reply = $("rr-" + id).value.trim().slice(0, 400);
+  const { error } = await sb.from("reviews").update({admin_reply: reply || null}).eq("id", id);
+  if(error){ console.error(error); showToast(/admin_reply/.test(error.message || "") ? "ستون admin_reply در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : "ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return; }
+  showToast(reply ? "پاسخ ذخیره شد ✓" : "پاسخ حذف شد");
+  loadReviews();
+}
+
+async function deleteReview(id) {
+  if(!confirm("این نظر حذف شود؟")) return;
+  const { error } = await sb.from("reviews").delete().eq("id", id);
+  if(error){ console.error(error); showToast("حذف نشد ❌ (دسترسی مدیر را بررسی کن)"); return; }
+  showToast("نظر حذف شد");
+  renderAdminReviews(); loadReviews();
 }
 
 async function renderAdminBTS() {
