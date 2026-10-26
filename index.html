@@ -414,7 +414,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
     <div class="field full"><span>عکس‌های محصول (تا ۸ عکس؛ عکس اول «کاور» است و روی کارت محصول نمایش داده می‌شود)</span>
-      <input type="file" accept="image/*" multiple onchange="uploadProductImages(this)">
+      <input type="file" accept="image/*,.heic,.heif,.jfif,.avif,.webp,.bmp,.gif,.tif,.tiff,.svg" multiple onchange="uploadProductImages(this)">
       <div id="imgPreview" class="img-thumbs"></div>
       <span class="hint" id="imgCount"></span></div>
     <div class="actions">
@@ -434,7 +434,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   <div id="tab-bts" style="display:none">
    <div class="admin-note">📸 عکس‌های پشت صحنه سفارشات را اینجا آپلود کنید.</div>
    <form id="btsForm" class="admin-form" onsubmit="addBTS(event)">
-     <label class="field full">انتخاب عکس <input type="file" accept="image/*" id="btsImage" required></label>
+     <label class="field full">انتخاب عکس <input type="file" accept="image/*,.heic,.heif,.jfif,.avif,.webp,.bmp,.gif,.tif,.tiff,.svg" id="btsImage" required></label>
      <label class="field full">کپشن (اختیاری) <input type="text" id="btsCaption" maxlength="100" placeholder="مثلاً: بسته‌بندی سفارش امروز..."></label>
      <div class="actions"><button class="btn primary" type="submit">آپلود و انتشار</button></div>
    </form>
@@ -447,7 +447,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
      <img id="adminHeroPreview" class="pv" src="" alt="عکس بالای صفحه">
      <p id="adminHeroEmpty" class="hint" style="margin-bottom:10px">هنوز عکسی تنظیم نشده؛ طرح پارچه‌ها نمایش داده می‌شود.</p>
      <p style="margin:0 0 6px">آپلود عکس جدید:</p>
-     <input class="file" type="file" accept="image/*" onchange="uploadHeroImage(this)">
+     <input class="file" type="file" accept="image/*,.heic,.heif,.jfif,.avif,.webp,.bmp,.gif,.tif,.tiff,.svg" onchange="uploadHeroImage(this)">
      <button class="btn outline" type="button" id="adminHeroRemove" style="display:none;margin-top:10px;padding:6px 14px;font-size:12px" onclick="removeHeroImage()">حذف عکس و بازگشت به طرح پیش‌فرض</button>
    </div>
    <div class="admin-note">📏 در این بخش می‌توانید عکس راهنمای سایز را آپلود کنید. این عکس با دکمه‌ی «راهنمای سایز» در سایت به همه بازدیدکننده‌ها نمایش داده می‌شود.</div>
@@ -456,7 +456,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
      <img id="adminSizeGuidePreview" class="pv" src="" alt="راهنمای سایز">
      <p id="adminSizeGuideEmpty" class="hint" style="margin-bottom:10px">هنوز عکسی آپلود نشده است.</p>
      <p style="margin:0 0 6px">آپلود عکس جدید:</p>
-     <input class="file" type="file" accept="image/*" onchange="uploadSizeGuide(this)">
+     <input class="file" type="file" accept="image/*,.heic,.heif,.jfif,.avif,.webp,.bmp,.gif,.tif,.tiff,.svg" onchange="uploadSizeGuide(this)">
    </div>
   </div>
  </div>
@@ -1182,7 +1182,7 @@ async function addBTS(e) {
     loadBTS();
   } catch(err) {
     console.error(err);
-    showToast("خطا در آپلود ❌");
+    showToast(uploadErrText(err) + " ❌");
   }
 }
 
@@ -1211,16 +1211,57 @@ function renderImgPreview(){
 function setImages(list){ formImages = (list || []).map(safeUrl).filter(Boolean).slice(0, MAX_IMAGES); renderImgPreview(); }
 function makeCover(i){ const u = formImages.splice(i, 1)[0]; formImages.unshift(u); renderImgPreview(); }
 function removeImage(i){ formImages.splice(i, 1); renderImgPreview(); }
-function compressImage(file, maxSide = 1200){ return new Promise((resolve, reject) => { const img = new Image(); const objUrl = URL.createObjectURL(file); img.onload = () => { const k = Math.min(1, maxSide / Math.max(img.width, img.height)); const c = document.createElement("canvas"); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k); c.getContext("2d").drawImage(img, 0, 0, c.width, c.height); URL.revokeObjectURL(objUrl); c.toBlob(b => b ? resolve(b) : reject(new Error("compress")), "image/jpeg", 0.85); }; img.onerror = () => { URL.revokeObjectURL(objUrl); reject(new Error("load")); }; img.src = objUrl; }); }
+/* ================= آماده‌سازی عکس: هر فرمتی (JPG/PNG/WEBP/GIF/BMP/AVIF/HEIC/SVG/...) → JPEG سبک ================= */
+function loadScriptOnce(src){ return new Promise((res, rej) => { if(document.querySelector(`script[src="${src}"]`)) return res(); const t = document.createElement("script"); t.src = src; t.onload = res; t.onerror = () => rej(new Error("script_load")); document.head.appendChild(t); }); }
+async function decodeImage(file){
+  if(window.createImageBitmap){
+    try{ return await createImageBitmap(file, {imageOrientation: "from-image"}); }catch(e){}
+    try{ return await createImageBitmap(file); }catch(e){}
+  }
+  try{
+    return await new Promise((res, rej) => { const u = URL.createObjectURL(file), im = new Image(); im.onload = () => { URL.revokeObjectURL(u); res(im); }; im.onerror = () => { URL.revokeObjectURL(u); rej(new Error("load")); }; im.src = u; });
+  }catch(e){ return null; }
+}
+async function compressImage(file, maxSide = 1200){
+  let src = await decodeImage(file);
+  // عکس‌های HEIC/HEIF آیفون در بعضی مرورگرها مستقیم باز نمی‌شوند؛ با یک کتابخانه تبدیل می‌شوند
+  if(!src && (/\.(heic|heif)$/i.test(file.name || "") || /hei[cf]/i.test(file.type || ""))){
+    try{
+      await loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js");
+      let out = await window.heic2any({blob: file, toType: "image/jpeg", quality: 0.9});
+      src = await decodeImage(Array.isArray(out) ? out[0] : out);
+    }catch(e){ console.error(e); }
+  }
+  if(!src) throw new Error("decode_failed");
+  const w = src.naturalWidth || src.width || maxSide, h = src.naturalHeight || src.height || maxSide;
+  const k = Math.min(1, maxSide / Math.max(w, h));
+  const c = document.createElement("canvas");
+  c.width = Math.max(1, Math.round(w * k)); c.height = Math.max(1, Math.round(h * k));
+  const ctx = c.getContext("2d");
+  ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height); // پس‌زمینه‌ی سفید برای PNG/WEBP شفاف
+  ctx.drawImage(src, 0, 0, c.width, c.height);
+  if(src.close) src.close();
+  const toBlob = q => new Promise(r => c.toBlob(r, "image/jpeg", q));
+  const blob = (await toBlob(0.85)) || (await toBlob(0.7));
+  if(!blob) throw new Error("compress_failed");
+  return blob;
+}
+function uploadErrText(e){
+  const m = String((e && (e.message || e.error)) || "");
+  if(/decode_failed/.test(m)) return "این فایل با مرورگر باز نشد (خراب است یا فرمتش پشتیبانی نمی‌شود)";
+  if(/row-level security|policy|permission|unauthorized|jwt/i.test(m)) return "دسترسی آپلود نداری؛ دوباره با حساب مدیر وارد شو";
+  if(/size|too large|payload/i.test(m)) return "حجم فایل زیاد است";
+  if(/mime|type/i.test(m)) return "نوع فایل در تنظیمات Storage مجاز نیست";
+  return "آپلود نشد (اینترنت یا تنظیمات Storage را چک کن)";
+}
 
 async function uploadProductImages(input){
   const files = Array.from(input.files || []); input.value = "";
   if(!files.length) return;
   const room = MAX_IMAGES - formImages.length;
   if(room <= 0){ showToast(`حداکثر ${fmt(MAX_IMAGES)} عکس برای هر محصول`); return }
-  const take = files.filter(f => /^image\//.test(f.type)).slice(0, room);
-  if(!take.length){ showToast("فقط فایل عکس انتخاب کن"); return }
-  let ok = 0, fail = 0;
+  const take = files.slice(0, room);
+  let ok = 0, fail = 0, lastErr = null;
   for(let i = 0; i < take.length; i++){
     showToast(`در حال آپلود ${fmt(i + 1)} از ${fmt(take.length)}... ⏳`);
     try{
@@ -1230,9 +1271,10 @@ async function uploadProductImages(input){
       if(error) throw error;
       const { data } = sb.storage.from("product-images").getPublicUrl(path);
       formImages.push(data.publicUrl); ok++; renderImgPreview();
-    }catch(e){ console.error(e); fail++ }
+    }catch(e){ console.error(e); fail++; lastErr = e; }
   }
-  showToast(fail ? `${fmt(ok)} عکس آپلود شد، ${fmt(fail)} عکس ناموفق ❌` : `${fmt(ok)} عکس آپلود شد ✓ حالا «ذخیره» را بزن`);
+  const extra = files.length > take.length ? ` (${fmt(files.length - take.length)} عکس به‌خاطر سقف ${fmt(MAX_IMAGES)} تایی نادیده ماند)` : "";
+  showToast(fail ? `${fmt(ok)} عکس آپلود شد، ${fmt(fail)} ناموفق ❌ ${uploadErrText(lastErr)}${extra}` : `${fmt(ok)} عکس آپلود شد ✓ حالا «ذخیره» را بزن${extra}`);
 }
 
 /* ذخیره‌ی مطمئن تنظیمات: اگر ردیفی آپدیت نشود (مثلاً به‌خاطر RLS یا نبودن ردیف id=1) خطا می‌دهد، نه موفقیت دروغین */
@@ -1249,7 +1291,6 @@ async function saveSetting(col, val){
 async function uploadSizeGuide(input){
   const file = input.files && input.files[0];
   if(!file) return;
-  if(!/^image\//.test(file.type)){ showToast("فقط فایل عکس انتخاب کن"); input.value = ""; return }
   showToast("در حال آپلود عکس راهنما... ⏳");
   try{
     const blob = await compressImage(file);
@@ -1266,7 +1307,7 @@ async function uploadSizeGuide(input){
     showToast("عکس راهنمای سایز با موفقیت آپلود و ذخیره شد ✓");
   }catch(e){
     console.error(e);
-    showToast(/settings_not_saved/.test((e && e.message) || "") ? "عکس آپلود شد ولی در دیتابیس ذخیره نشد ❌ (دسترسی جدول settings را چک کن)" : "آپلود نشد ❌ (تنظیمات Storage رو چک کن)");
+    showToast(/settings_not_saved/.test((e && e.message) || "") ? "عکس آپلود شد ولی در دیتابیس ذخیره نشد ❌ (دسترسی جدول settings را چک کن)" : uploadErrText(e) + " ❌");
   }
   input.value = "";
 }
@@ -1275,7 +1316,6 @@ async function uploadSizeGuide(input){
 async function uploadHeroImage(input){
   const file = input.files && input.files[0];
   if(!file) return;
-  if(!/^image\//.test(file.type)){ showToast("فقط فایل عکس انتخاب کن"); input.value = ""; return }
   showToast("در حال آپلود عکس... ⏳");
   try{
     const blob = await compressImage(file, 1000);
@@ -1289,7 +1329,7 @@ async function uploadHeroImage(input){
     showToast("عکس بالای صفحه ذخیره شد ✓");
   }catch(e){
     console.error(e);
-    const m = (e && e.message) || ""; showToast(/hero_image/.test(m) ? "ستون hero_image در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : /settings_not_saved/.test(m) ? "عکس آپلود شد ولی در دیتابیس ذخیره نشد ❌ (دسترسی جدول settings را چک کن)" : "آپلود نشد ❌ (تنظیمات Storage رو چک کن)");
+    const m = (e && e.message) || ""; showToast(/hero_image/.test(m) ? "ستون hero_image در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : /settings_not_saved/.test(m) ? "عکس آپلود شد ولی در دیتابیس ذخیره نشد ❌ (دسترسی جدول settings را چک کن)" : uploadErrText(e) + " ❌");
   }
   input.value = "";
 }
