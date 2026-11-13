@@ -80,8 +80,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .settings-block{display:flex;flex-direction:column;align-items:center;padding:20px;gap:6px}
 .settings-block .pv{max-width:100%;max-height:250px;border-radius:12px;border:1px solid var(--line);margin-bottom:10px;display:none}
 .settings-block .file{padding:10px;border:1px dashed var(--rose);border-radius:10px;background:var(--pink)}
-.color-checks{display:flex;flex-wrap:wrap;gap:8px}
-.color-checks label{display:inline-flex;align-items:center;gap:4px;font-size:13px;border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;cursor:pointer}
 @media(max-width:900px){.hero-grid{gap:20px}.navlinks{gap:6px 12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid .review{flex-basis:calc((100% - 18px)/2)}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.products .product{flex-basis:calc((100% - 11px)/2)}.car-btn{width:36px;height:36px;font-size:20px}.car-prev{right:-6px}.car-next{left:-6px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid .review{flex-basis:100%}.admin-stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -196,7 +194,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   </div>
   <div class="carousel" id="carousel">
    <button class="car-btn car-prev" type="button" onclick="carousels.products.step(-1,true)" aria-label="محصولات قبلی">›</button>
-   <div class="products" id="productsGrid"><div class="empty">نسخه ۳ | در حال بارگذاری محصولات... 🌸</div></div>
+   <div class="products" id="productsGrid"><div class="empty">در حال بارگذاری محصولات... 🌸</div></div>
    <button class="car-btn car-next" type="button" onclick="carousels.products.step(1,true)" aria-label="محصولات بعدی">‹</button>
    <div class="car-dots" id="carDots"></div>
   </div>
@@ -221,7 +219,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <div class="carousel" id="reviewsCarousel">
       <button class="car-btn car-prev" type="button" onclick="carousels.reviews.step(-1,true)" aria-label="نظر قبلی">›</button>
       <div class="review-grid" id="reviewGrid">
-        <div class="empty">نسخه ۳ | در حال بارگذاری نظرات... 🌸</div>
+        <div class="empty">در حال بارگذاری نظرات... 🌸</div>
       </div>
       <button class="car-btn car-next" type="button" onclick="carousels.reviews.step(1,true)" aria-label="نظر بعدی">‹</button>
       <div class="car-dots" id="revDots"></div>
@@ -414,20 +412,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field">برچسب<input name="tag" maxlength="30" placeholder="مثلاً جدید"></label>
     <label class="field full">توضیحات<input name="desc" maxlength="200"></label>
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
-<div class="field full"><span>رنگ‌های موجود برای مشتری (حداقل یکی)</span>
-  <div class="color-checks">
-    <label><input type="checkbox" name="colors" value="قرمز"> قرمز</label>
-    <label><input type="checkbox" name="colors" value="صورتی"> صورتی</label>
-    <label><input type="checkbox" name="colors" value="مشکی"> مشکی</label>
-    <label><input type="checkbox" name="colors" value="سفید"> سفید</label>
-    <label><input type="checkbox" name="colors" value="بژ"> بژ</label>
-    <label><input type="checkbox" name="colors" value="طوسی"> طوسی</label>
-    <label><input type="checkbox" name="colors" value="سرمه‌ای"> سرمه‌ای</label>
-    <label><input type="checkbox" name="colors" value="یاسی"> یاسی</label>
-    <label><input type="checkbox" name="colors" value="سبز"> سبز</label>
-    <label><input type="checkbox" name="colors" value="شیری"> شیری</label>
-  </div>
-</div>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
     <div class="field full"><span>عکس‌های محصول (تا ۸ عکس؛ عکس اول «کاور» است و روی کارت محصول نمایش داده می‌شود)</span>
       <input type="file" accept="image/*,.heic,.heif,.jfif,.avif,.webp,.bmp,.gif,.tif,.tiff,.svg" multiple onchange="uploadProductImages(this)">
@@ -510,8 +494,6 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_NIHwah7xe8Ti_tjVW901EQ_nP2-8xi0';
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
-// کلاینت عمومی بدون نشست ذخیره‌شده: خواندن‌های عمومی (محصول، نظر، پشت‌صحنه، سفارش) از این استفاده می‌کنند تا نشست قدیمی مرورگر آن‌ها را گیر نیندازد
-const sbPub = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth:{persistSession:false, autoRefreshToken:false, detectSessionInUrl:false}}) : null;
 
 let settingsFailed = false;
 let sizeGuideUrl = ""; // عکس راهنمای سایز: آپلود فقط توسط مدیر، نمایش برای همه
@@ -521,7 +503,6 @@ let heroUrl = "";
 
 // سایزها (۱، ۲، ۳، ۴ و سفارشی)
 const SIZES = ["1", "2", "3", "4", "سفارشی"];
-const COLOR_OPTIONS = ["قرمز","صورتی","مشکی","سفید","بژ","طوسی","سرمه‌ای","یاسی","سبز","شیری"];
 
 const MAX_QTY = 10;
 const MAX_IMAGES = 8;
@@ -559,7 +540,7 @@ const parseImages = r => {
   if(cover){ a = [cover].concat(a.filter(u => u !== cover)); }
   return a.slice(0, MAX_IMAGES);
 };
-const fromRow = r => { const images = parseImages(r); return {id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, colors: Array.isArray(r.colors) ? r.colors.map(String) : [], tag:r.tag||"", image:images[0]||"", images, active:r.active!==false}; };
+const fromRow = r => { const images = parseImages(r); return {id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", image:images[0]||"", images, active:r.active!==false}; };
 
 function applySizeGuideToAdmin(){
   const img = $("adminSizeGuidePreview"), note = $("adminSizeGuideEmpty");
@@ -583,7 +564,7 @@ function applyHero(){
 async function loadSettings() {
   if(!sb){ applyHero(); return; }
   try{
-    const { data, error } = await sbPub.from("settings").select("hero_image,size_guide_image").eq("id", 1).maybeSingle();
+    const { data, error } = await sb.from("settings").select("hero_image,size_guide_image").eq("id", 1).maybeSingle();
     settingsFailed = !!error;
     if(error) console.error("settings read failed (RLS یا نبودن ستون):", error);
     if(!error && data){
@@ -599,7 +580,7 @@ async function loadProducts(){
   loadFailed = false;
   if(sb){
     try{
-      const { data, error } = await sbPub.from("products").select("*").order("id");
+      const { data, error } = await sb.from("products").select("*").order("id");
       if(!error && Array.isArray(data)){ products = data.map(fromRow); return true }
       if(error) console.error("products:", error);
     }catch(e){ console.error(e) }
@@ -607,7 +588,7 @@ async function loadProducts(){
   loadFailed = true; products = []; return false;
 }
 async function retryLoad(){
-  $("productsGrid").innerHTML = '<div class="empty">نسخه ۳ | در حال بارگذاری محصولات... 🌸</div>';
+  $("productsGrid").innerHTML = '<div class="empty">در حال بارگذاری محصولات... 🌸</div>';
   await loadProducts(); cleanCart(); renderProducts(); updateCart();
 }
 
@@ -617,7 +598,7 @@ async function loadBTS() {
   const emptyMsg = '<div class="empty">به‌زودی عکس‌های پشت‌صحنه اینجا قرار می‌گیرد. 🌸</div>';
   let data = null, error = null;
   if(sb){
-    try{ ({ data, error } = await sbPub.from("bts").select("*").order("created_at", {ascending: false}).limit(200)); }
+    try{ ({ data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false}).limit(200)); }
     catch(e){ error = e; }
   }
   if(error || !data || !data.length) {
@@ -685,10 +666,8 @@ function cleanCart(){
   Object.keys(cart).forEach(id => {
     const p = products.find(x => x.id === Number(id));
     if(!p || !p.active || typeof cart[id] !== "object"){ delete cart[id]; return }
-    Object.keys(cart[id]).forEach(key => {
-      const parts = key.split(" - "); const base = parts[0]; const col = parts.slice(1).join(" - ");
-      const okColor = p.colors.length ? p.colors.includes(col) : col === "";
-      if(!SIZES.includes(base) || !okColor || !(cart[id][key] > 0)) delete cart[id][key];
+    Object.keys(cart[id]).forEach(sz => {
+      if(!SIZES.includes(sz) || !(cart[id][sz] > 0)) delete cart[id][sz]
     });
     if(!Object.keys(cart[id]).length) delete cart[id];
   });
@@ -722,6 +701,7 @@ function renderProductsInner(){
 }
 function productCardHTML(p){
     const sz = selectedSize[p.id] || "";
+    const sh = shareParts(p);
     return `<article class="product">
       <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" role="button" tabindex="0" aria-label="مشاهده ${esc(p.name)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span>${p.images.length > 1 ? `<span class="pcount">🖼 ${fmt(p.images.length)}</span>` : ""}</div>
       <div class="product-info">
@@ -729,7 +709,11 @@ function productCardHTML(p){
         <p class="desc">${esc(p.desc)}</p>
         <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${p.old > p.price ? `<span class="oldprice">${fmt(p.old)}</span>` : ""}</div>
         <div class="sizes" data-sizes-pid="${p.id}" role="group" aria-label="انتخاب سایز">${sizeButtons(p.id, sz)}</div>
-        ${p.colors.length ? `<div class="sizes" data-colors-pid="${p.id}" role="group" aria-label="انتخاب رنگ">${colorButtons(p)}</div>` : ""}
+        <div class="share-row">
+          <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener" title="اشتراک در واتساپ">🟢 واتساپ</a>
+          <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener" title="اشتراک در تلگرام">🔵 تلگرام</a>
+          <button type="button" class="share-btn" onclick="copyForInstagram(${p.id})" title="کپی برای اینستاگرام">🟣 اینستاگرام</button>
+        </div>
         <button class="btn soft add" onclick="addToCart(${p.id})">＋ افزودن به سبد</button>
       </div>
     </article>`;
@@ -740,18 +724,6 @@ function pickSize(pid, size){
 }
 function flagSizeNeeded(id){
   document.querySelectorAll(`[data-sz-pid="${id}"]`).forEach(b => b.classList.add("need"));
-}
-let selectedColor = {};
-function colorButtons(p){
-  const sel = selectedColor[p.id] || "";
-  return p.colors.map(c => `<button type="button" class="size-opt ${c===sel?"sel":""}" data-col-pid="${p.id}" data-color="${esc(c)}" onclick="pickColor(${p.id},'${esc(c)}')">${esc(c)}</button>`).join("");
-}
-function pickColor(pid, color){
-  selectedColor[pid] = color;
-  document.querySelectorAll(`[data-col-pid="${pid}"]`).forEach(b => { b.classList.toggle("sel", b.dataset.color === color); b.classList.remove("need"); });
-}
-function flagColorNeeded(id){
-  document.querySelectorAll(`[data-col-pid="${id}"]`).forEach(b => b.classList.add("need"));
 }
 function copyText(txt, okMsg){ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(() => showToast(okMsg)).catch(() => showToast("کپی نشد؛ دستی کپی کن")); } else showToast("کپی نشد؛ دستی کپی کن"); }
 function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${productLink(id)}`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
@@ -777,8 +749,11 @@ function openProduct(id){
         <p style="font-size:12px;color:var(--muted);margin:8px 0 0">دسته‌بندی: ${esc(p.category)}</p>
         <div style="margin-top:12px;font-size:13px;color:#754758">انتخاب سایز:</div>
         <div class="sizes" role="group" aria-label="انتخاب سایز">${sizeButtons(id, sz)}</div>
-        ${p.colors.length ? `<div style="margin-top:12px;font-size:13px;color:#754758">انتخاب رنگ:</div><div class="sizes" role="group" aria-label="انتخاب رنگ">${colorButtons(p)}</div>` : ""}
-        
+        <div class="share-row" style="margin-top:12px;justify-content:flex-start">
+          <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener">🟢 واتساپ</a>
+          <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener">🔵 تلگرام</a>
+          <button type="button" class="share-btn" onclick="copyForInstagram(${id})">🟣 اینستاگرام</button>
+        </div>
         <button class="btn primary add" onclick="if(addToCart(${id}))closeProduct()">افزودن به سبد خرید</button>
       </div>
     </div>`;
@@ -833,35 +808,23 @@ document.addEventListener("keydown", e => {
 function addToCart(id){
   const p = products.find(x => x.id === id); if(!p) return false;
   const size = selectedSize[id];
-  const color = p.colors.length ? selectedColor[id] : "";
   if(!size){ flagSizeNeeded(id); showToast("اول سایز را انتخاب کن 📏"); return false }
-  if(p.colors.length && !color){ flagColorNeeded(id); showToast("اول رنگ را انتخاب کن 🎨"); return false }
-  const key = color ? `${size} - ${color}` : size;
   if(!cart[id]) cart[id] = {};
-  if((cart[id][key] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return false }
-  cart[id][key] = (cart[id][key] || 0) + 1;
-  saveCart(); updateCart(); showToast(`«${p.name}» ${color ? "رنگ " + color + " " : ""}سایز ${size} اضافه شد 🌸`);
+  if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return false }
+  cart[id][size] = (cart[id][size] || 0) + 1;
+  saveCart(); updateCart(); showToast(`«${p.name}» سایز ${size} اضافه شد 🌸`);
   return true;
 }
-function cartLines(){
-  const out = [];
-  Object.entries(cart).forEach(([id, variants]) => {
-    const p = products.find(x => x.id === Number(id)); if(!p) return;
-    Object.entries(variants).forEach(([key, q]) => {
-      if(q > 0){ const parts = key.split(" - "); out.push({p, key, size: parts[0], color: parts.slice(1).join(" - "), q}) }
-    });
-  });
-  return out;
-}
+function cartLines(){ const out = []; Object.entries(cart).forEach(([id, sizes]) => { const p = products.find(x => x.id === Number(id)); if(!p) return; Object.entries(sizes).forEach(([size, q]) => { if(q > 0) out.push({p, size, q}) }); }); return out; }
 function updateCart(){
   const lines = cartLines();
   $("cartCount").textContent = fmt(lines.reduce((s, l) => s + l.q, 0));
-  $("cartItems").innerHTML = lines.length ? lines.map(({p, size, color, key, q}) => `<div class="cart-item">
-    <div><strong>${esc(p.name)}</strong><div class="sz">سایز ${esc(size)}${color ? " · رنگ " + esc(color) : ""}</div><div class="hint">${fmt(p.price)} تومان</div></div>
+  $("cartItems").innerHTML = lines.length ? lines.map(({p, size, q}) => `<div class="cart-item">
+    <div><strong>${esc(p.name)}</strong><div class="sz">سایز ${esc(size)}</div><div class="hint">${fmt(p.price)} تومان</div></div>
     <div class="qty">
-      <button type="button" aria-label="کم کردن" onclick="changeQty(${p.id},'${esc(key)}',-1)">−</button>
+      <button type="button" aria-label="کم کردن" onclick="changeQty(${p.id},'${esc(size)}',-1)">−</button>
       <span>${fmt(q)}</span>
-      <button type="button" aria-label="زیاد کردن" onclick="changeQty(${p.id},'${esc(key)}',1)">＋</button>
+      <button type="button" aria-label="زیاد کردن" onclick="changeQty(${p.id},'${esc(size)}',1)">＋</button>
     </div>
   </div>`).join("") : '<p class="hint">سبد خریدت هنوز خالیه. از محصولات یک مدل انتخاب کن 🌷</p>';
   const subtotal = lines.reduce((s, l) => s + l.p.price * l.q, 0);
@@ -878,7 +841,7 @@ async function applyCoupon(){
   if(!code){ msg.className = "coupon-msg err"; msg.textContent = "کد تخفیف رو وارد کن."; return }
   if(!sb){ msg.className = "coupon-msg err"; msg.textContent = "ارتباط با سرور برقرار نیست."; return }
   btn.disabled = true;
-  const { data, error } = await sbPub.rpc("check_coupon", {p_code: code});
+  const { data, error } = await sb.rpc("check_coupon", {p_code: code});
   btn.disabled = false;
   if(error || !data){ appliedCoupon = null; msg.className = "coupon-msg err"; msg.textContent = error ? "خطا در بررسی کد؛ دوباره تلاش کن." : "کد تخفیف معتبر نیست."; updateCart(); return }
   appliedCoupon = {code, percent: Number(data.percent) || 0, label: data.label || "تخفیف"};
@@ -920,7 +883,7 @@ $("orderForm").addEventListener("submit", async function(e){
   const btn = $("submitBtn"), original = btn.innerHTML;
   btn.innerHTML = "در حال ثبت... ⏳"; btn.disabled = true;
   if(!orderKey) orderKey = uuid();
-  const { data, error } = await sbPub.rpc("place_order", { p_name: name, p_phone: phone, p_address: address, p_postal: postal, p_items: lines.map(l => ({id: l.p.id, size: l.key, qty: l.q})), p_coupon: appliedCoupon ? appliedCoupon.code : "", p_payment: payment, p_custom: custom, p_key: orderKey });
+  const { data, error } = await sb.rpc("place_order", { p_name: name, p_phone: phone, p_address: address, p_postal: postal, p_items: lines.map(l => ({id: l.p.id, size: l.size, qty: l.q})), p_coupon: appliedCoupon ? appliedCoupon.code : "", p_payment: payment, p_custom: custom, p_key: orderKey });
   btn.innerHTML = original; btn.disabled = false;
   if(error || !data){ console.error("order:", error); if(error && error.code) orderKey = null; showToast(errorText(error)); if(error && /coupon/.test(error.message || "")){ appliedCoupon = null; $("couponMsg").textContent = ""; updateCart(); } return; }
   orderKey = null;
@@ -970,7 +933,7 @@ async function checkTrack(){
   }
   res.innerHTML = '<p class="hint">در حال بررسی... ⏳</p>';
 
-  const { data, error } = await sbPub.rpc('track_order', { p_order_id: parseInt(idRaw, 10), p_phone: phone });
+  const { data, error } = await sb.rpc('track_order', { p_order_id: parseInt(idRaw, 10), p_phone: phone });
 
   if(error || !data){
     res.innerHTML = '<p class="hint" style="color:#c62828">سفارشی با این مشخصات پیدا نشد. لطفاً کد و شماره را چک کنید.</p>';
@@ -996,8 +959,8 @@ async function checkTrack(){
 async function loadReviews() {
   if(!sb) return;
   const grid = $("reviewGrid");
-  grid.innerHTML = '<div class="empty">نسخه ۳ | در حال بارگذاری نظرات... 🌸</div>';
-  const { data, error } = await sbPub.from("reviews").select("*").order("created_at", {ascending: false}).limit(20);
+  grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
+  const { data, error } = await sb.from("reviews").select("*").order("created_at", {ascending: false}).limit(20);
   if(error || !data || !data.length) {
     grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
     carousels.reviews.refresh(true);
@@ -1225,18 +1188,16 @@ async function addBTS(e) {
 
 async function setOrderStatus(sel){ const { error } = await sb.from("orders").update({status: sel.value}).eq("id", sel.dataset.id); showToast(error ? "ذخیره نشد ❌" : "وضعیت سفارش ذخیره شد ✓"); }
 async function deleteProduct(id){ if(!confirm("محصول حذف بشه؟")) return; const { error } = await sb.from("products").delete().eq("id", id); if(error){ console.error(error); showToast("حذف نشد ❌"); return } delete cart[id]; saveCart(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast("محصول حذف شد"); }
-function editProduct(id){ const p = products.find(x => x.id === id); if(!p) return; const f = $("addProductForm").elements; editingId = id; f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; document.querySelectorAll('#addProductForm input[name="colors"]').forEach(cb => { cb.checked = (p.colors || []).includes(cb.value); }); setImages(p.images || []); $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; switchTab("add"); }
+function editProduct(id){ const p = products.find(x => x.id === id); if(!p) return; const f = $("addProductForm").elements; editingId = id; f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; setImages(p.images || []); $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; switchTab("add"); }
 async function saveProductForm(e){
   e.preventDefault();
   const f = new FormData(e.target);
-  const colors = f.getAll("colors").map(String).filter(c => COLOR_OPTIONS.includes(c));
-  if(!colors.length){ showToast("حداقل یک رنگ برای محصول انتخاب کن 🎨"); return }
-  const row = { name: String(f.get("name")).trim(), category: f.get("category"), price: Math.max(0, Math.round(Number(f.get("price")) || 0)), old_price: Math.max(0, Math.round(Number(f.get("old")) || 0)), description: String(f.get("desc")).trim(), tag: String(f.get("tag")).trim(), color: safeColor(String(f.get("color")).trim()), colors, active: f.get("active") === "1", image_url: formImages[0] || null, images: formImages.filter(u => safeUrl(u)) };
+  const row = { name: String(f.get("name")).trim(), category: f.get("category"), price: Math.max(0, Math.round(Number(f.get("price")) || 0)), old_price: Math.max(0, Math.round(Number(f.get("old")) || 0)), description: String(f.get("desc")).trim(), tag: String(f.get("tag")).trim(), color: safeColor(String(f.get("color")).trim()), active: f.get("active") === "1", image_url: formImages[0] || null, images: formImages.filter(u => safeUrl(u)) };
   if(!row.name){ showToast("نام محصول لازمه"); return }
   const btn = $("saveProductBtn"); btn.disabled = true;
   const q = editingId ? sb.from("products").update(row).eq("id", editingId) : sb.from("products").insert(row);
   const { error } = await q; btn.disabled = false;
-  if(error){ console.error(error); showToast(/images/.test(error.message || "") ? "ستون images در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : /colors/.test(error.message || "") ? "ستون colors در دیتابیس نیست؛ SQL را اجرا کن ❌" : "ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return }
+  if(error){ console.error(error); showToast(/images/.test(error.message || "") ? "ستون images در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : "ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return }
   const wasEdit = !!editingId; resetProductForm(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast(wasEdit ? "ذخیره شد ✓" : "محصول اضافه شد ✓"); switchTab("list");
 }
 function resetProductForm(){ editingId = null; $("addProductForm").reset(); $("addProductForm").elements.id.value = ""; setImages([]); $("saveProductBtn").textContent = "افزودن محصول"; $("tabAddBtn").textContent = "➕ افزودن محصول"; }
@@ -1258,4 +1219,347 @@ async function decodeImage(file){
     try{ return await createImageBitmap(file); }catch(e){}
   }
   try{
-    return await new Promise((r
+    return await new Promise((res, rej) => { const u = URL.createObjectURL(file), im = new Image(); im.onload = () => { URL.revokeObjectURL(u); res(im); }; im.onerror = () => { URL.revokeObjectURL(u); rej(new Error("load")); }; im.src = u; });
+  }catch(e){ return null; }
+}
+async function compressImage(file, maxSide = 1200){
+  let src = await decodeImage(file);
+  // عکس‌های HEIC/HEIF آیفون در بعضی مرورگرها مستقیم باز نمی‌شوند؛ با یک کتابخانه تبدیل می‌شوند
+  if(!src && (/\.(heic|heif)$/i.test(file.name || "") || /hei[cf]/i.test(file.type || ""))){
+    try{
+      await loadScriptOnce("https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js");
+      let out = await window.heic2any({blob: file, toType: "image/jpeg", quality: 0.9});
+      src = await decodeImage(Array.isArray(out) ? out[0] : out);
+    }catch(e){ console.error(e); }
+  }
+  if(!src) throw new Error("decode_failed");
+  const w = src.naturalWidth || src.width || maxSide, h = src.naturalHeight || src.height || maxSide;
+  const k = Math.min(1, maxSide / Math.max(w, h));
+  const c = document.createElement("canvas");
+  c.width = Math.max(1, Math.round(w * k)); c.height = Math.max(1, Math.round(h * k));
+  const ctx = c.getContext("2d");
+  ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height); // پس‌زمینه‌ی سفید برای PNG/WEBP شفاف
+  ctx.drawImage(src, 0, 0, c.width, c.height);
+  if(src.close) src.close();
+  const toBlob = q => new Promise(r => c.toBlob(r, "image/jpeg", q));
+  const blob = (await toBlob(0.85)) || (await toBlob(0.7));
+  if(!blob) throw new Error("compress_failed");
+  return blob;
+}
+function uploadErrText(e){
+  const m = String((e && (e.message || e.error)) || "");
+  if(/decode_failed/.test(m)) return "این فایل با مرورگر باز نشد (خراب است یا فرمتش پشتیبانی نمی‌شود)";
+  if(/row-level security|policy|permission|unauthorized|jwt/i.test(m)) return "دسترسی آپلود نداری؛ دوباره با حساب مدیر وارد شو";
+  if(/size|too large|payload/i.test(m)) return "حجم فایل زیاد است";
+  if(/mime|type/i.test(m)) return "نوع فایل در تنظیمات Storage مجاز نیست";
+  return "آپلود نشد (اینترنت یا تنظیمات Storage را چک کن)";
+}
+
+async function uploadProductImages(input){
+  const files = Array.from(input.files || []); input.value = "";
+  if(!files.length) return;
+  const room = MAX_IMAGES - formImages.length;
+  if(room <= 0){ showToast(`حداکثر ${fmt(MAX_IMAGES)} عکس برای هر محصول`); return }
+  const take = files.slice(0, room);
+  let ok = 0, fail = 0, lastErr = null;
+  for(let i = 0; i < take.length; i++){
+    showToast(`در حال آپلود ${fmt(i + 1)} از ${fmt(take.length)}... ⏳`);
+    try{
+      const blob = await compressImage(take[i]);
+      const path = `p-${Date.now()}-${Math.random().toString(36).slice(2, 8)}.jpg`;
+      const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
+      if(error) throw error;
+      const { data } = sb.storage.from("product-images").getPublicUrl(path);
+      formImages.push(data.publicUrl); ok++; renderImgPreview();
+    }catch(e){ console.error(e); fail++; lastErr = e; }
+  }
+  const extra = files.length > take.length ? ` (${fmt(files.length - take.length)} عکس به‌خاطر سقف ${fmt(MAX_IMAGES)} تایی نادیده ماند)` : "";
+  showToast(fail ? `${fmt(ok)} عکس آپلود شد، ${fmt(fail)} ناموفق ❌ ${uploadErrText(lastErr)}${extra}` : `${fmt(ok)} عکس آپلود شد ✓ حالا «ذخیره» را بزن${extra}`);
+}
+
+/* ذخیره‌ی مطمئن تنظیمات: اگر ردیفی آپدیت نشود (مثلاً به‌خاطر RLS یا نبودن ردیف id=1) خطا می‌دهد، نه موفقیت دروغین */
+async function saveSetting(col, val){
+  const patch = {}; patch[col] = val;
+  let r = await sb.from("settings").update(patch).eq("id", 1).select("id");
+  if(r.error) throw r.error;
+  if(r.data && r.data.length) return;
+  r = await sb.from("settings").upsert(Object.assign({id:1}, patch)).select("id");
+  if(r.error) throw r.error;
+  if(!r.data || !r.data.length) throw new Error("settings_not_saved");
+}
+
+async function uploadSizeGuide(input){
+  const file = input.files && input.files[0];
+  if(!file) return;
+  showToast("در حال آپلود عکس راهنما... ⏳");
+  try{
+    const blob = await compressImage(file);
+    const path = `size-guide-${Date.now()}.jpg`;
+    const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
+    if(error) throw error;
+    const { data } = sb.storage.from("product-images").getPublicUrl(path);
+
+    // آپدیت دیتابیس
+    await saveSetting("size_guide_image", data.publicUrl);
+
+    sizeGuideUrl = data.publicUrl;
+    applySizeGuideToAdmin();
+    showToast("عکس راهنمای سایز با موفقیت آپلود و ذخیره شد ✓");
+  }catch(e){
+    console.error(e);
+    showToast(/settings_not_saved/.test((e && e.message) || "") ? "عکس آپلود شد ولی در دیتابیس ذخیره نشد ❌ (دسترسی جدول settings را چک کن)" : uploadErrText(e) + " ❌");
+  }
+  input.value = "";
+}
+
+/* آپلود / حذف عکس بالای صفحه (لوگو) */
+async function uploadHeroImage(input){
+  const file = input.files && input.files[0];
+  if(!file) return;
+  showToast("در حال آپلود عکس... ⏳");
+  try{
+    const blob = await compressImage(file, 1000);
+    const path = `hero-${Date.now()}.jpg`;
+    const { error } = await sb.storage.from("product-images").upload(path, blob, {contentType: "image/jpeg", cacheControl: "31536000"});
+    if(error) throw error;
+    const { data } = sb.storage.from("product-images").getPublicUrl(path);
+    await saveSetting("hero_image", data.publicUrl);
+    heroUrl = data.publicUrl;
+    applyHero();
+    showToast("عکس بالای صفحه ذخیره شد ✓");
+  }catch(e){
+    console.error(e);
+    const m = (e && e.message) || ""; showToast(/hero_image/.test(m) ? "ستون hero_image در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : /settings_not_saved/.test(m) ? "عکس آپلود شد ولی در دیتابیس ذخیره نشد ❌ (دسترسی جدول settings را چک کن)" : uploadErrText(e) + " ❌");
+  }
+  input.value = "";
+}
+async function removeHeroImage(){
+  if(!confirm("عکس حذف شود و طرح پیش‌فرض برگردد؟")) return;
+  try{ await saveSetting("hero_image", null); }catch(error){ console.error(error); showToast("حذف نشد ❌"); return }
+  heroUrl = ""; applyHero(); showToast("عکس حذف شد");
+}
+
+/* ================= گالری و زوم عکس ================= */
+let galleryIdx = 0;
+function setGallery(pid, i){
+  const p = products.find(x => x.id === pid); if(!p || !p.images[i]) return;
+  galleryIdx = i;
+  const img = $("galImg"); if(img) img.src = p.images[i];
+  document.querySelectorAll(".gallery-thumbs button").forEach(b => b.classList.toggle("sel", Number(b.dataset.gi) === i));
+}
+function openLightbox(pid, idx){ const p = products.find(x => x.id === pid); if(!p || !p.images.length) return; openLightboxList(p.images, idx || 0); }
+
+const lb = {list:[], i:0, s:1, x:0, y:0, ptrs:new Map(), startDist:0, startS:1, sx:0, sy:0, moved:false, lastTap:0, ret:null};
+function lbApply(){ $("lbImg").style.transform = `translate(${lb.x}px,${lb.y}px) scale(${lb.s})`; $("lbStage").classList.toggle("zoomed", lb.s > 1.01); }
+function lbClamp(){
+  const st = $("lbStage").getBoundingClientRect(), img = $("lbImg");
+  const mx = Math.max(0, (img.offsetWidth * lb.s - st.width) / 2), my = Math.max(0, (img.offsetHeight * lb.s - st.height) / 2);
+  lb.x = Math.min(mx, Math.max(-mx, lb.x)); lb.y = Math.min(my, Math.max(-my, lb.y));
+}
+function lbReset(){ lb.s = 1; lb.x = 0; lb.y = 0; lb.ptrs.clear(); lbApply(); }
+function lbZoomAt(ns, cx, cy){
+  ns = Math.min(5, Math.max(1, ns));
+  const st = $("lbStage").getBoundingClientRect();
+  const ox = cx - (st.left + st.width / 2), oy = cy - (st.top + st.height / 2), k = ns / lb.s;
+  lb.x = ox - (ox - lb.x) * k; lb.y = oy - (oy - lb.y) * k; lb.s = ns;
+  if(lb.s <= 1.001){ lb.s = 1; lb.x = 0; lb.y = 0 }
+  lbClamp(); lbApply();
+}
+function lbBtnZoom(f){ const r = $("lbStage").getBoundingClientRect(); lbZoomAt(lb.s * f, r.left + r.width / 2, r.top + r.height / 2); }
+function lbShow(){
+  const n = lb.list.length;
+  $("lbImg").src = lb.list[lb.i];
+  $("lbCount").textContent = n > 1 ? `${fmt(lb.i + 1)} از ${fmt(n)}` : "";
+  $("lbPrev").style.display = $("lbNext").style.display = n > 1 ? "" : "none";
+  lbReset();
+  if(n > 1){ const nx = new Image(); nx.src = lb.list[(lb.i + 1) % n]; }
+}
+function openLightboxList(list, idx){
+  const l = (list || []).map(safeUrl).filter(Boolean); if(!l.length) return;
+  lb.list = l; lb.i = Math.min(Math.max(0, idx | 0), l.length - 1); lb.ret = document.activeElement;
+  lbShow(); $("lightbox").classList.add("show"); document.body.style.overflow = "hidden";
+  $("lbClose").focus({preventScroll:true});
+}
+function closeLightbox(){
+  $("lightbox").classList.remove("show");
+  if(!document.querySelector(".overlay.show,.admin-panel.show")) document.body.style.overflow = "";
+  if(lb.ret && document.contains(lb.ret)){ try{ lb.ret.focus({preventScroll:true}) }catch(e){} }
+  lb.ret = null;
+}
+function lbStep(d){ const n = lb.list.length; if(n < 2) return; lb.i = (lb.i + d + n) % n; lbShow(); }
+function lbHandleKey(e){
+  if(!$("lightbox").classList.contains("show")) return false;
+  switch(e.key){
+    case "Escape": closeLightbox(); return true;
+    case "ArrowLeft": lbStep(1); return true;
+    case "ArrowRight": lbStep(-1); return true;
+    case "+": case "=": lbBtnZoom(1.4); return true;
+    case "-": lbBtnZoom(1 / 1.4); return true;
+    case "0": lbReset(); return true;
+  }
+  return false;
+}
+(function initLightbox(){
+  const st = $("lbStage");
+  st.addEventListener("pointerdown", e => {
+    try{ st.setPointerCapture(e.pointerId) }catch(err){}
+    lb.ptrs.set(e.pointerId, {x:e.clientX, y:e.clientY});
+    lb.sx = e.clientX; lb.sy = e.clientY; lb.moved = false;
+    if(lb.ptrs.size === 2){ const [a, b] = Array.from(lb.ptrs.values()); lb.startDist = Math.hypot(a.x - b.x, a.y - b.y); lb.startS = lb.s; }
+  });
+  st.addEventListener("pointermove", e => {
+    const p = lb.ptrs.get(e.pointerId); if(!p) return;
+    const dx = e.clientX - p.x, dy = e.clientY - p.y; p.x = e.clientX; p.y = e.clientY;
+    if(Math.abs(e.clientX - lb.sx) + Math.abs(e.clientY - lb.sy) > 6) lb.moved = true;
+    if(lb.ptrs.size === 2){
+      const [a, b] = Array.from(lb.ptrs.values()), d = Math.hypot(a.x - b.x, a.y - b.y);
+      if(lb.startDist > 0) lbZoomAt(lb.startS * d / lb.startDist, (a.x + b.x) / 2, (a.y + b.y) / 2);
+    } else if(lb.s > 1.01){ lb.x += dx; lb.y += dy; lbClamp(); lbApply(); }
+  });
+  const end = e => {
+    if(!lb.ptrs.has(e.pointerId)) return;
+    lb.ptrs.delete(e.pointerId);
+    if(lb.ptrs.size === 0 && e.type === "pointerup"){
+      const dx = e.clientX - lb.sx, dy = e.clientY - lb.sy;
+      if(lb.s <= 1.01 && Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5){ lbStep(dx < 0 ? 1 : -1); return }
+      if(!lb.moved){
+        const now = Date.now();
+        if(now - lb.lastTap < 300){ lb.lastTap = 0; lbZoomAt(lb.s > 1.01 ? 1 : 2.5, e.clientX, e.clientY) } else lb.lastTap = now;
+      }
+    }
+  };
+  st.addEventListener("pointerup", end); st.addEventListener("pointercancel", end);
+  st.addEventListener("wheel", e => { e.preventDefault(); lbZoomAt(lb.s * (e.deltaY < 0 ? 1.2 : 1 / 1.2), e.clientX, e.clientY); }, {passive:false});
+})();
+
+/* ================= خروجی اکسل (کتابخانه فقط هنگام نیاز بارگذاری می‌شود) ================= */
+function loadScriptOnce(src){
+  return new Promise((resolve, reject) => {
+    if(window.XLSX) return resolve();
+    const el = document.createElement("script"); el.src = src; el.onload = () => resolve(); el.onerror = () => reject(new Error("load"));
+    document.head.appendChild(el);
+  });
+}
+const xlSafe = v => { v = String(v == null ? "" : v); return /^[=+\-@]/.test(v) ? "'" + v : v; };
+async function exportToExcel(){
+  showToast("در حال آماده‌سازی فایل... ⏳");
+  try{
+    await loadScriptOnce("https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js");
+    const { data: orders, error } = await sb.from("orders").select("*").order("created_at", {ascending:false}).limit(2000);
+    if(error) throw error;
+    if(!orders || !orders.length){ showToast("سفارشی برای خروجی وجود ندارد"); return }
+    const rows = orders.map(o => {
+      const d = new Date(o.created_at);
+      return {
+        "کد سفارش": o.id,
+        "تاریخ ثبت": d.toLocaleDateString("fa-IR") + " " + d.toLocaleTimeString("fa-IR", {hour:"2-digit", minute:"2-digit"}),
+        "نام مشتری": xlSafe(o.customer_name || "-"),
+        "شماره تماس": xlSafe(o.phone || "-"),
+        "کد پستی": xlSafe(o.postal_code || "-"),
+        "آدرس": xlSafe(o.address || "-"),
+        "محصولات": xlSafe(String(o.items || "").replace(/\n/g, " | ")),
+        "اندازه‌های سفارشی": xlSafe(o.custom_size || ""),
+        "کد تخفیف": xlSafe(o.coupon_code || ""),
+        "تخفیف (تومان)": o.discount || 0,
+        "مبلغ کل (تومان)": o.total_price || 0,
+        "وضعیت": STATUS_LABELS[o.status] || o.status || "",
+        "روش پرداخت": xlSafe(o.payment || "-")
+      };
+    });
+    const ws = XLSX.utils.json_to_sheet(rows), wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, "سفارش‌های گلپوش");
+    XLSX.writeFile(wb, `golpoosh-orders-${new Date().toISOString().slice(0, 10)}.xlsx`);
+    showToast("فایل اکسل دانلود شد 🌸");
+  }catch(e){ console.error(e); showToast("ساخت فایل اکسل ناموفق بود ❌ (اینترنت را بررسی کن)"); }
+}
+
+
+/* ================= اسلایدرها (محصولات + پشت صحنه + نظرات): خودکار هر ۴ ثانیه + دستی ================= */
+const CAR_INTERVAL = 4000, CAR_PAUSE_AFTER_TOUCH = 10000;
+const carousels = {};
+function makeCarousel(key, cfg){
+  const el = $(cfg.track), root = $(cfg.root), dotsEl = $(cfg.dots);
+  const st = {timer:null, pausedUntil:0, hover:false, visible:true};
+  const sign = () => getComputedStyle(el).direction === "rtl" ? -1 : 1;
+  const pause = () => { st.pausedUntil = Date.now() + CAR_PAUSE_AFTER_TOUCH; };
+  function metrics(){
+    const first = el.querySelector(cfg.item);
+    if(!first) return null;
+    const gap = parseFloat(getComputedStyle(el).columnGap) || 0;
+    const cw = first.offsetWidth + gap;
+    const per = Math.max(1, Math.round((el.clientWidth + gap) / cw));
+    const max = el.scrollWidth - el.clientWidth;
+    return {cw, per, max, pos: Math.abs(el.scrollLeft), pages: Math.max(1, Math.ceil(el.querySelectorAll(cfg.item).length / per))};
+  }
+  function updateDots(){
+    const m = metrics(); if(!m) return;
+    const page = Math.min(m.pages - 1, Math.round(m.pos / (m.cw * m.per)));
+    dotsEl.querySelectorAll("button").forEach((b, i) => b.classList.toggle("on", i === page));
+  }
+  function refresh(reset){
+    if(reset) el.scrollLeft = 0;
+    const m = metrics();
+    const can = !!m && m.max > 4;
+    root.classList.toggle("no-scroll", !can);
+    if(can){
+      dotsEl.innerHTML = Array.from({length:m.pages}, (_, i) => `<button type="button" aria-label="صفحه ${fmt(i+1)}" onclick="carousels.${key}.go(${i})"></button>`).join("");
+      updateDots();
+    } else dotsEl.innerHTML = "";
+  }
+  function go(page){
+    const m = metrics(); if(!m) return;
+    pause();
+    el.scrollTo({left: sign() * Math.min(m.max, page * m.cw * m.per), behavior:"smooth"});
+  }
+  function step(dir, user){
+    const m = metrics(); if(!m || m.max <= 4) return;
+    if(user) pause();
+    const stepPx = m.cw * m.per;
+    let target;
+    if(dir > 0) target = m.pos >= m.max - 4 ? 0 : Math.min(m.max, m.pos + stepPx);
+    else target = m.pos <= 4 ? m.max : Math.max(0, m.pos - stepPx);
+    el.scrollTo({left: sign() * target, behavior:"smooth"});
+  }
+  // کاربر لمس/اسکرول/فوکوس کرد → ۱۰ ثانیه صبر
+  ["pointerdown","touchstart","wheel","focusin","keydown"].forEach(t => el.addEventListener(t, pause, {passive:true}));
+  // hover فقط برای ماوس (روی موبایل بعد از لمس hover گیر نمی‌کند)
+  el.addEventListener("pointerenter", e => { if(e.pointerType === "mouse") st.hover = true; });
+  el.addEventListener("pointerleave", e => { if(e.pointerType === "mouse") st.hover = false; });
+  let raf = 0;
+  el.addEventListener("scroll", () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(updateDots); }, {passive:true});
+  window.addEventListener("resize", () => refresh(false));
+  // فقط وقتی بخش روی صفحه دیده می‌شود حرکت کند
+  if("IntersectionObserver" in window) new IntersectionObserver(es => { st.visible = es[0].isIntersecting; }, {threshold:.15}).observe(root);
+  if(!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)){
+    st.timer = setInterval(() => {
+      if(document.hidden || st.hover || !st.visible || Date.now() < st.pausedUntil) return;
+      // مودال / پنل مدیر / لایت‌باکس باز است (مثلاً کاربر پست را باز کرده و دارد نگاه می‌کند) → حرکت نکن
+      if(document.querySelector(".overlay.show,.admin-panel.show,.lightbox.show,.allpage.show")) return;
+      step(1, false);
+    }, CAR_INTERVAL);
+  }
+  return carousels[key] = {refresh, go, step};
+}
+makeCarousel("products", {track:"productsGrid", root:"carousel", dots:"carDots", item:".product"});
+makeCarousel("bts", {track:"btsGrid", root:"btsCarousel", dots:"btsDots", item:".ig-tile"});
+makeCarousel("reviews", {track:"reviewGrid", root:"reviewsCarousel", dots:"revDots", item:".review"});
+
+/* ================= لینک مستقیم محصول (#p12) ================= */
+function openFromHash(){
+  const m = /^#p(\d+)$/.exec(location.hash);
+  if(!m) return;
+  const id = Number(m[1]);
+  if(products.some(p => p.id === id && p.active)) openProduct(id);
+}
+
+/* ================= شروع ================= */
+(async function init(){
+  await Promise.all([loadSettings(), loadProducts()]);
+  applyHero();
+  cleanCart(); renderProducts(); updateCart();
+  loadReviews(); loadBTS();
+  openFromHash();
+})();
+</script>
+</body>
+</html>
