@@ -80,6 +80,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 .settings-block{display:flex;flex-direction:column;align-items:center;padding:20px;gap:6px}
 .settings-block .pv{max-width:100%;max-height:250px;border-radius:12px;border:1px solid var(--line);margin-bottom:10px;display:none}
 .settings-block .file{padding:10px;border:1px dashed var(--rose);border-radius:10px;background:var(--pink)}
+.color-checks{display:flex;flex-wrap:wrap;gap:8px}
+.color-checks label{display:inline-flex;align-items:center;gap:4px;font-size:13px;border:1px solid var(--line);border-radius:10px;padding:4px 10px;background:white;cursor:pointer}
 @media(max-width:900px){.hero-grid{gap:20px}.navlinks{gap:6px 12px}.hero-art{min-height:320px}.footer-grid{grid-template-columns:1fr 1fr}.footer-grid>div:first-child{grid-column:1/-1}.review-grid .review{flex-basis:calc((100% - 18px)/2)}.admin-form{grid-template-columns:1fr}.admin-form .field.full{grid-column:auto}.admin-form .actions{grid-column:auto}.trust-badges{grid-template-columns:1fr}.admin-stats{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.nav{flex-wrap:wrap}.navlinks{order:3;width:100%;justify-content:center;border-top:1px solid var(--line);padding-top:8px}.brand{font-size:25px}.nav-actions .btn{padding:9px 12px;font-size:12px}.hero{padding-top:25px}.hero-grid{grid-template-columns:1fr}.hero-art{min-height:270px;order:-1}.fabric{height:57px;width:255px}.hero h1{font-size:37px}.section{padding:37px 0}.section-head{align-items:start;flex-direction:column}.products{gap:11px}.products .product{flex-basis:calc((100% - 11px)/2)}.car-btn{width:36px;height:36px;font-size:20px}.car-prev{right:-6px}.car-next{left:-6px}.product-visual{height:170px}.product-visual:before{width:125px;height:140px}.product-visual:after{top:75px;font-size:17px}.product-info{padding:11px}.product-info h3{font-size:14px}.benefit-grid{grid-template-columns:1fr}.custom{grid-template-columns:1fr;padding:24px}.custom .btn{width:100%}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}.section-head .btn{align-self:stretch}.pdetail-grid{grid-template-columns:1fr}.pdetail-visual{height:180px}.review-grid .review{flex-basis:100%}.admin-stats{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -412,6 +414,20 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
     <label class="field">برچسب<input name="tag" maxlength="30" placeholder="مثلاً جدید"></label>
     <label class="field full">توضیحات<input name="desc" maxlength="200"></label>
     <label class="field">رنگ (hex)<input name="color" placeholder="#ed9fb5" value="#ed9fb5" dir="ltr"></label>
+<div class="field full"><span>رنگ‌های موجود برای مشتری (حداقل یکی)</span>
+  <div class="color-checks">
+    <label><input type="checkbox" name="colors" value="قرمز"> قرمز</label>
+    <label><input type="checkbox" name="colors" value="صورتی"> صورتی</label>
+    <label><input type="checkbox" name="colors" value="مشکی"> مشکی</label>
+    <label><input type="checkbox" name="colors" value="سفید"> سفید</label>
+    <label><input type="checkbox" name="colors" value="بژ"> بژ</label>
+    <label><input type="checkbox" name="colors" value="طوسی"> طوسی</label>
+    <label><input type="checkbox" name="colors" value="سرمه‌ای"> سرمه‌ای</label>
+    <label><input type="checkbox" name="colors" value="یاسی"> یاسی</label>
+    <label><input type="checkbox" name="colors" value="سبز"> سبز</label>
+    <label><input type="checkbox" name="colors" value="شیری"> شیری</label>
+  </div>
+</div>
     <label class="field">وضعیت<select name="active"><option value="1">نمایش در فروشگاه</option><option value="0">مخفی</option></select></label>
     <div class="field full"><span>عکس‌های محصول (تا ۸ عکس؛ عکس اول «کاور» است و روی کارت محصول نمایش داده می‌شود)</span>
       <input type="file" accept="image/*,.heic,.heif,.jfif,.avif,.webp,.bmp,.gif,.tif,.tiff,.svg" multiple onchange="uploadProductImages(this)">
@@ -503,6 +519,7 @@ let heroUrl = "";
 
 // سایزها (۱، ۲، ۳، ۴ و سفارشی)
 const SIZES = ["1", "2", "3", "4", "سفارشی"];
+const COLOR_OPTIONS = ["قرمز","صورتی","مشکی","سفید","بژ","طوسی","سرمه‌ای","یاسی","سبز","شیری"];
 
 const MAX_QTY = 10;
 const MAX_IMAGES = 8;
@@ -540,7 +557,7 @@ const parseImages = r => {
   if(cover){ a = [cover].concat(a.filter(u => u !== cover)); }
   return a.slice(0, MAX_IMAGES);
 };
-const fromRow = r => { const images = parseImages(r); return {id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, tag:r.tag||"", image:images[0]||"", images, active:r.active!==false}; };
+const fromRow = r => { const images = parseImages(r); return {id:Number(r.id), name:r.name, category:r.category, price:Number(r.price)||0, old:Number(r.old_price)||0, desc:r.description||"", color:r.color, colors: Array.isArray(r.colors) ? r.colors.map(String) : [], tag:r.tag||"", image:images[0]||"", images, active:r.active!==false}; };
 
 function applySizeGuideToAdmin(){
   const img = $("adminSizeGuidePreview"), note = $("adminSizeGuideEmpty");
@@ -666,8 +683,10 @@ function cleanCart(){
   Object.keys(cart).forEach(id => {
     const p = products.find(x => x.id === Number(id));
     if(!p || !p.active || typeof cart[id] !== "object"){ delete cart[id]; return }
-    Object.keys(cart[id]).forEach(sz => {
-      if(!SIZES.includes(sz) || !(cart[id][sz] > 0)) delete cart[id][sz]
+    Object.keys(cart[id]).forEach(key => {
+      const parts = key.split(" - "); const base = parts[0]; const col = parts.slice(1).join(" - ");
+      const okColor = p.colors.length ? p.colors.includes(col) : col === "";
+      if(!SIZES.includes(base) || !okColor || !(cart[id][key] > 0)) delete cart[id][key];
     });
     if(!Object.keys(cart[id]).length) delete cart[id];
   });
@@ -701,7 +720,6 @@ function renderProductsInner(){
 }
 function productCardHTML(p){
     const sz = selectedSize[p.id] || "";
-    const sh = shareParts(p);
     return `<article class="product">
       <div class="product-visual ${p.image ? "has-img" : ""}" style="--cloth:${safeColor(p.color)}" role="button" tabindex="0" aria-label="مشاهده ${esc(p.name)}" onclick="openProduct(${p.id})">${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">` : ""}<span class="tag">${esc(p.tag)}</span>${p.images.length > 1 ? `<span class="pcount">🖼 ${fmt(p.images.length)}</span>` : ""}</div>
       <div class="product-info">
@@ -709,11 +727,7 @@ function productCardHTML(p){
         <p class="desc">${esc(p.desc)}</p>
         <div class="price-row"><span class="price">${fmt(p.price)} تومان</span>${p.old > p.price ? `<span class="oldprice">${fmt(p.old)}</span>` : ""}</div>
         <div class="sizes" data-sizes-pid="${p.id}" role="group" aria-label="انتخاب سایز">${sizeButtons(p.id, sz)}</div>
-        <div class="share-row">
-          <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener" title="اشتراک در واتساپ">🟢 واتساپ</a>
-          <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener" title="اشتراک در تلگرام">🔵 تلگرام</a>
-          <button type="button" class="share-btn" onclick="copyForInstagram(${p.id})" title="کپی برای اینستاگرام">🟣 اینستاگرام</button>
-        </div>
+        ${p.colors.length ? `<div class="sizes" data-colors-pid="${p.id}" role="group" aria-label="انتخاب رنگ">${colorButtons(p)}</div>` : ""}
         <button class="btn soft add" onclick="addToCart(${p.id})">＋ افزودن به سبد</button>
       </div>
     </article>`;
@@ -724,6 +738,18 @@ function pickSize(pid, size){
 }
 function flagSizeNeeded(id){
   document.querySelectorAll(`[data-sz-pid="${id}"]`).forEach(b => b.classList.add("need"));
+}
+let selectedColor = {};
+function colorButtons(p){
+  const sel = selectedColor[p.id] || "";
+  return p.colors.map(c => `<button type="button" class="size-opt ${c===sel?"sel":""}" data-col-pid="${p.id}" data-color="${esc(c)}" onclick="pickColor(${p.id},'${esc(c)}')">${esc(c)}</button>`).join("");
+}
+function pickColor(pid, color){
+  selectedColor[pid] = color;
+  document.querySelectorAll(`[data-col-pid="${pid}"]`).forEach(b => { b.classList.toggle("sel", b.dataset.color === color); b.classList.remove("need"); });
+}
+function flagColorNeeded(id){
+  document.querySelectorAll(`[data-col-pid="${id}"]`).forEach(b => b.classList.add("need"));
 }
 function copyText(txt, okMsg){ if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(() => showToast(okMsg)).catch(() => showToast("کپی نشد؛ دستی کپی کن")); } else showToast("کپی نشد؛ دستی کپی کن"); }
 function copyForInstagram(id){ const p = products.find(x => x.id === id); if(!p) return; copyText(`${p.name}\n${p.desc}\nقیمت: ${fmt(p.price)} تومان\n\n${productLink(id)}`, "متن محصول کپی شد؛ توی اینستاگرام بچسبان 🌸"); }
@@ -749,11 +775,8 @@ function openProduct(id){
         <p style="font-size:12px;color:var(--muted);margin:8px 0 0">دسته‌بندی: ${esc(p.category)}</p>
         <div style="margin-top:12px;font-size:13px;color:#754758">انتخاب سایز:</div>
         <div class="sizes" role="group" aria-label="انتخاب سایز">${sizeButtons(id, sz)}</div>
-        <div class="share-row" style="margin-top:12px;justify-content:flex-start">
-          <a class="share-btn" href="https://wa.me/?text=${sh.text}%20${sh.url}" target="_blank" rel="noopener">🟢 واتساپ</a>
-          <a class="share-btn" href="https://t.me/share/url?url=${sh.url}&text=${sh.text}" target="_blank" rel="noopener">🔵 تلگرام</a>
-          <button type="button" class="share-btn" onclick="copyForInstagram(${id})">🟣 اینستاگرام</button>
-        </div>
+        ${p.colors.length ? `<div style="margin-top:12px;font-size:13px;color:#754758">انتخاب رنگ:</div><div class="sizes" role="group" aria-label="انتخاب رنگ">${colorButtons(p)}</div>` : ""}
+        
         <button class="btn primary add" onclick="if(addToCart(${id}))closeProduct()">افزودن به سبد خرید</button>
       </div>
     </div>`;
@@ -808,23 +831,35 @@ document.addEventListener("keydown", e => {
 function addToCart(id){
   const p = products.find(x => x.id === id); if(!p) return false;
   const size = selectedSize[id];
+  const color = p.colors.length ? selectedColor[id] : "";
   if(!size){ flagSizeNeeded(id); showToast("اول سایز را انتخاب کن 📏"); return false }
+  if(p.colors.length && !color){ flagColorNeeded(id); showToast("اول رنگ را انتخاب کن 🎨"); return false }
+  const key = color ? `${size} - ${color}` : size;
   if(!cart[id]) cart[id] = {};
-  if((cart[id][size] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return false }
-  cart[id][size] = (cart[id][size] || 0) + 1;
-  saveCart(); updateCart(); showToast(`«${p.name}» سایز ${size} اضافه شد 🌸`);
+  if((cart[id][key] || 0) >= MAX_QTY){ showToast(`حداکثر ${fmt(MAX_QTY)} عدد از هر مدل`); return false }
+  cart[id][key] = (cart[id][key] || 0) + 1;
+  saveCart(); updateCart(); showToast(`«${p.name}» ${color ? "رنگ " + color + " " : ""}سایز ${size} اضافه شد 🌸`);
   return true;
 }
-function cartLines(){ const out = []; Object.entries(cart).forEach(([id, sizes]) => { const p = products.find(x => x.id === Number(id)); if(!p) return; Object.entries(sizes).forEach(([size, q]) => { if(q > 0) out.push({p, size, q}) }); }); return out; }
+function cartLines(){
+  const out = [];
+  Object.entries(cart).forEach(([id, variants]) => {
+    const p = products.find(x => x.id === Number(id)); if(!p) return;
+    Object.entries(variants).forEach(([key, q]) => {
+      if(q > 0){ const parts = key.split(" - "); out.push({p, key, size: parts[0], color: parts.slice(1).join(" - "), q}) }
+    });
+  });
+  return out;
+}
 function updateCart(){
   const lines = cartLines();
   $("cartCount").textContent = fmt(lines.reduce((s, l) => s + l.q, 0));
-  $("cartItems").innerHTML = lines.length ? lines.map(({p, size, q}) => `<div class="cart-item">
-    <div><strong>${esc(p.name)}</strong><div class="sz">سایز ${esc(size)}</div><div class="hint">${fmt(p.price)} تومان</div></div>
+  $("cartItems").innerHTML = lines.length ? lines.map(({p, size, color, key, q}) => `<div class="cart-item">
+    <div><strong>${esc(p.name)}</strong><div class="sz">سایز ${esc(size)}${color ? " · رنگ " + esc(color) : ""}</div><div class="hint">${fmt(p.price)} تومان</div></div>
     <div class="qty">
-      <button type="button" aria-label="کم کردن" onclick="changeQty(${p.id},'${esc(size)}',-1)">−</button>
+      <button type="button" aria-label="کم کردن" onclick="changeQty(${p.id},'${esc(key)}',-1)">−</button>
       <span>${fmt(q)}</span>
-      <button type="button" aria-label="زیاد کردن" onclick="changeQty(${p.id},'${esc(size)}',1)">＋</button>
+      <button type="button" aria-label="زیاد کردن" onclick="changeQty(${p.id},'${esc(key)}',1)">＋</button>
     </div>
   </div>`).join("") : '<p class="hint">سبد خریدت هنوز خالیه. از محصولات یک مدل انتخاب کن 🌷</p>';
   const subtotal = lines.reduce((s, l) => s + l.p.price * l.q, 0);
@@ -883,7 +918,7 @@ $("orderForm").addEventListener("submit", async function(e){
   const btn = $("submitBtn"), original = btn.innerHTML;
   btn.innerHTML = "در حال ثبت... ⏳"; btn.disabled = true;
   if(!orderKey) orderKey = uuid();
-  const { data, error } = await sb.rpc("place_order", { p_name: name, p_phone: phone, p_address: address, p_postal: postal, p_items: lines.map(l => ({id: l.p.id, size: l.size, qty: l.q})), p_coupon: appliedCoupon ? appliedCoupon.code : "", p_payment: payment, p_custom: custom, p_key: orderKey });
+  const { data, error } = await sb.rpc("place_order", { p_name: name, p_phone: phone, p_address: address, p_postal: postal, p_items: lines.map(l => ({id: l.p.id, size: l.key, qty: l.q})), p_coupon: appliedCoupon ? appliedCoupon.code : "", p_payment: payment, p_custom: custom, p_key: orderKey });
   btn.innerHTML = original; btn.disabled = false;
   if(error || !data){ console.error("order:", error); if(error && error.code) orderKey = null; showToast(errorText(error)); if(error && /coupon/.test(error.message || "")){ appliedCoupon = null; $("couponMsg").textContent = ""; updateCart(); } return; }
   orderKey = null;
@@ -1188,16 +1223,18 @@ async function addBTS(e) {
 
 async function setOrderStatus(sel){ const { error } = await sb.from("orders").update({status: sel.value}).eq("id", sel.dataset.id); showToast(error ? "ذخیره نشد ❌" : "وضعیت سفارش ذخیره شد ✓"); }
 async function deleteProduct(id){ if(!confirm("محصول حذف بشه؟")) return; const { error } = await sb.from("products").delete().eq("id", id); if(error){ console.error(error); showToast("حذف نشد ❌"); return } delete cart[id]; saveCart(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast("محصول حذف شد"); }
-function editProduct(id){ const p = products.find(x => x.id === id); if(!p) return; const f = $("addProductForm").elements; editingId = id; f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; setImages(p.images || []); $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; switchTab("add"); }
+function editProduct(id){ const p = products.find(x => x.id === id); if(!p) return; const f = $("addProductForm").elements; editingId = id; f.id.value = id; f.name.value = p.name; f.category.value = p.category; f.price.value = p.price; f.old.value = p.old || ""; f.tag.value = p.tag; f.desc.value = p.desc; f.color.value = safeColor(p.color); f.active.value = p.active ? "1" : "0"; document.querySelectorAll('#addProductForm input[name="colors"]').forEach(cb => { cb.checked = (p.colors || []).includes(cb.value); }); setImages(p.images || []); $("saveProductBtn").textContent = "ذخیره تغییرات"; $("tabAddBtn").textContent = "✏️ ویرایش محصول"; switchTab("add"); }
 async function saveProductForm(e){
   e.preventDefault();
   const f = new FormData(e.target);
-  const row = { name: String(f.get("name")).trim(), category: f.get("category"), price: Math.max(0, Math.round(Number(f.get("price")) || 0)), old_price: Math.max(0, Math.round(Number(f.get("old")) || 0)), description: String(f.get("desc")).trim(), tag: String(f.get("tag")).trim(), color: safeColor(String(f.get("color")).trim()), active: f.get("active") === "1", image_url: formImages[0] || null, images: formImages.filter(u => safeUrl(u)) };
+  const colors = f.getAll("colors").map(String).filter(c => COLOR_OPTIONS.includes(c));
+  if(!colors.length){ showToast("حداقل یک رنگ برای محصول انتخاب کن 🎨"); return }
+  const row = { name: String(f.get("name")).trim(), category: f.get("category"), price: Math.max(0, Math.round(Number(f.get("price")) || 0)), old_price: Math.max(0, Math.round(Number(f.get("old")) || 0)), description: String(f.get("desc")).trim(), tag: String(f.get("tag")).trim(), color: safeColor(String(f.get("color")).trim()), colors, active: f.get("active") === "1", image_url: formImages[0] || null, images: formImages.filter(u => safeUrl(u)) };
   if(!row.name){ showToast("نام محصول لازمه"); return }
   const btn = $("saveProductBtn"); btn.disabled = true;
   const q = editingId ? sb.from("products").update(row).eq("id", editingId) : sb.from("products").insert(row);
   const { error } = await q; btn.disabled = false;
-  if(error){ console.error(error); showToast(/images/.test(error.message || "") ? "ستون images در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : "ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return }
+  if(error){ console.error(error); showToast(/images/.test(error.message || "") ? "ستون images در دیتابیس نیست؛ اسکریپت SQL را اجرا کن ❌" : /colors/.test(error.message || "") ? "ستون colors در دیتابیس نیست؛ SQL را اجرا کن ❌" : "ذخیره نشد ❌ (دسترسی مدیر را بررسی کن)"); return }
   const wasEdit = !!editingId; resetProductForm(); await loadProducts(); cleanCart(); renderAdminList(); renderProducts(); updateCart(); showToast(wasEdit ? "ذخیره شد ✓" : "محصول اضافه شد ✓"); switchTab("list");
 }
 function resetProductForm(){ editingId = null; $("addProductForm").reset(); $("addProductForm").elements.id.value = ""; setImages([]); $("saveProductBtn").textContent = "افزودن محصول"; $("tabAddBtn").textContent = "➕ افزودن محصول"; }
