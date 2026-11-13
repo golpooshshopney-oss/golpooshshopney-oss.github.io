@@ -196,7 +196,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
   </div>
   <div class="carousel" id="carousel">
    <button class="car-btn car-prev" type="button" onclick="carousels.products.step(-1,true)" aria-label="محصولات قبلی">›</button>
-   <div class="products" id="productsGrid"><div class="empty">در حال بارگذاری محصولات... 🌸</div></div>
+   <div class="products" id="productsGrid"><div class="empty">نسخه ۳ | در حال بارگذاری محصولات... 🌸</div></div>
    <button class="car-btn car-next" type="button" onclick="carousels.products.step(1,true)" aria-label="محصولات بعدی">‹</button>
    <div class="car-dots" id="carDots"></div>
   </div>
@@ -221,7 +221,7 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
    <div class="carousel" id="reviewsCarousel">
       <button class="car-btn car-prev" type="button" onclick="carousels.reviews.step(-1,true)" aria-label="نظر قبلی">›</button>
       <div class="review-grid" id="reviewGrid">
-        <div class="empty">در حال بارگذاری نظرات... 🌸</div>
+        <div class="empty">نسخه ۳ | در حال بارگذاری نظرات... 🌸</div>
       </div>
       <button class="car-btn car-next" type="button" onclick="carousels.reviews.step(1,true)" aria-label="نظر بعدی">‹</button>
       <div class="car-dots" id="revDots"></div>
@@ -607,7 +607,7 @@ async function loadProducts(){
   loadFailed = true; products = []; return false;
 }
 async function retryLoad(){
-  $("productsGrid").innerHTML = '<div class="empty">در حال بارگذاری محصولات... 🌸</div>';
+  $("productsGrid").innerHTML = '<div class="empty">نسخه ۳ | در حال بارگذاری محصولات... 🌸</div>';
   await loadProducts(); cleanCart(); renderProducts(); updateCart();
 }
 
@@ -996,7 +996,7 @@ async function checkTrack(){
 async function loadReviews() {
   if(!sb) return;
   const grid = $("reviewGrid");
-  grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
+  grid.innerHTML = '<div class="empty">نسخه ۳ | در حال بارگذاری نظرات... 🌸</div>';
   const { data, error } = await sbPub.from("reviews").select("*").order("created_at", {ascending: false}).limit(20);
   if(error || !data || !data.length) {
     grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
@@ -1258,4 +1258,4 @@ async function decodeImage(file){
     try{ return await createImageBitmap(file); }catch(e){}
   }
   try{
-    return await new Promise((res, rej) => { const u = URL.createOb
+    return await new Promise((r
