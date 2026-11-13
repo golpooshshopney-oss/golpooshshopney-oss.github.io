@@ -510,6 +510,8 @@ footer{background:#f6dfe3;padding:34px 0 20px;margin-top:15px}.footer-grid{displ
 const SUPABASE_URL = 'https://ysleunznbqxlwzwgrmvu.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_NIHwah7xe8Ti_tjVW901EQ_nP2-8xi0';
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
+// کلاینت عمومی بدون نشست ذخیره‌شده: خواندن‌های عمومی (محصول، نظر، پشت‌صحنه، سفارش) از این استفاده می‌کنند تا نشست قدیمی مرورگر آن‌ها را گیر نیندازد
+const sbPub = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {auth:{persistSession:false, autoRefreshToken:false, detectSessionInUrl:false}}) : null;
 
 let settingsFailed = false;
 let sizeGuideUrl = ""; // عکس راهنمای سایز: آپلود فقط توسط مدیر، نمایش برای همه
@@ -581,7 +583,7 @@ function applyHero(){
 async function loadSettings() {
   if(!sb){ applyHero(); return; }
   try{
-    const { data, error } = await sb.from("settings").select("hero_image,size_guide_image").eq("id", 1).maybeSingle();
+    const { data, error } = await sbPub.from("settings").select("hero_image,size_guide_image").eq("id", 1).maybeSingle();
     settingsFailed = !!error;
     if(error) console.error("settings read failed (RLS یا نبودن ستون):", error);
     if(!error && data){
@@ -597,7 +599,7 @@ async function loadProducts(){
   loadFailed = false;
   if(sb){
     try{
-      const { data, error } = await sb.from("products").select("*").order("id");
+      const { data, error } = await sbPub.from("products").select("*").order("id");
       if(!error && Array.isArray(data)){ products = data.map(fromRow); return true }
       if(error) console.error("products:", error);
     }catch(e){ console.error(e) }
@@ -615,7 +617,7 @@ async function loadBTS() {
   const emptyMsg = '<div class="empty">به‌زودی عکس‌های پشت‌صحنه اینجا قرار می‌گیرد. 🌸</div>';
   let data = null, error = null;
   if(sb){
-    try{ ({ data, error } = await sb.from("bts").select("*").order("created_at", {ascending: false}).limit(200)); }
+    try{ ({ data, error } = await sbPub.from("bts").select("*").order("created_at", {ascending: false}).limit(200)); }
     catch(e){ error = e; }
   }
   if(error || !data || !data.length) {
@@ -876,7 +878,7 @@ async function applyCoupon(){
   if(!code){ msg.className = "coupon-msg err"; msg.textContent = "کد تخفیف رو وارد کن."; return }
   if(!sb){ msg.className = "coupon-msg err"; msg.textContent = "ارتباط با سرور برقرار نیست."; return }
   btn.disabled = true;
-  const { data, error } = await sb.rpc("check_coupon", {p_code: code});
+  const { data, error } = await sbPub.rpc("check_coupon", {p_code: code});
   btn.disabled = false;
   if(error || !data){ appliedCoupon = null; msg.className = "coupon-msg err"; msg.textContent = error ? "خطا در بررسی کد؛ دوباره تلاش کن." : "کد تخفیف معتبر نیست."; updateCart(); return }
   appliedCoupon = {code, percent: Number(data.percent) || 0, label: data.label || "تخفیف"};
@@ -918,7 +920,7 @@ $("orderForm").addEventListener("submit", async function(e){
   const btn = $("submitBtn"), original = btn.innerHTML;
   btn.innerHTML = "در حال ثبت... ⏳"; btn.disabled = true;
   if(!orderKey) orderKey = uuid();
-  const { data, error } = await sb.rpc("place_order", { p_name: name, p_phone: phone, p_address: address, p_postal: postal, p_items: lines.map(l => ({id: l.p.id, size: l.key, qty: l.q})), p_coupon: appliedCoupon ? appliedCoupon.code : "", p_payment: payment, p_custom: custom, p_key: orderKey });
+  const { data, error } = await sbPub.rpc("place_order", { p_name: name, p_phone: phone, p_address: address, p_postal: postal, p_items: lines.map(l => ({id: l.p.id, size: l.key, qty: l.q})), p_coupon: appliedCoupon ? appliedCoupon.code : "", p_payment: payment, p_custom: custom, p_key: orderKey });
   btn.innerHTML = original; btn.disabled = false;
   if(error || !data){ console.error("order:", error); if(error && error.code) orderKey = null; showToast(errorText(error)); if(error && /coupon/.test(error.message || "")){ appliedCoupon = null; $("couponMsg").textContent = ""; updateCart(); } return; }
   orderKey = null;
@@ -968,7 +970,7 @@ async function checkTrack(){
   }
   res.innerHTML = '<p class="hint">در حال بررسی... ⏳</p>';
 
-  const { data, error } = await sb.rpc('track_order', { p_order_id: parseInt(idRaw, 10), p_phone: phone });
+  const { data, error } = await sbPub.rpc('track_order', { p_order_id: parseInt(idRaw, 10), p_phone: phone });
 
   if(error || !data){
     res.innerHTML = '<p class="hint" style="color:#c62828">سفارشی با این مشخصات پیدا نشد. لطفاً کد و شماره را چک کنید.</p>';
@@ -995,7 +997,7 @@ async function loadReviews() {
   if(!sb) return;
   const grid = $("reviewGrid");
   grid.innerHTML = '<div class="empty">در حال بارگذاری نظرات... 🌸</div>';
-  const { data, error } = await sb.from("reviews").select("*").order("created_at", {ascending: false}).limit(20);
+  const { data, error } = await sbPub.from("reviews").select("*").order("created_at", {ascending: false}).limit(20);
   if(error || !data || !data.length) {
     grid.innerHTML = '<div class="empty">هنوز نظرات زیباتو برامون نذاشتین 🌸</div>';
     carousels.reviews.refresh(true);
@@ -1256,9 +1258,4 @@ async function decodeImage(file){
     try{ return await createImageBitmap(file); }catch(e){}
   }
   try{
-    return await new Promise((res, rej) => { const u = URL.createObjectURL(file), im = new Image(); im.onload = () => { URL.revokeObjectURL(u); res(im); }; im.onerror = () => { URL.revokeObjectURL(u); rej(new Error("load")); }; im.src = u; });
-  }catch(e){ return null; }
-}
-async function compressImage(file, maxSide = 1200){
-  let src = await decodeImage(file);
-  // عکس‌های HEIC/HEIF آیفون در بعضی مرورگرها مستقیم
+    return await new Promise((res, rej) => { const u = URL.createOb
